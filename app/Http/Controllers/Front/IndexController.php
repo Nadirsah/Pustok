@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Http\Controllers\Front;
+
+use App\Http\Controllers\Controller;
+use App\Services\DataService;
+use Illuminate\Http\Request;
+
+class IndexController extends Controller
+{
+    public function __construct(private DataService $data){
+
+    }
+
+    public function index(){
+
+        return view('front.home.index');
+    }
+}
