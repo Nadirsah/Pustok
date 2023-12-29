@@ -1,13 +1,14 @@
 @extends('layouts.admin')
 @section('title','Mehsullar')
-@section('theme_js')
-    <script src="{{asset('admin')}}/global_assets\js\plugins\tables\datatables\datatables.min.js"></script>
-    <script src="{{asset('admin')}}/global_assets\js\plugins\forms\selects\select2.min.js"></script>
-    <script src="{{asset('admin')}}/global_assets\js\demo_pages\datatables_advanced.js"></script>
-@endsection
 @section('theme_css')
-    <link href="{{asset('admin')}}/global_assets\css\icons\fontawesome\styles.min.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('admin')}}\global_assets\css\icons\fontawesome\styles.min.css" rel="stylesheet" type="text/css">
 @endsection
+@section('theme_js')
+    <script src="{{asset('admin')}}\global_assets\js\plugins\tables\datatables\datatables.min.js"></script>
+    <script src="{{asset('admin')}}\global_assets\js\plugins\forms\selects\select2.min.js"></script>
+    <script src="{{asset('admin')}}\global_assets\js\demo_pages\datatables_advanced.js"></script>
+@endsection
+
 
 @section('content')
     <div class="content">

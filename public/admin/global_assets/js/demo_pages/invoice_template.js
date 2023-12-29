@@ -13,5 +13,5 @@ document.addEventListener('DOMContentLoaded', function() {
     CKEDITOR.dtd.$removeEmpty['i'] = false;
     CKEDITOR.config.startupShowBorders = false;
     CKEDITOR.config.extraAllowedContent = 'table(*)';
-
+    
 });

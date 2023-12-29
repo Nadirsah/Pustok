@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 .enter()
                     .append("path")
                     .attr("class", "streamgraph-layer")
-                    .attr("d", function(d) { return area(d.values); })
+                    .attr("d", function(d) { return area(d.values); })                    
                     .style('stroke', '#fff')
                     .style('stroke-width', 0.5)
                     .style("fill", function(d, i) { return z(i); });
@@ -335,7 +335,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             "<ul class='list-unstyled mb-5'>" +
                                 "<li>" + "<div class='text-size-base mt-5 mb-5'><i class='icon-circle-left2 position-left'></i>" + d.key + "</div>" + "</li>" +
                                 "<li>" + "Visits: &nbsp;" + "<span class='text-semibold pull-right'>" + pro + "</span>" + "</li>" +
-                                "<li>" + "Time: &nbsp; " + "<span class='text-semibold pull-right'>" + formatDate(d.values[mousedate].date) + "</span>" + "</li>" +
+                                "<li>" + "Time: &nbsp; " + "<span class='text-semibold pull-right'>" + formatDate(d.values[mousedate].date) + "</span>" + "</li>" + 
                             "</ul>"
                         )
                         .style("display", "block");
@@ -406,9 +406,9 @@ document.addEventListener('DOMContentLoaded', function() {
         $('.sidebar-control').on('click', resizeStream);
 
         // Resize function
-        //
+        // 
         // Since D3 doesn't support SVG resize by default,
-        // we need to manually specify parts of the graph that need to
+        // we need to manually specify parts of the graph that need to 
         // be updated on window resize
         function resizeStream() {
 

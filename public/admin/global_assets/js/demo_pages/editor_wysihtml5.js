@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             parserRules:  wysihtml5ParserRules,
             stylesheets: ["assets/css/components.css"],
             events: {
-                load: function() {
+                load: function() { 
                     $.jGrowl('Editor has been loaded.', { theme: 'bg-slate-700', header: 'WYSIHTML5 loaded' });
                 },
                 change_view: function() {

@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Single picker
-    $('.daterange-single').daterangepicker({
+    $('.daterange-single').daterangepicker({ 
         singleDatePicker: true,
         opens: 'left',
         locale: {
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
             cancelClass: 'btn-sm btn-light',
             locale: {
                 direction: 'rtl'
-            }
+            }                
         },
         function(start, end) {
             $('.daterange-predefined span').html(start.format('MMMM D, YYYY') + ' &nbsp; - &nbsp; ' + end.format('MMMM D, YYYY'));
@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', function() {
             picker_date.close();
         } else {
             picker_date.open();
-        }
+        }                        
         event.stopPropagation();
     });
 
@@ -368,7 +368,7 @@ document.addEventListener('DOMContentLoaded', function() {
             picker_time.close();
         } else {
             picker_time.open();
-        }
+        }                        
         event.stopPropagation();
     });
 

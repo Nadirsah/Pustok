@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var transition = $(this).data("transition");
 
         // Add animation class to panel element
-        $(this).parents(".panel").velocity("transition." + transition, {
+        $(this).parents(".panel").velocity("transition." + transition, { 
         	stagger: 1000,
         	duration: 1000
 		});

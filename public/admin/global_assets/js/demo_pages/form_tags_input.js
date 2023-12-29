@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var val = $element.val();
         if (val === null)
         val = "null";
-
+    
         $('pre.val > code', $container).html( ($.isArray(val) ? JSON.stringify(val) : "\"" + val.replace('"', '\\"') + "\"") );
         $('pre.items > code', $container).html(JSON.stringify($element.tagsinput('items')));
         Prism.highlightAll();

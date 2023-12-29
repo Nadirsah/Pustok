@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {id: 11, name: {first: 'Aaron', last: 'Kinley'}, email: '<a href="#">aaron.kinley@ex.com</a>', password: '12e3932asdw'}
     ];
 
-    // Define element
+    // Define element  
     var hot_password = document.getElementById('hot_password');
 
     // Initialize with options

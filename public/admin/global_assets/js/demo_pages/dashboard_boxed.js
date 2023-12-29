@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 .enter()
                     .append("path")
                     .attr("class", "streamgraph-layer")
-                    .attr("d", function(d) { return area(d.values); })
+                    .attr("d", function(d) { return area(d.values); })                    
                     .style('stroke', '#fff')
                     .style('stroke-width', 0.5)
                     .style("fill", function(d, i) { return z(i); });
@@ -385,7 +385,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             "<ul class='list-unstyled mb-5'>" +
                                 "<li>" + "<div class='text-size-base mt-5 mb-5'><i class='icon-circle-left2 position-left'></i>" + d.key + "</div>" + "</li>" +
                                 "<li>" + "Visits: &nbsp;" + "<span class='text-semibold pull-right'>" + pro + "</span>" + "</li>" +
-                                "<li>" + "Time: &nbsp; " + "<span class='text-semibold pull-right'>" + formatDate(d.values[mousedate].date) + "</span>" + "</li>" +
+                                "<li>" + "Time: &nbsp; " + "<span class='text-semibold pull-right'>" + formatDate(d.values[mousedate].date) + "</span>" + "</li>" + 
                             "</ul>"
                         )
                         .style("display", "block");
@@ -456,9 +456,9 @@ document.addEventListener('DOMContentLoaded', function() {
         $(document).on('click', '.sidebar-control', resizeStream);
 
         // Resize function
-        //
+        // 
         // Since D3 doesn't support SVG resize by default,
-        // we need to manually specify parts of the graph that need to
+        // we need to manually specify parts of the graph that need to 
         // be updated on window resize
         function resizeStream() {
 
@@ -525,7 +525,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return "<ul class='list-unstyled mb-5'>" +
                     "<li>" + "<div class='text-size-base mt-5 mb-5'><i class='icon-circle-left2 position-left'></i>" + d.name + " app" + "</div>" + "</li>" +
                     "<li>" + "Sales: &nbsp;" + "<span class='text-semibold pull-right'>" + d.value + "</span>" + "</li>" +
-                    "<li>" + "Revenue: &nbsp; " + "<span class='text-semibold pull-right'>" + "$" + (d.value * 25).toFixed(2) + "</span>" + "</li>" +
+                    "<li>" + "Revenue: &nbsp; " + "<span class='text-semibold pull-right'>" + "$" + (d.value * 25).toFixed(2) + "</span>" + "</li>" + 
                 "</ul>";
             });
 
@@ -595,8 +595,8 @@ document.addEventListener('DOMContentLoaded', function() {
         d3.select(window)
             .on("keydown", function() { altKey = d3.event.altKey; })
             .on("keyup", function() { altKey = false; });
-
-        // Set terms of transition on date change
+    
+        // Set terms of transition on date change   
         function change() {
           d3.transition()
               .duration(altKey ? 7500 : 500)
@@ -608,7 +608,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Main chart drawing function
         // ------------------------------
 
-        function redraw() {
+        function redraw() { 
 
             // Construct chart layout
             // ------------------------------
@@ -617,15 +617,15 @@ document.addEventListener('DOMContentLoaded', function() {
             var nested = d3.nest()
                 .key(function(d) { return d.type; })
                 .map(formatted)
-
+            
             // Get value from menu selection
             // the option values correspond
-            //to the [type] value we used to nest the data
+            //to the [type] value we used to nest the data  
             var series = menu.val();
-
+            
             // Only retrieve data from the selected series using nest
             var data = nested[series];
-
+            
             // For object constancy we will need to set "keys", one for each type of data (column name) exclude all others.
             color.domain(d3.keys(data[0]).filter(function(key) { return (key !== "date" && key !== "type"); }));
 
@@ -687,7 +687,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 .ticks(6)
                 .tickSize(0 -width)
                 .tickPadding(8);
-
+            
 
 
             //
@@ -714,7 +714,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Bind the data
             var lines = svg.selectAll(".lines")
                 .data(linedata)
-
+         
             // Append a group tag for each line
             var lineGroup = lines
                 .enter()
@@ -732,7 +732,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     .duration(500)
                     .delay(function(d, i) { return i * 200; })
                     .style('opacity', 1);
-
+          
 
 
             // Append circles
@@ -779,7 +779,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Change tooltip direction of first point
             // to always keep it inside chart, useful on mobiles
-            lines.each(function (d) {
+            lines.each(function (d) { 
                 d3.select(d3.select(this).selectAll('circle')[0][0])
                     .on("mouseover", function (d) {
                         tooltip.offset([0, 15]).direction('e').show(d);
@@ -797,7 +797,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Change tooltip direction of last point
             // to always keep it inside chart, useful on mobiles
-            lines.each(function (d) {
+            lines.each(function (d) { 
                 d3.select(d3.select(this).selectAll('circle')[0][d3.select(this).selectAll('circle').size() - 1])
                     .on("mouseover", function (d) {
                         tooltip.offset([0, -15]).direction('w').show(d);
@@ -820,7 +820,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Set variable for updating visualization
             var lineUpdate = d3.transition(lines);
-
+            
             // Update lines
             lineUpdate.select("path")
                 .attr("d", function(d, i) { return line(d.values); });
@@ -833,7 +833,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Update vertical axes
             d3.transition(svg)
                 .select(".d3-axis-vertical")
-                .call(yAxis);
+                .call(yAxis);   
 
             // Update horizontal axes
             d3.transition(svg)
@@ -853,9 +853,9 @@ document.addEventListener('DOMContentLoaded', function() {
             $(document).on('click', '.sidebar-control', appSalesResize);
 
             // Resize function
-            //
+            // 
             // Since D3 doesn't support SVG resize by default,
-            // we need to manually specify parts of the graph that need to
+            // we need to manually specify parts of the graph that need to 
             // be updated on window resize
             function appSalesResize() {
 
@@ -1120,12 +1120,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 .attr("width", width)
                 .attr("height", height)
                     .on("mouseover", function() {
-                        focusPointer.style("display", null);
+                        focusPointer.style("display", null);        
                         focusLine.style("display", null)
                         focusText.style("display", null);
                     })
                     .on("mouseout", function() {
-                        focusPointer.style("display", "none");
+                        focusPointer.style("display", "none"); 
                         focusLine.style("display", "none");
                         focusText.style("display", "none");
                     })
@@ -1172,9 +1172,9 @@ document.addEventListener('DOMContentLoaded', function() {
             $(document).on('click', '.sidebar-control', monthlySalesAreaResize);
 
             // Resize function
-            //
+            // 
             // Since D3 doesn't support SVG resize by default,
-            // we need to manually specify parts of the graph that need to
+            // we need to manually specify parts of the graph that need to 
             // be updated on window resize
             function monthlySalesAreaResize() {
 
@@ -1344,9 +1344,9 @@ document.addEventListener('DOMContentLoaded', function() {
             $(document).on('click', '.sidebar-control', messagesAreaResize);
 
             // Resize function
-            //
+            // 
             // Since D3 doesn't support SVG resize by default,
-            // we need to manually specify parts of the graph that need to
+            // we need to manually specify parts of the graph that need to 
             // be updated on window resize
             function messagesAreaResize() {
 
@@ -1429,7 +1429,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Vertical
         y.domain([0, qty])
-
+            
 
 
         // Construct chart layout
@@ -1444,12 +1444,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Area
         var area = d3.svg.area()
             .interpolate(interpolation)
-            .x(function(d,i) {
-                return x(i);
+            .x(function(d,i) { 
+                return x(i); 
             })
             .y0(height)
-            .y1(function(d) {
-                return y(d);
+            .y1(function(d) { 
+                return y(d); 
             });
 
 
@@ -1571,9 +1571,9 @@ document.addEventListener('DOMContentLoaded', function() {
         $(document).on('click', '.sidebar-control', resizeSparklines);
 
         // Resize function
-        //
+        // 
         // Since D3 doesn't support SVG resize by default,
-        // we need to manually specify parts of the graph that need to
+        // we need to manually specify parts of the graph that need to 
         // be updated on window resize
         function resizeSparklines() {
 
@@ -1671,7 +1671,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return "<ul class='list-unstyled mb-5'>" +
                     "<li>" + "<div class='text-size-base mt-5 mb-5'><i class='icon-check2 position-left'></i>" + formatDate(d.date) + "</div>" + "</li>" +
                     "<li>" + "Sales: &nbsp;" + "<span class='text-semibold pull-right'>" + d.alpha + "</span>" + "</li>" +
-                    "<li>" + "Revenue: &nbsp; " + "<span class='text-semibold pull-right'>" + "$" + (d.alpha * 25).toFixed(2) + "</span>" + "</li>" +
+                    "<li>" + "Revenue: &nbsp; " + "<span class='text-semibold pull-right'>" + "$" + (d.alpha * 25).toFixed(2) + "</span>" + "</li>" + 
                 "</ul>";
             });
 
@@ -1919,9 +1919,9 @@ document.addEventListener('DOMContentLoaded', function() {
         $(document).on('click', '.sidebar-control', revenueResize);
 
         // Resize function
-        //
+        // 
         // Since D3 doesn't support SVG resize by default,
-        // we need to manually specify parts of the graph that need to
+        // we need to manually specify parts of the graph that need to 
         // be updated on window resize
         function revenueResize() {
 
@@ -2001,7 +2001,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .innerRadius(0)
             .outerRadius(radius)
             .endAngle(function(d) {
-              return (d.value / d.size) * 2 * Math.PI;
+              return (d.value / d.size) * 2 * Math.PI; 
             })
 
 
@@ -2125,13 +2125,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add svg element
         var container = d3Container.append("svg").call(tip);
-
+        
         // Add SVG group
         var svg = container
             .attr("width", size)
             .attr("height", size)
             .append("g")
-                .attr("transform", "translate(" + (size / 2) + "," + (size / 2) + ")");
+                .attr("transform", "translate(" + (size / 2) + "," + (size / 2) + ")");  
 
 
 
@@ -2143,9 +2143,9 @@ document.addEventListener('DOMContentLoaded', function() {
             .sort(null)
             .startAngle(Math.PI)
             .endAngle(3 * Math.PI)
-            .value(function (d) {
+            .value(function (d) { 
                 return d.value;
-            });
+            }); 
 
         // Arc
         var arc = d3.svg.arc()
@@ -2162,11 +2162,11 @@ document.addEventListener('DOMContentLoaded', function() {
         var arcGroup = svg.selectAll(".d3-arc")
             .data(pie(data))
             .enter()
-            .append("g")
+            .append("g") 
                 .attr("class", "d3-arc")
                 .style('stroke', '#fff')
                 .style('cursor', 'pointer');
-
+        
         // Append path
         var arcPath = arcGroup
             .append("path")
@@ -2190,7 +2190,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
 
             .on("mousemove", function (d) {
-
+                
                 // Show tooltip on mousemove
                 tip.show(d)
                     .style("top", (d3.event.pageY - 40) + "px")
@@ -2219,8 +2219,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     var interpolate = d3.interpolate(d.startAngle,d.endAngle);
                     return function(t) {
                         d.endAngle = interpolate(t);
-                        return arc(d);
-                    };
+                        return arc(d);  
+                    }; 
                 });
     }
 
@@ -2295,13 +2295,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add svg element
         var container = d3Container.append("svg").call(tip);
-
+        
         // Add SVG group
         var svg = container
             .attr("width", size)
             .attr("height", size)
             .append("g")
-                .attr("transform", "translate(" + (size / 2) + "," + (size / 2) + ")");
+                .attr("transform", "translate(" + (size / 2) + "," + (size / 2) + ")");  
 
 
 
@@ -2313,9 +2313,9 @@ document.addEventListener('DOMContentLoaded', function() {
             .sort(null)
             .startAngle(Math.PI)
             .endAngle(3 * Math.PI)
-            .value(function (d) {
+            .value(function (d) { 
                 return d.value;
-            });
+            }); 
 
         // Arc
         var arc = d3.svg.arc()
@@ -2332,11 +2332,11 @@ document.addEventListener('DOMContentLoaded', function() {
         var arcGroup = svg.selectAll(".d3-arc")
             .data(pie(data))
             .enter()
-            .append("g")
+            .append("g") 
                 .attr("class", "d3-arc")
                 .style('stroke', '#fff')
                 .style('cursor', 'pointer');
-
+        
         // Append path
         var arcPath = arcGroup
             .append("path")
@@ -2360,7 +2360,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
 
             .on("mousemove", function (d) {
-
+                
                 // Show tooltip on mousemove
                 tip.show(d)
                     .style("top", (d3.event.pageY - 40) + "px")
@@ -2389,8 +2389,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     var interpolate = d3.interpolate(d.startAngle,d.endAngle);
                     return function(t) {
                         d.endAngle = interpolate(t);
-                        return arc(d);
-                    };
+                        return arc(d);  
+                    }; 
                 });
     }
 
@@ -2460,13 +2460,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add svg element
         var container = d3Container.append("svg").call(tip);
-
+        
         // Add SVG group
         var svg = container
             .attr("width", size)
             .attr("height", size)
             .append("g")
-                .attr("transform", "translate(" + (size / 2) + "," + (size / 2) + ")");
+                .attr("transform", "translate(" + (size / 2) + "," + (size / 2) + ")");  
 
 
 
@@ -2478,9 +2478,9 @@ document.addEventListener('DOMContentLoaded', function() {
             .sort(null)
             .startAngle(Math.PI)
             .endAngle(3 * Math.PI)
-            .value(function (d) {
+            .value(function (d) { 
                 return d.value;
-            });
+            }); 
 
         // Arc
         var arc = d3.svg.arc()
@@ -2497,11 +2497,11 @@ document.addEventListener('DOMContentLoaded', function() {
         var arcGroup = svg.selectAll(".d3-arc")
             .data(pie(data))
             .enter()
-            .append("g")
+            .append("g") 
                 .attr("class", "d3-arc")
                 .style('stroke', '#fff')
                 .style('cursor', 'pointer');
-
+        
         // Append path
         var arcPath = arcGroup
             .append("path")
@@ -2525,7 +2525,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
 
             .on("mousemove", function (d) {
-
+                
                 // Show tooltip on mousemove
                 tip.show(d)
                     .style("top", (d3.event.pageY - 40) + "px")
@@ -2554,8 +2554,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     var interpolate = d3.interpolate(d.startAngle,d.endAngle);
                     return function(t) {
                         d.endAngle = interpolate(t);
-                        return arc(d);
-                    };
+                        return arc(d);  
+                    }; 
                 });
     }
 
@@ -2586,7 +2586,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Main variables
         var d3Container = d3.select(element),
             width = d3Container.node().getBoundingClientRect().width;
-
+        
 
 
         // Construct scales
@@ -2746,9 +2746,9 @@ document.addEventListener('DOMContentLoaded', function() {
         $(document).on('click', '.sidebar-control', barsResize);
 
         // Resize function
-        //
+        // 
         // Since D3 doesn't support SVG resize by default,
-        // we need to manually specify parts of the graph that need to
+        // we need to manually specify parts of the graph that need to 
         // be updated on window resize
         function barsResize() {
 

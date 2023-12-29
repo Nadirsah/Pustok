@@ -108,7 +108,7 @@ var GoogleSankeyBasic = function() {
             // Options
             var options = {
                 height: 600,
-                sankey: {
+                sankey: { 
                     link: {
                         color: {
                             fill: '#eee',
@@ -121,8 +121,8 @@ var GoogleSankeyBasic = function() {
                         label: {
                             fontName: 'Roboto',
                             fontSize: 13
-                        }
-                    }
+                        } 
+                    } 
                 },
             };
 

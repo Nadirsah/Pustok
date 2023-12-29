@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         td.style.color = '#1B5E20';
         td.style.background = '#E8F5E9';
     }
-
+  
     // Negative values renderer
     function negativeValueRenderer(instance, td, row, col, prop, value, cellProperties) {
         Handsontable.renderers.TextRenderer.apply(this, arguments);

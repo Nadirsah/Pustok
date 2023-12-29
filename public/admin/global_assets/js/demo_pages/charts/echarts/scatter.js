@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 formatter: function (params) {
                     if (params.value.length > 1) {
                         return params.seriesName + ':<br/>'
-                        + params.value[0] + 'cm '
+                        + params.value[0] + 'cm ' 
                         + params.value[1] + 'kg ';
                     }
                     else {
@@ -866,8 +866,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         trigger: 'item',
                         formatter: function (params) {
                             return params.seriesName + ' （'  + 'Category' + params.value[0] + '）<br/>'
-                            + params.value[1] + ', '
-                            + params.value[2];
+                            + params.value[1] + ', ' 
+                            + params.value[2]; 
                         },
                         axisPointer: {
                             show: true
@@ -898,8 +898,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         trigger: 'item',
                         formatter: function (params) {
                             return params.seriesName + ' （'  + 'Category' + params.value[0] + '）<br/>'
-                            + params.value[1] + ', '
-                            + params.value[2];
+                            + params.value[1] + ', ' 
+                            + params.value[2]; 
                         },
                         axisPointer:{
                             show: true

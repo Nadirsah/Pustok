@@ -366,7 +366,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {car: "Audi", model: "Q7", year: 2012, price: 21000, available: false},
         {car: "Cadillac", model: "Escalade", year: 2012, price: 63900, available: true}
     ];
-
+  
     // Define element
     var hot_checks_values = document.getElementById('hot_checks_values');
 

@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // SelectBoxIt selects
     $(".selectbox").selectBoxIt({
-        autoWidth: false
+        autoWidth: false 
     });
 
 
@@ -176,5 +176,5 @@ document.addEventListener('DOMContentLoaded', function() {
     $('.file-styled').uniform({
         fileButtonClass: 'action btn bg-warning-400'
     });
-
+    
 });

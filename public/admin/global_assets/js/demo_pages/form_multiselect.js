@@ -272,13 +272,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Select option
     $('.multiselect-select-button').on('click', function() {
-
+        
         $('option[value="tomatoes"]', $('.multiselect-method-refresh')).attr('selected', 'selected');
         $('option[value="tomatoes"]', $('.multiselect-method-refresh')).prop('selected', true);
-
+        
         $('option[value="mushrooms"]', $('.multiselect-method-refresh')).prop('selected', true);
         $('option[value="mushrooms"]', $('.multiselect-method-refresh')).attr('selected', 'selected');
-
+        
         $('option[value="onions"]', $('.multiselect-method-refresh')).prop('selected', true);
         $('option[value="onions"]', $('.multiselect-method-refresh')).attr('selected', 'selected');
 
@@ -411,7 +411,7 @@ document.addEventListener('DOMContentLoaded', function() {
               values.push($(this).val());
             }
           });
-
+          
           $('.multiselect-simulate-selections').multiselect('deselect', values);
         }
     });
@@ -426,7 +426,7 @@ document.addEventListener('DOMContentLoaded', function() {
               selected++;
             }
           });
-
+     
           if (selected >= 3) {
             $('.multiselect-close-dropdown').siblings('div').children('ul').dropdown('toggle');
           }
@@ -557,7 +557,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
-
+ 
     // Order selected options on button click
     $('.multiselect-order-options-button').on('click', function() {
         var selected = [];
@@ -599,7 +599,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Related plugins
     // ------------------------------
-
+    
     // Styled checkboxes and radios
     $(".styled").uniform();
 

@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add legend
         // ------------------------------
-
+        
         var myLegend = myChart.addLegend("100%", 0, 0, "100%", "right");
 
 

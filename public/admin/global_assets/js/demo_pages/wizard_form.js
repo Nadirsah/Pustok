@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 swal({title: "Congratulations!", text: "You are registered now!", type: "success", timer: 2000, confirmButtonColor: "#43ABDB"})
             },
             dataType: 'json',
-            resetForm: true,
+            resetForm: true, 
             beforeSubmit: function(){
                 return confirm("This is the beforeSubmit callback, do you want to submit?");
             },
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Append step on button click
     $("#add-step").on('click', function(){
         $(".step-wrapper").append($(".extra-steps .step:first"));
-        $(".form-add-steps").formwizard("update_steps");
+        $(".form-add-steps").formwizard("update_steps");  
         return false;
     });
 
@@ -184,5 +184,5 @@ document.addEventListener('DOMContentLoaded', function() {
     $(".form-basic, .form-validation, .form-add-steps, .form-ajax").on("step_shown", function(event, data){
         //$.uniform.update();
     });
-
+    
 });

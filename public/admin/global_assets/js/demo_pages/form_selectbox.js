@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
         autoWidth: false,
         theme: "bootstrap"
     });
-
-
+    
+    
     // Allow copying classes to container
     $(".selectbox-container").selectBoxIt({
         autoWidth: false,
@@ -263,5 +263,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Enable popover
     $('[data-toggle="popover"').popover();
-
+    
 });

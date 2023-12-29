@@ -74,7 +74,7 @@ var GoogleDonutBasic = function() {
                     height: '90%'
                 }
             };
-
+            
             // Instantiate and draw our chart, passing in some options.
             var donut = new google.visualization.PieChart(donut_chart_element);
             donut.draw(data, options_donut);

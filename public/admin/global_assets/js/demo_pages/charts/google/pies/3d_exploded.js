@@ -82,7 +82,7 @@ var GoogleDonut3dExploded = function() {
                 },
                 is3D: true,
                 pieSliceText: 'label',
-                slices: {
+                slices: {  
                     2: {offset: 0.15},
                     8: {offset: 0.1},
                     10: {offset: 0.15},

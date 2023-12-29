@@ -48,13 +48,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Disabled autocrop
     $('.crop-auto').cropper({
-        autoCrop: false
+        autoCrop: false 
     });
 
 
     // Disabled drag
     $('.crop-drag').cropper({
-        movable: false
+        movable: false 
     });
 
 
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
-
+    
     // Demo cropper
     // ------------------------------
 
@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Destroy cropper
             $cropper.cropper('destroy');
-
+            
             // Disable other options
             cropClearInit.disable();
             enableDisableInit.disable();

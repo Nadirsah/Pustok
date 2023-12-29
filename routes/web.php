@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Front\CartController;
@@ -46,6 +47,8 @@ Route::group(['prefix'=>'admin','middleware'=>['auth']],function(){
     Route::get('/dashboard',[HomeController::class,'index'])->name('dashboard');
     Route::resource('/product',ProductController::class,);
     Route::get('/delete/{id}', [ProductController::class, 'delete'])->name('delete');
+    Route::resource('/category',CategoryController::class,);
+    Route::get('/delete/{id}', [CategoryController::class, 'delete'])->name('delete');
     Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 });
 Route::middleware(['web','guest'])->controller(AuthController::class)->group(function(){

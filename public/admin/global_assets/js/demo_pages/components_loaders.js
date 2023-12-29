@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $('#h-fill-basic-reset').on('click', function() {
         $('#h-fill-basic .progress-bar').attr('data-transitiongoal', 0).progressbar({display_text: 'fill'});
     });
-
+            
 
 
     // Progress bar with non-percentage text
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $('#h-center-basic-reset').on('click', function() {
         $('#h-center-basic .progress-bar').attr('data-transitiongoal', 0).progressbar({display_text: 'center'});
     });
-
+            
 
 
     // Progress bar with centered non-percentage text
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $('#h-center-nonpercentage-basic-reset').on('click', function() {
         $('#h-center-nonpercentage-basic .progress-bar').attr('data-transitiongoal', 0).progressbar({display_text: 'center', use_percentage: false});
     });
-
+            
 
 
     // Vertical progress bar

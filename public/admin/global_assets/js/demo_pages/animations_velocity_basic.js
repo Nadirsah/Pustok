@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Run basic animations
     $('.velocity-property').on('click', function (e) {
         e.preventDefault();
-
+        
         // Get animation class and panel
         var property = $(this).data("property");
         var value = $(this).data("value");
@@ -43,5 +43,5 @@ document.addEventListener('DOMContentLoaded', function() {
         	}
         });
     });
-
+    
 });

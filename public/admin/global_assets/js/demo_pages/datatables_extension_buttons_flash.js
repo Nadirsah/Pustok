@@ -101,5 +101,5 @@ document.addEventListener('DOMContentLoaded', function() {
         minimumResultsForSearch: Infinity,
         width: 'auto'
     });
-
+    
 });

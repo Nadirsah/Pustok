@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 width: '100px',
                 targets: 1
             },
-	        {
+	        { 
 	            orderable: false,
 	            width: '90px',
 	            targets: 6
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // External table additions
     // ------------------------------
-
+    
     // Lightbox
     $('[data-popup="lightbox"]').fancybox({
         padding: 3
@@ -95,5 +95,5 @@ document.addEventListener('DOMContentLoaded', function() {
         minimumResultsForSearch: Infinity,
         width: 'auto'
     });
-
+    
 });

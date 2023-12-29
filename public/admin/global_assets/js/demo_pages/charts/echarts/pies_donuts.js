@@ -425,7 +425,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     itemStyle: dataStyle,
                     data: [
                         {
-                            value: 30,
+                            value: 30, 
                             name: '30% Could be better'
                         },
                         {
@@ -447,7 +447,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     itemStyle: dataStyle,
                     data: [
                         {
-                            value: 10,
+                            value: 10, 
                             name: '10% Not at the moment'
                         },
                         {

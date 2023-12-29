@@ -201,5 +201,5 @@ document.addEventListener('DOMContentLoaded', function() {
         buttondown_class: "btn btn-info",
         buttonup_class: "btn btn-info"
     });
-
+    
 });

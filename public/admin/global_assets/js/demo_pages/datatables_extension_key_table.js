@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
         paging: false,
         keys: true
     });
-
+ 
 
     // Custom class
     $('.datatable-key-class').DataTable({
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var table = $('.datatable-key-events').DataTable({
         keys: true
     });
-
+ 
     // Events
     var events = $('#key-events');
     table
@@ -87,5 +87,5 @@ document.addEventListener('DOMContentLoaded', function() {
         minimumResultsForSearch: Infinity,
         width: 'auto'
     });
-
+    
 });

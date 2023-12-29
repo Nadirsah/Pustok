@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fallbackLng: false
     },
     function (err, t) {
-
+        
         // Initialize library
         jqueryI18next.init(i18next, $);
 
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
         $switchContainer.children('.dropdown-toggle').html(
             $(russianLangClass).html() + ' <span class="caret" />'
         ).children('img').addClass('position-left');
-
+        
         // Set active class
         $switchContainer.find('.active').removeClass('active');
         $(russianLangClass).parent().addClass('active');
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
         $switchContainer.children('.dropdown-toggle').html(
             $(ukrainianLangClass).html() + ' <span class="caret" />'
         ).children('img').addClass('position-left');
-
+        
         // Set active class
         $switchContainer.find('.active').removeClass('active');
         $(ukrainianLangClass).parent().addClass('active');

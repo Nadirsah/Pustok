@@ -47,5 +47,5 @@ document.addEventListener('DOMContentLoaded', function() {
             { name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] }
         ]
     });
-
+    
 });

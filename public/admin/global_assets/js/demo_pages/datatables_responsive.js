@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $.extend( $.fn.dataTable.defaults, {
         autoWidth: false,
         responsive: true,
-        columnDefs: [{
+        columnDefs: [{ 
             orderable: false,
             width: '100px',
             targets: [ 5 ]
@@ -54,11 +54,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 orderable: false,
                 targets:   0
             },
-            {
+            { 
                 width: "100px",
                 targets: [6]
             },
-            {
+            { 
                 orderable: false,
                 targets: [6]
             }
@@ -81,11 +81,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 orderable: false,
                 targets: -1
             },
-            {
+            { 
                 width: "100px",
                 targets: [5]
             },
-            {
+            { 
                 orderable: false,
                 targets: [5]
             }
@@ -107,11 +107,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 orderable: false,
                 targets:   0
             },
-            {
+            { 
                 width: "100px",
                 targets: [6]
             },
-            {
+            { 
                 orderable: false,
                 targets: [6]
             }
@@ -129,5 +129,5 @@ document.addEventListener('DOMContentLoaded', function() {
         minimumResultsForSearch: Infinity,
         width: 'auto'
     });
-
+    
 });

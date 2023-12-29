@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         containment: "#draggable-containment-container",
         axis: "x"
     });
-
+ 
 
     //
     // Revert position
@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
         containment: "#droppable-revert-container",
         revert: "invalid"
     });
-
+ 
     // Drop
     $("#droppable-revert-target").droppable({
         drop: function(event, ui) {

@@ -111,5 +111,5 @@ document.addEventListener('DOMContentLoaded', function() {
         extraAllowedContent: 'a(documentation);abbr[title];code',
         removePlugins: 'stylescombo'
     });
-
+    
 });

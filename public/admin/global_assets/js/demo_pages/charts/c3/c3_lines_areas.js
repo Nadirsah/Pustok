@@ -10,7 +10,7 @@
  * ---------------------------------------------------------------------------- */
 
 $(function () {
-
+    
 
     // Line chart
     // ------------------------------
@@ -18,8 +18,8 @@ $(function () {
     // Generate chart
     var line_chart = c3.generate({
         bindto: '#c3-line-chart',
-        point: {
-            r: 4
+        point: { 
+            r: 4   
         },
         size: { height: 400 },
         color: {

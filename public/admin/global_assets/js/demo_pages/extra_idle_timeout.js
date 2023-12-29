@@ -19,5 +19,5 @@ document.addEventListener('DOMContentLoaded', function() {
         redirUrl: 'login_unlock.html',
         logoutUrl: 'login_advanced.html'
     });
-
+    
 });

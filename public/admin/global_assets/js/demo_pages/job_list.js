@@ -10,5 +10,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Checkboxes, radios
     $(".styled").uniform();
-
+  
 });

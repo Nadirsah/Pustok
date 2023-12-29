@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Colors
         var colors = ['#EF5350', '#5C6BC0', '#66BB6A']
 
-
+   
 
         // Construct scales
         // ------------------------------
@@ -61,16 +61,16 @@ document.addEventListener('DOMContentLoaded', function() {
         var xAxis = d3.svg.axis()
             .scale(x)
             .tickSize(-height)
-            .tickPadding(10)
-            .tickSubdivide(true)
-            .orient("bottom");
+            .tickPadding(10)  
+            .tickSubdivide(true)  
+            .orient("bottom");  
 
         // Vertical
         var yAxis = d3.svg.axis()
             .scale(y)
             .tickPadding(10)
             .tickSize(-width)
-            .tickSubdivide(true)
+            .tickSubdivide(true)  
             .orient("left");
 
 
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .x(x)
             .y(y)
             .scaleExtent([1, 10])
-            .on("zoom", zoomed);
+            .on("zoom", zoomed);  
 
 
 
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 .attr("d", line)
                 .attr("class", "d3-line d3-line-medium")
                 .attr("clip-path", "url(#zoom-clip)")
-                .style('stroke', function(d,i){
+                .style('stroke', function(d,i){      
                     return colors[i%colors.length];
                 });
 
@@ -168,25 +168,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add dots
         points.selectAll('.d3-dot')
-            .data(function(d, index) {
+            .data(function(d, index) {     
                 var a = [];
                 d.forEach(function(point,i) {
                     a.push({'index': index, 'point': point});
-                });
+                });   
                 return a;
             })
             .enter()
             .append('circle')
                 .attr('class', 'd3-dot')
                 .attr("r", 3)
-                .attr("transform", function(d) {
+                .attr("transform", function(d) { 
                     return "translate(" + x(d.point.x) + "," + y(d.point.y) + ")"; }
                 )
                 .style("fill", "#fff")
                 .style("stroke-width", 2)
-                .style('stroke', function(d,i){
+                .style('stroke', function(d,i){  
                     return colors[d.index%colors.length];
-                })
+                })  
                 .style("cursor", "pointer");
 
 
@@ -195,12 +195,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         function zoomed() {
             svg.select(".d3-axis-horizontal").call(xAxis);
-            svg.select(".d3-axis-vertical").call(yAxis);
-            svg.selectAll('.d3-line').attr('d', line);
+            svg.select(".d3-axis-vertical").call(yAxis);   
+            svg.selectAll('.d3-line').attr('d', line); 
 
-            points.selectAll('.d3-dot').attr("transform", function(d) {
+            points.selectAll('.d3-dot').attr("transform", function(d) { 
                 return "translate(" + x(d.point.x) + "," + y(d.point.y) + ")"; }
-            );
+            );  
         }
 
 
@@ -215,9 +215,9 @@ document.addEventListener('DOMContentLoaded', function() {
         $('.sidebar-control').on('click', resize);
 
         // Resize function
-        //
+        // 
         // Since D3 doesn't support SVG resize by default,
-        // we need to manually specify parts of the graph that need to
+        // we need to manually specify parts of the graph that need to 
         // be updated on window resize
         function resize() {
 
@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', function() {
             svg.selectAll('.d3-line').attr("d", line);
 
             // Dots
-            points.selectAll('.d3-dot').attr("transform", function(d) {
+            points.selectAll('.d3-dot').attr("transform", function(d) { 
                 return "translate(" + x(d.point.x) + "," + y(d.point.y) + ")"; }
             );
         }

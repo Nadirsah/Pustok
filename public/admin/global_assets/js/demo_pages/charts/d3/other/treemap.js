@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var color = d3.scale.category20();
 
 
-
+    
         // Create chart
         // ------------------------------
 
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 .text(function(d) { return d.name; })
                 .style("fill", "#fff")
                 .style("opacity", function(d) { d.width = this.getComputedTextLength(); return d.dx > d.width ? 1 : 0; });
-        });
+        }); 
 
 
         // Change data
@@ -180,9 +180,9 @@ document.addEventListener('DOMContentLoaded', function() {
         d3.select('.sidebar-control').on('click', resize);
 
         // Resize function
-        //
+        // 
         // Since D3 doesn't support SVG resize by default,
-        // we need to manually specify parts of the graph that need to
+        // we need to manually specify parts of the graph that need to 
         // be updated on window resize
         function resize() {
 

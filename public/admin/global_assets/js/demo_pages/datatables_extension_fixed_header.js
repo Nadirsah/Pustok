@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Setting datatable defaults
     $.extend( $.fn.dataTable.defaults, {
         autoWidth: false,
-        columnDefs: [{
+        columnDefs: [{ 
             orderable: false,
             targets: [ 5 ]
         }],
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var table_offset = $('.datatable-header-offset').DataTable({
         fixedHeader: {
             header: true,
-
+            
         }
     });
 
@@ -115,5 +115,5 @@ document.addEventListener('DOMContentLoaded', function() {
         minimumResultsForSearch: Infinity,
         width: 'auto'
     });
-
+    
 });

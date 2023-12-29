@@ -75,5 +75,5 @@ document.addEventListener('DOMContentLoaded', function() {
         $('.listbox-dynamic-options').append('<option value="apples">Apples</option><option value="oranges" selected>Oranges</option>');
         $('.listbox-dynamic-options').trigger('bootstrapDualListbox.refresh', true);
     });
-
+    
 });

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Lang;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -11,8 +14,8 @@ class CategoryController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        //
+    {   $item=Category::all();
+        return view('admin.category.index',compact('item'));
     }
 
     /**
@@ -20,15 +23,28 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $langs=Lang::all();
+        $data=Category::where('parent_id',0)->get();
+        return view('admin.category.create',compact('langs','data'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        //
+    {$request->validate([
+        'parent_id' => 'sometimes|nullable|numeric'
+    ]);
+
+        $data=new Category;
+        $data->name=$request->name;
+        $data->slug = Str::slug($data->getTranslation('name', app()->getLocale()), '-');
+        $data->parent_id=$request->parent_id;
+
+        $data->save();
+        return redirect()->route('category.index')->with('type','success')
+            ->with('message','Melumatlar ugurla yuklendi!');
+
     }
 
     /**
@@ -43,8 +59,9 @@ class CategoryController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
-    {
-        //
+    {   $langs=Lang::all();
+        $data=Category::findOrFail($id);
+        return  view('admin.category.edit',compact('langs','data'));
     }
 
     /**
@@ -52,7 +69,17 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+       
+    
+            $data=Category::findOrFail($id);;
+            $data->name=$request->name;
+            $data->slug = Str::slug($data->getTranslation('name', app()->getLocale()), '-');
+            $data->parent_id=$request->parent_id;
+    
+            $data->save();
+            return redirect()->route('category.index')->with('type','success')
+                ->with('message','Melumatlar ugurla yuklendi!');
+    
     }
 
     /**

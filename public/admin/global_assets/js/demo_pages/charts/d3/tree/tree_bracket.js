@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
             arr = arr || [];
             var i = 0,
             l = item.children?item.children.length : 0;
-
+            
             arr.push(item);
             for(; i < l; i++) {
                 toArray(item.children[i], arr);
@@ -138,13 +138,13 @@ document.addEventListener('DOMContentLoaded', function() {
             root = json;
             root.x0 = height / 2;
             root.y0 = width / 2;
-
+            
             // Add tree layout
             var t1 = d3.layout.tree().size([height, halfWidth]).children(function(d){return d.winners;}),
                 t2 = d3.layout.tree().size([height, halfWidth]).children(function(d){return d.challengers;});
                 t1.nodes(root);
                 t2.nodes(root);
-
+  
             // Rebuild children nodes
             var rebuildChildren = function(node){
                 node.children = getChildren(node);
@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var nodeEnter = node.enter().append("g")
                 .attr("class", "node")
                 .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
-                .on("click", click);
+                .on("click", click);    
 
             // Add node circles
             nodeEnter.append("circle")
@@ -304,9 +304,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
             // Resize function
-            //
+            // 
             // Since D3 doesn't support SVG resize by default,
-            // we need to manually specify parts of the graph that need to
+            // we need to manually specify parts of the graph that need to 
             // be updated on window resize
             function resize() {
 

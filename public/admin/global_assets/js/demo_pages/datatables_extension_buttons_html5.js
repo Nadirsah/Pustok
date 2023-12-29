@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Basic initialization
     $('.datatable-button-html5-basic').DataTable({
-        buttons: {
+        buttons: {            
             dom: {
                 button: {
                     className: 'btn btn-default'
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Column selectors
     $('.datatable-button-html5-columns').DataTable({
-        buttons: {
+        buttons: {            
             buttons: [
                 {
                     extend: 'copyHtml5',
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Tab separated values
     $('.datatable-button-html5-tab').DataTable({
-        buttons: {
+        buttons: {            
             buttons: [
                 {
                     extend: 'copyHtml5',
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ]
         }
     });
-
+    
 
 
     // External table additions
@@ -128,5 +128,5 @@ document.addEventListener('DOMContentLoaded', function() {
         minimumResultsForSearch: Infinity,
         width: 'auto'
     });
-
+    
 });

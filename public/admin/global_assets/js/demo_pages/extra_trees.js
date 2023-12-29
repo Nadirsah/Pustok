@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
         selectMode: 1,
         source: {
             url: "../../../../global_assets/demo_data/fancytree/fancytree.json"
-        }
+        }    
     });
 
 
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
         selectMode: 2,
         source: {
             url: "../../../../global_assets/demo_data/fancytree/fancytree.json"
-        }
+        }    
     });
 
     // Initialize switchery toggle
@@ -313,5 +313,5 @@ document.addEventListener('DOMContentLoaded', function() {
             alert("dislike " + $input.val());
         }
     });
-
+    
 });

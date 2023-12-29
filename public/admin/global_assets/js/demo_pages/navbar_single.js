@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Toggle navbar position state toggle
     togglePosition.onchange = function() {
         if(togglePosition.checked) {
-
+        
             // Disable position switch
             toggleTypeInit.disable();
 
@@ -69,5 +69,5 @@ document.addEventListener('DOMContentLoaded', function() {
             $('body').removeClass('navbar-bottom');
         }
     };
-
+    
 });

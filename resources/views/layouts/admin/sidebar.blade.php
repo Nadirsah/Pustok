@@ -33,6 +33,7 @@
                     <li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i></li>
                     <li class="{{Route::is('dashboard') ? 'active' : ''}}"><a href="{{route('dashboard')}}"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
                     <li class="{{Request::segment(2)==='product' ? 'active' : ''}}"><a href="{{route('product.index')}}"><i class="icon-home4"></i> <span>Mehsullar</span></a></li>
+                    <li class="{{Request::segment(2)==='category' ? 'active' : ''}}"><a href="{{route('category.index')}}"><i class="icon-home4"></i> <span>Categoriya</span></a></li>
                 </ul>
             </div>
         </div>

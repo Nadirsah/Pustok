@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 targets: 1,
                 width: 400
             },
-            {
+            { 
                 orderable: false,
                 width: 16,
                 targets: 7
@@ -59,13 +59,13 @@ document.addEventListener('DOMContentLoaded', function() {
             var api = this.api();
             var rows = api.rows({ page: 'current' }).nodes();
             var last = null;
-
+ 
             api.column(0, { page: 'current' }).data().each(function(group, i) {
                 if (last !== group) {
                     $(rows).eq(i).before(
                         '<tr class="active group border-double"><td colspan="8" class="text-semibold">' + group + '</td></tr>'
                     );
-
+ 
                     last = group;
                 }
             });
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // External table additions
     // ------------------------------
-
+    
     // Enable Select2 select for the length option
     $('.dataTables_length select').select2({
         minimumResultsForSearch: Infinity,

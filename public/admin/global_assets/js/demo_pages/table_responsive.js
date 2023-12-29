@@ -10,5 +10,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	// Initialize responsive functionality
     $('.table-togglable').footable();
-
+    
 });

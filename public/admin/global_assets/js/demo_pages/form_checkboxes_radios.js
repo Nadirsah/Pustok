@@ -86,5 +86,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // ------------------------------
 
     $(".switch").bootstrapSwitch();
-
+    
 });

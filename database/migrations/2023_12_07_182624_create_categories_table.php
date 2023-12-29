@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->json('name')->nullable();
             $table->json('slug');
-            $table->unsignedBigInteger('parent_id');
-            $table->boolean('status');
+            $table->unsignedBigInteger('parent_id')->unsigned()->nullable()->default(0);
             $table->timestamps();
         });
     }

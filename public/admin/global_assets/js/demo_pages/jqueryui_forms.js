@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // Restrict date range
-    $(".datepicker-restrict").datepicker({
+    $(".datepicker-restrict").datepicker({ 
         minDate: -20,
         maxDate: "+1M +10D",
         isRTL: $('html').attr('dir') == 'rtl' ? true : false
@@ -568,7 +568,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return li.append( wrapper ).appendTo( ul );
         }
     });
-
+ 
     // Initialize
     $('#select-icons').iconselectmenu({width: '100%'}).iconselectmenu('menuWidget');
 
@@ -608,7 +608,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Basic spinner
     $("#spinner-basic").spinner();
-
+ 
 
     // Disabled spinner
     $("#spinner-disabled").spinner({
@@ -715,5 +715,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize
     $("#spinner-time").timespinner();
-
+ 
 });

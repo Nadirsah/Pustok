@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         notice.get().on('click', function() {
             notice.remove();
-        });
+        });  
     });
 
     // Form
@@ -1144,5 +1144,5 @@ document.addEventListener('DOMContentLoaded', function() {
     $('#pnotify-stack-custom-bottom').on('click', function () {
         show_stack_custom_bottom('info');
     });
-
+    
 });

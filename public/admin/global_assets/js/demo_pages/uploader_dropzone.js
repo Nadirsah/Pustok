@@ -56,3 +56,4 @@ Dropzone.options.dropzoneFileLimits = {
     maxThumbnailFilesize: 1,
     addRemoveLinks: true
 };
+    

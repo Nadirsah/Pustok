@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Toggle mini sidebar
     $('.sidebar-main-toggle').on('click', function (e) {
 
-        // Initialize mini sidebar
+        // Initialize mini sidebar 
         miniSidebar();
     });
 

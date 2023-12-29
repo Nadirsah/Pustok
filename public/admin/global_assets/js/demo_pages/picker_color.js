@@ -280,5 +280,5 @@ document.addEventListener('DOMContentLoaded', function() {
         var label = $("#dragstop-result");
         label.removeClass('hidden').html('Dragstop called: ' + '<span class="text-semibold">' + c.toHexString() + '</span>');
     });
-
+    
 });

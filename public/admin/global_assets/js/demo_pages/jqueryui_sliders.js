@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
             $(".ui-slider-methods").slider('enable');
         }
         else {
-            $(".ui-slider-methods").slider('disable');
+            $(".ui-slider-methods").slider('disable'); 
         }
     };
 
@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function() {
         isRTL: $('html').attr('dir') == 'rtl' ? true : false
     });
     $(".ui-slider-suffix-prefix").slider("pips", {
-        rest: "label",
+        rest: "label", 
         prefix: "$",
         suffix: ".00"
     });

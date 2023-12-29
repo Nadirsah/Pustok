@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 visible: false,
                 targets: 1
             },
-            {
+            { 
                 orderable: false,
                 width: '100px',
                 targets: 7
@@ -56,13 +56,13 @@ document.addEventListener('DOMContentLoaded', function() {
             var api = this.api();
             var rows = api.rows( {page:'current'} ).nodes();
             var last=null;
-
+ 
             api.column(1, {page:'current'} ).data().each( function ( group, i ) {
                 if ( last !== group ) {
                     $(rows).eq( i ).before(
                         '<tr class="active border-double"><td colspan="8" class="text-semibold">'+group+'</td></tr>'
                     );
-
+ 
                     last = group;
                 }
             });

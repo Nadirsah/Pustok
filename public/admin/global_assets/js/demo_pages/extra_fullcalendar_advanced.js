@@ -210,5 +210,5 @@ document.addEventListener('DOMContentLoaded', function() {
         locale: 'ar',
         events: events
     });
-
+    
 });

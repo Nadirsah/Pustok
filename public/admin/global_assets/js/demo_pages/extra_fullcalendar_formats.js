@@ -209,5 +209,5 @@ document.addEventListener('DOMContentLoaded', function() {
         containerCssClass: 'bg-slate-700',
         dropdownCssClass: 'bg-slate-700'
     });
-
+    
 });

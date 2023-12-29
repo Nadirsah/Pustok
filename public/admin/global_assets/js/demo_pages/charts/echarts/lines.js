@@ -807,7 +807,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     label: {
                         normal: {
                             show: true
-                        }
+                        } 
                     },
                     itemStyle: {
                         normal: {
@@ -824,7 +824,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     label: {
                         normal: {
                             show: true
-                        }
+                        } 
                     },
                     itemStyle: {
                         normal: {

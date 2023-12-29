@@ -49,5 +49,5 @@ document.addEventListener('DOMContentLoaded', function() {
     $(".file-styled").uniform({
         fileButtonClass: 'action btn bg-pink-400'
     });
-
+    
 });

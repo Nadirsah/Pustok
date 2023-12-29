@@ -7,7 +7,7 @@
 * ---------------------------------------------------------------------------- */
 
 document.addEventListener('DOMContentLoaded', function() {
-
+    
 
     // CKEditor
     // ------------------------------
@@ -27,5 +27,5 @@ document.addEventListener('DOMContentLoaded', function() {
             { name: 'others' },
             { name: 'document',    groups: [ 'mode', 'document', 'doctools' ] }
         ]
-    });
+    });    
 });

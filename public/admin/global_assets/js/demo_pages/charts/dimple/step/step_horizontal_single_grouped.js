@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Line space
         s.barGap = 0.05;
 
-
+        
         // Add styles
         // ------------------------------
 

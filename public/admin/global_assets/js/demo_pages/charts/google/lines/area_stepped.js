@@ -102,7 +102,7 @@ var GoogleAreaStepped = function() {
                 }
             };
 
-            // Draw chart
+            // Draw chart 
             var stepped_area_chart = new google.visualization.SteppedAreaChart(document.getElementById('google-area-stepped'));
             stepped_area_chart.draw(data, options);
         }

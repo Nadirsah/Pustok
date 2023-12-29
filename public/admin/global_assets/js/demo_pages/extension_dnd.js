@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Basic
     $('.select').select2();
-
+    
 
 
     // Styled form components

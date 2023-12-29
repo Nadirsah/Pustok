@@ -126,5 +126,5 @@ document.addEventListener('DOMContentLoaded', function() {
         fileButtonClass: 'action btn btn-default btn-icon',
         fileButtonHtml: '<i class="icon-upload"></i>'
     });
-
+    
 });

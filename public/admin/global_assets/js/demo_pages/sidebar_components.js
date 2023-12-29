@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // SelectBoIt selects
     $(".selectbox").selectBoxIt({
-        autoWidth: false
+        autoWidth: false 
     });
 
 
@@ -220,5 +220,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Dynamit tree
     $(".tree-default").fancytree();
-
+    
 });

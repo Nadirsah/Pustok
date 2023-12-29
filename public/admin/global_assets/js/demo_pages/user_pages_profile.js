@@ -640,5 +640,5 @@ document.addEventListener('DOMContentLoaded', function() {
         $element.fullCalendar('render');
         $(window).trigger('resize');
     });
-
+    
 });

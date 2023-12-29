@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Setting datatable defaults
     $.extend( $.fn.dataTable.defaults, {
         autoWidth: false,
-        columnDefs: [{
+        columnDefs: [{ 
             orderable: false,
             width: '100px',
             targets: [ 5 ]
@@ -97,12 +97,12 @@ document.addEventListener('DOMContentLoaded', function() {
             data: null,
             defaultContent: "<button class='label label-default'>Show</button>"
         },
-        {
+        { 
             orderable: false,
             targets: [0, 2]
         }]
     });
-
+    
     $('.datatable-generated tbody').on('click', 'button', function () {
         var data = table.row($(this).parents('tr')).data();
         alert(data[0] +"'s location is: "+ data[ 2 ]);
@@ -118,5 +118,5 @@ document.addEventListener('DOMContentLoaded', function() {
         minimumResultsForSearch: Infinity,
         width: 'auto'
     });
-
+    
 });

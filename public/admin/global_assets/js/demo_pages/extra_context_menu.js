@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Dynamic replacement
     $('.context-dynamic').contextmenu({
         target: '.context-dynamic-menu',
-        before: function(e) {
+        before: function(e) { 
             this.getMenu().find('li').eq(2).find('a').html('<i class="icon-stack"></i> Item has been changed');
             return true;
         }
@@ -75,5 +75,5 @@ document.addEventListener('DOMContentLoaded', function() {
     $('.context-hidden-menu').on('hidden.bs.context',function () {
         alert('onHidden event fired');
     });
-
+    
 });

@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Secondary top (with affix)
         if (vals == 'secondary_top') {
             $(window).on('resize', function() {
-                setTimeout(function() {
+                setTimeout(function() {                    
                     if($(window).width() <= 768) {
 
                         // Remove affix
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (vals == 'multiple_top') {
             $('body').addClass('navbar-top-md-xs');
             $('#navbar-main, #navbar-second').wrapAll('<div class="navbar-fixed-top" />');
-
+            
         }
         else {
             $('body').removeClass('navbar-top-md-xs');

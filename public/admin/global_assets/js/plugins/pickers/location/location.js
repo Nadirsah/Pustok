@@ -112,8 +112,8 @@
         if (inputBinding.locationNameInput) {
             inputBinding.locationNameInput.val(gmapContext.locationName);
         }
-    }
-
+    } 
+ 
     function setupInputListenersInput(inputBinding, gmapContext) {
         if (inputBinding) {
             if (inputBinding.radiusInput){
@@ -132,7 +132,7 @@
                         gmapContext.settings.onlocationnotfound(place.name);
                         return;
                     }
-                    GmUtility.setPosition(gmapContext, place.geometry.location, function(context) {
+                    GmUtility.setPosition(gmapContext, place.geometry.location, function(context) {		                    
                         updateInputValues(inputBinding, context);
                         context.settings.onchanged(GmUtility.locationFromLatLng(context.location), context.radius, false);
                     });

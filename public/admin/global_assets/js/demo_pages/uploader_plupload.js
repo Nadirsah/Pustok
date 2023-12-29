@@ -260,5 +260,5 @@ document.addEventListener('DOMContentLoaded', function() {
         log.append(str + "<br>");
         log.scrollTop(log[0].scrollHeight);
     }
-
+    
 });

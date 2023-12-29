@@ -473,7 +473,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             barBorderColor: '#FF7043',
                             barBorderWidth: 6,
                             label: {
-                                show: true,
+                                show: true, 
                                 position: 'top',
                                 formatter: function (params) {
                                     for (var i = 0, l = columns_thermometer_options.xAxis[0].data.length; i < l; i++) {

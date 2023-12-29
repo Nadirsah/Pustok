@@ -536,5 +536,5 @@ document.addEventListener('DOMContentLoaded', function() {
             header: 'Bottom Center position'
         });
     });
-
+    
 });

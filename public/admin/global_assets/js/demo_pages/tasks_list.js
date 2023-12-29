@@ -14,7 +14,7 @@ $.fn.dataTable.ext.order['dom-text'] = function (settings, col) {
     });
 }
 
-
+ 
 // Create an array with the values of all the select options in a column
 $.fn.dataTable.ext.order['dom-select'] = function (settings, col) {
     return this.api().column(col, {order:'index'}).nodes().map( function (td, i) {
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 type: 'string',
                 targets: 5
             },
-            {
+            { 
                 orderable: false,
                 width: '100px',
                 targets: 7
@@ -84,14 +84,14 @@ document.addEventListener('DOMContentLoaded', function() {
             var api = this.api();
             var rows = api.rows({page:'current'}).nodes();
             var last=null;
-
+ 
             // Grouod rows
             api.column(1, {page:'current'}).data().each(function (group, i) {
                 if (last !== group) {
                     $(rows).eq(i).before(
                         '<tr class="active border-double"><td colspan="8" class="text-semibold">'+group+'</td></tr>'
                     );
-
+ 
                     last = group;
                 }
             });
@@ -131,5 +131,5 @@ document.addEventListener('DOMContentLoaded', function() {
         minimumResultsForSearch: Infinity,
         width: 'auto'
     });
-
+    
 });

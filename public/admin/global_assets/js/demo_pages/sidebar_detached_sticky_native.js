@@ -7,7 +7,7 @@
 * ---------------------------------------------------------------------------- */
 
 document.addEventListener('DOMContentLoaded', function() {
-
+    
 
     // Resize sidebar on scroll
     // ------------------------------
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Remove affix and scrollbar on mobile
     $(window).on('resize', function() {
-        setTimeout(function() {
+        setTimeout(function() {            
             if($(window).width() <= 768) {
 
                 // Remove affix on mobile

@@ -888,7 +888,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     label: {
                         normal: {
                             show: true
-                        }
+                        } 
                     },
                     areaStyle: {
                         normal: {

@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Binding UI with the widget
     $('#us2').locationpicker({
-        location: {latitude: 44.1219256, longitude: 15.2357175},
+        location: {latitude: 44.1219256, longitude: 15.2357175}, 
         radius: 300,
         scrollwheel: false,
         inputBinding: {
@@ -50,14 +50,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Subscribing for events
     $('#us3').locationpicker({
-        location: {latitude: 47.494293, longitude: 19.054151899999965},
+        location: {latitude: 47.494293, longitude: 19.054151899999965}, 
         radius: 300,
         scrollwheel: false,
         inputBinding: {
             latitudeInput: $('#us3-lat'),
             longitudeInput: $('#us3-lon'),
             radiusInput: $('#us3-radius'),
-            locationNameInput: $('#us3-address')
+            locationNameInput: $('#us3-address')        
         },
         enableAutocomplete: true,
         onchanged: function(currentLocation, radius, isMarkerDropped) {
@@ -155,5 +155,5 @@ document.addEventListener('DOMContentLoaded', function() {
     google.maps.event.addListener(map, 'idle', function(){
         $('#zoom').val(map.getZoom());
     });
-
+    
 });

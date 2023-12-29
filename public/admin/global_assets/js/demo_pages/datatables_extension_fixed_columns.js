@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Setting datatable defaults
     $.extend( $.fn.dataTable.defaults, {
-        columnDefs: [{
+        columnDefs: [{ 
             orderable: false,
             width: '100px',
             targets: [ 5 ]
@@ -31,23 +31,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Left fixed column example
     $('.datatable-fixed-left').DataTable({
         columnDefs: [
-            {
+            { 
                 orderable: false,
                 targets: [5]
             },
-            {
+            { 
                 width: "200px",
                 targets: [0]
             },
-            {
+            { 
                 width: "300px",
                 targets: [1]
             },
-            {
+            { 
                 width: "200px",
                 targets: [5, 6]
             },
-            {
+            { 
                 width: "100px",
                 targets: [4]
             }
@@ -62,23 +62,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Right fixed column example
     $('.datatable-fixed-right').DataTable({
         columnDefs: [
-            {
+            { 
                 orderable: false,
                 targets: [5]
             },
-            {
+            { 
                 width: "300px",
                 targets: [0]
             },
-            {
+            { 
                 width: "300px",
                 targets: [1]
             },
-            {
+            { 
                 width: "200px",
                 targets: [5, 6]
             },
-            {
+            { 
                 width: "100px",
                 targets: [3, 4]
             }
@@ -96,23 +96,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Left and right fixed columns
     $('.datatable-fixed-both').DataTable({
         columnDefs: [
-            {
+            { 
                 orderable: false,
                 targets: [ 5 ]
             },
-            {
+            { 
                 width: "200px",
                 targets: [0]
             },
-            {
+            { 
                 width: "100px",
                 targets: [1]
             },
-            {
+            { 
                 width: "200px",
                 targets: [5, 6]
             },
-            {
+            { 
                 width: "100px",
                 targets: [4]
             }
@@ -130,28 +130,28 @@ document.addEventListener('DOMContentLoaded', function() {
     //
     // Fixed column with complex headers
     //
-
+    
     // Initialize
     var table = $('.datatable-fixed-complex').DataTable({
         autoWidth: false,
         columnDefs: [
-            {
+            { 
                 orderable: false,
                 targets: [5]
             },
-            {
+            { 
                 width: "250px",
                 targets: [0]
             },
-            {
+            { 
                 width: "250px",
                 targets: [1]
             },
-            {
+            { 
                 width: "200px",
                 targets: [5, 6]
             },
-            {
+            { 
                 width: "100px",
                 targets: [4]
             }
@@ -179,5 +179,5 @@ document.addEventListener('DOMContentLoaded', function() {
         minimumResultsForSearch: Infinity,
         width: 'auto'
     });
-
+    
 });

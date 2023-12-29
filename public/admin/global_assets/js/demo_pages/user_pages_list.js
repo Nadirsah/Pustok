@@ -14,5 +14,5 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollTop: $(this).height()
         }, 500)
     });
-
+    
 });

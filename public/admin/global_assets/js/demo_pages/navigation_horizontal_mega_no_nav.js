@@ -27,5 +27,5 @@ document.addEventListener('DOMContentLoaded', function() {
 	elems.forEach(function(html) {
 		var switchery = new Switchery(html);
 	});
-
+	
 });

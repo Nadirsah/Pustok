@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Remove affix and scrollbar on mobile
     $(window).on('resize', function() {
-        setTimeout(function() {
+        setTimeout(function() {            
             if($(window).width() <= 768) {
 
                 // Remove nicescroll on mobiles

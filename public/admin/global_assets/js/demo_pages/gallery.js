@@ -12,5 +12,5 @@ document.addEventListener('DOMContentLoaded', function() {
     $('[data-popup="lightbox"]').fancybox({
         padding: 3
     });
-
+    
 });

@@ -618,7 +618,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 color: 'transparent'
             }
         };
-        var dataStyle = {
+        var dataStyle = { 
             normal: {
                 barBorderRadius: 3,
                 label: {

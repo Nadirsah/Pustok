@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		}).velocity('reverse', {
 			delay: 1000
 		}).velocity({
-			marginRight: 20
+			marginRight: 20 
 		}).velocity('reverse', {
 			delay: 1000
 		}).velocity({

@@ -31,5 +31,5 @@ document.addEventListener('DOMContentLoaded', function() {
                 top: 0
             }, 200);
         }
-    });
+    });    
 });

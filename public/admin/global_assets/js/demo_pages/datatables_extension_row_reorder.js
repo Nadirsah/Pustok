@@ -66,18 +66,18 @@ document.addEventListener('DOMContentLoaded', function() {
     var table = $('.datatable-row-events').DataTable({
         rowReorder: true
     });
-
+ 
     // Setup event
     table.on('row-reorder', function (e, diff, edit) {
         var result = 'Reorder started on row: '+edit.triggerRow.data()[1]+'<br>';
-
+ 
         for (var i=0, ien=diff.length ; i<ien ; i++) {
             var rowData = table.row( diff[i].node ).data();
-
+ 
             result += rowData[1]+' updated to be in position '+
                 diff[i].newData+' (was '+diff[i].oldData+')<br>';
         }
-
+ 
         $('#event-result').html('Event result:<br>'+result);
     });
 
@@ -91,5 +91,5 @@ document.addEventListener('DOMContentLoaded', function() {
         minimumResultsForSearch: Infinity,
         width: 'auto'
     });
-
+    
 });

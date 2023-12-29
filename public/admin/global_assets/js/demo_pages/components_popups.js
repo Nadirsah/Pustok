@@ -170,5 +170,5 @@ document.addEventListener('DOMContentLoaded', function() {
 	$('#destroy-popover-method').on('click', function() {
 		$('#destroy-popover-method-target').popover('destroy')
 	});
-
+	
 });

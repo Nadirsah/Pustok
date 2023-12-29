@@ -135,9 +135,9 @@ document.addEventListener('DOMContentLoaded', function() {
             $(document).on('click', '.sidebar-control', messagesAreaResize);
 
             // Resize function
-            //
+            // 
             // Since D3 doesn't support SVG resize by default,
-            // we need to manually specify parts of the graph that need to
+            // we need to manually specify parts of the graph that need to 
             // be updated on window resize
             function messagesAreaResize() {
 
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Main variables
         var d3Container = d3.select(element),
             width = d3Container.node().getBoundingClientRect().width;
-
+        
 
 
         // Construct scales
@@ -353,9 +353,9 @@ document.addEventListener('DOMContentLoaded', function() {
         $(document).on('click', '.sidebar-control', barsResize);
 
         // Resize function
-        //
+        // 
         // Since D3 doesn't support SVG resize by default,
-        // we need to manually specify parts of the graph that need to
+        // we need to manually specify parts of the graph that need to 
         // be updated on window resize
         function barsResize() {
 
@@ -451,7 +451,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return "<ul class='list-unstyled mb-5'>" +
                     "<li>" + "<div class='text-size-base mt-5 mb-5'><i class='icon-check2 position-left'></i>" + formatDate(d.date) + "</div>" + "</li>" +
                     "<li>" + "Sales: &nbsp;" + "<span class='text-semibold pull-right'>" + d.alpha + "</span>" + "</li>" +
-                    "<li>" + "Revenue: &nbsp; " + "<span class='text-semibold pull-right'>" + "$" + (d.alpha * 25).toFixed(2) + "</span>" + "</li>" +
+                    "<li>" + "Revenue: &nbsp; " + "<span class='text-semibold pull-right'>" + "$" + (d.alpha * 25).toFixed(2) + "</span>" + "</li>" + 
                 "</ul>";
             });
 
@@ -688,9 +688,9 @@ document.addEventListener('DOMContentLoaded', function() {
         $(document).on('click', '.sidebar-control', lineChartResize);
 
         // Resize function
-        //
+        // 
         // Since D3 doesn't support SVG resize by default,
-        // we need to manually specify parts of the graph that need to
+        // we need to manually specify parts of the graph that need to 
         // be updated on window resize
         function lineChartResize() {
 
@@ -782,7 +782,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Vertical
         y.domain([0, qty]);
-
+            
 
         // Construct chart layout
         // ------------------------------
@@ -796,12 +796,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Area
         var area = d3.svg.area()
             .interpolate(interpolation)
-            .x(function(d,i) {
-                return x(i);
+            .x(function(d,i) { 
+                return x(i); 
             })
             .y0(height)
-            .y1(function(d) {
-                return y(d);
+            .y1(function(d) { 
+                return y(d); 
             });
 
 
@@ -920,9 +920,9 @@ document.addEventListener('DOMContentLoaded', function() {
         $(document).on('click', '.sidebar-control', resizeSparklines);
 
         // Resize function
-        //
+        // 
         // Since D3 doesn't support SVG resize by default,
-        // we need to manually specify parts of the graph that need to
+        // we need to manually specify parts of the graph that need to 
         // be updated on window resize
         function resizeSparklines() {
 
@@ -1273,13 +1273,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add svg element
         var container = d3Container.append("svg").call(tip);
-
+        
         // Add SVG group
         var svg = container
             .attr("width", size)
             .attr("height", size)
             .append("g")
-                .attr("transform", "translate(" + (size / 2) + "," + (size / 2) + ")");
+                .attr("transform", "translate(" + (size / 2) + "," + (size / 2) + ")");  
 
 
         // Construct chart layout
@@ -1290,9 +1290,9 @@ document.addEventListener('DOMContentLoaded', function() {
             .sort(null)
             .startAngle(Math.PI)
             .endAngle(3 * Math.PI)
-            .value(function (d) {
+            .value(function (d) { 
                 return d.value;
-            });
+            }); 
 
         // Arc
         var arc = d3.svg.arc()
@@ -1307,14 +1307,14 @@ document.addEventListener('DOMContentLoaded', function() {
         var arcGroup = svg.selectAll(".d3-arc")
             .data(pie(data))
             .enter()
-            .append("g")
+            .append("g") 
                 .attr("class", "d3-arc")
                 .style({
                     'stroke': '#fff',
                     'stroke-width': 2,
                     'cursor': 'pointer'
                 });
-
+        
         // Append path
         var arcPath = arcGroup
             .append("path")
@@ -1339,7 +1339,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
             })
             .on("mousemove", function (d) {
-
+                
                 // Show tooltip on mousemove
                 tip.show(d)
                     .style("top", (d3.event.pageY - 40) + "px")
@@ -1367,8 +1367,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     var interpolate = d3.interpolate(d.startAngle,d.endAngle);
                     return function(t) {
                         d.endAngle = interpolate(t);
-                        return arc(d);
-                    };
+                        return arc(d);  
+                    }; 
                 });
 
 
@@ -1434,13 +1434,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add svg element
         var container = d3Container.append("svg");
-
+        
         // Add SVG group
         var svg = container
             .attr("width", size)
             .attr("height", size)
             .append("g")
-                .attr("transform", "translate(" + (size / 2) + "," + (size / 2) + ")");
+                .attr("transform", "translate(" + (size / 2) + "," + (size / 2) + ")");  
 
 
         // Construct chart layout
@@ -1451,9 +1451,9 @@ document.addEventListener('DOMContentLoaded', function() {
             .sort(null)
             .startAngle(Math.PI)
             .endAngle(3 * Math.PI)
-            .value(function (d) {
+            .value(function (d) { 
                 return d.value;
-            });
+            }); 
 
         // Arc
         var arc = d3.svg.arc()
@@ -1468,14 +1468,14 @@ document.addEventListener('DOMContentLoaded', function() {
         var arcGroup = svg.selectAll(".d3-arc")
             .data(pie(data))
             .enter()
-            .append("g")
+            .append("g") 
                 .attr("class", "d3-arc")
                 .style({
                     'stroke': '#fff',
                     'stroke-width': 2,
                     'cursor': 'pointer'
                 });
-
+        
         // Append path
         var arcPath = arcGroup
             .append("path")
@@ -1529,8 +1529,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     var interpolate = d3.interpolate(d.startAngle,d.endAngle);
                     return function(t) {
                         d.endAngle = interpolate(t);
-                        return arc(d);
-                    };
+                        return arc(d);  
+                    }; 
                 });
 
 
@@ -1648,13 +1648,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add svg element
         var container = d3Container.append("svg").call(tip);
-
+        
         // Add SVG group
         var svg = container
             .attr("width", size)
             .attr("height", size / 2)
             .append("g")
-                .attr("transform", "translate(" + (size / 2) + "," + (size / 2) + ")");
+                .attr("transform", "translate(" + (size / 2) + "," + (size / 2) + ")");  
 
 
 
@@ -1666,9 +1666,9 @@ document.addEventListener('DOMContentLoaded', function() {
             .sort(null)
             .startAngle(-Math.PI / 2)
             .endAngle(Math.PI / 2)
-            .value(function (d) {
+            .value(function (d) { 
                 return d.value;
-            });
+            }); 
 
         // Arc
         var arc = d3.svg.arc()
@@ -1685,14 +1685,14 @@ document.addEventListener('DOMContentLoaded', function() {
         var arcGroup = svg.selectAll(".d3-arc")
             .data(pie(data))
             .enter()
-            .append("g")
+            .append("g") 
                 .attr("class", "d3-arc")
                 .style({
                     'stroke': '#fff',
                     'stroke-width': 2,
                     'cursor': 'pointer'
                 });
-
+        
         // Append path
         var arcPath = arcGroup
             .append("path")
@@ -1750,8 +1750,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     var interpolate = d3.interpolate(d.startAngle,d.endAngle);
                     return function(t) {
                         d.endAngle = interpolate(t);
-                        return arc(d);
-                    };
+                        return arc(d);  
+                    }; 
                 });
 
 
@@ -1890,13 +1890,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add svg element
         var container = d3Container.append("svg").call(tip);
-
+        
         // Add SVG group
         var svg = container
             .attr("width", size)
             .attr("height", size)
             .append("g")
-                .attr("transform", "translate(" + (size / 2) + "," + (size / 2) + ")");
+                .attr("transform", "translate(" + (size / 2) + "," + (size / 2) + ")");  
 
 
         // Construct chart layout
@@ -1907,9 +1907,9 @@ document.addEventListener('DOMContentLoaded', function() {
             .sort(null)
             .startAngle(Math.PI)
             .endAngle(3 * Math.PI)
-            .value(function (d) {
+            .value(function (d) { 
                 return d.value;
-            });
+            }); 
 
         // Arc
         var arc = d3.svg.arc()
@@ -1925,14 +1925,14 @@ document.addEventListener('DOMContentLoaded', function() {
         var arcGroup = svg.selectAll(".d3-arc")
             .data(pie(data))
             .enter()
-            .append("g")
+            .append("g") 
                 .attr("class", "d3-arc")
                 .style({
                     'stroke': '#fff',
                     'stroke-width': 2,
                     'cursor': 'pointer'
                 });
-
+        
         // Append path
         var arcPath = arcGroup
             .append("path")
@@ -1957,7 +1957,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
             })
             .on("mousemove", function (d) {
-
+                
                 // Show tooltip on mousemove
                 tip.show(d)
                     .style("top", (d3.event.pageY - 40) + "px")
@@ -1985,8 +1985,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     var interpolate = d3.interpolate(d.startAngle,d.endAngle);
                     return function(t) {
                         d.endAngle = interpolate(t);
-                        return arc(d);
-                    };
+                        return arc(d);  
+                    }; 
                 });
 
 
@@ -2056,13 +2056,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add svg element
         var container = d3Container.append("svg");
-
+        
         // Add SVG group
         var svg = container
             .attr("width", size)
             .attr("height", size)
             .append("g")
-                .attr("transform", "translate(" + (size / 2) + "," + (size / 2) + ")");
+                .attr("transform", "translate(" + (size / 2) + "," + (size / 2) + ")");  
 
 
         // Construct chart layout
@@ -2073,9 +2073,9 @@ document.addEventListener('DOMContentLoaded', function() {
             .sort(null)
             .startAngle(Math.PI)
             .endAngle(3 * Math.PI)
-            .value(function (d) {
+            .value(function (d) { 
                 return d.value;
-            });
+            }); 
 
         // Arc
         var arc = d3.svg.arc()
@@ -2091,14 +2091,14 @@ document.addEventListener('DOMContentLoaded', function() {
         var arcGroup = svg.selectAll(".d3-arc")
             .data(pie(data))
             .enter()
-            .append("g")
+            .append("g") 
                 .attr("class", "d3-arc")
                 .style({
                     'stroke': '#fff',
                     'stroke-width': 2,
                     'cursor': 'pointer'
                 });
-
+        
         // Append path
         var arcPath = arcGroup
             .append("path")
@@ -2154,8 +2154,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     var interpolate = d3.interpolate(d.startAngle,d.endAngle);
                     return function(t) {
                         d.endAngle = interpolate(t);
-                        return arc(d);
-                    };
+                        return arc(d);  
+                    }; 
                 });
 
 
@@ -2275,13 +2275,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add svg element
         var container = d3Container.append("svg").call(tip);
-
+        
         // Add SVG group
         var svg = container
             .attr("width", size)
             .attr("height", size)
             .append("g")
-                .attr("transform", "translate(" + (size / 2) + "," + (size / 2) + ")");
+                .attr("transform", "translate(" + (size / 2) + "," + (size / 2) + ")");  
 
 
         // Construct chart layout
@@ -2292,9 +2292,9 @@ document.addEventListener('DOMContentLoaded', function() {
             .sort(null)
             .startAngle(Math.PI)
             .endAngle(3 * Math.PI)
-            .value(function (d) {
+            .value(function (d) { 
                 return d.value;
-            });
+            }); 
 
         // Arc
         var arc = d3.svg.arc()
@@ -2310,14 +2310,14 @@ document.addEventListener('DOMContentLoaded', function() {
         var arcGroup = svg.selectAll(".d3-arc")
             .data(pie(data))
             .enter()
-            .append("g")
+            .append("g") 
                 .attr("class", "d3-arc")
                 .style({
                     'stroke': '#fff',
                     'stroke-width': 2,
                     'cursor': 'pointer'
                 });
-
+        
         // Append path
         var arcPath = arcGroup
             .append("path")
@@ -2375,8 +2375,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 var interpolate = d3.interpolate(d.startAngle,d.endAngle);
                 return function(t) {
                     d.endAngle = interpolate(t);
-                    return arc(d);
-                };
+                    return arc(d);  
+                }; 
             });
 
 
@@ -2475,7 +2475,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add svg element
         var container = d3Container.append("svg");
-
+        
         // Add SVG group
         var svg = container
             .attr('width', radius * 2)
@@ -2642,7 +2642,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add svg element
         var container = d3Container.append("svg");
-
+        
         // Add SVG group
         var svg = container
             .attr('width', radius * 2)
@@ -2813,7 +2813,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add svg element
         var container = d3Container.append("svg");
-
+        
         // Add SVG group
         var svg = container
             .attr("width", width)
@@ -2926,7 +2926,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 .duration(600)
                 .ease("easeInOut")
                 .attrTween("d", arcTween);
-
+                
             // Update count text
             field
                 .select(".arc-goal-completed")
@@ -2994,7 +2994,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add svg element
         var container = d3Container.append("svg");
-
+        
         // Add SVG group
         var svg = container
             .attr("width", width)
@@ -3111,7 +3111,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 .duration(750)
                 .ease("easeInOut")
                 .attrTween("d", arcTween);
-
+                
             // Update every 4 seconds
             setTimeout(update, 4000);
         }
@@ -3165,7 +3165,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add svg element
         var container = d3Container.append("svg");
-
+        
         // Add SVG group
         var svg = container
             .attr("width", width)
@@ -3246,13 +3246,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 var interpolate = d3.interpolate(d.startAngle, d.endAngle);
                 return function(t) {
                     d.endAngle = interpolate(t);
-                    return arc(d);
-                };
+                    return arc(d);  
+                }; 
             });
 
 
         //
-        // Line path
+        // Line path 
         //
 
         // Line
@@ -3284,7 +3284,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .text(function(d){
                 return d;
-            });
+            });            
 
 
         //
@@ -3356,13 +3356,13 @@ document.addEventListener('DOMContentLoaded', function() {
             pointerWidth = 10,
             pointerTailLength = 5,
             pointerHeadLengthPercent = 0.75,
-
+            
             minValue = min,
             maxValue = max,
-
+            
             minAngle = -90,
             maxAngle = 90,
-
+            
             slices = sliceQty,
             range = maxAngle - minAngle,
             pointerHeadLength = Math.round(radius * pointerHeadLengthPercent);
@@ -3388,8 +3388,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Construct chart layout
         // ------------------------------
-
-        // Donut
+        
+        // Donut  
         var arc = d3.svg.arc()
             .innerRadius(radius - ringWidth - ringInset)
             .outerRadius(radius - ringInset)
@@ -3406,7 +3406,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var scale = d3.scale.linear()
             .range([0, 1])
             .domain([minValue, maxValue]);
-
+            
         // Ticks
         var ticks = scale.ticks(slices);
         var tickData = d3.range(slices)
@@ -3418,7 +3418,7 @@ document.addEventListener('DOMContentLoaded', function() {
         function deg2rad(deg) {
             return deg * Math.PI / 180;
         }
-
+            
         // Calculate rotation angle
         function newAngle(d) {
             var ratio = scale(d);
@@ -3486,7 +3486,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Line data
         var lineData = [
-            [pointerWidth / 2, 0],
+            [pointerWidth / 2, 0], 
             [0, -pointerHeadLength],
             [-(pointerWidth / 2), 0],
             [0, pointerTailLength],

@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add bottom spacing if reached bottom,
     // to avoid footer overlapping
     // -------------------------
-
+    
     $(window).scroll(function() {
         if($(window).scrollTop() + $(window).height() > $(document).height() - 40) {
             $('.fab-menu-bottom-left, .fab-menu-bottom-right').addClass('reached-bottom');

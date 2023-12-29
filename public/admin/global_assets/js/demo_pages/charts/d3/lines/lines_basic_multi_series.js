@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 .attr("x", 10)
                 .attr("dy", ".35em")
                 .text(function(d) { return d.name; });
-
+        
 
 
             // Append axes
@@ -199,9 +199,9 @@ document.addEventListener('DOMContentLoaded', function() {
         $('.sidebar-control').on('click', resize);
 
         // Resize function
-        //
+        // 
         // Since D3 doesn't support SVG resize by default,
-        // we need to manually specify parts of the graph that need to
+        // we need to manually specify parts of the graph that need to 
         // be updated on window resize
         function resize() {
 

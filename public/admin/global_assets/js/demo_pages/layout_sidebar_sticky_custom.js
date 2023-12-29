@@ -7,7 +7,7 @@
 * ---------------------------------------------------------------------------- */
 
 document.addEventListener('DOMContentLoaded', function() {
-
+    
 
     // Mini sidebar
     // -------------------------
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Toggle mini sidebar
     $('.sidebar-main-toggle').on('click', function (e) {
 
-        // Initialize mini sidebar
+        // Initialize mini sidebar 
         miniSidebar();
     });
 
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Remove affix and scrollbar on mobile
     $(window).on('resize', function() {
-        setTimeout(function() {
+        setTimeout(function() {            
             if($(window).width() <= 768) {
 
                 // Remove nicescroll on mobiles

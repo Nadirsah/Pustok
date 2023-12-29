@@ -15,11 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Datatable defaults
     $.extend( $.fn.dataTable.defaults, {
         columnDefs: [
-            {
+            { 
                 width: "100px",
                 targets: [ 0 ]
             },
-            {
+            { 
                 width: "23%",
                 targets: [ 1, 2, 3, 4 ]
             }
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, 3000);
-
+    
 
 
     // External table additions
@@ -98,5 +98,5 @@ document.addEventListener('DOMContentLoaded', function() {
         minimumResultsForSearch: Infinity,
         width: 'auto'
     });
-
+    
 });

@@ -132,12 +132,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 .attr("class", "d3-axis d3-axis-horizontal d3-axis-strong")
                 .attr("transform", "translate(0," + height + ")")
                 .call(xAxis)
-                .selectAll("text")
+                .selectAll("text")  
                     .style("text-anchor", "end")
                     .attr("dx", "-15px")
                     .attr("dy", "-6px")
                     .attr("transform", function(d) {
-                        return "rotate(-90)"
+                        return "rotate(-90)" 
                     });
 
             // Vertical
@@ -201,9 +201,9 @@ document.addEventListener('DOMContentLoaded', function() {
         $('.sidebar-control').on('click', resize);
 
         // Resize function
-        //
+        // 
         // Since D3 doesn't support SVG resize by default,
-        // we need to manually specify parts of the graph that need to
+        // we need to manually specify parts of the graph that need to 
         // be updated on window resize
         function resize() {
 

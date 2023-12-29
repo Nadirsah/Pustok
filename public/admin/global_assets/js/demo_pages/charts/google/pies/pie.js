@@ -46,7 +46,7 @@ var GooglePieBasic = function() {
             packages: ['corechart']
         });
 
-        // Chart settings
+        // Chart settings    
         function drawPie() {
 
             // Define charts element

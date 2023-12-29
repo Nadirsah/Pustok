@@ -74,16 +74,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             },
             callback: function (result) {
-                if (result === null) {
+                if (result === null) {                                             
                     bootbox.alert({
                         title: 'Prompt dismissed',
                         message: 'You have cancelled this damn thing'
-                    });
+                    });                              
                 } else {
                     bootbox.alert({
                         title: 'Hi <strong>' + result + '</strong>',
                         message: 'How are you doing today?'
-                    });
+                    });                              
                 }
             }
         });
@@ -105,16 +105,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             },
             callback: function(result) {
-                if (result === null) {
+                if (result === null) {                                             
                     bootbox.alert({
                         title: 'Prompt dismissed',
                         message: 'You have cancelled this damn thing'
-                    });
+                    });                              
                 } else {
                     bootbox.alert({
                         title: 'Hi <strong>' + result + '</strong>',
                         message: 'How are you doing today?'
-                    });
+                    });                              
                 }
             }
         });
@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Modal callbacks
     // ------------------------------
-
+    
     // onShow callback
     $('#modal_onshow').on('show.bs.modal', function() {
         alert('onShow callback fired.')
@@ -329,7 +329,7 @@ document.addEventListener('DOMContentLoaded', function() {
     //
     // Contextual alerts
     //
-
+    
     // Success alert
     $('#sweet_success').on('click', function() {
         swal({

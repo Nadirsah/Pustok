@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,7 @@
 
     <!-- Global stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet"
-          type="text/css">
+        type="text/css">
     <link href="{{asset('admin')}}/global_assets\css\icons\icomoon\styles.css" rel="stylesheet" type="text/css">
     <link href="{{asset('admin')}}/assets\css\bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="{{asset('admin')}}/assets\css\core.min.css" rel="stylesheet" type="text/css">
@@ -34,77 +35,77 @@
 
 <body class="login-container">
 
-<!-- Main navbar -->
+    <!-- Main navbar -->
 
-<!-- /main navbar -->
+    <!-- /main navbar -->
 
 
-<!-- Page container -->
-<div class="page-container">
+    <!-- Page container -->
+    <div class="page-container">
 
-    <!-- Page content -->
-    <div class="page-content">
+        <!-- Page content -->
+        <div class="page-content">
 
-        <!-- Main content -->
-        <div class="content-wrapper">
+            <!-- Main content -->
+            <div class="content-wrapper">
 
-            <!-- Content area -->
-            <div class="content">
+                <!-- Content area -->
+                <div class="content">
 
-                <!-- Advanced login -->
-                <form action="{{route('auth')}}" method="post">
-                    @include('layouts.admin.alert')
-                    @csrf
-                    <div class="panel panel-body login-form">
-                        <div class="text-center">
-                            <div class="icon-object border-slate-300 text-slate-300"><i class="icon-reading"></i></div>
-                            <h5 class="content-group">Login to your account <small class="display-block">Your
-                                    credentials</small></h5>
-                        </div>
-
-                        <div class="form-group has-feedback has-feedback-left">
-                            <input type="text" name="email" class="form-control" placeholder="Username">
-                            <div class="form-control-feedback">
-                                <i class="icon-user text-muted"></i>
+                    <!-- Advanced login -->
+                    <form action="{{route('auth')}}" method="post">
+                        @include('layouts.admin.alert')
+                        @csrf
+                        <div class="panel panel-body login-form">
+                            <div class="text-center">
+                                <div class="icon-object border-slate-300 text-slate-300"><i class="icon-reading"></i>
+                                </div>
+                                <h5 class="content-group">Login to your account <small class="display-block">Your
+                                        credentials</small></h5>
                             </div>
-                        </div>
 
-                        <div class="form-group has-feedback has-feedback-left">
-                            <input type="password" name="password" class="form-control" placeholder="Password">
-                            <div class="form-control-feedback">
-                                <i class="icon-lock2 text-muted"></i>
+                            <div class="form-group has-feedback has-feedback-left">
+                                <input type="text" name="email" class="form-control" placeholder="Username">
+                                <div class="form-control-feedback">
+                                    <i class="icon-user text-muted"></i>
+                                </div>
                             </div>
-                        </div>
+
+                            <div class="form-group has-feedback has-feedback-left">
+                                <input type="password" name="password" class="form-control" placeholder="Password">
+                                <div class="form-control-feedback">
+                                    <i class="icon-lock2 text-muted"></i>
+                                </div>
+                            </div>
 
 
-                        <div class="form-group">
-                            <button type="submit" class="btn bg-blue btn-block">Login <i
+                            <div class="form-group">
+                                <button type="submit" class="btn bg-blue btn-block">Login <i
                                         class="icon-arrow-right14 position-right"></i></button>
+                            </div>
+
+
                         </div>
+                    </form>
+                    <!-- /advanced login -->
 
 
-                    </div>
-                </form>
-                <!-- /advanced login -->
+                    <!-- Footer -->
 
+                    <!-- /footer -->
 
-                <!-- Footer -->
-
-                <!-- /footer -->
+                </div>
+                <!-- /content area -->
 
             </div>
-            <!-- /content area -->
+            <!-- /main content -->
 
         </div>
-        <!-- /main content -->
+        <!-- /page content -->
 
     </div>
-    <!-- /page content -->
-
-</div>
-<!-- /page container -->
+    <!-- /page container -->
 
 </body>
+
 </html>
-
-

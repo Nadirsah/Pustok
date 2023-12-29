@@ -16,7 +16,8 @@
 <div class="content">
     @include('layouts.admin.alert')
     <!-- Basic tabs -->
-    <form action="{{route('category.store')}}" method="POST" class="row" enctype="multipart/form-data">
+    <form action="{{route('category.update',$data->id)}}" method="POST" class="row" enctype="multipart/form-data">
+        @method('PUT')
         @csrf
         <div class="col-md-7">
             <div class="card">
@@ -36,8 +37,8 @@
                                         <div class="form-group">
                                             <label>Categoriya</label>
                                             <input type="text" name="name[{{$lang->name}}]" class="form-control"
-                                                value="{{ old('name.'.$lang->name) }}" placeholder="Category Name"
-                                                required>
+                                                value="{{ old('name',$data->getTranslation('name',$lang->name))}}"
+                                                placeholder="Category Name" required>
                                             <span
                                                 class="text-danger">@error('name.'.$lang->name){{'Categoriya sahəsi boş ola bilməz!'}}@enderror</span>
 
@@ -48,13 +49,18 @@
                         </div>
                         @endforeach
                         <div class="form-group">
-                            <label class="control-label col-lg-2">Categoriya</label>
+                            <label class="control-label col-lg-2">SubCategoriya</label>
+
+
+                            @if($data->children->isNotEmpty() )
                             <select name="parent_id" class="form-control">
-                                <option value="0">Categoriya</option>
-                                @foreach($data as $items)
-                                <option value="{{$items->id}}">{{$items->name}}</option>
+                                <option value="0">SubCategoriya</option>
+                                @foreach($data->children as $child)
+                                <option value="{{$child->id}}">{{$child->name}}</option>
                                 @endforeach
                             </select>
+                            @endif
+
                         </div>
                         <div class="text-right">
                             <button type="submit" class="btn btn-primary">Gonder <i

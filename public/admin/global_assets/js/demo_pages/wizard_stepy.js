@@ -152,5 +152,5 @@ document.addEventListener('DOMContentLoaded', function() {
     $('.file-styled').uniform({
         fileButtonClass: 'action btn bg-blue'
     });
-
+    
 });

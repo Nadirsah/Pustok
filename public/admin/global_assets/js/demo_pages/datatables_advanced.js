@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Setting datatable defaults
     $.extend( $.fn.dataTable.defaults, {
         autoWidth: false,
-        columnDefs: [{
+        columnDefs: [{ 
             orderable: false,
             width: '100px',
             targets: [ 5 ]
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Highlighting rows and columns on mouseover
     var lastIdx = null;
     var table = $('.datatable-highlight').DataTable();
-
+     
     $('.datatable-highlight tbody').on('mouseover', 'td', function() {
         var colIdx = table.cell(this).index().column;
 
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Columns rendering
     $('.datatable-columns').dataTable({
-        columnDefs: [
+        columnDefs: [ 
             {
                 // The `data` parameter refers to the data for the cell (defined by the
                 // `data` option, which defaults to the column being worked with, in
@@ -89,5 +89,5 @@ document.addEventListener('DOMContentLoaded', function() {
         minimumResultsForSearch: Infinity,
         width: 'auto'
     });
-
+    
 });

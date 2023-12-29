@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 targets: 0,
                 width: 400
             },
-            {
+            { 
                 orderable: false,
                 width: 16,
                 targets: 6
@@ -278,7 +278,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // External table additions
     // ------------------------------
-
+    
     // Enable Select2 select for the length option
     $('.dataTables_length select').select2({
         minimumResultsForSearch: Infinity,

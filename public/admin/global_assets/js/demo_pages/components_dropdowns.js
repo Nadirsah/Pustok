@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	// Switchery toggles
 	var toggle = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
-
+	
 	toggle.forEach(function(html) {
 		var switchery = new Switchery(html);
     });

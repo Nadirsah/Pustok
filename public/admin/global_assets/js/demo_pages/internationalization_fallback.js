@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fallbackLng: 'en'
     },
     function (err, t) {
-
+        
         // Initialize library
         jqueryI18next.init(i18next, $);
 
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
             i18next.on('languageChanged', function() {
                 $localizationElement.localize();
             });
-
+            
             // Set active class
             $(englishLangClass).parent().addClass('active');
 

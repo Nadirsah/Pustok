@@ -107,8 +107,8 @@ document.addEventListener('DOMContentLoaded', function() {
             .data(overlaps)
             .enter()
             .append("path")
-            .attr("d", function(d) {
-                return venn.intersectionAreaPath(d.sets.map(function(j) { return sets[j]; }));
+            .attr("d", function(d) { 
+                return venn.intersectionAreaPath(d.sets.map(function(j) { return sets[j]; })); 
             })
             .style("fill-opacity","0")
             .style("fill", "#333")

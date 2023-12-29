@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fallbackLng: false
     },
     function (err, t) {
-
+        
         // Initialize library
         jqueryI18next.init(i18next, $);
 

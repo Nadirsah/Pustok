@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Block panel
     $('#block-panel').on('click', function() {
         var block = $(this).parent();
-        $(block).block({
+        $(block).block({ 
             message: '<i class="icon-spinner4 spinner"></i>',
             timeout: 2000, //unblock after 2 seconds
             overlayCSS: {
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Block sidebar
     $('#block-sidebar').on('click', function() {
         var block = $('.sidebar');
-        $(block).block({
+        $(block).block({ 
             message: '<i class="icon-spinner4 spinner"></i>',
             timeout: 2000, //unblock after 2 seconds
             overlayCSS: {
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 opacity: 0.6,
                 cursor: 'wait'
             },
-            centerY: 0,
+            centerY: 0, 
             css: {
             	top: '180px',
                 border: 0,
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Block page
     $('#block-page').on('click', function() {
-        $.blockUI({
+        $.blockUI({ 
             message: '<i class="icon-spinner4 spinner"></i>',
             timeout: 2000, //unblock after 2 seconds
             overlayCSS: {
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Basic overlay
     $('#basic-overlay').on('click', function() {
         var block = $(this).parent();
-        $(block).block({
+        $(block).block({ 
             message: '<i class="icon-spinner4 spinner"></i>',
             timeout: 2000, //unblock after 2 seconds
             overlayCSS: {
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Custom overlay
     $('#overlay-custom').on('click', function() {
         var block = $(this).parent();
-        $(block).block({
+        $(block).block({ 
             message: '<i class="icon-spinner4 spinner"></i>',
             timeout: 2000, //unblock after 2 seconds
             overlayCSS: {
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Overlay with custom color
     $('#overlay-cover').on('click', function() {
         var block = $(this).parent();
-        $(block).block({
+        $(block).block({ 
             message: '<i class="icon-spinner4 spinner"></i>',
             timeout: 2000, //unblock after 2 seconds
             overlayCSS: {
@@ -178,8 +178,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 width: 46,
                 height: 46,
                 lineHeight: 1,
-                '-webkit-border-radius': '2px',
-                '-moz-border-radius': '2px',
+                '-webkit-border-radius': '2px', 
+                '-moz-border-radius': '2px', 
                 opacity: 0.95
             }
         });
@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $('#multiple-messages').on('click', function() {
         var message = $(this).next('.blockui-message');
         var block = $(this).parent();
-        $(block).block({
+        $(block).block({ 
             message: message,
             overlayCSS: {
                 backgroundColor: '#fff',
@@ -303,11 +303,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         window.setTimeout(function () {
            message.html('<i class="icon-spinner4 spinner"></i> <span class="text-semibold display-block">Loading</span>')
-        }, 0);
+        }, 0); 
 
         window.setTimeout(function () {
            message.html('<i class="icon-spinner4 spinner"></i> <span class="text-semibold display-block">Please wait</span>')
-        }, 2000);
+        }, 2000); 
 
         window.setTimeout(function () {
            message.addClass('bg-danger').html('<i class="icon-warning"></i> <span class="text-semibold display-block">Load error</span>')
@@ -354,7 +354,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Custom message position
     $('#custom-position').on('click', function() {
         var block = $(this).parent();
-        $(block).block({
+        $(block).block({ 
             message: '<i class="icon-spinner4 spinner"></i>',
             timeout: 2000, //unblock after 2 seconds
             centerX: 0,
@@ -384,7 +384,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Auto unblock
     $('#auto-unblock').on('click', function() {
         var block = $(this).parent();
-        $(block).block({
+        $(block).block({ 
             message: '<i class="icon-spinner4 spinner"></i>',
             timeout: 2000, //unblock after 2 seconds
             overlayCSS: {
@@ -404,7 +404,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Unblock on click
     $('#click-unblock').on('click', function() {
         var block = $(this).parent();
-        $(block).block({
+        $(block).block({ 
             message: '<i class="icon-spinner4 spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#fff',
@@ -431,9 +431,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Block callback
     $('#block-callback').on('click', function() {
-        $.blockUI({
+        $.blockUI({ 
             message: '<i class="icon-spinner4 spinner"></i>',
-            fadeIn: 800,
+            fadeIn: 800, 
             timeout: 2000, //unblock after 2 seconds
             overlayCSS: {
                 backgroundColor: '#1b2024',
@@ -448,16 +448,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 padding: 0,
                 backgroundColor: 'transparent'
             },
-            onBlock: function() {
-                alert('Page is now blocked. FadeIn completed.');
-            }
+            onBlock: function() { 
+                alert('Page is now blocked. FadeIn completed.'); 
+            } 
         });
     });
 
 
     // Unblock callback
     $('#unblock-callback').on('click', function() {
-        $.blockUI({
+        $.blockUI({ 
             message: '<i class="icon-spinner4 spinner"></i>',
             timeout: 2000, //unblock after 2 seconds
             overlayCSS: {
@@ -473,16 +473,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 zIndex: 1201,
                 backgroundColor: 'transparent'
             },
-            onUnblock: function() {
-                alert('Page is now unblocked. FadeOut completed.');
-            }
+            onUnblock: function() { 
+                alert('Page is now unblocked. FadeOut completed.'); 
+            } 
         });
     });
 
 
     // Overlay callback
     $('#overlay-callback').on('click', function() {
-        $.blockUI({
+        $.blockUI({ 
             message: '<i class="icon-spinner4 spinner"></i>',
             overlayCSS: {
                 backgroundColor: '#1b2024',
@@ -508,14 +508,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Growl notification
     $('#growl').on('click', function() {
-        $.blockUI({
-            message: $('.blockui-growl'),
-            fadeIn: 700,
-            fadeOut: 700,
+        $.blockUI({ 
+            message: $('.blockui-growl'), 
+            fadeIn: 700, 
+            fadeOut: 700, 
             timeout: 3000000, //unblock after 3 seconds
-            showOverlay: false,
-            centerY: false,
-            css: {
+            showOverlay: false, 
+            centerY: false, 
+            css: { 
                 width: '250px',
                 backgroundColor: 'transparent',
                 top: '20px',
@@ -524,8 +524,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 border: 0,
                 opacity: .95,
                 zIndex: 1200,
-            }
-        });
+            } 
+        }); 
     });
 
 });

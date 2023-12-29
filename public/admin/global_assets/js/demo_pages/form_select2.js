@@ -386,5 +386,5 @@ document.addEventListener('DOMContentLoaded', function() {
         minimumResultsForSearch: Infinity
     });
     $(".access-multiple-clear").on("click", function () { $(".select-access-multiple-clear").val(null).trigger("change"); });
-
+    
 });

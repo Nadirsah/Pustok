@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // Single picker
-    $('.daterange-single').daterangepicker({
+    $('.daterange-single').daterangepicker({ 
         singleDatePicker: true
     });
 
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $('.daterange-ranges span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' &nbsp; - &nbsp; ' + moment().format('MMMM D, YYYY'));
 
 
-
+    
     // Pick-a-date picker
     // ------------------------------
 
@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function() {
             picker_date.close();
         } else {
             picker_date.open();
-        }
+        }                        
         event.stopPropagation();
     });
 
@@ -366,7 +366,7 @@ document.addEventListener('DOMContentLoaded', function() {
             picker_time.close();
         } else {
             picker_time.open();
-        }
+        }                        
         event.stopPropagation();
     });
 
@@ -558,5 +558,5 @@ document.addEventListener('DOMContentLoaded', function() {
             $("#rangeDemoFinish").val("").attr("disabled","disabled");
         }
     });
-
+    
 });

@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var $select = $('.select').select2({
         minimumResultsForSearch: Infinity
     });
-
+    
     // Trigger value change when selection is made
     $select.on('change', function() {
         $(this).trigger('blur');
