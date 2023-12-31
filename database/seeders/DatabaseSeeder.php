@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Category;
 use App\Models\TranslateHome;
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
@@ -18,18 +19,18 @@ class DatabaseSeeder extends Seeder
     {
 //         User::factory(1)->create();
 //
-//         User::factory()->create([
-//             'name' => 'Test User',
-//             'email' => 'test@example.com',
-//         ]);
+         User::factory()->create([
+             'name' => 'Test User',
+             'email' => 'test@example.com',
+         ]);
 
         $this->call([
-//            CategorySeeder::class,
-//            ProductSeeder::class,
-//            ProductImageSeeder::class,
-//              SettingSeeder::class,
-//              BrandSeeder::class,
-        TranslateHomeSeeder::class,
+        //    CategorySeeder::class,
+//           ProductSeeder::class,
+        //    ProductImageSeeder::class,
+        //      SettingSeeder::class,
+        //      BrandSeeder::class,
+        // TranslateHomeSeeder::class,
         ]);
 
 

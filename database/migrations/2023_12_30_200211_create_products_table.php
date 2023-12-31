@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('model');
             $table->json('about');
             $table->json('description');
-            $table->unsignedBigInteger('');
+            $table->unsignedBigInteger('catgory_id');
 
             $table->timestamps();
         });

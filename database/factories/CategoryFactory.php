@@ -32,9 +32,7 @@ class CategoryFactory extends Factory
                 'ru'=>Str::slug($title,'-'),
             ]),
             'parent_id' => fake()->numberBetween(0, 9),
-            'status' =>fake()->boolean(),
+            
         ];
     }
 }
-
-

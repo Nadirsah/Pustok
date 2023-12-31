@@ -36,8 +36,6 @@ class ProductFactory extends Factory
             'old_price' => fake()->numberBetween(10, 50),
             'brand'=>fake()->name,
             'model'=>fake()->name,
-            'points' => fake()->numberBetween(10, 50),
-            'activity' => fake()->boolean(),
             'about' => json_encode([
                 'az' => json_encode(fake()->sentence(20)),
                 'en' => json_encode(fake()->sentence(20)),
