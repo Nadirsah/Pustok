@@ -8,15 +8,15 @@
             </div>
             <div class="col-lg-5">
                 <div class="header-search-block">
-                    <input type="text" placeholder="{{trans($transhome->placeholder)}}">
-                    <button>{{$transhome->search_button}}</button>
+                    <input type="text" placeholder="axtar">
+                    <button>axtar</button>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="main-navigation flex-lg-right">
                     <div class="cart-widget">
                         <div class="login-block">
-                            <a href="{{route('log-res')}}" class="font-weight-bold">{{$transhome->login}}</a> <br>
+                            <a href="{{route('log-res')}}" class="font-weight-bold">login</a> <br>
                             <span>or</span><a href="{{route('log-res')}}">Register</a>
                         </div>
                         <div class="cart-block">
@@ -49,7 +49,7 @@
                                 </div>
                                 <div class=" single-cart-block ">
                                     <div class="btn-block">
-                                        <a href="{{route('cart')}}" class="btn">{{$transhome->view_cart}}<i
+                                        <a href="{{route('cart')}}" class="btn">view cart<i
                                                 class="fas fa-chevron-right"></i></a>
 
                                     </div>
