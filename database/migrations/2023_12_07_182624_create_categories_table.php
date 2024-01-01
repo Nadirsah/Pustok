@@ -17,6 +17,11 @@ return new class extends Migration
             $table->json('slug');
             $table->unsignedBigInteger('parent_id')->unsigned()->nullable()->default(0);
             $table->timestamps();
+
+            $table->foreign('parent_id')
+                ->references('id')
+                ->on('categories')
+                ->onDelete('cascade');
         });
     }
 

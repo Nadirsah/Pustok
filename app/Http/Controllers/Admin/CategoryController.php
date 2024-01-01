@@ -61,7 +61,8 @@ class CategoryController extends Controller
     public function edit(string $id)
     {   $langs=Lang::all();
         $data=Category::findOrFail($id);
-        return  view('admin.category.edit',compact('langs','data'));
+        $categories = Category::where('parent_id', 0)->where('id', '!=', $data->id)->orderby('name', 'asc')->get();
+        return  view('admin.category.edit',compact('langs','data','categories'));
     }
 
     /**
@@ -69,17 +70,15 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-       
-    
-            $data=Category::findOrFail($id);;
+            $data=Category::findOrFail($id);
             $data->name=$request->name;
             $data->slug = Str::slug($data->getTranslation('name', app()->getLocale()), '-');
             $data->parent_id=$request->parent_id;
-    
+
             $data->save();
             return redirect()->route('category.index')->with('type','success')
                 ->with('message','Melumatlar ugurla yuklendi!');
-    
+
     }
 
     /**
@@ -87,6 +86,23 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+
+    }
+    public function delete($id){
+        $category = Category::findOrFail($id);
+        if ($category) {
+            // Eğer alt kategoriler varsa, onları da sil
+            $category->parent()->delete();
+
+            // Kategori silme işlemi
+            $category->delete();
+
+            return redirect()->route('category.index')->with('type','success')
+                ->with('message','Melumatlar ugurla silindi!');
+        } else {
+            return "Kategori bulunamadı";
+        }
+
+
     }
 }
