@@ -2,7 +2,7 @@
 @section('content')
     <div class="content">
 
-      Salam
+      Salam 123
 
 
 
