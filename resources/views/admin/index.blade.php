@@ -2,7 +2,7 @@
 @section('content')
     <div class="content">
 
-      Salam Aleykum
+      Salam Aleykum necesen
 
 
 
