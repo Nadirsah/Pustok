@@ -1,10 +1,13 @@
 @extends('layouts.admin')
 @section('content')
-    <div class="content">
+<div class="content">
 
-      Salam 123
+    Salam 123
+    Salam 123
+    Salam 123
+    Salam 123
 
 
 
-    </div>
+</div>
 @endsection
