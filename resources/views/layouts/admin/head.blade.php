@@ -1,4 +1,5 @@
 <meta charset="utf-8">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pustok - @yield('title')</title>
@@ -10,7 +11,6 @@
 <link href="{{asset('admin')}}/assets\css\core.min.css" rel="stylesheet" type="text/css">
 <link href="{{asset('admin')}}/assets\css\components.min.css" rel="stylesheet" type="text/css">
 <link href="{{asset('admin')}}/assets\css\colors.min.css" rel="stylesheet" type="text/css">
-@yield('theme_css')
 <!-- /global stylesheets -->
 
 <!-- Core JS files -->
@@ -21,7 +21,7 @@
 <!-- /core JS files -->
 
 <!-- Theme JS files -->
-@yield('theme_js')
+@stack('theme_js')
 <script src="{{asset('admin')}}/global_assets\js\plugins\visualization\d3\d3.min.js"></script>
 <script src="{{asset('admin')}}/global_assets\js\plugins\visualization\d3\d3_tooltip.js"></script>
 <script src="{{asset('admin')}}/global_assets\js\plugins\forms\styling\switchery.min.js"></script>

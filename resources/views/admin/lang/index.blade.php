@@ -5,6 +5,7 @@
 <script src="{{asset('admin')}}\global_assets\js\plugins\tables\datatables\datatables.min.js"></script>
 <script src="{{asset('admin')}}\global_assets\js\plugins\forms\selects\select2.min.js"></script>
 <script src="{{asset('admin')}}\global_assets\js\demo_pages\datatables_advanced.js"></script>
+
 @endpush
 
 
@@ -14,7 +15,7 @@
     <div class="card">
         <div class="card-header header-elements-inline">
 
-            <h5 class="card-title"><a href="{{route('product.create')}}" class="btn btn-info"><i
+            <h5 class="card-title"><a href="{{route('lang.create')}}" class="btn btn-info"><i
                         class="icon-plus3 mr-3 icon-xl"></i> Mehsul elave et</a></h5>
             <div class="header-elements">
                 <div class="list-icons">
@@ -25,39 +26,19 @@
             </div>
         </div>
 
-
-
         <table class="table datatable-show-all">
             <thead>
                 <tr>
-                    <th>Categoriya</th>
-                    <th>Tags</th>
-                    <th>Vergi</th>
-                    <th>Qiymet</th>
-                    <th>Evvelki qiymet</th>
-                    <th>Brand</th>
-                    <th>Model</th>
-                    <th>Title</th>
-                    <th>Haqqinda</th>
-                    <th>Tesfir</th>
+                    <th>Dil</th>
                     <th class="text-center">Actions</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($item as $items)
+                @foreach($langs as $lang)
                 <tr>
-                    <td>{{$items->catgory_id}}</td>
-                    <td>{{$items->tags}}</td>
-                    <td>{{$items->tax}}</td>
-                    <td>{{$items->price}}</td>
-                    <td>{{$items->old_price}}</td>
-                    <td>{{$items->brand}}</td>
-                    <td>{{$items->model}}</td>
-                    <td>{!! $items->title!!}</td>
-                    <td>{!! $items->about !!}</td>
-                    <td>{!! $items->description !!}</td>
-                    <td> <a href="{{route('product.edit',$items->id)}}"><i class="btn btn-info fa fa-edit"></i></a>
-                        <a href="{{route('delete',$items->id)}}"><i class="btn btn-danger fa fa-trash"></i></a>
+                    <td>{{$lang->name}}</td>
+                    <td> <a href="{{route('lang.edit',$lang->id)}}"><i class="btn btn-info fa fa-edit"></i></a>
+                    <button class="deleteRecord" data-id="{{ $lang->id }}" >Delete Record</button>
                     </td>
                 </tr>
                 @endforeach
@@ -65,4 +46,25 @@
         </table>
     </div>
 </div>
+
+<script type="text/javascript">
+$(".deleteRecord").click(function(){
+    var id = $(this).data("id");
+    var token = $("meta[name='csrf-token']").attr("content");
+    $.ajax(
+    {
+        url: "delete/"+id,
+        type: 'post',
+        data: {
+            "id": id,
+            "_token": token,
+        },
+        success: function (){
+            console.log("itcon Works");
+            $(`.deleteRecord[data-id="${id}"]`).closest('tr').remove();
+        }
+    });
+   
+});
+</script>
 @endsection
