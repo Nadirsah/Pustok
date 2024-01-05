@@ -14,12 +14,12 @@ class TranslateHome extends Model
         'placeholder',
         'search_button',
         'login',
-        'or',
+        'veya',
         'register',
         'shopping_cart',
-        'Browse_category',
-        'Free_support',
-        'View_cart',
+        'browse_category',
+        'free_support',
+        'view_cart',
     ];
 }
 

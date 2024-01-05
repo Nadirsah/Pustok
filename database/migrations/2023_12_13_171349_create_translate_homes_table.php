@@ -16,7 +16,7 @@ return new class extends Migration
             $table->json('placeholder');
             $table->json('search_button');
             $table->json('login');
-            $table->json('or');
+            $table->json('veya');
             $table->json('register');
             $table->json('shopping_cart');
             $table->json('browse_category');

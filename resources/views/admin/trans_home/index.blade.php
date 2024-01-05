@@ -45,15 +45,15 @@
             <tbody>
                 @foreach($data as $items)
                 <tr>
-                    <td>{{$items->catgory_id}}</td>
-                    <td>{{$items->tags}}</td>
-                    <td>{{$items->tax}}</td>
-                    <td>{{$items->price}}</td>
-                    <td>{{$items->old_price}}</td>
-                    <td>{{$items->brand}}</td>
-                    <td>{{$items->model}}</td>
-                    <td>{{$items->title}}</td>
-                    <td>{{$items->about}}</td>
+                    <td>{{$items->placeholder}}</td>
+                    <td>{{$items->search_button}}</td>
+                    <td>{{$items->login}}</td>
+                    <td>{{$items->veya}}</td>
+                    <td>{{$items->register}}</td>
+                    <td>{{$items->shopping_cart}}</td>
+                    <td>{{$items->browse_category}}</td>
+                    <td>{{$items->free_support}}</td>
+                    <td>{{$items->view_cart}}</td>
                     <td> <a href="{{route('trans_home.edit',$items->id)}}"><i class="btn btn-info fa fa-edit"></i></a>
                         
                     </td>
@@ -64,3 +64,4 @@
     </div>
 </div>
 @endsection
+
