@@ -5,6 +5,9 @@ use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\TransHomeController;
+use App\Http\Controllers\Admin\TranslateFooterController;
+use App\Http\Controllers\Admin\LangController;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CheckoutController;
 use App\Http\Controllers\Front\ContactController;
@@ -50,7 +53,14 @@ Route::group(['prefix'=>'admin','middleware'=>['auth']],function(){
     Route::get('/delete/{id}', [ProductController::class, 'delete'])->name('delete');
     Route::resource('/category',CategoryController::class,);
     Route::get('/delete/{id}', [CategoryController::class, 'delete'])->name('delete');
+    Route::resource('/lang',LangController::class,);
+    Route::post('/delete_lang/{id}', [LangController::class, 'delete'])->name('delete');
     Route::resource('/brand',BrandController::class,);
+    Route::post('/delete_brand/{id}', [BrandController::class, 'delete'])->name('delete');
+    Route::resource('/trans_home',TransHomeController::class,);
+    Route::post('/delete_trans_home/{id}', [TransHomeController::class, 'delete'])->name('delete');
+    Route::resource('/trans_footer',TranslateFooterController::class,);
+    Route::post('/delete_trans_footer/{id}', [TranslateFooterController::class, 'delete'])->name('delete');
     Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 });
 Route::middleware(['web','guest'])->controller(AuthController::class)->group(function(){

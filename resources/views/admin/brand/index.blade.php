@@ -41,11 +41,32 @@
                         <td><img width="50" src="{{$item->file_path}}"></td>
                         <td> <a href="{{route('brand.edit',$item->id)}}"><i
                                     class="btn btn-info fa fa-edit"></i></a>
+                                    <a class="deleteRecord" data-id="{{ $item->id }}" ><i class="btn btn-danger fa fa-trash"></i></a>
 
                 @endforeach
                 </tbody>
             </table>
         </div>
     </div>
+    <script type="text/javascript">
+$(".deleteRecord").click(function(){
+    var id = $(this).data("id");
+    var token = $("meta[name='csrf-token']").attr("content");
+    $.ajax(
+    {
+        url: "delete_brand/"+id,
+        type: 'post',
+        data: {
+            "id": id,
+            "_token": token,
+        },
+        success: function (){
+            console.log("itcon Works");
+            $(`.deleteRecord[data-id="${id}"]`).closest('tr').remove();
+        }
+    });
+   
+});
+</script>
 @endsection
 

@@ -35,6 +35,10 @@
                     <li class="{{Request::segment(2)==='product' ? 'active' : ''}}"><a href="{{route('product.index')}}"><i class="icon-home4"></i> <span>Mehsullar</span></a></li>
                     <li class="{{Request::segment(2)==='category' ? 'active' : ''}}"><a href="{{route('category.index')}}"><i class="icon-home4"></i> <span>Categoriya</span></a></li>
                     <li class="{{Request::segment(2)==='brand' ? 'active' : ''}}"><a href="{{route('brand.index')}}"><i class="icon-home4"></i> <span>Brands</span></a></li>
+                    <li class="{{Request::segment(2)==='lang' ? 'active' : ''}}"><a href="{{route('lang.index')}}"><i class="icon-home4"></i> <span>Dil</span></a></li>
+                    <li class="{{Request::segment(2)==='trans_home' ? 'active' : ''}}"><a href="{{route('trans_home.index')}}"><i class="icon-home4"></i> <span>Esas sehife tercume</span></a></li>
+                    <li class="{{Request::segment(2)==='trans_footer' ? 'active' : ''}}"><a href="{{route('trans_footer.index')}}"><i class="icon-home4"></i> <span>Footer tercume</span></a></li>
+                    
                 </ul>
             </div>
         </div>

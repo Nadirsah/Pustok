@@ -13,15 +13,15 @@ return new class extends Migration
     {
         Schema::create('translate_home_footers', function (Blueprint $table) {
             $table->id();
-            $table->json('Address');
-            $table->json('Phone');
-            $table->json('Email');
-            $table->json('INFORMATION');
-            $table->json('EXTRAS');
-            $table->json('Newsletter subscribe');
-            $table->json('Enter your email');
-            $table->json('Subscribe');
-            $table->json('Stay connected');
+            $table->json('address');
+            $table->json('phone');
+            $table->json('email');
+            $table->json('information');
+            $table->json('extras');
+            $table->json('newsletter_subscribe');
+            $table->json('enter_your_email');
+            $table->json('subscribe');
+            $table->json('stay_connected');
             $table->timestamps();
         });
     }

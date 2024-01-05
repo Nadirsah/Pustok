@@ -17,9 +17,8 @@ class TranslateHome extends Model
         'or',
         'register',
         'shopping_cart',
-        'Browse_category',
-        'Free_support',
-        'View_cart',
+        'browse_category',
+        'free_support',
+        'view_cart',
     ];
 }
-
