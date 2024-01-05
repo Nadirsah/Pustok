@@ -38,7 +38,7 @@
                 <tr>
                     <td>{{$lang->name}}</td>
                     <td> <a href="{{route('lang.edit',$lang->id)}}"><i class="btn btn-info fa fa-edit"></i></a>
-                    <button class="deleteRecord" data-id="{{ $lang->id }}" >Delete Record</button>
+                    <a class="deleteRecord" data-id="{{ $lang->id }}" ><i class="btn btn-danger fa fa-trash"></i></a>
                     </td>
                 </tr>
                 @endforeach
