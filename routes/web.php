@@ -54,6 +54,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth']],function(){
     Route::resource('/lang',LangController::class,);
     Route::post('/delete/{id}', [LangController::class, 'delete'])->name('delete');
     Route::resource('/trans_home',TransHomeController::class,);
+    Route::resource('/trans_content',TransContentController::class,);
     Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 });
 Route::middleware(['web','guest'])->controller(AuthController::class)->group(function(){
