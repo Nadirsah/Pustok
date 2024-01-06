@@ -11,20 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('translate_homecontents', function (Blueprint $table) {
+        Schema::create('translate_home_contents', function (Blueprint $table) {
             $table->id();
-            $table->json('Best seller');
-            $table->json('Feature products');
-            $table->json('New arrivals');
-            $table->json('Most view products');
-            $table->json('Special offer');
-            $table->json('Arts & photography');
-            $table->json('Childrens books');
-            $table->json('Biographies');
-            $table->json('Days');
-            $table->json('Hours');
-            $table->json('Mins');
-            $table->json('Secs');
+            $table->json('best_seller');
+            $table->json('feature_products');
+            $table->json('new_arrivals');
+            $table->json('most_view_products');
+            $table->json('special_offer');
+            $table->json('arts_photography');
+            $table->json('childrens_books');
+            $table->json('biographies');
+            $table->json('days');
+            $table->json('hours');
+            $table->json('mins');
+            $table->json('secs');
             $table->timestamps();
         });
     }

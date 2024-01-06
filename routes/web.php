@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\TransContentController;
 use App\Http\Controllers\Admin\TransHomeController;
 use App\Http\Controllers\Admin\TranslateFooterController;
 use App\Http\Controllers\Admin\LangController;
@@ -61,6 +62,8 @@ Route::group(['prefix'=>'admin','middleware'=>['auth']],function(){
     Route::post('/delete_trans_home/{id}', [TransHomeController::class, 'delete'])->name('delete');
     Route::resource('/trans_footer',TranslateFooterController::class,);
     Route::post('/delete_trans_footer/{id}', [TranslateFooterController::class, 'delete'])->name('delete');
+    Route::resource('/trans_content',TransContentController::class,);
+    Route::post('/delete_trans_content/{id}', [TransContentController::class, 'delete'])->name('delete');
     Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 });
 Route::middleware(['web','guest'])->controller(AuthController::class)->group(function(){

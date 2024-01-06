@@ -1,5 +1,6 @@
 @extends('layouts.admin')
-@section('title','Mehsullar')@section('theme_css')
+@section('title','Mehsullar')
+@section('theme_css')
     <link href="{{asset('admin')}}\global_assets\css\icons\fontawesome\styles.min.css" rel="stylesheet" type="text/css">
 @endsection
 @push('theme_js')
@@ -82,7 +83,7 @@ $(".deleteRecord").click(function(){
             $(`.deleteRecord[data-id="${id}"]`).closest('tr').remove();
         }
     });
-   
+
 });
 </script>
 @endsection

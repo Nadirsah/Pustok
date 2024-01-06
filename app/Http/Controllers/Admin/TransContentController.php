@@ -64,7 +64,9 @@ class TransContentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data=TranslateHomeContent::findOrFail($id);
+        $langs=Lang::all();
+        return view('admin.trans_content.edit',compact('data','langs'));
     }
 
     /**
@@ -72,7 +74,23 @@ class TransContentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data=TranslateHomeContent::findOrFail($id);
+        $data->best_seller = $request->best_seller;
+        $data->feature_products = $request->feature_products;
+        $data->new_arrivals = $request->new_arrivals;
+        $data->most_view_products = $request->most_view_products;
+        $data->special_offer = $request->special_offer;
+        $data->arts_photography = $request->arts_photography;
+        $data->childrens_books = $request->childrens_books;
+        $data->biographies = $request->biographies;
+        $data->days = $request->days;
+        $data->hours = $request->hours;
+        $data->mins = $request->mins;
+        $data->secs = $request->secs;
+        $data->save();
+
+        return redirect()->route('trans_content.index')->with('type','success')
+            ->with('message','Melumatlar ugurla yuklendi!');
     }
 
     /**
@@ -81,5 +99,13 @@ class TransContentController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+    public function delete($id){
+
+        TranslateHomeContent::find($id)->delete($id);
+
+        return response()->json([
+            'success' => 'Record deleted successfully!'
+        ]);
     }
 }
