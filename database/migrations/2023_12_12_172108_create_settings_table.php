@@ -14,14 +14,9 @@ return new class extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
             $table->string('logo');
-            $table->string('facebook');
-            $table->string('facebook_icon');
-            $table->string('twitter');
-            $table->string('twitter_icon');
+            $table->string('file_path');
             $table->string('phone_1');
             $table->string('phone_2');
-            $table->json('location');
-            $table->json('about');
             $table->string('adress');
             $table->string('email');
             $table->boolean('activ');
