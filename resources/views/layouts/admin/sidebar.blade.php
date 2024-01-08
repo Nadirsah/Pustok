@@ -39,7 +39,8 @@
                     <li class="{{Request::segment(2)==='trans_home' ? 'active' : ''}}"><a href="{{route('trans_home.index')}}"><i class="icon-home4"></i> <span>Esas sehife tercume</span></a></li>
                     <li class="{{Request::segment(2)==='trans_footer' ? 'active' : ''}}"><a href="{{route('trans_footer.index')}}"><i class="icon-home4"></i> <span>Footer tercume</span></a></li>
                     <li class="{{Request::segment(2)==='trans_content' ? 'active' : ''}}"><a href="{{route('trans_content.index')}}"><i class="icon-home4"></i> <span>Mezmun tercume</span></a></li>
-
+                    <li class="{{Request::segment(2)==='setting' ? 'active' : ''}}"><a href="{{route('setting.index')}}"><i class="icon-home4"></i> <span>Ayarlar</span></a></li>
+                    <li class="{{Request::segment(2)==='social' ? 'active' : ''}}"><a href="{{route('social.index')}}"><i class="icon-home4"></i> <span>Social</span></a></li>
                 </ul>
             </div>
         </div>

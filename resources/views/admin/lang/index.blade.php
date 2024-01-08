@@ -56,7 +56,7 @@ $(".deleteRecord").click(function(){
     var token = $("meta[name='csrf-token']").attr("content");
     $.ajax(
     {
-        url: "delete_lang/"+id,
+        url: "{{route('delete')}}"+id,
         type: 'post',
         data: {
             "id": id,
@@ -67,7 +67,7 @@ $(".deleteRecord").click(function(){
             $(`.deleteRecord[data-id="${id}"]`).closest('tr').remove();
         }
     });
-   
+
 });
 </script>
 @endsection

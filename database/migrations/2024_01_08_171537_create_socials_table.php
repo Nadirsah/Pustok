@@ -11,15 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('settings', function (Blueprint $table) {
+        Schema::create('socials', function (Blueprint $table) {
             $table->id();
-            $table->string('logo');
-            $table->string('file_path');
-            $table->string('phone_1');
-            $table->string('phone_2');
-            $table->string('adress');
-            $table->string('email');
-            $table->boolean('activ');
+            $table->string('name');
+            $table->string('url');
             $table->timestamps();
         });
     }
@@ -29,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('settings');
+        Schema::dropIfExists('socials');
     }
 };

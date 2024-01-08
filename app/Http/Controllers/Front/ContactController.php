@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Http\Controllers\ActivController;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ContactController extends Controller
+class ContactController extends ActivController
 {
     public function index(){
         return view ('front.contact');

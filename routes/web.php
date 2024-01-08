@@ -9,6 +9,9 @@ use App\Http\Controllers\Admin\TransContentController;
 use App\Http\Controllers\Admin\TransHomeController;
 use App\Http\Controllers\Admin\TranslateFooterController;
 use App\Http\Controllers\Admin\LangController;
+use App\Http\Controllers\Admin\Usercontroller;
+use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\SocialController;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CheckoutController;
 use App\Http\Controllers\Front\ContactController;
@@ -47,6 +50,9 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
     Route::get('/log-res',[LogResController::class,'index'])->name('log-res');
 });
 
+Route::get('/error',function(){
+    return view('error');
+});
 
 Route::group(['prefix'=>'admin','middleware'=>['auth']],function(){
     Route::get('/dashboard',[HomeController::class,'index'])->name('dashboard');
@@ -57,15 +63,21 @@ Route::group(['prefix'=>'admin','middleware'=>['auth']],function(){
     Route::resource('/lang',LangController::class,);
     Route::post('/delete_lang/{id}', [LangController::class, 'delete'])->name('delete');
     Route::resource('/brand',BrandController::class,);
-    Route::post('/delete_brand/{id}', [BrandController::class, 'delete'])->name('delete');
+    Route::post('/delete_brand/{id}', [BrandController::class, 'delete'])->name('brand.delete');
     Route::resource('/trans_home',TransHomeController::class,);
     Route::post('/delete_trans_home/{id}', [TransHomeController::class, 'delete'])->name('delete');
     Route::resource('/trans_footer',TranslateFooterController::class,);
     Route::post('/delete_trans_footer/{id}', [TranslateFooterController::class, 'delete'])->name('delete');
     Route::resource('/trans_content',TransContentController::class,);
     Route::post('/delete_trans_content/{id}', [TransContentController::class, 'delete'])->name('delete');
+    Route::resource('/user',Usercontroller::class,);
+    Route::post('update_status/', [Usercontroller::class, 'updateStatus'])->name('isdiscount');
+    Route::resource('/setting',SettingController::class,);
+    Route::resource('/social',SocialController::class,);
+     Route::post('/delete_social/{id}', [SocialController::class, 'delete'])->name('delete');
     Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 });
+
 Route::middleware(['web','guest'])->controller(AuthController::class)->group(function(){
     Route::get('/admin/login','index')->name('login');
     Route::post('/admin/login','auth')->name('auth');
