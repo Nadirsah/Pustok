@@ -53,7 +53,7 @@ $(".deleteRecord").click(function(){
     var token = $("meta[name='csrf-token']").attr("content");
     $.ajax(
     {
-        url: "delete/"+id,
+        url: "delete_lang/"+id,
         type: 'post',
         data: {
             "id": id,

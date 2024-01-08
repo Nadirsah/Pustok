@@ -34,7 +34,7 @@
                     <li><a href="#"><i class="icon-coins"></i> My balance</a></li>
                     <li><a href="#"><span class="badge bg-teal-400 pull-right">58</span> <i class="icon-comment-discussion"></i> Messages</a></li>
                     <li class="divider"></li>
-                    <li><a href="#"><i class="icon-cog5"></i> Account settings</a></li>
+                    <li><a href="{{route('user.index')}}"><i class="icon-cog5"></i> Istifadeci ayarlari</a></li>
                     <li><a href="{{route('logout')}}"><i class="icon-switch2"></i> Cixis</a></li>
                 </ul>
             </li>

@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\TransHomeController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SocialController;
+use App\Http\Controllers\Admin\Usercontroller;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CheckoutController;
 use App\Http\Controllers\Front\ContactController;
@@ -50,16 +51,18 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
 Route::group(['prefix'=>'admin','middleware'=>['auth']],function(){
     Route::get('/dashboard',[HomeController::class,'index'])->name('dashboard');
     Route::resource('/product',ProductController::class,);
-    Route::get('/delete/{id}', [ProductController::class, 'delete'])->name('delete');
+    Route::get('/delete_product/{id}', [ProductController::class, 'delete'])->name('delete');
     Route::resource('/category',CategoryController::class,);
-    Route::get('/delete/{id}', [CategoryController::class, 'delete'])->name('delete');
+    // Route::get('/delete_category/{id}', [CategoryController::class, 'delete'])->name('delete');
     Route::resource('/lang',LangController::class,);
-    Route::post('/delete/{id}', [LangController::class, 'delete'])->name('delete');
+    // Route::post('/delete_lang/{id}', [LangController::class, 'delete'])->name('delete');
     Route::resource('/trans_home',TransHomeController::class,);
     Route::resource('/trans_content',TransContentController::class,);
     Route::resource('/setting',SettingController::class,);
     Route::resource('/social',SocialController::class,);
-    Route::post('/delete_social/{id}', [SocialController::class, 'delete'])->name('delete');
+    // Route::post('/delete_social/{id}', [SocialController::class, 'delete'])->name('delete');
+    Route::resource('/user',Usercontroller::class,);
+    Route::post('update_status/', [Usercontroller::class, 'updateStatus'])->name('isdiscount');
     Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 });
 Route::middleware(['web','guest'])->controller(AuthController::class)->group(function(){
