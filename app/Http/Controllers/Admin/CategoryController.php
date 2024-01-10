@@ -90,18 +90,21 @@ class CategoryController extends Controller
     }
     public function delete($id){
         $category = Category::findOrFail($id);
-        if ($category) {
-            // Eğer alt kategoriler varsa, onları da sil
-            $category->parent()->delete();
-
-            // Kategori silme işlemi
-            $category->delete();
-
-            return redirect()->route('category.index')->with('type','success')
-                ->with('message','Melumatlar ugurla silindi!');
-        } else {
-            return "Kategori bulunamadı";
-        }
+        $category->delete();
+        return redirect()->route('category.index')->with('type','success')
+            ->with('message','Melumatlar ugurla silindi!');
+//        if ($category) {
+//            // Eğer alt kategoriler varsa, onları da sil
+//            $category->getCategory()->delete();
+//
+//            // Kategori silme işlemi
+//            $category->delete();
+//
+//            return redirect()->route('category.index')->with('type','success')
+//                ->with('message','Melumatlar ugurla silindi!');
+//        } else {
+//            return "Kategori bulunamadı";
+//        }
 
 
     }

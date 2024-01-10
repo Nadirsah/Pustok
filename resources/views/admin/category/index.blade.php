@@ -49,7 +49,7 @@
                         </td>
                         <td> <a href="{{route('category.edit',$items->id)}}"><i
                                     class="btn btn-info fa fa-edit"></i></a>
-                            <a href="{{route('delete',$items->id)}}"><i
+                            <a href="{{route('category.delete',$items->id)}}"><i
                                     class="btn btn-danger fa fa-trash"></i></a></td>
                     </tr>
                 @endforeach

@@ -47,7 +47,7 @@
                 <tbody>
                 @foreach($item as $items)
                 <tr>
-                    <td>{{$items->catgory_id}}</td>
+                    <td>{{$items->getCategory->name}}</td>
                     <td>{{$items->tags}}</td>
                     <td>{{$items->tax}}</td>
                     <td>{{$items->price}}</td>
@@ -59,7 +59,7 @@
                     <td>{!! $items->description !!}</td>
                     <td> <a href="{{route('product.edit',$items->id)}}"><i
                                 class="btn btn-info fa fa-edit"></i></a>
-                        <a href="{{route('delete',$items->id)}}"><i
+                        <a href="{{route('product.delete',$items->id)}}"><i
                                 class="btn btn-danger fa fa-trash"></i></a></td>
                 </tr>
                 @endforeach

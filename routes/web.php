@@ -57,11 +57,11 @@ Route::get('/error',function(){
 Route::group(['prefix'=>'admin','middleware'=>['auth']],function(){
     Route::get('/dashboard',[HomeController::class,'index'])->name('dashboard');
     Route::resource('/product',ProductController::class,);
-    Route::get('/delete/{id}', [ProductController::class, 'delete'])->name('delete');
+    Route::get('/delete_product/{id}', [ProductController::class, 'delete'])->name('product.delete');
     Route::resource('/category',CategoryController::class,);
-    Route::get('/delete/{id}', [CategoryController::class, 'delete'])->name('delete');
+    Route::get('/delete_category/{id}', [CategoryController::class, 'delete'])->name('category.delete');
     Route::resource('/lang',LangController::class,);
-    Route::post('/delete_lang/{id}', [LangController::class, 'delete'])->name('delete');
+    Route::post('/delete_lang/{id}', [LangController::class, 'delete'])->name('lang.delete');
     Route::resource('/brand',BrandController::class,);
     Route::post('/delete_brand/{id}', [BrandController::class, 'delete'])->name('brand.delete');
     Route::resource('/trans_home',TransHomeController::class,);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
+use App\Models\Category;
 use App\Models\Lang;
 use App\Models\Product;
 use App\Models\ProductImage;
@@ -17,9 +18,8 @@ class ProductController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {$item=Product::all();
-
-        return view('admin.product.index',compact('item'));
+    {    $item=Product::all();
+        return view('admin.product.index',compact('item',));
     }
 
     /**
@@ -27,7 +27,8 @@ class ProductController extends Controller
      */
     public function create()
     {   $langs=Lang::all();
-        return view('admin.product.create',compact('langs'));
+        $categories=Category::where('parent_id','!=',0)->get();
+        return view('admin.product.create',compact('langs','categories'));
     }
 
     /**

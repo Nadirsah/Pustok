@@ -61,7 +61,9 @@
                     <div class="form-group">
                         <label class="control-label col-lg-2">Categoriya</label>
                         <select name="subcategory" class="form-control">
-                            <option value="1">Categoriya</option>
+                            @foreach($categories as $category)
+                            <option value="{{$category->id}}">{{$category->name}}</option>
+                                @endforeach
                         </select>
                         <span class="text-danger">@error('subcategory'){{'Categoriya sahəsi boş ola bilməz!'}}@enderror</span>
                     </div>

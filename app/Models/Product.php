@@ -26,4 +26,13 @@ public function image()
 {
         return $this->hasOne(ProductImage::class)->where('is_main',1);
 }
+
+
+    public function getCategory()
+    {
+        return $this->hasOne(Category::class, 'id','catgory_id');
+    }
+
+
+
 }
