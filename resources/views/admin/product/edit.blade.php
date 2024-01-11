@@ -76,7 +76,9 @@
                     <div class="form-group">
                         <label class="control-label col-lg-2">Categoriya</label>
                         <select name="subcategory" class="form-control">
-                            <option value="1">Categoriya</option>
+                            @foreach($categories as $item)
+                            <option @if($data->catgory_id==$item->id) selected @endif value="{{$item->id}}">{{$item->name}}</option>
+                            @endforeach
                         </select>
                         <span
                             class="text-danger">@error('subcategory'){{'Categoriya sahəsi boş ola bilməz!'}}@enderror</span>
@@ -120,6 +122,10 @@
                         <span class="action btn btn-default" style="user-select: none;">Choose File</span>
 
                     </div>
+                    @foreach($images as $image)
+                        <div>Brand: <img width="100" src="{{$image->file_path}}"></div>
+                        <br>
+                    @endforeach
 
                     <div class="text-right">
                         <button type="submit" class="btn btn-primary">Gonder <i

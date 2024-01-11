@@ -18,7 +18,7 @@ class ProductController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {    $item=Product::all();
+    {    $item=Product::with('images')->get();
         return view('admin.product.index',compact('item',));
     }
 
@@ -74,16 +74,17 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
-    {$data=Product::findOrFail($id);
+    {   $data=Product::findOrFail($id);
         $langs=Lang::all();
-       return view('admin.product.edit',compact('data','langs'));
+        $images=ProductImage::where('product_id','=',$id)->get();
+        $categories=Category::where('parent_id','!=',0)->get();
+       return view('admin.product.edit',compact('data','langs','images','categories'));
     }
 
     /**
