@@ -37,7 +37,8 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 |
 */
 Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath','localize','localeViewPath'       ]],function(){
-    Route::get('/',[IndexController::class,'index'])->name('home');
+    $locale = LaravelLocalization::setLocale();
+    Route::get('/',[IndexController::class,'index'])->name('home')->middleware("LaravelLocalizationRedirectFilter:{$locale}");
     Route::get('/shop',[ShopController::class,'index'])->name('shop');
     Route::get('/contact',[ContactController::class,'index'])->name('contact');
     Route::get('/cart',[CartController::class,'index'])->name('cart');
@@ -58,6 +59,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth']],function(){
     Route::get('/dashboard',[HomeController::class,'index'])->name('dashboard');
     Route::resource('/product',ProductController::class,);
     Route::get('/delete_product/{id}', [ProductController::class, 'delete'])->name('product.delete');
+    Route::post('/delete_image/{id}', [ProductController::class, 'deleteimg'])->name('image.delete');
     Route::resource('/category',CategoryController::class,);
     Route::get('/delete_category/{id}', [CategoryController::class, 'delete'])->name('category.delete');
     Route::resource('/lang',LangController::class,);
@@ -73,6 +75,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth']],function(){
     Route::resource('/user',Usercontroller::class,);
     Route::post('update_status/', [Usercontroller::class, 'updateStatus'])->name('isdiscount');
     Route::resource('/setting',SettingController::class,);
+    Route::post('update_site/', [SettingController::class, 'updateSite'])->name('isdiscountsite');
     Route::resource('/social',SocialController::class,);
      Route::post('/delete_social/{id}', [SocialController::class, 'delete'])->name('delete');
     Route::get('/logout',[AuthController::class,'logout'])->name('logout');

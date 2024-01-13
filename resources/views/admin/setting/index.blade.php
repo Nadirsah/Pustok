@@ -7,6 +7,9 @@
     <script src="{{asset('admin')}}\global_assets\js\plugins\tables\datatables\datatables.min.js"></script>
     <script src="{{asset('admin')}}\global_assets\js\plugins\forms\selects\select2.min.js"></script>
     <script src="{{asset('admin')}}\global_assets\js\demo_pages\datatables_advanced.js"></script>
+    <script src="{{asset('admin')}}\global_assets\js\plugins\forms\styling\switchery.min.js"></script>
+    <script src="{{asset('admin')}}\global_assets\js\plugins\forms\styling\switch.min.js"></script>
+    <script src="{{asset('admin')}}\global_assets\js\demo_pages\form_checkboxes_radios.js"></script>
 @endpush
 
 
@@ -49,7 +52,15 @@
                     <td>{{$data->phone_2}}</td>
                     <td>{{$data->adress}}</td>
                     <td>{{$data->email}}</td>
-                    <td>{{$data->activ}}</td>
+                    <td>
+                        <div class="checkbox checkbox-switchery">
+                            <label>
+                                <input type="checkbox" name='activ' class="switchery" id="{{ $data->id }}"
+                                    {{$data->activ==1 ? 'checked' :''}}>
+
+                            </label>
+                        </div>
+                    </td>
                     <td> <a href="{{route('setting.edit',$data->id)}}"><i class="btn btn-info fa fa-edit"></i></a>
                     </td>
                 </tr>
@@ -58,4 +69,31 @@
             </table>
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+            $('.switchery').click(function() {
+                var id = $(this).attr("id");
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $("meta[name='csrf-token']").attr("content")
+                    }
+                });
+                $.ajax({
+                    url: "{{route('isdiscountsite')}}", // Define your Laravel route
+                    type: 'POST',
+                    data: {
+                        "id": id,
+                        is_active: $(this).is(':checked'),
+
+                    },
+                    success: function(data) {
+                        console.log('Status updated successfully');
+                    },
+                    error: function(error) {
+                        console.error('Error updating status:', error);
+                    }
+                });
+            });
+        });
+    </script>
 @endsection

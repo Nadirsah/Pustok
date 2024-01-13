@@ -93,4 +93,14 @@ class SettingController extends Controller
     {
         //
     }
+    public function updateSite(Request $request)
+    {
+        $id = $request->id;
+        $isActive = $request->is_active == 'true' ? 1 : 0;
+
+        // Update the database
+        Setting::where('id', $id)->update(['activ' => $isActive]);
+
+        return response()->json(['message' => 'Status updated successfully']);
+    }
 }

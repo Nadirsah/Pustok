@@ -80,33 +80,62 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                    @foreach($items->images as $image)
-                        <div class="panel panel-flat">
-                            <div class="panel-heading">
-                            </div>
-                            <div class="thumbnail">
-                                <div class="thumb">
-                                    <img width="50" src="{{$image->file_path}}" alt="">
-                                    <div class="caption-overflow">
+                    <table class="table datatable-show-all">
+                        <thead>
+                        <tr>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($items->images as $image)
+                        <tr>
+                            <td>
+                                <div class="panel panel-flat">
+                                    <div class="panel-heading">
+                                    </div>
+                                    <div class="thumbnail">
+                                        <div class="thumb">
+                                            <img width="50" src="{{$image->file_path}}" alt="">
+                                            <div class="caption-overflow">
 												<span>
-													<a href="#" class="btn bg-warning-300 btn-icon"><i class="icon-link"></i></a>
+													<a href="#" class="btn bg-warning-300 btn-icon deleteimg" data-id="{{ $image->id }}"><i class="icon-link"></i></a>
 												</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            </td>
+                        </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
 
-                    @endforeach
                     <!-- Resimleri Listeleme -->
-
-
-
-
-
                 </div>
             </div>
         </div>
     </div>
     <!-- /login form -->
+    <script type="text/javascript">
+        $(".deleteimg").click(function(){
+            var id = $(this).data("id");
+            var token = $("meta[name='csrf-token']").attr("content");
+            $.ajax(
+                {
+                    url: "delete_image/"+id,
+                    type: 'post',
+                    data: {
+                        "id": id,
+                        "_token": token,
+                    },
+                    success: function (){
+                        $('.modal').modal('hide');
+                        console.log("itcon Works");
+                        $(`.deleteRecord[data-id="${id}"]`).closest('tr').remove();
+                    }
+                });
+
+        });
+    </script>
 @endsection
 

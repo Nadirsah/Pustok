@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Hash;
 
 class UserController extends Controller
 {
@@ -21,7 +22,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.users.create');
     }
 
     /**
@@ -29,7 +30,16 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'email'=>['required','email'],
+            'password'=>['required'],
+        ]);
+        $data=new User();
+        $data->name=$request->name;
+        $data->email=$request->email;
+        $data->password=Hash::make($request->password);
+        $data->save();
+        return  redirect()->route('user.index')->with('message', 'Məlumat əlavə olundu!');
     }
 
     /**
@@ -45,7 +55,8 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data=User::findOrFail($id);
+        return view('admin.users.edit',compact('data'));
     }
 
     /**
@@ -53,7 +64,12 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data=User::findOrFail($id);
+        $data->name=$request->name;
+        $data->email=$request->email;
+        $data->password=Hash::make($request->password);
+        $data->save();
+        return  redirect()->route('user.index')->with('message', 'Məlumat əlavə olundu!');
     }
 
     /**

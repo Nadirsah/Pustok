@@ -52,9 +52,13 @@
                                         {{$items->is_active==1 ? 'checked' :''}}>
                                     Checked switch
                                 </label>
-
+                            </div>
                         </td>
-                        <td>{{$items->is_admin}}</td>
+                        <td>@if($items->is_admin==1)
+                                Admin
+                            @else($items->is_admin==0)
+                                Istifadeci
+                            @endif</td>
                         <td> <a href="{{route('user.edit',$items->id)}}"><i class="btn btn-info fa fa-edit"></i></a>
 
                         </td>

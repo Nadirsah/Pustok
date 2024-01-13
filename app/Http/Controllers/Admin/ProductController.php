@@ -151,4 +151,13 @@ class ProductController extends Controller
          $data->delete();
         return redirect()->route('product.index')->with('message','File has been delete')->with('type','success');
     }
+
+    public function deleteimg($id){
+
+        ProductImage::find($id)->delete($id);
+
+        return response()->json([
+            'success' => 'Record deleted successfully!'
+        ]);
+    }
 }
