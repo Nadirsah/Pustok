@@ -31,7 +31,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Parol</label>
-                                        <input type="text" class="form-control " name="password" value=""
+                                        <input type="text" class="form-control " name="password" value="{{$data->password}}"
                                                placeholder="Yazin...">
                                         <span
                                             class="text-danger">@error('password'){{'Sifre support sahəsi boş ola bilməz!'}}@enderror</span>

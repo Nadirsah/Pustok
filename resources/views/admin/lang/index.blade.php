@@ -3,18 +3,15 @@
 @section('theme_css')
     <link href="{{asset('admin')}}\global_assets\css\icons\fontawesome\styles.min.css" rel="stylesheet" type="text/css">
 @endsection
-@push('theme_js')
-<link href="{{asset('admin')}}\global_assets\css\icons\fontawesome\styles.min.css" rel="stylesheet" type="text/css">
-<script src="{{asset('admin')}}\global_assets\js\plugins\tables\datatables\datatables.min.js"></script>
-<script src="{{asset('admin')}}\global_assets\js\plugins\forms\selects\select2.min.js"></script>
-<script src="{{asset('admin')}}\global_assets\js\demo_pages\datatables_advanced.js"></script>
+@section('theme_js')
+    <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 
-@endpush
+@endsection
 
 
 @section('content')
 <div class="content">
-
+    @include('layouts.admin.alert')
     <div class="card">
         <div class="card-header header-elements-inline">
 
@@ -29,7 +26,7 @@
             </div>
         </div>
 
-        <table class="table datatable-show-all">
+        <table class="table table-hover border table-bordered " id="dataTable">
             <thead>
                 <tr>
                     <th>Dil</th>
@@ -49,7 +46,9 @@
         </table>
     </div>
 </div>
-
+<script>
+    let table = new DataTable('#dataTable');
+</script>
 <script type="text/javascript">
 $(".deleteRecord").click(function(){
     var id = $(this).data("id");

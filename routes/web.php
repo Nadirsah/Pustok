@@ -37,8 +37,8 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 |
 */
 Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath','localize','localeViewPath'       ]],function(){
-    $locale = LaravelLocalization::setLocale();
-    Route::get('/',[IndexController::class,'index'])->name('home')->middleware("LaravelLocalizationRedirectFilter:{$locale}");
+
+    Route::get('/',[IndexController::class,'index'])->name('home');
     Route::get('/shop',[ShopController::class,'index'])->name('shop');
     Route::get('/contact',[ContactController::class,'index'])->name('contact');
     Route::get('/cart',[CartController::class,'index'])->name('cart');
@@ -67,11 +67,8 @@ Route::group(['prefix'=>'admin','middleware'=>['auth']],function(){
     Route::resource('/brand',BrandController::class,);
     Route::post('/delete_brand/{id}', [BrandController::class, 'delete'])->name('brand.delete');
     Route::resource('/trans_home',TransHomeController::class,);
-    Route::post('/delete_trans_home/{id}', [TransHomeController::class, 'delete'])->name('delete');
     Route::resource('/trans_footer',TranslateFooterController::class,);
-    Route::post('/delete_trans_footer/{id}', [TranslateFooterController::class, 'delete'])->name('delete');
     Route::resource('/trans_content',TransContentController::class,);
-    Route::post('/delete_trans_content/{id}', [TransContentController::class, 'delete'])->name('delete');
     Route::resource('/user',Usercontroller::class,);
     Route::post('update_status/', [Usercontroller::class, 'updateStatus'])->name('isdiscount');
     Route::resource('/setting',SettingController::class,);

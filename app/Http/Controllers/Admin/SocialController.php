@@ -28,7 +28,12 @@ class SocialController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
+    {$request->validate([
+        'name' => 'required',
+        'url' => 'required',
+
+
+    ]);
         $data = new Social();
         $data->name = $request->name;
         $data->url = $request->url;
@@ -60,7 +65,10 @@ class SocialController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {
+    {$request->validate([
+        'name' => 'required',
+        'url' => 'required',
+    ]);
         $data=Social::findOrFail($id);
         $data->name = $request->name;
         $data->url = $request->url;

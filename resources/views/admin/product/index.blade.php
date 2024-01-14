@@ -2,7 +2,6 @@
 @section('title','Mehsullar')
 @section('theme_css')
     <link href="{{asset('admin')}}\global_assets\css\icons\fontawesome\styles.min.css" rel="stylesheet" type="text/css">
-
 @endsection
 @section('theme_js')
     <script src="{{asset('admin')}}\global_assets\js\plugins\tables\datatables\datatables.min.js"></script>
@@ -14,7 +13,7 @@
 
 @section('content')
     <div class="content">
-
+        @include('layouts.admin.alert')
         <div class="card">
             <div class="card-header header-elements-inline">
 
@@ -65,7 +64,7 @@
                         </div></td>
                     <td> <a href="{{route('product.edit',$items->id)}}"><i
                                 class="btn btn-info fa fa-edit"></i></a>
-                        <a href="{{route('product.delete',$items->id)}}"><i
+                        <a href="{{route('product.delete',$items->id)}}" onclick="return confirm('Mehsulu silmeye eminsiz?')"><i
                                 class="btn btn-danger fa fa-trash"></i></a></td>
                 </tr>
                 @endforeach

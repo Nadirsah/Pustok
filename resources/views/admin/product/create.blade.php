@@ -10,7 +10,7 @@
 @endsection
 @section('content')
     <div class="content">
-        @include('layouts.admin.alert')
+
         <!-- Basic tabs -->
         <form action="{{route('product.store')}}" method="POST" class="row" enctype="multipart/form-data">
             @csrf

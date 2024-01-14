@@ -18,11 +18,12 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="uploader hover form-group">
-                            <span class="text-danger">@error('img'){{'Sekil sahəsi boş ola bilməz!'}}@enderror</span>
+
                             <input type="file" name="img[]" multiple class="file-styled" value="{{old('img[]')}}">
                             <span class="filename" style="user-select: none;">File secilmeyib</span>
                             <span class="action btn btn-default" style="user-select: none;">Choose File</span>
                         </div>
+                        <span class="text-danger">@error('img'){{'Sekil sahəsi boş ola bilməz!'}}@enderror</span>
                         <div class="text-right">
                             <button type="submit" class="btn btn-primary">Gonder <i class="icon-arrow-right14 position-right"></i></button>
                         </div>

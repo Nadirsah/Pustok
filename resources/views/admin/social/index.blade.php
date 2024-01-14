@@ -1,32 +1,27 @@
 @extends('layouts.admin')
 @section('title','Mehsullar')
-@push('theme_js')
+@section('theme_js')
     <link href="{{asset('admin')}}\global_assets\css\icons\fontawesome\styles.min.css" rel="stylesheet" type="text/css">
     <script src="{{asset('admin')}}\global_assets\js\plugins\tables\datatables\datatables.min.js"></script>
     <script src="{{asset('admin')}}\global_assets\js\plugins\forms\selects\select2.min.js"></script>
     <script src="{{asset('admin')}}\global_assets\js\demo_pages\datatables_advanced.js"></script>
+    <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 
-@endpush
+@endsection
 
 
 @section('content')
     <div class="content">
-
+        @include('layouts.admin.alert')
         <div class="card">
             <div class="card-header header-elements-inline">
 
                 <h5 class="card-title"><a href="{{route('social.create')}}" class="btn btn-info"><i
-                            class="icon-plus3 mr-3 icon-xl"></i> Mehsul elave et</a></h5>
-                <div class="header-elements">
-                    <div class="list-icons">
-                        <a class="list-icons-item" data-action="collapse"></a>
-                        <a class="list-icons-item" data-action="reload"></a>
-                        <a class="list-icons-item" data-action="remove"></a>
-                    </div>
-                </div>
+                            class="icon-plus3 mr-3 icon-xl"></i> Link elave et</a></h5>
+
             </div>
 
-            <table class="table datatable-show-all">
+            <table class="table table-hover border table-bordered " id="dataTable">
                 <thead>
                 <tr>
                     <th>Ad</th>
@@ -48,7 +43,9 @@
             </table>
         </div>
     </div>
-
+    <script>
+        let table = new DataTable('#dataTable');
+    </script>
     <script type="text/javascript">
         $(".deleteRecord").click(function(){
             var id = $(this).data("id");

@@ -73,7 +73,21 @@ class TransContentController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {
+    {$request->validate([
+        'best_seller'=>'required',
+        'feature_products'=>'required',
+        'new_arrivals'=>'required',
+        'most_view_products'=>'required',
+        'special_offer'=>'required',
+        'arts_photography'=>'required',
+        'childrens_books'=>'required',
+        'biographies'=>'required',
+        'days'=>'required',
+        'hours'=>'required',
+        'mins'=>'required',
+        'secs'=>'required',
+
+    ]);
         $data=TranslateHomeContent::findOrFail($id);
         $data->best_seller = $request->best_seller;
         $data->feature_products = $request->feature_products;

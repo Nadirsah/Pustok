@@ -1,6 +1,6 @@
 <div class="navbar navbar-inverse">
     <div class="navbar-header">
-        <a class="navbar-brand" href="index.html"><img src="{{asset('admin')}}/global_assets\images\logo_light.png" alt=""></a>
+        <a class="navbar-brand" href="{{route('dashboard')}}">Admin Panel</a>
 
         <ul class="nav navbar-nav visible-xs-block">
             <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
@@ -30,10 +30,6 @@
                 </a>
 
                 <ul class="dropdown-menu dropdown-menu-right">
-                    <li><a href="#"><i class="icon-user-plus"></i> My profile</a></li>
-                    <li><a href="#"><i class="icon-coins"></i> My balance</a></li>
-                    <li><a href="#"><span class="badge bg-teal-400 pull-right">58</span> <i class="icon-comment-discussion"></i> Messages</a></li>
-                    <li class="divider"></li>
                     <li><a href="{{route('user.index')}}"><i class="icon-cog5"></i> Istifadeci ayarlari</a></li>
                     <li><a href="{{route('logout')}}"><i class="icon-switch2"></i> Cixis</a></li>
                 </ul>

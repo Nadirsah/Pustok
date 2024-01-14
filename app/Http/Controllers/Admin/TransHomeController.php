@@ -29,7 +29,18 @@ class TransHomeController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
+    {$request->validate([
+        'placeholder'=>'required',
+        'search_button'=>'required',
+        'login'=>'required',
+        'or'=>'required',
+        'register'=>'required',
+        'shopping_cart'=>'required',
+        'browse_category'=>'required',
+        'free_support'=>'required',
+        'view_cart'=>'required',
+
+    ]);
         $data=new TranslateHome;
         $data->placeholder = $request->placeholder;
         $data->search_button = $request->search_button;
@@ -68,8 +79,19 @@ class TransHomeController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {
-       
+    {$request->validate([
+        'placeholder'=>'required',
+        'search_button'=>'required',
+        'login'=>'required',
+        'or'=>'required',
+        'register'=>'required',
+        'shopping_cart'=>'required',
+        'browse_category'=>'required',
+        'free_support'=>'required',
+        'view_cart'=>'required',
+
+    ]);
+
         $data=TranslateHome::findOrFail($id);
         $data->placeholder = $request->placeholder;
         $data->search_button = $request->search_button;
@@ -83,7 +105,7 @@ class TransHomeController extends Controller
         $data->save();
 
         return redirect()->route('trans_home.index')->with('type','success')
-            ->with('message','Melumatlar ugurla yuklendi!');
+            ->with('message','Melumatlar ugurla yenilendi!');
     }
 
     /**
@@ -94,9 +116,9 @@ class TransHomeController extends Controller
         //
     }
     public function delete($id){
-   
+
         TranslateHome::find($id)->delete($id);
-      
+
         return response()->json([
             'success' => 'Record deleted successfully!'
         ]);

@@ -1,21 +1,21 @@
 @extends('layouts.admin')
 @section('title','Mehsullar')
-@push('theme_js')
-    <link href="{{asset('admin')}}\global_assets\css\icons\fontawesome\styles.min.css" rel="stylesheet" type="text/css">
-    <script src="{{asset('admin')}}\global_assets\js\plugins\tables\datatables\datatables.min.js"></script>
-    <script src="{{asset('admin')}}\global_assets\js\plugins\forms\selects\select2.min.js"></script>
-    <script src="{{asset('admin')}}\global_assets\js\demo_pages\datatables_advanced.js"></script>
+@section('theme_css')
+<link href="{{asset('admin')}}\global_assets\css\icons\fontawesome\styles.min.css" rel="stylesheet" type="text/css">
+@endsection
+@section('theme_js')
+    <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="{{asset('admin')}}\global_assets\js\plugins\forms\styling\uniform.min.js"></script>
     <script src="{{asset('admin')}}\global_assets\js\plugins\forms\styling\switchery.min.js"></script>
     <script src="{{asset('admin')}}\global_assets\js\plugins\forms\styling\switch.min.js"></script>
     <script src="{{asset('admin')}}\global_assets\js\demo_pages\form_checkboxes_radios.js"></script>
 
-@endpush
+@endsection
 
 
 @section('content')
     <div class="content">
-
+        @include('layouts.admin.alert')
         <div class="card">
             <div class="card-header header-elements-inline">
 
@@ -30,7 +30,7 @@
                 </div>
             </div>
 
-            <table class="table datatable-show-all">
+            <table class="table table-hover border table-bordered" id="dataTable">
                 <thead>
                 <tr>
                     <th>Ad</th>
@@ -68,7 +68,9 @@
             </table>
         </div>
     </div>
-
+    <script>
+        let table = new DataTable('#dataTable');
+    </script>
     <script>
         $(document).ready(function() {
             $('.switchery').click(function() {

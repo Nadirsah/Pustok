@@ -31,8 +31,8 @@
                                             <fieldset class="content-group">
                                                 <div class="form-group">
                                                     <label >Title</label>
-                                                    <input  class="form-control"  name="name[{{$lang->name}}]" value="{{old('name')}}" placeholder="Categoriya">
-                                                    <span class="text-danger">@error('title.'.$lang->name){{'Title sahəsi boş ola bilməz!'}}@enderror</span>
+                                                    <input  class="form-control"  name="name[{{$lang->name}}]" value="{{old('name.'.$lang->name)}}" placeholder="Categoriya">
+                                                    <span class="text-danger">@error('name.'.$lang->name){{'Title sahəsi boş ola bilməz!'}}@enderror</span>
                                                 </div>
 
                                             </fieldset>

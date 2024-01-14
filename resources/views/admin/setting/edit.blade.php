@@ -48,7 +48,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Email</label>
-                                            <input type="text" class="form-control " name="email" value="{{$data->email}}"
+                                            <input type="email" class="form-control " name="email" value="{{$data->email}}"
                                                    placeholder="Yazin...">
                                             <span
                                                 class="text-danger">@error('email'){{'Email sahəsi boş ola bilməz!'}}@enderror</span>

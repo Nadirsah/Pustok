@@ -28,11 +28,15 @@ class LangController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
+    {$request->validate([
+        'name'=>'required',
+
+    ]);
             $data=new Lang();
             $data->name=$request->name;
             $data->save();
-            return response()->json(['status'=>1,'msg'=>'Elave olundu', 'redirect' => route('lang.index')]);
+        return redirect()->route('lang.index')->with('type','success')
+            ->with('message','Melumatlar ugurla yuklendi!');
     }
 
     /**
@@ -56,11 +60,16 @@ class LangController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {
+    {$request->validate([
+        'name'=>'required',
+
+    ]);
         $data=Lang::findOrFail($id);
         $data->name=$request->name;
         $data->save();
-        return response()->json(['status'=>1,'msg'=>'Elave olundu', 'redirect' => route('lang.index')]);
+        return redirect()->route('lang.index')->with('type','success')
+            ->with('message','Melumatlar ugurla yenilendi!');
+
     }
 
     /**
@@ -68,12 +77,12 @@ class LangController extends Controller
      */
     public function destroy(string $id)
     {
-        
+
     }
     public function delete($id){
-   
+
         Lang::find($id)->delete($id);
-      
+
         return response()->json([
             'success' => 'Record deleted successfully!'
         ]);

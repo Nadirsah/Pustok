@@ -31,6 +31,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'name'=>['required'],
             'email'=>['required','email'],
             'password'=>['required'],
         ]);
@@ -39,7 +40,7 @@ class UserController extends Controller
         $data->email=$request->email;
         $data->password=Hash::make($request->password);
         $data->save();
-        return  redirect()->route('user.index')->with('message', 'Məlumat əlavə olundu!');
+        return  redirect()->route('user.index')->with('type','success')->with('message', 'Məlumat əlavə olundu!');
     }
 
     /**
@@ -63,13 +64,17 @@ class UserController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {
+    {$request->validate([
+        'name'=>['required'],
+        'email'=>['required','email'],
+        'password'=>['required'],
+    ]);
         $data=User::findOrFail($id);
         $data->name=$request->name;
         $data->email=$request->email;
         $data->password=Hash::make($request->password);
         $data->save();
-        return  redirect()->route('user.index')->with('message', 'Məlumat əlavə olundu!');
+        return  redirect()->route('user.index')->with('type','success')->with('message', 'Məlumat yenilendi!');
     }
 
     /**

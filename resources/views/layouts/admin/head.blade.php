@@ -22,7 +22,7 @@
 <!-- /core JS files -->
 
 <!-- Theme JS files -->
-@yield('theme_js')
+
 <script src="{{asset('admin')}}/global_assets\js\plugins\visualization\d3\d3.min.js"></script>
 <script src="{{asset('admin')}}/global_assets\js\plugins\visualization\d3\d3_tooltip.js"></script>
 <script src="{{asset('admin')}}/global_assets\js\plugins\forms\styling\switchery.min.js"></script>
@@ -32,4 +32,5 @@
 
 <script src="{{asset('admin')}}/assets\js\app.js"></script>
 <script src="{{asset('admin')}}/global_assets\js\demo_pages\dashboard.js"></script>
+@yield('theme_js')
 <!-- /theme JS files -->

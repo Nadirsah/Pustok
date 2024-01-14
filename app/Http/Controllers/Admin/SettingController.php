@@ -68,7 +68,15 @@ class SettingController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {
+    {$request->validate([
+        'phone_1' => 'required',
+        'phone_2' => 'required',
+        'adress' => 'required',
+        'email' => 'required|email',
+        'activ' => 'required|integer',
+        'logo'=>'required|max:2048',
+
+    ]);
         $data=Setting::findOrFail($id);
         $data->phone_1 = $request->phone_1;
         $data->phone_2 = $request->phone_2;

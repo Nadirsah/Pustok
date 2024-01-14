@@ -70,7 +70,18 @@ class TranslateFooterController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {
+    {$request->validate([
+        'address'=>'required',
+        'phone'=>'required',
+        'email'=>'required',
+        'information'=>'required',
+        'extras'=>'required',
+        'newsletter_subscribe'=>'required',
+        'enter_your_email'=>'required',
+        'subscribe'=>'required',
+        'stay_connected'=>'required',
+
+    ]);
         $data=TranslateHomeFooter::findOrFail($id);
         $data->address = $request->address;
         $data->phone = $request->phone;
@@ -84,7 +95,7 @@ class TranslateFooterController extends Controller
         $data->save();
 
         return redirect()->route('trans_footer.index')->with('type','success')
-            ->with('message','Melumatlar ugurla yuklendi!');
+            ->with('message','Melumatlar ugurla yenilendi!');
     }
 
     /**
@@ -95,9 +106,9 @@ class TranslateFooterController extends Controller
         //
     }
     public function delete($id){
-   
+
         TranslateHomeFooter::find($id)->delete($id);
-      
+
         return response()->json([
             'success' => 'Record deleted successfully!'
         ]);

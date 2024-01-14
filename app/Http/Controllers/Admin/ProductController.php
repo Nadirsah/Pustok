@@ -102,6 +102,7 @@ class ProductController extends Controller
         'model' => 'required',
         'description.*' => 'required',
         'subcategory' => 'required',
+        'img'=>'required|max:2048',
 
     ]);
         $data = Product::findOrFail($id);
@@ -149,7 +150,7 @@ class ProductController extends Controller
             $image->delete();
         }
          $data->delete();
-        return redirect()->route('product.index')->with('message','File has been delete')->with('type','success');
+        return redirect()->route('product.index')->with('message','Melumatlar ugurla silindi')->with('type','success');
     }
 
     public function deleteimg($id){

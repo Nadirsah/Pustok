@@ -33,17 +33,16 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {$request->validate([
+        'name.*'=>'required',
         'parent_id' => 'sometimes|nullable|numeric'
     ]);
-
         $data=new Category;
         $data->name=$request->name;
         $data->slug = Str::slug($data->getTranslation('name', app()->getLocale()), '-');
         $data->parent_id=$request->parent_id;
 
         $data->save();
-        return redirect()->route('category.index')->with('type','success')
-            ->with('message','Melumatlar ugurla yuklendi!');
+        return redirect()->route('category.index')->with('message','Melumatlar ugurla yuklendi!');
 
     }
 
@@ -69,15 +68,17 @@ class CategoryController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {
+    {$request->validate([
+        'name.*'=>'required',
+        'parent_id' => 'sometimes|nullable|numeric'
+    ]);
             $data=Category::findOrFail($id);
             $data->name=$request->name;
             $data->slug = Str::slug($data->getTranslation('name', app()->getLocale()), '-');
             $data->parent_id=$request->parent_id;
 
             $data->save();
-            return redirect()->route('category.index')->with('type','success')
-                ->with('message','Melumatlar ugurla yuklendi!');
+            return redirect()->route('category.index')->with('message','Melumatlar ugurla yuklendi!');
 
     }
 

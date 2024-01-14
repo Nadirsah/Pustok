@@ -1,37 +1,22 @@
 @extends('layouts.admin')
 @section('title','Mehsullar')
-@push('theme_css')
+@section('theme_css')
     <link href="{{asset('admin')}}\global_assets\css\icons\fontawesome\styles.min.css" rel="stylesheet" type="text/css">
-@endpush
-@push('theme_js')
+@endsection
+@section('theme_js')
     <script src="{{asset('admin')}}\global_assets\js\plugins\tables\datatables\datatables.min.js"></script>
     <script src="{{asset('admin')}}\global_assets\js\plugins\forms\selects\select2.min.js"></script>
     <script src="{{asset('admin')}}\global_assets\js\demo_pages\datatables_advanced.js"></script>
     <script src="{{asset('admin')}}\global_assets\js\plugins\forms\styling\switchery.min.js"></script>
     <script src="{{asset('admin')}}\global_assets\js\plugins\forms\styling\switch.min.js"></script>
     <script src="{{asset('admin')}}\global_assets\js\demo_pages\form_checkboxes_radios.js"></script>
-@endpush
+@endsection
 
 
 @section('content')
     <div class="content">
-
+        @include('layouts.admin.alert')
         <div class="card">
-            <div class="card-header header-elements-inline">
-
-                <h5 class="card-title"><a href="{{route('setting.create')}}" class="btn btn-info"><i
-                            class="icon-plus3 mr-3 icon-xl"></i> Mehsul elave et</a></h5>
-                <div class="header-elements">
-                    <div class="list-icons">
-                        <a class="list-icons-item" data-action="collapse"></a>
-                        <a class="list-icons-item" data-action="reload"></a>
-                        <a class="list-icons-item" data-action="remove"></a>
-                    </div>
-                </div>
-            </div>
-
-
-
             <table class="table datatable-show-all">
                 <thead>
                 <tr>

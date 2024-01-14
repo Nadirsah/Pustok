@@ -14,7 +14,7 @@
 @endsection
 @section('content')
 <div class="content">
-    @include('layouts.admin.alert')
+
     <!-- Basic tabs -->
     <form action="{{route('product.update',$data->id)}}" method="POST" class="row" enctype="multipart/form-data">
         @method("PUT")
@@ -115,12 +115,10 @@
                         <input type="text" class="form-control " name="model" value="{{old('model',$data->model)}}">
                         <span class="text-danger">@error('model'){{'Model sahəsi boş ola bilməz!'}}@enderror</span>
                     </div>
-                    <div class="uploader hover form-group">
+                    <div class="form-group">
+                        <label>Sekil</label>
+                        <input type="file" class="form-control" multiple name="img[]" value="{{old('img[]')}}">
                         <span class="text-danger">@error('img'){{'Sekil sahəsi boş ola bilməz!'}}@enderror</span>
-                        <input type="file" name="img[]" multiple class="file-styled" value="{{old('img[]')}}">
-                        <span class="filename" style="user-select: none;">File secilmeyib</span>
-                        <span class="action btn btn-default" style="user-select: none;">Choose File</span>
-
                     </div>
                     @foreach($images as $image)
                         <div>Brand: <img width="100" src="{{$image->file_path}}"></div>
