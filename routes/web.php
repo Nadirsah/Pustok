@@ -36,6 +36,8 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/redirects',[IndexController::class,'redirects']);
+
 Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath','localize','localeViewPath'       ]],function(){
 
     Route::get('/',[IndexController::class,'index'])->name('home');
@@ -48,7 +50,7 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
     Route::get('/checkout',[CheckoutController::class,'index'])->name('checkout');
     Route::get('/order-complete',[OrderCompleteController::class,'index'])->name('order-complete');
     Route::get('/my-account',[MyAccountController::class,'index'])->name('my-account');
-    Route::get('/log-res',[LogResController::class,'index'])->name('log-res');
+    Route::get('/log-res',[LogResController::class,'index'])->name('log-res')->middleware('isLogin');
 });
 
 Route::get('/error',function(){
@@ -75,11 +77,13 @@ Route::group(['prefix'=>'admin','middleware'=>['auth']],function(){
     Route::post('update_site/', [SettingController::class, 'updateSite'])->name('isdiscountsite');
     Route::resource('/social',SocialController::class,);
      Route::post('/delete_social/{id}', [SocialController::class, 'delete'])->name('delete');
-    Route::get('/logout',[AuthController::class,'logout'])->name('logout');
+    
 });
 
+Route::group(['prefix'=>'admin','middleware'=>['auth']],function(){
+    Route::get('/logout',[AuthController::class,'logout'])->name('logout');
+});
 Route::middleware(['web','guest'])->controller(AuthController::class)->group(function(){
     Route::get('/admin/login','index')->name('login');
     Route::post('/admin/login','auth')->name('auth');
 });
-

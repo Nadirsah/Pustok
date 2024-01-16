@@ -16,27 +16,33 @@
                 <div class="main-navigation flex-lg-right">
                     <div class="cart-widget">
                         <div class="login-block">
-                            <a href="{{route('log-res')}}" class="font-weight-bold">login</a> <br>
-                            <span>or</span><a href="{{route('log-res')}}">Register</a>
+                            @guest
+                            <a href="{{ route('log-res') }}" class="font-weight-bold">Login</a> <br>
+                            <span>or</span> <a href="{{ route('log-res') }}">Register</a>
+                            @else
+                            <p>{{ Auth::user()->name }}</p>
+                            <a href="{{route('logout')}}"><i class="icon-switch2"></i> Cixis</a>
+                            @endguest
                         </div>
                         <div class="cart-block">
                             <div class="cart-total">
-                                            <span class="text-number">
-                                                1
-                                            </span>
+                                <span class="text-number">
+                                    1
+                                </span>
                                 <span class="text-item">
-                                                Shopping Cart
-                                            </span>
+                                    Shopping Cart
+                                </span>
                                 <span class="price">
-                                                £0.00
-                                                <i class="fas fa-chevron-down"></i>
-                                            </span>
+                                    £0.00
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
                             </div>
                             <div class="cart-dropdown-block">
                                 <div class=" single-cart-block ">
                                     <div class="cart-product">
                                         <a href="product-details.html" class="image">
-                                            <img src="{{asset('front')}}/assets/image/products/cart-product-1.jpg" alt="">
+                                            <img src="{{asset('front')}}/assets/image/products/cart-product-1.jpg"
+                                                alt="">
                                         </a>
                                         <div class="content">
                                             <h3 class="title"><a href="product-details.html">Kodak PIXPRO

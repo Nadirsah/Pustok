@@ -21,12 +21,8 @@ class AuthController extends Controller
         $option['is_active']=1;
         if(Auth::attempt($option)){
             $request->session()->regenerate();
-
-            if (Auth::user()->user_Type=='admin') {
-            return redirect()->intended('admin/dashboard');
-        } else {
-            return redirect()->intended('/'); // Redirect regular users to the home page or any other default page
-        }
+            return redirect('redirects');
+       
         }
         return back()->withErrors([
             'email'=>'Melumatlar duzgun doldurulmayib'
