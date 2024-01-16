@@ -25,7 +25,8 @@
         <ul class="nav navbar-nav navbar-right">
             <li class="dropdown dropdown-user">
                 <a class="dropdown-toggle" data-toggle="dropdown">
-                    <span>{{Auth::user()->name}}</span>
+                <span>{{ Auth::user()->user_Type == 'admin' ? Auth::user()->name : '' }}</span>
+                   
                     <i class="caret"></i>
                 </a>
 

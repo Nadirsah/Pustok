@@ -19,10 +19,14 @@ class AuthController extends Controller
             'password'=>['required'],
         ]);
         $option['is_active']=1;
-        $option['is_admin']=1;
         if(Auth::attempt($option)){
             $request->session()->regenerate();
+
+            if (Auth::user()->user_Type=='admin') {
             return redirect()->intended('admin/dashboard');
+        } else {
+            return redirect()->intended('/'); // Redirect regular users to the home page or any other default page
+        }
         }
         return back()->withErrors([
             'email'=>'Melumatlar duzgun doldurulmayib'
@@ -34,6 +38,6 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/admin/login');
+        return redirect('/');
     }
 }
