@@ -401,7 +401,7 @@
                                                         <img src="{{asset('front')}}/assets/image/products/product-1.jpg" alt="">
                                                     </a>
                                                     <div class="hover-btns">
-                                                        <a href="{{route('cart')}}" class="single-btn">
+                                                        <a href="" class="single-btn">
                                                             <i class="fas fa-shopping-basket"></i>
                                                         </a>
                                                         <a href="{{route('wish')}}" class="single-btn">
@@ -445,7 +445,7 @@
                                                         <img src="{{asset('front')}}/assets/image/products/product-1.jpg" alt="">
                                                     </a>
                                                     <div class="hover-btns">
-                                                        <a href="{{route('cart')}}" class="single-btn">
+                                                        <a href="" class="single-btn">
                                                             <i class="fas fa-shopping-basket"></i>
                                                         </a>
                                                         <a href="{{route('wish')}}" class="single-btn">
@@ -490,7 +490,7 @@
                                                         <img src="{{asset('front')}}/assets/image/products/product-2.jpg" alt="">
                                                     </a>
                                                     <div class="hover-btns">
-                                                        <a href="{{route('cart')}}" class="single-btn">
+                                                        <a href="" class="single-btn">
                                                             <i class="fas fa-shopping-basket"></i>
                                                         </a>
                                                         <a href="{{route('wish')}}" class="single-btn">
@@ -534,7 +534,7 @@
                                                         <img src="{{asset('front')}}/assets/image/products/product-4.jpg" alt="">
                                                     </a>
                                                     <div class="hover-btns">
-                                                        <a href="{{route('cart')}}" class="single-btn">
+                                                        <a href="" class="single-btn">
                                                             <i class="fas fa-shopping-basket"></i>
                                                         </a>
                                                         <a href="{{route('wish')}}" class="single-btn">
@@ -579,7 +579,7 @@
                                                         <img src="{{asset('front')}}/assets/image/products/product-4.jpg" alt="">
                                                     </a>
                                                     <div class="hover-btns">
-                                                        <a href="{{route('cart')}}" class="single-btn">
+                                                        <a href="" class="single-btn">
                                                             <i class="fas fa-shopping-basket"></i>
                                                         </a>
                                                         <a href="{{route('wish')}}" class="single-btn">
@@ -623,7 +623,7 @@
                                                         <img src="{{asset('front')}}/assets/image/products/product-7.jpg" alt="">
                                                     </a>
                                                     <div class="hover-btns">
-                                                        <a href="{{route('cart')}}" class="single-btn">
+                                                        <a href="" class="single-btn">
                                                             <i class="fas fa-shopping-basket"></i>
                                                         </a>
                                                         <a href="{{route('wish')}}" class="single-btn">
@@ -653,107 +653,7 @@
                             </div>
                         </div>
                         <div class="single-block">
-{{--                            <h3 class="home-sidebar-title">--}}
-{{--                                CLIENT TESTIMONIALS--}}
-{{--                            </h3>--}}
-{{--                            <div class="sb-slick-slider testimonial-slider slider-one-column" data-slick-setting='{--}}
-{{--                "autoplay": true,--}}
-{{--                "autoplaySpeed": 8000,--}}
-{{--                "slidesToShow":1,--}}
-{{--                "dots":true--}}
-{{--            }' data-slick-responsive='[--}}
-{{--                {"breakpoint":1200, "settings": {"slidesToShow": 1} },--}}
-{{--                {"breakpoint":992, "settings": {"slidesToShow": 2} },--}}
-{{--                {"breakpoint":768, "settings": {"slidesToShow": 2} },--}}
-{{--                {"breakpoint":575, "settings": {"slidesToShow": 1} },--}}
-{{--                {"breakpoint":490, "settings": {"slidesToShow": 1} }--}}
-{{--            ]'>--}}
-{{--                                <div class="single-slide">--}}
-{{--                                    <div class="testimonial-card">--}}
-{{--                                        <div class="testimonial-image">--}}
-{{--                                            <img src="{{asset('front')}}/assets/image/others/client-1.png" alt="">--}}
-{{--                                        </div>--}}
-{{--                                        <div class="testimonial-body">--}}
-{{--                                            <article>--}}
-{{--                                                <h2 class="sr-only">Testimonial Article</h2>--}}
-{{--                                                <p>version This is Photoshops of Lorem Ipsum. Proin gravida nibh vel--}}
-{{--                                                    velit.Lorem ipsum dolor--}}
-{{--                                                    sit amet, consectetur--}}
-{{--                                                    adipiscing elit. In molestie augue magna. Pell..</p>--}}
-{{--                                                <span class="d-block client-name">Rebecka Filson</span>--}}
-{{--                                            </article>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="single-slide">--}}
-{{--                                    <div class="testimonial-card">--}}
-{{--                                        <div class="testimonial-image">--}}
-{{--                                            <img src="{{asset('front')}}/assets/image/others/client-2.png" alt="">--}}
-{{--                                        </div>--}}
-{{--                                        <div class="testimonial-body">--}}
-{{--                                            <article>--}}
-{{--                                                <h2 class="sr-only">Testimonial Article</h2>--}}
-{{--                                                <p>In molestie augue magna.This is Photoshops version of Lorem--}}
-{{--                                                    Ipsum. Proin gravida nibh vel--}}
-{{--                                                    velit.Lorem ipsum dolor sit amet, consectetur--}}
-{{--                                                    adipiscing elit. Pell..</p>--}}
-{{--                                                <span class="d-block client-name">Rebecka Filson</span>--}}
-{{--                                            </article>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="single-slide">--}}
-{{--                                    <div class="testimonial-card">--}}
-{{--                                        <div class="testimonial-image">--}}
-{{--                                            <img src="{{asset('front')}}/assets/image/others/client-3.png" alt="">--}}
-{{--                                        </div>--}}
-{{--                                        <div class="testimonial-body">--}}
-{{--                                            <article>--}}
-{{--                                                <h2 class="sr-only">Testimonial Article</h2>--}}
-{{--                                                <p>Lorem Ipsum This is Photoshops version of . Proin gravida nibh--}}
-{{--                                                    vel velit.Lorem ipsum--}}
-{{--                                                    dolor sit amet, consectetur--}}
-{{--                                                    adipiscing elit. In molestie augue magna. Pell..</p>--}}
-{{--                                                <span class="d-block client-name">Rebecka Filson</span>--}}
-{{--                                            </article>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="single-slide">--}}
-{{--                                    <div class="testimonial-card">--}}
-{{--                                        <div class="testimonial-image">--}}
-{{--                                            <img src="{{asset('front')}}/assets/image/others/client-4.png" alt="">--}}
-{{--                                        </div>--}}
-{{--                                        <div class="testimonial-body">--}}
-{{--                                            <article>--}}
-{{--                                                <h2 class="sr-only">Testimonial Article</h2>--}}
-{{--                                                <p>elit. In molestie This is Photoshops version of Lorem Ipsum.--}}
-{{--                                                    Proin gravida nibh vel--}}
-{{--                                                    velit.Lorem ipsum dolor sit amet, consectetur--}}
-{{--                                                    adipiscing augue magna. Pell..</p>--}}
-{{--                                                <span class="d-block client-name">Rebecka Filson</span>--}}
-{{--                                            </article>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="single-slide">--}}
-{{--                                    <div class="testimonial-card">--}}
-{{--                                        <div class="testimonial-image">--}}
-{{--                                            <img src="{{asset('front')}}/assets/image/others/client-5.png" alt="">--}}
-{{--                                        </div>--}}
-{{--                                        <div class="testimonial-body">--}}
-{{--                                            <article>--}}
-{{--                                                <h2 class="sr-only">Testimonial Article</h2>--}}
-{{--                                                <p>Pell Photoshops version of Lorem Ipsum. Proin gravida nibh vel--}}
-{{--                                                    velit.Lorem ipsum dolor--}}
-{{--                                                    sit amet, consectetur--}}
-{{--                                                    adipiscing elit. In molestie augue magna. This is..</p>--}}
-{{--                                                <span class="d-block client-name">Rebecka Filson</span>--}}
-{{--                                            </article>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
+
                         </div>
                     </div>
                 </div>
@@ -800,32 +700,33 @@
                         {"breakpoint":480, "settings": {"slidesToShow": 1} },
                         {"breakpoint":320, "settings": {"slidesToShow": 1} }
                     ]'>
+                                            @foreach($products as $product)
+                                                <form action="{{route('addcart',$product->id)}}" method="Post">
+                                                    @csrf
                                             <div class="single-slide">
                                                 <div class="product-card">
                                                     <div class="product-header">
                                                         <a href="" class="author">
-                                                            jpple
+                                                            {{$product->tags}}
                                                         </a>
-                                                        <h3><a href="{{route('product-detail')}}">Rpple iPad with
-                                                                Retina Display</a></h3>
+                                                        <h3><a href="{{route('product-detail')}}">{!!$product->title!!}</a></h3>
                                                     </div>
                                                     <div class="product-card--body">
                                                         <div class="card-image">
-                                                            <img src="{{asset('front')}}/assets/image/products/product-1.jpg" alt="">
+                                                            @foreach($product->images as $image)
+                                                                @if($image->is_main == 1)
+                                                                    <img src="{{ $image->file_path }}" alt="">
+                                                                @endif
+                                                            @endforeach
+
                                                             <div class="hover-contents">
                                                                 <a href="{{route('product-detail')}}" class="hover-image">
-                                                                    <img src="{{asset('front')}}/assets/image/products/product-1.jpg" alt="">
+                                                                    <img src="" alt="">
                                                                 </a>
                                                                 <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
+                                                                    <button type="submit" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
-                                                                    </a>
-                                                                    <a href="{{route('wish')}}" class="single-btn">
-                                                                        <i class="fas fa-heart"></i>
-                                                                    </a>
-                                                                    <a href="compare.html" class="single-btn">
-                                                                        <i class="fas fa-random"></i>
-                                                                    </a>
+                                                                    </button>
                                                                     <a href="#" data-toggle="modal"
                                                                        data-target="#quickModal"
                                                                        class="single-btn">
@@ -835,476 +736,15 @@
                                                             </div>
                                                         </div>
                                                         <div class="price-block">
-                                                            <span class="price">£51.20</span>
-                                                            <del class="price-old">£51.20</del>
-                                                            <span class="price-discount">20%</span>
+                                                            <span class="price">{{$product->price}}-azn</span>
+                                                            <del class="price-old">£{{$product->old_price}}-azn</del>
+                                                            <span class="price-discount">{{$product->tax}}%</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="single-slide">
-                                                <div class="product-card">
-                                                    <div class="product-header">
-                                                        <a href="" class="author">
-                                                            Bpple
-                                                        </a>
-                                                        <h3><a href="{{route('product-detail')}}">Koss Lightweight
-                                                                Headphone</a></h3>
-                                                    </div>
-                                                    <div class="product-card--body">
-                                                        <div class="card-image">
-                                                            <img src="{{asset('front')}}/assets/image/products/product-2.jpg" alt="">
-                                                            <div class="hover-contents">
-                                                                <a href="{{route('product-detail')}}" class="hover-image">
-                                                                    <img src="{{asset('front')}}/assets/image/products/product-3.jpg" alt="">
-                                                                </a>
-                                                                <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
-                                                                        <i class="fas fa-shopping-basket"></i>
-                                                                    </a>
-                                                                    <a href="{{route('wish')}}" class="single-btn">
-                                                                        <i class="fas fa-heart"></i>
-                                                                    </a>
-                                                                    <a href="compare.html" class="single-btn">
-                                                                        <i class="fas fa-random"></i>
-                                                                    </a>
-                                                                    <a href="#" data-toggle="modal"
-                                                                       data-target="#quickModal"
-                                                                       class="single-btn">
-                                                                        <i class="fas fa-eye"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="price-block">
-                                                            <span class="price">£51.20</span>
-                                                            <del class="price-old">£51.20</del>
-                                                            <span class="price-discount">20%</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="single-slide">
-                                                <div class="product-card">
-                                                    <div class="product-header">
-                                                        <a href="" class="author">
-                                                            Cpple
-                                                        </a>
-                                                        <h3><a href="{{route('product-detail')}}">Beats Wired On-Ear
-                                                                Headphone-Black</a></h3>
-                                                    </div>
-                                                    <div class="product-card--body">
-                                                        <div class="card-image">
-                                                            <img src="{{asset('front')}}/assets/image/products/product-3.jpg" alt="">
-                                                            <div class="hover-contents">
-                                                                <a href="{{route('product-detail')}}" class="hover-image">
-                                                                    <img src="{{asset('front')}}/assets/image/products/product-2.jpg" alt="">
-                                                                </a>
-                                                                <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
-                                                                        <i class="fas fa-shopping-basket"></i>
-                                                                    </a>
-                                                                    <a href="{{route('wish')}}" class="single-btn">
-                                                                        <i class="fas fa-heart"></i>
-                                                                    </a>
-                                                                    <a href="compare.html" class="single-btn">
-                                                                        <i class="fas fa-random"></i>
-                                                                    </a>
-                                                                    <a href="#" data-toggle="modal"
-                                                                       data-target="#quickModal"
-                                                                       class="single-btn">
-                                                                        <i class="fas fa-eye"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="price-block">
-                                                            <span class="price">£51.20</span>
-                                                            <del class="price-old">£51.20</del>
-                                                            <span class="price-discount">20%</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="single-slide">
-                                                <div class="product-card">
-                                                    <div class="product-header">
-                                                        <a href="" class="author">
-                                                            Dpple
-                                                        </a>
-                                                        <h3><a href="{{route('product-detail')}}">Beats Solo2 Solo 2
-                                                                Wired On-Ear</a></h3>
-                                                    </div>
-                                                    <div class="product-card--body">
-                                                        <div class="card-image">
-                                                            <img src="{{asset('front')}}/assets/image/products/product-4.jpg" alt="">
-                                                            <div class="hover-contents">
-                                                                <a href="{{route('product-detail')}}" class="hover-image">
-                                                                    <img src="{{asset('front')}}/assets/image/products/product-5.jpg" alt="">
-                                                                </a>
-                                                                <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
-                                                                        <i class="fas fa-shopping-basket"></i>
-                                                                    </a>
-                                                                    <a href="{{route('wish')}}" class="single-btn">
-                                                                        <i class="fas fa-heart"></i>
-                                                                    </a>
-                                                                    <a href="compare.html" class="single-btn">
-                                                                        <i class="fas fa-random"></i>
-                                                                    </a>
-                                                                    <a href="#" data-toggle="modal"
-                                                                       data-target="#quickModal"
-                                                                       class="single-btn">
-                                                                        <i class="fas fa-eye"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="price-block">
-                                                            <span class="price">£51.20</span>
-                                                            <del class="price-old">£51.20</del>
-                                                            <span class="price-discount">20%</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="single-slide">
-                                                <div class="product-card">
-                                                    <div class="product-header">
-                                                        <a href="" class="author">
-                                                            Lpple
-                                                        </a>
-                                                        <h3><a href="{{route('product-detail')}}">Beats Solo3 Wireless
-                                                                Headphones 2</a></h3>
-                                                    </div>
-                                                    <div class="product-card--body">
-                                                        <div class="card-image">
-                                                            <img src="{{asset('front')}}/assets/image/products/product-5.jpg" alt="">
-                                                            <div class="hover-contents">
-                                                                <a href="{{route('product-detail')}}" class="hover-image">
-                                                                    <img src="{{asset('front')}}/assets/image/products/product-4.jpg" alt="">
-                                                                </a>
-                                                                <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
-                                                                        <i class="fas fa-shopping-basket"></i>
-                                                                    </a>
-                                                                    <a href="{{route('wish')}}" class="single-btn">
-                                                                        <i class="fas fa-heart"></i>
-                                                                    </a>
-                                                                    <a href="compare.html" class="single-btn">
-                                                                        <i class="fas fa-random"></i>
-                                                                    </a>
-                                                                    <a href="#" data-toggle="modal"
-                                                                       data-target="#quickModal"
-                                                                       class="single-btn">
-                                                                        <i class="fas fa-eye"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="price-block">
-                                                            <span class="price">£51.20</span>
-                                                            <del class="price-old">£51.20</del>
-                                                            <span class="price-discount">20%</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="single-slide">
-                                                <div class="product-card">
-                                                    <div class="product-header">
-                                                        <a href="" class="author">
-                                                            Fpple
-                                                        </a>
-                                                        <h3><a href="{{route('product-detail')}}">Ways To Have
-                                                                Appealing BOOK</a></h3>
-                                                    </div>
-                                                    <div class="product-card--body">
-                                                        <div class="card-image">
-                                                            <img src="{{asset('front')}}/assets/image/products/product-6.jpg" alt="">
-                                                            <div class="hover-contents">
-                                                                <a href="{{route('product-detail')}}" class="hover-image">
-                                                                    <img src="{{asset('front')}}/assets/image/products/product-7.jpg" alt="">
-                                                                </a>
-                                                                <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
-                                                                        <i class="fas fa-shopping-basket"></i>
-                                                                    </a>
-                                                                    <a href="{{route('wish')}}" class="single-btn">
-                                                                        <i class="fas fa-heart"></i>
-                                                                    </a>
-                                                                    <a href="compare.html" class="single-btn">
-                                                                        <i class="fas fa-random"></i>
-                                                                    </a>
-                                                                    <a href="#" data-toggle="modal"
-                                                                       data-target="#quickModal"
-                                                                       class="single-btn">
-                                                                        <i class="fas fa-eye"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="price-block">
-                                                            <span class="price">£51.20</span>
-                                                            <del class="price-old">£51.20</del>
-                                                            <span class="price-discount">20%</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="single-slide">
-                                                <div class="product-card">
-                                                    <div class="product-header">
-                                                        <a href="" class="author">
-                                                            Epple
-                                                        </a>
-                                                        <h3><a href="{{route('product-detail')}}">10 Minutes, I'll
-                                                                Give You Truth About</a></h3>
-                                                    </div>
-                                                    <div class="product-card--body">
-                                                        <div class="card-image">
-                                                            <img src="{{asset('front')}}/assets/image/products/product-7.jpg" alt="">
-                                                            <div class="hover-contents">
-                                                                <a href="{{route('product-detail')}}" class="hover-image">
-                                                                    <img src="{{asset('front')}}/assets/image/products/product-6.jpg" alt="">
-                                                                </a>
-                                                                <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
-                                                                        <i class="fas fa-shopping-basket"></i>
-                                                                    </a>
-                                                                    <a href="{{route('wish')}}" class="single-btn">
-                                                                        <i class="fas fa-heart"></i>
-                                                                    </a>
-                                                                    <a href="compare.html" class="single-btn">
-                                                                        <i class="fas fa-random"></i>
-                                                                    </a>
-                                                                    <a href="#" data-toggle="modal"
-                                                                       data-target="#quickModal"
-                                                                       class="single-btn">
-                                                                        <i class="fas fa-eye"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="price-block">
-                                                            <span class="price">£51.20</span>
-                                                            <del class="price-old">£51.20</del>
-                                                            <span class="price-discount">20%</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="single-slide">
-                                                <div class="product-card">
-                                                    <div class="product-header">
-                                                        <a href="" class="author">
-                                                            Fpple
-                                                        </a>
-                                                        <h3><a href="{{route('product-detail')}}">Ways To Get Through
-                                                                BOOK</a></h3>
-                                                    </div>
-                                                    <div class="product-card--body">
-                                                        <div class="card-image">
-                                                            <img src="{{asset('front')}}/assets/image/products/product-8.jpg" alt="">
-                                                            <div class="hover-contents">
-                                                                <a href="{{route('product-detail')}}" class="hover-image">
-                                                                    <img src="{{asset('front')}}/assets/image/products/product-9.jpg" alt="">
-                                                                </a>
-                                                                <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
-                                                                        <i class="fas fa-shopping-basket"></i>
-                                                                    </a>
-                                                                    <a href="{{route('wish')}}" class="single-btn">
-                                                                        <i class="fas fa-heart"></i>
-                                                                    </a>
-                                                                    <a href="compare.html" class="single-btn">
-                                                                        <i class="fas fa-random"></i>
-                                                                    </a>
-                                                                    <a href="#" data-toggle="modal"
-                                                                       data-target="#quickModal"
-                                                                       class="single-btn">
-                                                                        <i class="fas fa-eye"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="price-block">
-                                                            <span class="price">£51.20</span>
-                                                            <del class="price-old">£51.20</del>
-                                                            <span class="price-discount">20%</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="single-slide">
-                                                <div class="product-card">
-                                                    <div class="product-header">
-                                                        <a href="" class="author">
-                                                            Gpple
-                                                        </a>
-                                                        <h3><a href="{{route('product-detail')}}">What Can You Do To
-                                                                Save Your BOOK</a></h3>
-                                                    </div>
-                                                    <div class="product-card--body">
-                                                        <div class="card-image">
-                                                            <img src="{{asset('front')}}/assets/image/products/product-9.jpg" alt="">
-                                                            <div class="hover-contents">
-                                                                <a href="{{route('product-detail')}}" class="hover-image">
-                                                                    <img src="{{asset('front')}}/assets/image/products/product-8.jpg" alt="">
-                                                                </a>
-                                                                <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
-                                                                        <i class="fas fa-shopping-basket"></i>
-                                                                    </a>
-                                                                    <a href="{{route('wish')}}" class="single-btn">
-                                                                        <i class="fas fa-heart"></i>
-                                                                    </a>
-                                                                    <a href="compare.html" class="single-btn">
-                                                                        <i class="fas fa-random"></i>
-                                                                    </a>
-                                                                    <a href="#" data-toggle="modal"
-                                                                       data-target="#quickModal"
-                                                                       class="single-btn">
-                                                                        <i class="fas fa-eye"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="price-block">
-                                                            <span class="price">£51.20</span>
-                                                            <del class="price-old">£51.20</del>
-                                                            <span class="price-discount">20%</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="single-slide">
-                                                <div class="product-card">
-                                                    <div class="product-header">
-                                                        <a href="" class="author">
-                                                            Hpple
-                                                        </a>
-                                                        <h3><a href="{{route('product-detail')}}">From Destruction By
-                                                                Social Media?</a></h3>
-                                                    </div>
-                                                    <div class="product-card--body">
-                                                        <div class="card-image">
-                                                            <img src="{{asset('front')}}/assets/image/products/product-10.jpg" alt="">
-                                                            <div class="hover-contents">
-                                                                <a href="{{route('product-detail')}}" class="hover-image">
-                                                                    <img src="{{asset('front')}}/assets/image/products/product-11.jpg" alt="">
-                                                                </a>
-                                                                <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
-                                                                        <i class="fas fa-shopping-basket"></i>
-                                                                    </a>
-                                                                    <a href="{{route('wish')}}" class="single-btn">
-                                                                        <i class="fas fa-heart"></i>
-                                                                    </a>
-                                                                    <a href="compare.html" class="single-btn">
-                                                                        <i class="fas fa-random"></i>
-                                                                    </a>
-                                                                    <a href="#" data-toggle="modal"
-                                                                       data-target="#quickModal"
-                                                                       class="single-btn">
-                                                                        <i class="fas fa-eye"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="price-block">
-                                                            <span class="price">£51.20</span>
-                                                            <del class="price-old">£51.20</del>
-                                                            <span class="price-discount">20%</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="single-slide">
-                                                <div class="product-card">
-                                                    <div class="product-header">
-                                                        <a href="" class="author">
-                                                            Gpple
-                                                        </a>
-                                                        <h3><a href="{{route('product-detail')}}">Find Out More About
-                                                                BOOK ?</a></h3>
-                                                    </div>
-                                                    <div class="product-card--body">
-                                                        <div class="card-image">
-                                                            <img src="{{asset('front')}}/assets/image/products/product-11.jpg" alt="">
-                                                            <div class="hover-contents">
-                                                                <a href="{{route('product-detail')}}" class="hover-image">
-                                                                    <img src="{{asset('front')}}/assets/image/products/product-10.jpg" alt="">
-                                                                </a>
-                                                                <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
-                                                                        <i class="fas fa-shopping-basket"></i>
-                                                                    </a>
-                                                                    <a href="{{route('wish')}}" class="single-btn">
-                                                                        <i class="fas fa-heart"></i>
-                                                                    </a>
-                                                                    <a href="compare.html" class="single-btn">
-                                                                        <i class="fas fa-random"></i>
-                                                                    </a>
-                                                                    <a href="#" data-toggle="modal"
-                                                                       data-target="#quickModal"
-                                                                       class="single-btn">
-                                                                        <i class="fas fa-eye"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="price-block">
-                                                            <span class="price">£51.20</span>
-                                                            <del class="price-old">£51.20</del>
-                                                            <span class="price-discount">20%</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="single-slide">
-                                                <div class="product-card">
-                                                    <div class="product-header">
-                                                        <a href="" class="author">
-                                                            Vpple
-                                                        </a>
-                                                        <h3><a href="{{route('product-detail')}}">Read This
-                                                                Contro versial BOOK?</a>
-                                                        </h3>
-                                                    </div>
-                                                    <div class="product-card--body">
-                                                        <div class="card-image">
-                                                            <img src="{{asset('front')}}/assets/image/products/product-12.jpg" alt="">
-                                                            <div class="hover-contents">
-                                                                <a href="{{route('product-detail')}}" class="hover-image">
-                                                                    <img src="{{asset('front')}}/assets/image/products/product-11.jpg" alt="">
-                                                                </a>
-                                                                <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
-                                                                        <i class="fas fa-shopping-basket"></i>
-                                                                    </a>
-                                                                    <a href="{{route('wish')}}" class="single-btn">
-                                                                        <i class="fas fa-heart"></i>
-                                                                    </a>
-                                                                    <a href="compare.html" class="single-btn">
-                                                                        <i class="fas fa-random"></i>
-                                                                    </a>
-                                                                    <a href="#" data-toggle="modal"
-                                                                       data-target="#quickModal"
-                                                                       class="single-btn">
-                                                                        <i class="fas fa-eye"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="price-block">
-                                                            <span class="price">£51.20</span>
-                                                            <del class="price-old">£51.20</del>
-                                                            <span class="price-discount">20%</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                </form>
+                                           @endforeach
                                         </div>
                                     </div>
                                     <div class="tab-pane" id="men" role="tabpanel" aria-labelledby="men-tab">
@@ -1338,7 +778,7 @@
                                                                     <img src="{{asset('front')}}/assets/image/products/product-9.jpg" alt="">
                                                                 </a>
                                                                 <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
+                                                                    <a href="" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </a>
                                                                     <a href="{{route('wish')}}" class="single-btn">
@@ -1380,7 +820,7 @@
                                                                     <img src="{{asset('front')}}/assets/image/products/product-10.jpg" alt="">
                                                                 </a>
                                                                 <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
+                                                                    <a href="" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </a>
                                                                     <a href="{{route('wish')}}" class="single-btn">
@@ -1422,7 +862,7 @@
                                                                     <img src="{{asset('front')}}/assets/image/products/product-9.jpg" alt="">
                                                                 </a>
                                                                 <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
+                                                                    <a href="" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </a>
                                                                     <a href="{{route('wish')}}" class="single-btn">
@@ -1464,7 +904,7 @@
                                                                     <img src="{{asset('front')}}/assets/image/products/product-8.jpg" alt="">
                                                                 </a>
                                                                 <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
+                                                                    <a href="" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </a>
                                                                     <a href="{{route('wish')}}" class="single-btn">
@@ -1506,7 +946,7 @@
                                                                     <img src="{{asset('front')}}/assets/image/products/product-7.jpg" alt="">
                                                                 </a>
                                                                 <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
+                                                                    <a href="" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </a>
                                                                     <a href="{{route('wish')}}" class="single-btn">
@@ -1548,7 +988,7 @@
                                                                     <img src="{{asset('front')}}/assets/image/products/product-6.jpg" alt="">
                                                                 </a>
                                                                 <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
+                                                                    <a href="" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </a>
                                                                     <a href="{{route('wish')}}" class="single-btn">
@@ -1590,7 +1030,7 @@
                                                                     <img src="{{asset('front')}}/assets/image/products/product-8.jpg" alt="">
                                                                 </a>
                                                                 <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
+                                                                    <a href="" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </a>
                                                                     <a href="{{route('wish')}}" class="single-btn">
@@ -1632,7 +1072,7 @@
                                                                     <img src="{{asset('front')}}/assets/image/products/product-4.jpg" alt="">
                                                                 </a>
                                                                 <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
+                                                                    <a href="" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </a>
                                                                     <a href="{{route('wish')}}" class="single-btn">
@@ -1674,7 +1114,7 @@
                                                                     <img src="{{asset('front')}}/assets/image/products/product-8.jpg" alt="">
                                                                 </a>
                                                                 <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
+                                                                    <a href="" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </a>
                                                                     <a href="{{route('wish')}}" class="single-btn">
@@ -1716,7 +1156,7 @@
                                                                     <img src="{{asset('front')}}/assets/image/products/product-5.jpg" alt="">
                                                                 </a>
                                                                 <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
+                                                                    <a href="" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </a>
                                                                     <a href="{{route('wish')}}" class="single-btn">
@@ -1758,7 +1198,7 @@
                                                                     <img src="{{asset('front')}}/assets/image/products/product-4.jpg" alt="">
                                                                 </a>
                                                                 <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
+                                                                    <a href="" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </a>
                                                                     <a href="{{route('wish')}}" class="single-btn">
@@ -1800,7 +1240,7 @@
                                                                     <img src="{{asset('front')}}/assets/image/products/product-5.jpg" alt="">
                                                                 </a>
                                                                 <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
+                                                                    <a href="" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </a>
                                                                     <a href="{{route('wish')}}" class="single-btn">
@@ -1858,7 +1298,7 @@
                                                                     <img src="{{asset('front')}}/assets/image/products/product-1.jpg" alt="">
                                                                 </a>
                                                                 <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
+                                                                    <a href="" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </a>
                                                                     <a href="{{route('wish')}}" class="single-btn">
@@ -1900,7 +1340,7 @@
                                                                     <img src="{{asset('front')}}/assets/image/products/product-3.jpg" alt="">
                                                                 </a>
                                                                 <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
+                                                                    <a href="" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </a>
                                                                     <a href="{{route('wish')}}" class="single-btn">
@@ -1942,7 +1382,7 @@
                                                                     <img src="{{asset('front')}}/assets/image/products/product-2.jpg" alt="">
                                                                 </a>
                                                                 <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
+                                                                    <a href="" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </a>
                                                                     <a href="{{route('wish')}}" class="single-btn">
@@ -1984,7 +1424,7 @@
                                                                     <img src="{{asset('front')}}/assets/image/products/product-5.jpg" alt="">
                                                                 </a>
                                                                 <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
+                                                                    <a href="" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </a>
                                                                     <a href="{{route('wish')}}" class="single-btn">
@@ -2026,7 +1466,7 @@
                                                                     <img src="{{asset('front')}}/assets/image/products/product-4.jpg" alt="">
                                                                 </a>
                                                                 <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
+                                                                    <a href="" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </a>
                                                                     <a href="{{route('wish')}}" class="single-btn">
@@ -2068,7 +1508,7 @@
                                                                     <img src="{{asset('front')}}/assets/image/products/product-7.jpg" alt="">
                                                                 </a>
                                                                 <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
+                                                                    <a href="" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </a>
                                                                     <a href="{{route('wish')}}" class="single-btn">
@@ -2110,7 +1550,7 @@
                                                                     <img src="{{asset('front')}}/assets/image/products/product-6.jpg" alt="">
                                                                 </a>
                                                                 <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
+                                                                    <a href="" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </a>
                                                                     <a href="{{route('wish')}}" class="single-btn">
@@ -2152,7 +1592,7 @@
                                                                     <img src="{{asset('front')}}/assets/image/products/product-9.jpg" alt="">
                                                                 </a>
                                                                 <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
+                                                                    <a href="" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </a>
                                                                     <a href="{{route('wish')}}" class="single-btn">
@@ -2194,7 +1634,7 @@
                                                                     <img src="{{asset('front')}}/assets/image/products/product-8.jpg" alt="">
                                                                 </a>
                                                                 <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
+                                                                    <a href="" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </a>
                                                                     <a href="{{route('wish')}}" class="single-btn">
@@ -2236,7 +1676,7 @@
                                                                     <img src="{{asset('front')}}/assets/image/products/product-11.jpg" alt="">
                                                                 </a>
                                                                 <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
+                                                                    <a href="" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </a>
                                                                     <a href="{{route('wish')}}" class="single-btn">
@@ -2278,7 +1718,7 @@
                                                                     <img src="{{asset('front')}}/assets/image/products/product-10.jpg" alt="">
                                                                 </a>
                                                                 <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
+                                                                    <a href="" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </a>
                                                                     <a href="{{route('wish')}}" class="single-btn">
@@ -2320,7 +1760,7 @@
                                                                     <img src="{{asset('front')}}/assets/image/products/product-11.jpg" alt="">
                                                                 </a>
                                                                 <div class="hover-btns">
-                                                                    <a href="{{route('cart')}}" class="single-btn">
+                                                                    <a href="" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </a>
                                                                     <a href="{{route('wish')}}" class="single-btn">
@@ -3456,105 +2896,7 @@
                                 </div>
                             </div>
                         </div>
-{{--                        <div class="single-block">--}}
-{{--                            <div class="blog-slider sb-slick-slider slider-one-column" data-slick-setting='{--}}
-{{--                        "autoplay": false,--}}
-{{--                        "autoplaySpeed": 8000,--}}
-{{--                        "slidesToShow": 1,--}}
-{{--                        "dots": true--}}
-{{--                    }'>--}}
-{{--                                <div class="single-slide">--}}
-{{--                                    <div class="blog-card">--}}
-{{--                                        <div class="image">--}}
-{{--                                            <img src="{{asset('front')}}/assets/image/others/home-blog-1.jpg" alt="">--}}
-{{--                                        </div>--}}
-{{--                                        <div class="content">--}}
-{{--                                            <div class="content-header">--}}
-{{--                                                <div class="date-badge">--}}
-{{--                                                        <span class="date">--}}
-{{--                                                            30--}}
-{{--                                                        </span>--}}
-{{--                                                    <span class="month">--}}
-{{--                                                            OCT--}}
-{{--                                                        </span>--}}
-{{--                                                </div>--}}
-{{--                                                <h3 class="title"><a href="blog-details.html">How to Water and Care--}}
-{{--                                                        for Mounted</a></h3>--}}
-{{--                                            </div>--}}
-{{--                                            <p class="meta-para"><i class="fas fa-user-edit"></i>Post by <a--}}
-{{--                                                    href="#">Hastech</a></p>--}}
-{{--                                            <article class="blog-paragraph">--}}
-{{--                                                <h2 class="sr-only">blog-paragraph</h2>--}}
-{{--                                                <p>Virtual reality and 3-D technology are already well-established--}}
-{{--                                                    in the entertainment...</p>--}}
-{{--                                            </article>--}}
-{{--                                            <a href="blog-details.html" class="card-link">Read More <i--}}
-{{--                                                    class="fas fa-chevron-circle-right"></i></a>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="single-slide">--}}
-{{--                                    <div class="blog-card">--}}
-{{--                                        <div class="image">--}}
-{{--                                            <img src="{{asset('front')}}/assets/image/others/home-blog-2.jpg" alt="">--}}
-{{--                                        </div>--}}
-{{--                                        <div class="content">--}}
-{{--                                            <div class="content-header">--}}
-{{--                                                <div class="date-badge">--}}
-{{--                                                        <span class="date">--}}
-{{--                                                            30--}}
-{{--                                                        </span>--}}
-{{--                                                    <span class="month">--}}
-{{--                                                            OCT--}}
-{{--                                                        </span>--}}
-{{--                                                </div>--}}
-{{--                                                <h3 class="title"><a href="blog-details.html">How to Grow Epiphytic--}}
-{{--                                                        Tropical Plants</a></h3>--}}
-{{--                                            </div>--}}
-{{--                                            <p class="meta-para"><i class="fas fa-user-edit"></i>Post by <a--}}
-{{--                                                    href="#">Hastech</a></p>--}}
-{{--                                            <article class="blog-paragraph">--}}
-{{--                                                <h2 class="sr-only">blog-paragraph</h2>--}}
-{{--                                                <p>Virtual reality and 3-D technology are already well-established--}}
-{{--                                                    in the entertainment...</p>--}}
-{{--                                            </article>--}}
-{{--                                            <a href="blog-details.html" class="card-link">Read More <i--}}
-{{--                                                    class="fas fa-chevron-circle-right"></i></a>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="single-slide">--}}
-{{--                                    <div class="blog-card">--}}
-{{--                                        <div class="image">--}}
-{{--                                            <img src="{{asset('front')}}/assets/image/others/home-blog-1.jpg" alt="">--}}
-{{--                                        </div>--}}
-{{--                                        <div class="content">--}}
-{{--                                            <div class="content-header">--}}
-{{--                                                <div class="date-badge">--}}
-{{--                                                        <span class="date">--}}
-{{--                                                            30--}}
-{{--                                                        </span>--}}
-{{--                                                    <span class="month">--}}
-{{--                                                            OCT--}}
-{{--                                                        </span>--}}
-{{--                                                </div>--}}
-{{--                                                <h3 class="title"><a href="blog-details.html">How To Pot Up and Care--}}
-{{--                                                        For Juvenile</a></h3>--}}
-{{--                                            </div>--}}
-{{--                                            <p class="meta-para"><i class="fas fa-user-edit"></i>Post by <a--}}
-{{--                                                    href="#">Hastech</a></p>--}}
-{{--                                            <article class="blog-paragraph">--}}
-{{--                                                <h2 class="sr-only">blog-paragraph</h2>--}}
-{{--                                                <p>Virtual reality and 3-D technology are already well-established--}}
-{{--                                                    in the entertainment...</p>--}}
-{{--                                            </article>--}}
-{{--                                            <a href="blog-details.html" class="card-link">Read More <i--}}
-{{--                                                    class="fas fa-chevron-circle-right"></i></a>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+
                     </div>
                 </div>
             </div>

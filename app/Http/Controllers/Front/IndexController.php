@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\ActivController;
 use App\Http\Controllers\Controller;
 use App\Models\Setting;
+use App\Models\Product;
 use App\Services\DataService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,8 +15,8 @@ class IndexController extends ActivController
 
 
     public function index(){
-
-        return view('front.home.index');
+        $products=Product::with('images')->get();
+        return view('front.home.index',compact('products'));
     }
 
     public function redirects(){

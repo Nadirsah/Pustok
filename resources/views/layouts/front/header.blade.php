@@ -26,41 +26,32 @@
                         </div>
                         <div class="cart-block">
                             <div class="cart-total">
+                                @auth
+                                    <a href="{{route('showcart',Auth::user()->id)}}">
                                 <span class="text-number">
-                                    1
+                                   {{$cart}}
                                 </span>
                                 <span class="text-item">
                                 {{$transhome->shopping_cart}}
                                 </span>
                                 <span class="price">
-                                    £0.00
-                                    <i class="fas fa-chevron-down"></i>
+                                    {{$cartsum}} azn
                                 </span>
+                                    </a>
+                                @endauth
+                                    @guest
+                                        <span class="text-number">
+                                   0
+                                </span>
+                                        <span class="text-item">
+                                {{$transhome->shopping_cart}}
+                                </span>
+                                        <span class="price">
+                                    0.00 azn
+                                </span>
+                                    @endguest
                             </div>
-                            <div class="cart-dropdown-block">
-                                <div class=" single-cart-block ">
-                                    <div class="cart-product">
-                                        <a href="product-details.html" class="image">
-                                            <img src="{{asset('front')}}/assets/image/products/cart-product-1.jpg"
-                                                alt="">
-                                        </a>
-                                        <div class="content">
-                                            <h3 class="title"><a href="product-details.html">Kodak PIXPRO
-                                                    Astro Zoom AZ421 16 MP</a>
-                                            </h3>
-                                            <p class="price"><span class="qty">1 ×</span> £87.34</p>
-                                            <button class="cross-btn"><i class="fas fa-times"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class=" single-cart-block ">
-                                    <div class="btn-block">
-                                        <a href="{{route('cart')}}" class="btn">{{$transhome->view_cart}}<i
-                                                class="fas fa-chevron-right"></i></a>
 
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

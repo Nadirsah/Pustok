@@ -25,47 +25,35 @@
                                         <th class="pro-thumbnail">Image</th>
                                         <th class="pro-title">Product</th>
                                         <th class="pro-price">Price</th>
-                                        <th class="pro-quantity">Quantity</th>
+{{--                                        <th class="pro-quantity">Quantity</th>--}}
                                         <th class="pro-subtotal">Total</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <!-- Product Row -->
+                                    @foreach($data as $item)
                                     <tr>
                                         <td class="pro-remove"><a href="#"><i class="far fa-trash-alt"></i></a>
                                         </td>
-                                        <td class="pro-thumbnail"><a href="#"><img
-                                                    src="{{asset('front')}}/assets/image/products/product-1.jpg" alt="Product"></a></td>
-                                        <td class="pro-title"><a href="#">Rinosin Glasses</a></td>
-                                        <td class="pro-price"><span>$395.00</span></td>
-                                        <td class="pro-quantity">
-                                            <div class="pro-qty">
-                                                <div class="count-input-block">
-                                                    <input type="number" class="form-control text-center"
-                                                           value="1">
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="pro-subtotal"><span>$395.00</span></td>
+                                        <td class="pro-thumbnail"><a href="#">
+
+                                                        <img src="{{ $item->image_path }}" alt="">
+                                                    </a></td>
+                                        <td class="pro-title"><a href="#">{!!$item->title!!}</a></td>
+                                        <td class="pro-price"><span>{{$item->price}} azn</span></td>
+{{--                                        <td class="pro-quantity">--}}
+{{--                                            <div class="pro-qty">--}}
+{{--                                                <div class="count-input-block">--}}
+{{--                                                    <input type="number" class="form-control text-center"--}}
+{{--                                                           value="1">--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </td>--}}
+                                        <td class="pro-subtotal"><span>{{$item->price}} azn</span></td>
                                     </tr>
+                                    @endforeach
                                     <!-- Product Row -->
-                                    <tr>
-                                        <td class="pro-remove"><a href="#"><i class="far fa-trash-alt"></i></a>
-                                        </td>
-                                        <td class="pro-thumbnail"><a href="#"><img
-                                                    src="{{asset('front')}}/assets/image/products/product-2.jpg" alt="Product"></a></td>
-                                        <td class="pro-title"><a href="#">Rinosin Glasses</a></td>
-                                        <td class="pro-price"><span>$395.00</span></td>
-                                        <td class="pro-quantity">
-                                            <div class="pro-qty">
-                                                <div class="count-input-block">
-                                                    <input type="number" class="form-control text-center"
-                                                           value="1">
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="pro-subtotal"><span>$395.00</span></td>
-                                    </tr>
+
 
                                     </tbody>
                                 </table>

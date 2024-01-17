@@ -43,7 +43,7 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
     Route::get('/',[IndexController::class,'index'])->name('home');
     Route::get('/shop',[ShopController::class,'index'])->name('shop');
     Route::get('/contact',[ContactController::class,'index'])->name('contact');
-    Route::get('/cart',[CartController::class,'index'])->name('cart');
+    Route::get('/cart/{id}',[CartController::class,'showcart'])->name('showcart');
     Route::get('/wish',[WishController::class,'index'])->name('wish');
     Route::get('/product-detail',[ProductDetailController::class,'index'])->name('product-detail');
     Route::get('/faq',[FaqController::class,'index'])->name('faq');
@@ -51,6 +51,7 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
     Route::get('/order-complete',[OrderCompleteController::class,'index'])->name('order-complete');
     Route::get('/my-account',[MyAccountController::class,'index'])->name('my-account');
     Route::get('/log-res',[LogResController::class,'index'])->name('log-res')->middleware('isLogin');
+    Route::post('/addcart/{id}',[CartController::class,'addcart'])->name('addcart');
 });
 
 Route::get('/error',function(){
@@ -77,7 +78,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','isAdmin']],function(){
     Route::post('update_site/', [SettingController::class, 'updateSite'])->name('isdiscountsite');
     Route::resource('/social',SocialController::class,);
      Route::post('/delete_social/{id}', [SocialController::class, 'delete'])->name('delete');
-    
+
 });
 
 Route::group(['prefix'=>'admin','middleware'=>['auth']],function(){
