@@ -8,8 +8,8 @@
             </div>
             <div class="col-lg-5">
                 <div class="header-search-block">
-                    <input type="text" placeholder="axtar">
-                    <button>axtar</button>
+                    <input type="text" placeholder="{{$transhome->placeholder}}">
+                    <button>{{$transhome->search_button}}</button>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -17,8 +17,8 @@
                     <div class="cart-widget">
                         <div class="login-block">
                             @guest
-                            <a href="{{ route('log-res') }}" class="font-weight-bold">Login</a> <br>
-                            <span>or</span> <a href="{{ route('log-res') }}">Register</a>
+                            <a href="{{ route('log-res') }}" class="font-weight-bold">{{$transhome->login}}</a> <br>
+                            <span>{{$transhome->or}}</span> <a href="{{ route('log-res') }}">{{$transhome->register}}</a>
                             @else
                             <p>{{ Auth::user()->name }}</p>
                             <a href="{{route('logout')}}"><i class="icon-switch2"></i> Cixis</a>
@@ -30,7 +30,7 @@
                                     1
                                 </span>
                                 <span class="text-item">
-                                    Shopping Cart
+                                {{$transhome->shopping_cart}}
                                 </span>
                                 <span class="price">
                                     £0.00
@@ -55,7 +55,7 @@
                                 </div>
                                 <div class=" single-cart-block ">
                                     <div class="btn-block">
-                                        <a href="{{route('cart')}}" class="btn">view cart<i
+                                        <a href="{{route('cart')}}" class="btn">{{$transhome->view_cart}}<i
                                                 class="fas fa-chevron-right"></i></a>
 
                                     </div>

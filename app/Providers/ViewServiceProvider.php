@@ -23,7 +23,7 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Facades\View::composer(['front.home.home-sidebar','layouts.front.header','layouts.front.sidebar'],LangComposer::class);
+        Facades\View::composer(['front.home.home-sidebar','layouts.front.header','layouts.front.sidebar','layouts.front'],LangComposer::class);
 
     }
 }
