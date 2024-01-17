@@ -57,7 +57,7 @@ Route::get('/error',function(){
     return view('error');
 });
 
-Route::group(['prefix'=>'admin','middleware'=>['auth']],function(){
+Route::group(['prefix'=>'admin','middleware'=>['auth','isAdmin']],function(){
     Route::get('/dashboard',[HomeController::class,'index'])->name('dashboard');
     Route::resource('/product',ProductController::class,);
     Route::get('/delete_product/{id}', [ProductController::class, 'delete'])->name('product.delete');

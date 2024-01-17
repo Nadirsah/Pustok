@@ -16,9 +16,14 @@ class isAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!Auth::user()->user_Type ='admin') {
+        {
+            // Check if the user is authenticated and is an admin
+            if (Auth::check() && Auth::user()->user_Type == 'admin') {
+                return $next($request);
+            }
+    
+            // If not admin, redirect to the home page
             return redirect()->route('home');
         }
-        return $next($request);
     }
 }
