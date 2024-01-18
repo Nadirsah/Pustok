@@ -27,10 +27,26 @@ $data=Cart::where('user_id',$id)->join('products','carts.product_id','=','produc
           $cart->user_id=$user_id;
           $cart->product_id=$productid;
           $cart->save();
-          return redirect()->route('cart');
+          return redirect()->route('showcart');
       }
       else{
           return redirect()->route('home');
       }
+}
+
+
+public function delete($id){
+    $card = Card::find($id);
+
+    if ($card) {
+        $card->delete();
+        return response()->json([
+            'success' => 'Record deleted successfully!'
+        ]);
+    } else {
+        return response()->json([
+            'error' => 'Record not found!'
+        ], 404);
+    }
 }
 }

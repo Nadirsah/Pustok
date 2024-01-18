@@ -1,6 +1,6 @@
 @extends('layouts.front')
 @section('css')
-@endsection
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 @section('sidebar')
     @include('layouts.front.sidebar')
 @endsection
@@ -25,7 +25,7 @@
                                         <th class="pro-thumbnail">Image</th>
                                         <th class="pro-title">Product</th>
                                         <th class="pro-price">Price</th>
-{{--                                        <th class="pro-quantity">Quantity</th>--}}
+                                  <!-- <th class="pro-quantity">Quantity</th> -->
                                         <th class="pro-subtotal">Total</th>
                                     </tr>
                                     </thead>
@@ -33,7 +33,7 @@
                                     <!-- Product Row -->
                                     @foreach($data as $item)
                                     <tr>
-                                        <td class="pro-remove"><a href="#"><i class="far fa-trash-alt"></i></a>
+                                        <td class="pro-remove"><a class="deleteCard" data-id="{{ $item->id }}"><i class="far fa-trash-alt"></i></a>
                                         </td>
                                         <td class="pro-thumbnail"><a href="#">
 
@@ -41,14 +41,14 @@
                                                     </a></td>
                                         <td class="pro-title"><a href="#">{!!$item->title!!}</a></td>
                                         <td class="pro-price"><span>{{$item->price}} azn</span></td>
-{{--                                        <td class="pro-quantity">--}}
-{{--                                            <div class="pro-qty">--}}
-{{--                                                <div class="count-input-block">--}}
-{{--                                                    <input type="number" class="form-control text-center"--}}
-{{--                                                           value="1">--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </td>--}}
+                                       <!-- <td class="pro-quantity">
+<div class="pro-qty">
+                                                <div class="count-input-block">
+                                                    <input type="number" class="form-control text-center"
+                                                          value="1">
+                                                </div>
+                                            </div>
+                                        </td> -->
                                         <td class="pro-subtotal"><span>{{$item->price}} azn</span></td>
                                     </tr>
                                     @endforeach
@@ -305,7 +305,25 @@
             </div>
         </div>
     </main>
+    <script type="text/javascript">
+$(".deleteCard").click(function(){
+    var id = $(this).data("id");
+    var token = $("meta[name='csrf-token']").attr("content");
+    $.ajax(
+            {
+                url: "delete_card/" + id,
+                type: 'post',
+                data: {
+                    "id": id,
+                    "_token": token,
+                },
+                success: function () {
+                    $(`.deleteRecord[data-id="${id}"]`).closest('tr').remove();
+                }
+            });
+});
+</script>
 @endsection
-@section('js')
-@endsection
+
+
 

@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\LangController;
 use App\Http\Controllers\Admin\Usercontroller;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SocialController;
+use App\Http\Controllers\Admin\TransCardController;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CheckoutController;
 use App\Http\Controllers\Front\ContactController;
@@ -52,7 +53,9 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
     Route::get('/my-account',[MyAccountController::class,'index'])->name('my-account');
     Route::get('/log-res',[LogResController::class,'index'])->name('log-res')->middleware('isLogin');
     Route::post('/addcart/{id}',[CartController::class,'addcart'])->name('addcart');
+    Route::post('/delete_card/{id}', [CartController::class, 'delete'])->name('card.delete');
 });
+
 
 Route::get('/error',function(){
     return view('error');
@@ -72,6 +75,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','isAdmin']],function(){
     Route::resource('/trans_home',TransHomeController::class,);
     Route::resource('/trans_footer',TranslateFooterController::class,);
     Route::resource('/trans_content',TransContentController::class,);
+    Route::resource('/trans_card',TransCardController::class,);
     Route::resource('/user',Usercontroller::class,);
     Route::post('update_status/', [Usercontroller::class, 'updateStatus'])->name('isdiscount');
     Route::resource('/setting',SettingController::class,);
