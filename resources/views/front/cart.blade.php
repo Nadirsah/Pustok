@@ -1,6 +1,7 @@
 @extends('layouts.front')
 @section('css')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+@endsection
 @section('sidebar')
     @include('layouts.front.sidebar')
 @endsection
@@ -36,11 +37,14 @@
                                         <td class="pro-remove"><a class="deleteCard" data-id="{{ $item->id }}"><i class="far fa-trash-alt"></i></a>
                                         </td>
                                         <td class="pro-thumbnail"><a href="#">
-
-                                                        <img src="{{ $item->image_path }}" alt="">
+                                                @foreach($item->get_products->images as $image)
+                                                    @if($image->is_main == 1)
+                                                        <img src="{{ $image->file_path }}" alt="">
+                                                    @endif
+                                                @endforeach
                                                     </a></td>
-                                        <td class="pro-title"><a href="#">{!!$item->title!!}</a></td>
-                                        <td class="pro-price"><span>{{$item->price}} azn</span></td>
+                                        <td class="pro-title"><a href="#">{!!$item->get_products->title!!}</a></td>
+                                        <td class="pro-price"><span>{{$item->get_products->price}} azn</span></td>
                                        <!-- <td class="pro-quantity">
 <div class="pro-qty">
                                                 <div class="count-input-block">
@@ -49,7 +53,7 @@
                                                 </div>
                                             </div>
                                         </td> -->
-                                        <td class="pro-subtotal"><span>{{$item->price}} azn</span></td>
+                                        <td class="pro-subtotal"><span>{{$item->get_products->price}} azn</span></td>
                                     </tr>
                                     @endforeach
                                     <!-- Product Row -->
@@ -297,7 +301,7 @@
                             </div>
                             <div class="cart-summary-button">
                                 <a href="{{route('checkout')}}" class="checkout-btn c-btn btn--primary">Checkout</a>
-                                <button class="update-btn c-btn btn-outlined">Update Cart</button>
+
                             </div>
                         </div>
                     </div>
@@ -311,7 +315,7 @@ $(".deleteCard").click(function(){
     var token = $("meta[name='csrf-token']").attr("content");
     $.ajax(
             {
-                url: "delete_card/" + id,
+                url: "{{ url('delete_card') }}/" + id,
                 type: 'post',
                 data: {
                     "id": id,

@@ -11,48 +11,11 @@
             <div class="row">
                 <div class="col-12">
                     <!-- Checkout Form s-->
-                    <form action="" class="checkout-form">
+                    <form action="{{route('card.checkout')}}" method="post" class="checkout-form">
+
+                        @csrf
                         <div class="row row-40">
-                            <div class="col-12">
 
-
-                                <!-- Slide Down Blox ==> Login Box  -->
-                                <div class="checkout-slidedown-box" id="quick-login">
-                                    <div action="./">
-                                        <div class="quick-login-form">
-                                            <p>If you have shopped with us before, please enter your details in the
-                                                boxes below. If you are a new
-                                                customer
-                                                please
-                                                proceed to the Billing & Shipping section.</p>
-                                            <div class="form-group">
-                                                <label for="quick-user">Username or email *</label>
-                                                <input type="text" placeholder="" id="quick-user">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="quick-pass">Password *</label>
-                                                <input type="text" placeholder="" id="quick-pass">
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="d-flex align-items-center flex-wrap">
-                                                    <a href="#" class="btn btn-outlined   mr-3">Login</a>
-                                                    <div class="d-inline-flex align-items-center">
-                                                        <input type="checkbox" id="accept_terms" class="mb-0 mr-1">
-                                                        <label for="accept_terms" class="mb-0">I’ve read and accept
-                                                            the terms &amp; conditions</label>
-                                                    </div>
-                                                </div>
-                                                <p><a href="javascript:" class="pass-lost mt-3">Lost your
-                                                        password?</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Slide Down Trigger  -->
-
-                                <!-- Slide Down Blox ==> Cupon Box -->
-
-                            </div>
                             <div class="col-lg-7 mb--20">
                                 <!-- Billing Address -->
                                 <div id="billing-form" class="mb-40">
@@ -60,113 +23,48 @@
                                     <div class="row">
                                         <div class="col-md-6 col-12 mb--20">
                                             <label>First Name*</label>
-                                            <input type="text" placeholder="First Name">
+                                            <input type="text" name="name" placeholder="First Name">
                                         </div>
                                         <div class="col-md-6 col-12 mb--20">
                                             <label>Last Name*</label>
-                                            <input type="text" placeholder="Last Name">
+                                            <input type="text" name="surname" placeholder="Last Name">
                                         </div>
                                         <div class="col-12 mb--20">
                                             <label>Company Name</label>
-                                            <input type="text" placeholder="Company Name">
+                                            <input type="text" name="company" placeholder="Company Name">
                                         </div>
                                         <div class="col-12 col-12 mb--20">
                                             <label>Country*</label>
-                                            <select class="nice-select">
-                                                <option>Bangladesh</option>
-                                                <option>China</option>
-                                                <option>country</option>
-                                                <option>India</option>
-                                                <option>Japan</option>
-                                            </select>
+                                            <input type="text" name="country" placeholder="Country">
                                         </div>
                                         <div class="col-md-6 col-12 mb--20">
                                             <label>Email Address*</label>
-                                            <input type="email" placeholder="Email Address">
+                                            <input type="email" name="email" placeholder="Email Address">
                                         </div>
                                         <div class="col-md-6 col-12 mb--20">
                                             <label>Phone no*</label>
-                                            <input type="text" placeholder="Phone number">
+                                            <input type="text" name="phone" placeholder="Phone number">
                                         </div>
                                         <div class="col-12 mb--20">
                                             <label>Address*</label>
-                                            <input type="text" placeholder="Address line 1">
+                                            <input type="text" name="adress" placeholder="Address line 1">
                                         </div>
                                         <div class="col-md-6 col-12 mb--20">
                                             <label>Town/City*</label>
-                                            <input type="text" placeholder="Town/City">
-                                        </div>
-                                        <div class="col-md-6 col-12 mb--20">
-                                            <label>State*</label>
-                                            <input type="text" placeholder="State">
+                                            <input type="text" name="city" placeholder="Town/City">
                                         </div>
                                         <div class="col-md-6 col-12 mb--20">
                                             <label>Zip Code*</label>
-                                            <input type="text" placeholder="Zip Code">
+                                            <input type="text" name="zip_cod" placeholder="Zip Code">
                                         </div>
+
                                         <div class="col-12 mb--20 ">
 
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Shipping Address -->
-                                <div id="shipping-form" class="mb--40">
-                                    <h4 class="checkout-title">Shipping Address</h4>
-                                    <div class="row">
-                                        <div class="col-md-6 col-12 mb--20">
-                                            <label>First Name*</label>
-                                            <input type="text" placeholder="First Name">
-                                        </div>
-                                        <div class="col-md-6 col-12 mb--20">
-                                            <label>Last Name*</label>
-                                            <input type="text" placeholder="Last Name">
-                                        </div>
-                                        <div class="col-md-6 col-12 mb--20">
-                                            <label>Email Address*</label>
-                                            <input type="email" placeholder="Email Address">
-                                        </div>
-                                        <div class="col-md-6 col-12 mb--20">
-                                            <label>Phone no*</label>
-                                            <input type="text" placeholder="Phone number">
-                                        </div>
-                                        <div class="col-12 mb--20">
-                                            <label>Company Name</label>
-                                            <input type="text" placeholder="Company Name">
-                                        </div>
-                                        <div class="col-12 mb--20">
-                                            <label>Address*</label>
-                                            <input type="text" placeholder="Address line 1">
-                                            <input type="text" placeholder="Address line 2">
-                                        </div>
-                                        <div class="col-md-6 col-12 mb--20">
-                                            <label>Country*</label>
-                                            <select class="nice-select">
-                                                <option>Bangladesh</option>
-                                                <option>China</option>
-                                                <option>country</option>
-                                                <option>India</option>
-                                                <option>Japan</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-6 col-12 mb--20">
-                                            <label>Town/City*</label>
-                                            <input type="text" placeholder="Town/City">
-                                        </div>
-                                        <div class="col-md-6 col-12 mb--20">
-                                            <label>State*</label>
-                                            <input type="text" placeholder="State">
-                                        </div>
-                                        <div class="col-md-6 col-12 mb--20">
-                                            <label>Zip Code*</label>
-                                            <input type="text" placeholder="Zip Code">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="order-note-block mt--30">
-                                    <label for="order-note">Order notes</label>
-                                    <textarea id="order-note" cols="30" rows="10" class="order-note"
-                                              placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
-                                </div>
+
                             </div>
                             <div class="col-lg-5">
                                 <div class="row">
@@ -199,11 +97,11 @@
                                                 </article>
                                             </div>
                                             <div class="term-block">
-                                                <input type="checkbox" id="accept_terms2">
+                                                <input type="checkbox" name="status" value="1" id="accept_terms2">
                                                 <label for="accept_terms2">I’ve read and accept the terms &
                                                     conditions</label>
                                             </div>
-                                            <button class="place-order w-100">Place order</button>
+                                            <button type="submit" class="place-order w-100">Place order</button>
                                         </div>
                                     </div>
                                 </div>
