@@ -15,20 +15,24 @@ class LangComposer
 {
 public function compose(View $view):void
 {   $user_id=Auth::id();
-    $product_id=Cart::where('user_id',$user_id)->pluck('product_id')->toArray();
+    $cartItems =Cart::where('user_id',$user_id)->where('status', 0)->get();
+    $totalPrice = 0;
+    foreach ($cartItems as $cartItem) {
+        $product = Product::find($cartItem->product_id);
+        if ($product) {
+            $totalPrice += $product->price * $cartItem->quantity;
+        }
+    }
+
     $transhome=TranslateHome::first();
     $lang=Lang::get();
     $categories=Category::with('children')->get();
-    $cart=Cart::where('user_id',$user_id)->count();
-    if (!empty($product_id)) {
-    $cartsum=Product::whereIn('id',$product_id)->sum('price');
-    } else {
-        $cartsum = 0;
-    }
+    $cart=Cart::where('user_id',$user_id )->where('status', 0)->sum('quantity');
+
     $view->with('categories', $categories);
     $view->with('lang', $lang);
     $view->with('transhome', $transhome);
     $view->with('cart', $cart);
-    $view->with('cartsum', $cartsum);
+    $view->with('totalPrice', $totalPrice);
 }
 }

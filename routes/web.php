@@ -49,7 +49,7 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
     Route::get('/product-detail',[ProductDetailController::class,'index'])->name('product-detail');
     Route::get('/faq',[FaqController::class,'index'])->name('faq');
     Route::get('/checkout',[CheckoutController::class,'index'])->name('checkout');
-    Route::get('/order-complete',[OrderCompleteController::class,'index'])->name('order-complete');
+    Route::get('/order-complete/{order_number}',[OrderCompleteController::class,'index'])->name('order-complete');
     Route::get('/my-account',[MyAccountController::class,'index'])->name('my-account');
     Route::get('/log-res',[LogResController::class,'index'])->name('log-res')->middleware('isLogin');
     Route::post('/addcart/{id}',[CartController::class,'addcart'])->name('addcart');

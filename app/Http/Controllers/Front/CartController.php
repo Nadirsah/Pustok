@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Models\Cart;
 use App\Models\Checkout;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -13,7 +14,7 @@ class CartController extends Controller
 {
   public function showcart(Request $request,$id){
 
-     $data=Cart::where('user_id',$id)->get();
+     $data=Cart::where('user_id',$id)->where('status',0)->get();
 
       return view('front.cart',compact('data',));
   }
@@ -22,10 +23,22 @@ class CartController extends Controller
           $user_id=Auth::id();
           $productid=$id;
 
-          $cart=new Cart;
-          $cart->user_id=$user_id;
-          $cart->product_id=$productid;
-          $cart->save();
+          $cartItem = Cart::where('user_id', $user_id)
+              ->where('product_id', $productid)
+              ->where('status', 0)
+              ->first();
+
+          if ($cartItem) {
+              $cartItem->quantity += 1;
+              $cartItem->save();
+          } else {
+              // Eğer ürün ilk defa ekleniyorsa, yeni bir satır oluştur
+              Cart::create([
+                  'user_id' => $user_id,
+                  'product_id' => $productid,
+                  'quantity' => 1,
+              ]);
+      }
           return redirect()->route('home');
       }
       else{
@@ -50,9 +63,19 @@ public function delete($id){
 }
 
 
-public function checkout(Request $request){
+   public function checkout(Request $request)
+   { $user_id=Auth::id();
 
+       $cartItems =Cart::where('user_id',$user_id)->where('status', 0)->get();
+       $totalPrice = 0;
+       foreach ($cartItems as $cartItem) {
+           $product = Product::find($cartItem->product_id);
+           if ($product) {
+               $totalPrice += $product->price * $cartItem->quantity;
+           }
+       }
       $data=new Checkout;
+      $data->user_id=$user_id;
       $data->name=$request->name;
       $data->surname=$request->surname;
       $data->company=$request->company;
@@ -64,10 +87,14 @@ public function checkout(Request $request){
       $data->zip_cod=$request->zip_cod;
       $data->status=$request->status;
       $data->order_number=rand(1,100);
+       $data->total=$totalPrice;
       $data->save();
 
+       if(Auth::id()){
+           $user_id=Auth::id();
+           Cart::where('user_id',$user_id)->update(['status' => 1]);
 
-
-      return redirect()->route('home');
+       }
+      return redirect()->route('order-complete', ['order_number' => $data->order_number]);
 }
 }

@@ -12,7 +12,6 @@
                 <div class="col-12">
                     <!-- Checkout Form s-->
                     <form action="{{route('card.checkout')}}" method="post" class="checkout-form">
-
                         @csrf
                         <div class="row row-40">
 

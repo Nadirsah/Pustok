@@ -26,7 +26,7 @@
                                         <th class="pro-thumbnail">Image</th>
                                         <th class="pro-title">Product</th>
                                         <th class="pro-price">Price</th>
-                                  <!-- <th class="pro-quantity">Quantity</th> -->
+                                        <th class="pro-quantity">Quantity</th>
                                         <th class="pro-subtotal">Total</th>
                                     </tr>
                                     </thead>
@@ -45,15 +45,8 @@
                                                     </a></td>
                                         <td class="pro-title"><a href="#">{!!$item->get_products->title!!}</a></td>
                                         <td class="pro-price"><span>{{$item->get_products->price}} azn</span></td>
-                                       <!-- <td class="pro-quantity">
-<div class="pro-qty">
-                                                <div class="count-input-block">
-                                                    <input type="number" class="form-control text-center"
-                                                          value="1">
-                                                </div>
-                                            </div>
-                                        </td> -->
-                                        <td class="pro-subtotal"><span>{{$item->get_products->price}} azn</span></td>
+                                        <td class="pro-price"><span>{{$item->quantity}}</span></td>
+                                        <td class="pro-subtotal"><span>{{($item->get_products->price)*($item->quantity)}} azn</span></td>
                                     </tr>
                                     @endforeach
                                     <!-- Product Row -->
@@ -297,7 +290,7 @@
                                 <h4><span>Cart Summary</span></h4>
                                 <p>Sub Total <span class="text-primary">$1250.00</span></p>
                                 <p>Shipping Cost <span class="text-primary">$00.00</span></p>
-                                <h2>Grand Total <span class="text-primary">$1250.00</span></h2>
+                                <h2>Grand Total <span class="text-primary">{{$totalPrice}} azn</span></h2>
                             </div>
                             <div class="cart-summary-button">
                                 <a href="{{route('checkout')}}" class="checkout-btn c-btn btn--primary">Checkout</a>

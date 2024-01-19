@@ -15,12 +15,12 @@
                         <p>Your order has been received.</p>
                     </div>
                     <ul class="order-details-list">
-                        <li>Order Number: <strong>3053</strong></li>
-                        <li>Date: <strong>January 24, 2019</strong></li>
-                        <li>Total: <strong>$117.00</strong></li>
-                        <li>Payment Method: <strong>Cash on Delivery</strong></li>
+                        <li>Order Number: <strong>{{$data->order_number}}</strong></li>
+                        <li>Date: <strong>{{$data->created_at}}</strong></li>
+                        <li>Total: <strong>{{$data->total}}</strong></li>
+
                     </ul>
-                    <p>Pay with cash upon delivery.</p>
+
                     <h3 class="order-table-title">Order Details</h3>
                     <div class="table-responsive">
                         <table class="table order-details-table">
@@ -44,10 +44,6 @@
                             <tr>
                                 <th>Subtotal:</th>
                                 <td><span>$117.00</span></td>
-                            </tr>
-                            <tr>
-                                <th>Payment Method:</th>
-                                <td>Cash on Delivery</td>
                             </tr>
                             <tr>
                                 <th>Total:</th>

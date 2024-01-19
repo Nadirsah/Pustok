@@ -35,7 +35,7 @@
                                 {{$transhome->shopping_cart}}
                                 </span>
                                 <span class="price">
-                                    {{$cartsum}} azn
+                                    {{$totalPrice}} azn
                                 </span>
                                     </a>
                                 @endauth
