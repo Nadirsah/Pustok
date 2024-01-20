@@ -4,26 +4,26 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\TranslateCard;
+use App\Models\Translate3;
 use App\Models\Lang;
 
-class TransCardController extends Controller
+class Translate3Controller extends Controller
 {
     public function index()
     {
-        $data=TranslateCard::all();
-        return view('admin.trans_card.index',compact('data'));
+        $data=Translate3::all();
+        return view('admin.trans_3.index',compact('data'));
     }
 
     public function create()
     {
         $langs=Lang::all();
-        return view('admin.trans_card.create',compact('langs'));
+        return view('admin.trans_3.create',compact('langs'));
     }
 
     public function store(Request $request)
     {
-        $data=new TranslateCard;
+        $data=new Translate3;
         $data->shopping_cart = $request->shopping_cart;
         $data->image = $request->image;
         $data->product = $request->product;
@@ -36,20 +36,20 @@ class TransCardController extends Controller
         $data->checkout = $request->checkout;
         $data->save();
 
-        return redirect()->route('trans_card.index')->with('type','success')
+        return redirect()->route('trans_3.index')->with('type','success')
             ->with('message','Melumatlar ugurla yuklendi!');
     }
 
     public function edit(string $id)
     {
-        $data=TranslateCard::findOrFail($id);
+        $data=Translate3::findOrFail($id);
         $langs=Lang::all();
-        return view('admin.trans_card.edit',compact('data','langs'));
+        return view('admin.trans_3.edit',compact('data','langs'));
     }
 
     public function update(Request $request, string $id)
     {
-        $data=TranslateCard::findOrFail($id);
+        $data=Translate3::findOrFail($id);
         $data->shopping_cart = $request->shopping_cart;
         $data->image = $request->image;
         $data->product = $request->product;
@@ -62,7 +62,7 @@ class TransCardController extends Controller
         $data->checkout = $request->checkout;
         $data->update();
 
-        return redirect()->route('trans_card.index')->with('type','success')
+        return redirect()->route('trans_3.index')->with('type','success')
             ->with('message','Melumatlar ugurla yuklendi!');
     }
 }

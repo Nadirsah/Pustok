@@ -3,18 +3,18 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\TranslateHome;
+use App\Models\Translate;
 use App\Models\Lang;
 use Illuminate\Http\Request;
 
-class TransHomeController extends Controller
+class TranslateController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
-    {   $data=TranslateHome::all();
-        return view('admin.trans_home.index',compact('data'));
+    {   $data=Translate::all();
+        return view('admin.trans.index',compact('data'));
     }
 
     /**
@@ -22,26 +22,15 @@ class TransHomeController extends Controller
      */
     public function create()
     {$langs=Lang::all();
-        return view('admin.trans_home.create',compact('langs'));
+        return view('admin.trans.create',compact('langs'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {$request->validate([
-        'placeholder'=>'required',
-        'search_button'=>'required',
-        'login'=>'required',
-        'or'=>'required',
-        'register'=>'required',
-        'shopping_cart'=>'required',
-        'browse_category'=>'required',
-        'free_support'=>'required',
-        'view_cart'=>'required',
-
-    ]);
-        $data=new TranslateHome;
+    {
+        $data=new Translate;
         $data->placeholder = $request->placeholder;
         $data->search_button = $request->search_button;
         $data->login = $request->login;
@@ -50,10 +39,18 @@ class TransHomeController extends Controller
         $data->shopping_cart = $request->shopping_cart;
         $data->browse_category = $request->browse_category;
         $data->free_support = $request->free_support;
-        $data->view_cart = $request->view_cart;
+        $data->home = $request->home;
+        $data->shop = $request->shop;
+        $data->contact = $request->contact;
+        $data->address = $request->address;
+        $data->phone = $request->phone;
+        $data->email = $request->email;
+        $data->information = $request->information;
+        $data->extras = $request->extras;
+        $data->newsletter_subscribe = $request->newsletter_subscribe;
         $data->save();
 
-        return redirect()->route('trans_home.index')->with('type','success')
+        return redirect()->route('trans.index')->with('type','success')
             ->with('message','Melumatlar ugurla yuklendi!');
     }
 
@@ -70,29 +67,17 @@ class TransHomeController extends Controller
      */
     public function edit(string $id)
     {
-        $data=TranslateHome::findOrFail($id);
+        $data=Translate::findOrFail($id);
         $langs=Lang::all();
-       return view('admin.trans_home.edit',compact('data','langs'));
+       return view('admin.trans.edit',compact('data','langs'));
     }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {$request->validate([
-        'placeholder'=>'required',
-        'search_button'=>'required',
-        'login'=>'required',
-        'or'=>'required',
-        'register'=>'required',
-        'shopping_cart'=>'required',
-        'browse_category'=>'required',
-        'free_support'=>'required',
-        'view_cart'=>'required',
-
-    ]);
-
-        $data=TranslateHome::findOrFail($id);
+    {
+        $data=Translate::findOrFail($id);
         $data->placeholder = $request->placeholder;
         $data->search_button = $request->search_button;
         $data->login = $request->login;
@@ -101,10 +86,18 @@ class TransHomeController extends Controller
         $data->shopping_cart = $request->shopping_cart;
         $data->browse_category = $request->browse_category;
         $data->free_support = $request->free_support;
-        $data->view_cart = $request->view_cart;
+        $data->home = $request->home;
+        $data->shop = $request->shop;
+        $data->contact = $request->contact;
+        $data->address = $request->address;
+        $data->phone = $request->phone;
+        $data->email = $request->email;
+        $data->information = $request->information;
+        $data->extras = $request->extras;
+        $data->newsletter_subscribe = $request->newsletter_subscribe;
         $data->save();
 
-        return redirect()->route('trans_home.index')->with('type','success')
+        return redirect()->route('trans.index')->with('type','success')
             ->with('message','Melumatlar ugurla yenilendi!');
     }
 
@@ -117,7 +110,7 @@ class TransHomeController extends Controller
     }
     public function delete($id){
 
-        TranslateHome::find($id)->delete($id);
+        Translate1::find($id)->delete($id);
 
         return response()->json([
             'success' => 'Record deleted successfully!'

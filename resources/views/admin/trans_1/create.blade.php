@@ -35,80 +35,62 @@
                                             <fieldset class="content-group">
                                                 <div class="col-md-5">
                                                     <div class="form-group">
+                                                        <label>Enter your email</label>
+                                                        <input type="text" class="form-control"
+                                                               name="enter_your_email[{{$lang->name}}]" placeholder="Enter your email"
+                                                               value="{{old('enter_your_email.'.$lang->name)}}">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Subscribe</label>
+                                                        <input type="text" class="form-control"
+                                                               name="subscribe[{{$lang->name}}]" placeholder="Subscribe"
+                                                               value="{{old('subscribe.'.$lang->name)}}">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Stay connected</label>
+                                                        <input type="text" class="form-control" name="stay_connected[{{$lang->name}}]"
+                                                               placeholder="Stay connected" value="{{old('stay_connected.'.$lang->name)}}">
+
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Us</label>
+                                                        <input type="text" class="form-control" name="us[{{$lang->name}}]"
+                                                               placeholder="Us" value="{{old('us.'.$lang->name)}}">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label>About</label>
+                                                        <input type="text" class="form-control" name="about[{{$lang->name}}]"
+                                                               placeholder="About" value="{{old('about.'.$lang->name)}}">
+                                                    </div>
+                                                    <div class="form-group">
                                                         <label>Best seller</label>
                                                         <input type="text" class="form-control"
                                                                name="best_seller[{{$lang->name}}]" placeholder="Best seller"
                                                                value="{{old('best_seller.'.$lang->name)}}">
-                                                        <span
-                                                            class="text-danger">@error('best_seller.'.$lang->name){{'Best seller sahəsi boş ola bilməz!'}}@enderror</span>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Feature products</label>
-                                                        <input type="text" class="form-control"
-                                                               name="feature_products[{{$lang->name}}]" placeholder="Feature products"
-                                                               value="{{old('feature_products.'.$lang->name)}}">
-                                                        <span
-                                                            class="text-danger">@error('feature_products.'.$lang->name){{'Feature products sahəsi boş ola bilməz!'}}@enderror</span>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>New arrivals</label>
-                                                        <input type="text" class="form-control" name="new_arrivals[{{$lang->name}}]"
-                                                               placeholder="New arrivals" value="{{old('new_arrivals.'.$lang->name)}}">
-                                                        <span
-                                                            class="text-danger">@error('new_arrivals.'.$lang->name){{'New arrivals sahəsi boş ola bilməz!'}}@enderror</span>
-
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Mostview products</label>
-                                                        <input type="text" class="form-control" name="most_view_products[{{$lang->name}}]"
-                                                               placeholder="Mostview products" value="{{old('most_view_products.'.$lang->name)}}">
-                                                        <span
-                                                            class="text-danger">@error('most_view_products.'.$lang->name){{'Mostview products sahəsi boş ola bilməz!'}}@enderror</span>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <label>Special offer</label>
-                                                        <input type="text" class="form-control" name="special_offer[{{$lang->name}}]"
-                                                               placeholder="Special offer" value="{{old('special_offer.'.$lang->name)}}">
-                                                        <span
-                                                            class="text-danger">@error('special_offer.'.$lang->name){{'Special offer sahəsi boş ola bilməz!'}}@enderror</span>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Arts photography</label>
-                                                        <input type="text" class="form-control"
-                                                               name="arts_photography[{{$lang->name}}]" placeholder="Arts photography"
-                                                               value="{{old('arts_photography.'.$lang->name)}}">
-                                                        <span
-                                                            class="text-danger">@error('arts_photography.'.$lang->name){{'Arts photography sahəsi boş ola bilməz!'}}@enderror</span>
 
                                                     </div>
                                                 </div>
                                                 <div class="col-md-5">
 
                                                     <div class="form-group">
-                                                        <label>Childrens books </label>
+                                                        <label>Special</label>
                                                         <input type="text" class="form-control"
-                                                               name="childrens_books[{{$lang->name}}]"
-                                                               placeholder="Childrens books "
-                                                               value="{{old('childrens_books.'.$lang->name)}}">
-                                                        <span
-                                                            class="text-danger">@error('childrens_books.'.$lang->name){{'Childrens books  sahəsi boş ola bilməz!'}}@enderror</span>
+                                                               name="special[{{$lang->name}}]"
+                                                               placeholder="Special "
+                                                               value="{{old('special.'.$lang->name)}}">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Biographies</label>
+                                                        <label>Offer</label>
                                                         <input type="text" class="form-control"
-                                                               name="biographies[{{$lang->name}}]" placeholder="Biographies"
-                                                               value="{{old('biographies.'.$lang->name)}}">
-                                                        <span
-                                                            class="text-danger">@error('biographies.'.$lang->name){{'Biographies sahəsi boş ola bilməz!'}}@enderror</span>
-                                                    </div>
+                                                               name="offer[{{$lang->name}}]" placeholder="Offer"
+                                                               value="{{old('offer.'.$lang->name)}}">
+                                                               </div>
                                                     <div class="form-group">
                                                         <label>Days</label>
                                                         <input type="text" class="form-control"
                                                                name="days[{{$lang->name}}]" placeholder="Days"
                                                                value="{{old('days.'.$lang->name)}}">
-                                                        <span
-                                                            class="text-danger">@error('days.'.$lang->name){{'Days sahəsi boş ola bilməz!'}}@enderror</span>
 
                                                     </div>
                                                     <div class="form-group">
@@ -116,17 +98,13 @@
                                                         <input type="text" class="form-control"
                                                                name="hours[{{$lang->name}}]" placeholder="Hours"
                                                                value="{{old('hours.'.$lang->name)}}">
-                                                        <span
-                                                            class="text-danger">@error('hours.'.$lang->name){{'Hours sahəsi boş ola bilməz!'}}@enderror</span>
 
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Hours</label>
+                                                        <label>Mins</label>
                                                         <input type="text" class="form-control"
                                                                name="mins[{{$lang->name}}]" placeholder="Hours"
                                                                value="{{old('mins.'.$lang->name)}}">
-                                                        <span
-                                                            class="text-danger">@error('mins.'.$lang->name){{'Hours sahəsi boş ola bilməz!'}}@enderror</span>
 
                                                     </div>
                                                     <div class="form-group">
@@ -134,9 +112,41 @@
                                                         <input type="text" class="form-control"
                                                                name="secs[{{$lang->name}}]" placeholder="Secs"
                                                                value="{{old('secs.'.$lang->name)}}">
-                                                        <span
-                                                            class="text-danger">@error('secs.'.$lang->name){{'Secs sahəsi boş ola bilməz!'}}@enderror</span>
 
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label>New</label>
+                                                        <input type="text" class="form-control"
+                                                               name="new[{{$lang->name}}]" placeholder="New"
+                                                               value="{{old('new.'.$lang->name)}}">
+                                                               </div>
+                                                    <div class="form-group">
+                                                        <label>Customer</label>
+                                                        <input type="text" class="form-control"
+                                                               name="customer[{{$lang->name}}]" placeholder="Customer"
+                                                               value="{{old('customer.'.$lang->name)}}">
+
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>I am a</label>
+                                                        <input type="text" class="form-control"
+                                                               name="i_am_a[{{$lang->name}}]" placeholder="I am a"
+                                                               value="{{old('i_am_a.'.$lang->name)}}">
+
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Full</label>
+                                                        <input type="text" class="form-control"
+                                                               name="full[{{$lang->name}}]" placeholder="Full"
+                                                               value="{{old('full.'.$lang->name)}}">
+
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Name</label>
+                                                        <input type="text" class="form-control"
+                                                               name="name[{{$lang->name}}]" placeholder="Name"
+                                                               value="{{old('name.'.$lang->name)}}">
                                                     </div>
                                                 </div>
                                             </fieldset>

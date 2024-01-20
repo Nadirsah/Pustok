@@ -18,12 +18,20 @@
                     <th>Placeholder</th>
                     <th>Search button</th>
                     <th>Login</th>
-                    <th>or</th>
+                    <th>Or</th>
                     <th>Register</th>
                     <th>Shopping cart</th>
                     <th>Browse category</th>
                     <th>Free support</th>
-                    <th>View cart</th>
+                    <th>Home</th>
+                    <th>Shop</th>
+                    <th>Contact</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Information</th>
+                    <th>Extras</th>
+                    <th>Newsletter subscribe</th>
                     <th class="text-center">Actions</th>
                 </tr>
             </thead>
@@ -38,7 +46,15 @@
                     <td>{{$items->shopping_cart}}</td>
                     <td>{{$items->browse_category}}</td>
                     <td>{{$items->free_support}}</td>
-                    <td>{{$items->view_cart}}</td>
+                    <td>{{$items->home}}</td>
+                    <td>{{$items->shop}}</td>
+                    <td>{{$items->contact}}</td>
+                    <td>{{$items->address}}</td>
+                    <td>{{$items->phone}}</td>
+                    <td>{{$items->email}}</td>
+                    <td>{{$items->information}}</td>
+                    <td>{{$items->extras}}</td>
+                    <td>{{$items->newsletter_subscribe}}</td>
                     <td> <a href="{{route('trans_home.edit',$items->id)}}"><i class="btn btn-info fa fa-edit"></i></a>
 
                     </td>
