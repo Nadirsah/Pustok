@@ -18,7 +18,7 @@
     <!-- Basic tabs -->
     <form action="{{route('trans.store')}}" method="POST" class="row" enctype="multipart/form-data">
         @csrf
-        <div class="col-md-10">
+        <div class="col-md-12 ">
             <div class="card">
                 <div class="card-body">
                     <ul class="nav nav-tabs">
@@ -33,7 +33,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <fieldset class="content-group">
-                                        <div class="col-md-5">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Placeholder</label>
                                                 <input type="text" class="form-control"
@@ -60,22 +60,20 @@
                                                     placeholder="Or" value="{{old('or.'.$lang->name)}}">
                                                 
                                             </div>
-
                                             <div class="form-group">
                                                 <label>Register</label>
                                                 <input type="text" class="form-control" name="register[{{$lang->name}}]"
                                                     placeholder="Register" value="{{old('register.'.$lang->name)}}">
                                                 
                                             </div>
-                                        </div>
-                                        <div class="col-md-5">
                                             <div class="form-group">
                                                 <label>Shopping cart</label>
                                                 <input type="text" class="form-control"
                                                     name="shopping_cart[{{$lang->name}}]" placeholder="Shopping cart"
                                                     value="{{old('shopping_cart.'.$lang->name)}}">
-
                                             </div>
+                                        </div>
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Browse category</label>
                                                 <input type="text" class="form-control"
@@ -98,7 +96,6 @@
                                                     value="{{old('home.'.$lang->name)}}">
 
                                             </div>
-
                                             <div class="form-group">
                                                 <label>Shop</label>
                                                 <input type="text" class="form-control"
@@ -116,23 +113,23 @@
                                                 <label>Address</label>
                                                 <input type="text" class="form-control" name="address[{{$lang->name}}]"
                                                     placeholder="Address" value="{{old('address.'.$lang->name)}}">
-
                                             </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            
+                                           
                                             <div class="form-group">
                                                 <label>Phone</label>
                                                 <input type="text" class="form-control" name="phone[{{$lang->name}}]"
                                                     placeholder="Phone" value="{{old('phone.'.$lang->name)}}">
                                                 
                                             </div>
-
                                             <div class="form-group">
                                                 <label>Email</label>
                                                 <input type="text" class="form-control" name="email[{{$lang->name}}]"
                                                     placeholder="Email" value="{{old('email.'.$lang->name)}}">
                                                 
                                             </div>
-                                        </div>
-                                        <div class="col-md-5">
                                             <div class="form-group">
                                                 <label>Information</label>
                                                 <input type="text" class="form-control"
@@ -155,8 +152,8 @@
                                                     value="{{old('newsletter_subscribe.'.$lang->name)}}">
                                                
                                             </div>
-                                            
                                         </div>
+                                       
                                     </fieldset>
                                 </div>
                             </div>

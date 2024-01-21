@@ -24,16 +24,22 @@ class Translate3Controller extends Controller
     public function store(Request $request)
     {
         $data=new Translate3;
-        $data->shopping_cart = $request->shopping_cart;
-        $data->image = $request->image;
-        $data->product = $request->product;
-        $data->price = $request->price;
+        $data->city = $request->city;
+        $data->state = $request->state;
+        $data->zip_code = $request->zip_code;
+        $data->condition = $request->condition;
+        $data->place = $request->place;
+        $data->order = $request->order;
+        $data->thank = $request->thank;
+        $data->you = $request->you;
+        $data->message_for_order = $request->message_for_order;
+        $data->number = $request->number;
         $data->total = $request->total;
-        $data->cart_summary = $request->cart_summary;
-        $data->sub_total = $request->sub_total;
-        $data->shipping_cost = $request->shipping_cost;
-        $data->grand_total = $request->grand_total;
-        $data->checkout = $request->checkout;
+        $data->details = $request->details;
+        $data->description = $request->description;
+        $data->dashboard = $request->dashboard;
+        $data->account = $request->account;
+        $data->change = $request->change;
         $data->save();
 
         return redirect()->route('trans_3.index')->with('type','success')
@@ -50,16 +56,22 @@ class Translate3Controller extends Controller
     public function update(Request $request, string $id)
     {
         $data=Translate3::findOrFail($id);
-        $data->shopping_cart = $request->shopping_cart;
-        $data->image = $request->image;
-        $data->product = $request->product;
-        $data->price = $request->price;
+        $data->city = $request->city;
+        $data->state = $request->state;
+        $data->zip_code = $request->zip_code;
+        $data->condition = $request->condition;
+        $data->place = $request->place;
+        $data->order = $request->order;
+        $data->thank = $request->thank;
+        $data->you = $request->you;
+        $data->message_for_order = $request->message_for_order;
+        $data->number = $request->number;
         $data->total = $request->total;
-        $data->cart_summary = $request->cart_summary;
-        $data->sub_total = $request->sub_total;
-        $data->shipping_cost = $request->shipping_cost;
-        $data->grand_total = $request->grand_total;
-        $data->checkout = $request->checkout;
+        $data->details = $request->details;
+        $data->description = $request->description;
+        $data->dashboard = $request->dashboard;
+        $data->account = $request->account;
+        $data->change = $request->change;
         $data->update();
 
         return redirect()->route('trans_3.index')->with('type','success')

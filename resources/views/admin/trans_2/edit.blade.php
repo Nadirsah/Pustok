@@ -16,10 +16,10 @@
 <div class="content">
     @include('layouts.admin.alert')
     <!-- Basic tabs -->
-    <form action="{{route('trans_footer.update',$data->id)}}" method="POST" class="row" enctype="multipart/form-data">
+    <form action="{{route('trans_2.update',$data->id)}}" method="POST" class="row" enctype="multipart/form-data">
         @method('PUT')
         @csrf
-        <div class="col-md-10">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
                     <ul class="nav nav-tabs">
@@ -33,82 +33,121 @@
                         <div class="tab-pane fade{{$key===0?'show active':''}}" id="{{$lang->name}}">
                             <div class="card">
                                 <div class="card-body">
-                                    <fieldset class="content-group">
-                                        <div class="col-md-5">
+                                <fieldset class="content-group">
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                <label>Address</label>
-                                                <input type="text" class="form-control"
-                                                    name="address[{{$lang->name}}]" placeholder="Address"
-                                                    value="{{old('address.'.$lang->name,$data->getTranslation('address',$lang->name))}}">
-                                                <span
-                                                    class="text-danger">@error('address.'.$lang->name){{'Address sahəsi boş ola bilməz!'}}@enderror</span>
+                                                <label>Password</label>
+                                                <input type="text" class="form-control" name="password[{{$lang->name}}]"
+                                                    placeholder="Password" value="{{old('password.'.$lang->name,$data->getTranslation('password',$lang->name))}}">
                                             </div>
                                             <div class="form-group">
-                                                <label>Phone</label>
-                                                <input type="text" class="form-control"
-                                                    name="phone[{{$lang->name}}]" placeholder="Phone"
-                                                    value="{{old('phone.'.$lang->name,$data->getTranslation('phone',$lang->name))}}">
-                                                <span
-                                                    class="text-danger">@error('phone.'.$lang->name){{'Phone sahəsi boş ola bilməz!'}}@enderror</span>
+                                                <label>Returning</label>
+                                                <input type="text" class="form-control" name="returning[{{$lang->name}}]"
+                                                    placeholder="Returning" value="{{old('returning.'.$lang->name,$data->getTranslation('returning',$lang->name))}}">
                                             </div>
                                             <div class="form-group">
-                                                <label>Email</label>
-                                                <input type="text" class="form-control" name="email[{{$lang->name}}]"
-                                                    placeholder="Email" value="{{old('email.'.$lang->name,$data->getTranslation('email',$lang->name))}}">
-                                                <span
-                                                    class="text-danger">@error('email.'.$lang->name){{'Email sahəsi boş ola bilməz!'}}@enderror</span>
+                                                <label>Image</label>
+                                                <input type="text" class="form-control" name="image[{{$lang->name}}]"
+                                                    placeholder="Image" value="{{old('image.'.$lang->name,$data->getTranslation('image',$lang->name))}}">
 
                                             </div>
                                             <div class="form-group">
-                                                <label>INFORMATION</label>
-                                                <input type="text" class="form-control" name="information[{{$lang->name}}]"
-                                                    placeholder="INFORMATION" value="{{old('information.'.$lang->name,$data->getTranslation('information',$lang->name))}}">
-                                                <span
-                                                    class="text-danger">@error('information.'.$lang->name){{'INFORMATION sahəsi boş ola bilməz!'}}@enderror</span>
+                                                <label>Product</label>
+                                                <input type="text" class="form-control"
+                                                    name="product[{{$lang->name}}]" placeholder="Product"
+                                                    value="{{old('product.'.$lang->name,$data->getTranslation('product',$lang->name))}}">
                                             </div>
-
                                             <div class="form-group">
-                                                <label>EXTRAS</label>
-                                                <input type="text" class="form-control" name="extras[{{$lang->name}}]"
-                                                    placeholder="EXTRAS" value="{{old('extras.'.$lang->name,$data->getTranslation('extras',$lang->name))}}">
-                                                <span
-                                                    class="text-danger">@error('extras.'.$lang->name){{'EXTRAS sahəsi boş ola bilməz!'}}@enderror</span>
+                                                <label>Price</label>
+                                                <input type="text" class="form-control" name="price[{{$lang->name}}]"
+                                                    placeholder="Price" value="{{old('price.'.$lang->name,$data->getTranslation('price',$lang->name))}}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Total</label>
+                                                <input type="text" class="form-control"
+                                                    name="total[{{$lang->name}}]"
+                                                    placeholder="Total"
+                                                    value="{{old('total.'.$lang->name,$data->getTranslation('total',$lang->name))}}">
+
                                             </div>
                                         </div>
-                                        <div class="col-md-5">
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                <label>Newsletter subscribe</label>
+                                                <label>Quantity</label>
                                                 <input type="text" class="form-control"
-                                                    name="newsletter_subscribe[{{$lang->name}}]" placeholder="Newsletter subscribe"
-                                                    value="{{old('newsletter_subscribe.'.$lang->name,$data->getTranslation('newsletter_subscribe',$lang->name))}}">
-                                                <span
-                                                    class="text-danger">@error('newsletter_subscribe.'.$lang->name){{'Newsletter subscribe sahəsi boş ola bilməz!'}}@enderror</span>
+                                                    name="quantity[{{$lang->name}}]"
+                                                    placeholder="Quantity"
+                                                    value="{{old('quantity.'.$lang->name,$data->getTranslation('quantity',$lang->name))}}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Cart summary</label>
+                                                <input type="text" class="form-control"
+                                                    name="cart_summary[{{$lang->name}}]" placeholder="Cart summary"
+                                                    value="{{old('cart_summary.'.$lang->name,$data->getTranslation('cart_summary',$lang->name))}}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Sub</label>
+                                                <input type="text" class="form-control"
+                                                    name="sub[{{$lang->name}}]" placeholder="Sub"
+                                                    value="{{old('sub.'.$lang->name,$data->getTranslation('sub',$lang->name))}}">
 
                                             </div>
                                             <div class="form-group">
-                                                <label>Enter your email</label>
+                                                <label>Grand</label>
                                                 <input type="text" class="form-control"
-                                                    name="enter_your_email[{{$lang->name}}]"
-                                                    placeholder="Enter your email"
-                                                    value="{{old('enter_your_email.'.$lang->name,$data->getTranslation('enter_your_email',$lang->name))}}">
-                                                <span
-                                                    class="text-danger">@error('enter_your_email.'.$lang->name){{'Enter your email sahəsi boş ola bilməz!'}}@enderror</span>
+                                                    name="grand[{{$lang->name}}]"
+                                                    placeholder="Grand"
+                                                    value="{{old('grand.'.$lang->name,$data->getTranslation('grand',$lang->name))}}">
+
                                             </div>
                                             <div class="form-group">
-                                                <label>Subscribe</label>
+                                                <label>Checkout</label>
                                                 <input type="text" class="form-control"
-                                                    name="subscribe[{{$lang->name}}]" placeholder="Subscribe"
-                                                    value="{{old('subscribe.'.$lang->name,$data->getTranslation('subscribe',$lang->name))}}">
-                                                <span
-                                                    class="text-danger">@error('subscribe.'.$lang->name){{'Subscribe sahəsi boş ola bilməz!'}}@enderror</span>
+                                                    name="checkout[{{$lang->name}}]"
+                                                    placeholder="Checkout"
+                                                    value="{{old('checkout.'.$lang->name,$data->getTranslation('checkout',$lang->name))}}">
                                             </div>
                                             <div class="form-group">
-                                                <label>Stay connected</label>
+                                                <label>Billing</label>
                                                 <input type="text" class="form-control"
-                                                    name="stay_connected[{{$lang->name}}]" placeholder="Stay connected"
-                                                    value="{{old('stay_connected.'.$lang->name,$data->getTranslation('stay_connected',$lang->name))}}">
-                                                <span
-                                                    class="text-danger">@error('stay_connected.'.$lang->name){{'Stay connected sahəsi boş ola bilməz!'}}@enderror</span>
+                                                    name="billing[{{$lang->name}}]" placeholder="Billing"
+                                                    value="{{old('billing.'.$lang->name,$data->getTranslation('billing',$lang->name))}}">
+                                            </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>First</label>
+                                                <input type="text" class="form-control"
+                                                    name="first[{{$lang->name}}]" placeholder="First"
+                                                    value="{{old('first.'.$lang->name,$data->getTranslation('first',$lang->name))}}">
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Last</label>
+                                                <input type="text" class="form-control"
+                                                    name="last[{{$lang->name}}]"
+                                                    placeholder="Last"
+                                                    value="{{old('last.'.$lang->name,$data->getTranslation('last',$lang->name))}}">
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Company</label>
+                                                <input type="text" class="form-control"
+                                                    name="company[{{$lang->name}}]"
+                                                    placeholder="Company"
+                                                    value="{{old('company.'.$lang->name,$data->getTranslation('company',$lang->name))}}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Country</label>
+                                                <input type="text" class="form-control"
+                                                    name="country[{{$lang->name}}]" placeholder="Country"
+                                                    value="{{old('country.'.$lang->name,$data->getTranslation('country',$lang->name))}}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>No</label>
+                                                <input type="text" class="form-control"
+                                                    name="no[{{$lang->name}}]" placeholder="No"
+                                                    value="{{old('no.'.$lang->name,$data->getTranslation('no',$lang->name))}}">
 
                                             </div>
                                         </div>

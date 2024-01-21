@@ -11,7 +11,8 @@
 @section('content')
 <div class="content">
     @include('layouts.admin.alert')
-    <div class="card">
+    <div class="panel panel-flat">
+    <div class="table-responsive">
         <table class="table table-hover border table-bordered">
             <thead>
                 <tr>
@@ -55,13 +56,14 @@
                     <td>{{$items->information}}</td>
                     <td>{{$items->extras}}</td>
                     <td>{{$items->newsletter_subscribe}}</td>
-                    <td> <a href="{{route('trans_home.edit',$items->id)}}"><i class="btn btn-info fa fa-edit"></i></a>
+                    <td> <a href="{{route('trans.edit',$items->id)}}"><i class="btn btn-info fa fa-edit"></i></a>
 
                     </td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
+    </div>
     </div>
 </div>
 

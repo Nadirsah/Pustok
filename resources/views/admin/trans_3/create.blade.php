@@ -16,9 +16,9 @@
 <div class="content">
     @include('layouts.admin.alert')
     <!-- Basic tabs -->
-    <form action="{{route('trans_card.store')}}" method="POST" class="row" enctype="multipart/form-data">
+    <form action="{{route('trans_3.store')}}" method="POST" class="row" enctype="multipart/form-data">
         @csrf
-        <div class="col-md-10">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
                     <ul class="nav nav-tabs">
@@ -33,91 +33,104 @@
                             <div class="card">
                                 <div class="card-body">
                                     <fieldset class="content-group">
-                                        <div class="col-md-5">
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                <label>Shopping cart</label>
+                                                <label>City</label>
                                                 <input type="text" class="form-control"
-                                                    name="shopping_cart[{{$lang->name}}]" placeholder="Placeholder"
-                                                    value="{{old('shopping_cart.'.$lang->name)}}">
-                                                <span
-                                                    class="text-danger">@error('shopping_cart.'.$lang->name){{'Shopping cart sahəsi boş ola bilməz!'}}@enderror</span>
+                                                    name="city[{{$lang->name}}]" placeholder="City"
+                                                    value="{{old('city.'.$lang->name)}}">
                                             </div>
                                             <div class="form-group">
-                                                <label>Image</label>
-                                                <input type="text" class="form-control"
-                                                    name="image[{{$lang->name}}]" placeholder="Search button"
-                                                    value="{{old('image.'.$lang->name)}}">
-                                                <span
-                                                    class="text-danger">@error('image.'.$lang->name){{'Image sahəsi boş ola bilməz!'}}@enderror</span>
+                                                <label>State</label>
+                                                <input type="text" class="form-control" name="state[{{$lang->name}}]"
+                                                    placeholder="state" value="{{old('state.'.$lang->name)}}">
                                             </div>
                                             <div class="form-group">
-                                                <label>Product</label>
-                                                <input type="text" class="form-control" name="product[{{$lang->name}}]"
-                                                    placeholder="Login" value="{{old('product.'.$lang->name)}}">
-                                                <span
-                                                    class="text-danger">@error('product.'.$lang->name){{'Product sahəsi boş ola bilməz!'}}@enderror</span>
+                                                <label>Zip code</label>
+                                                <input type="text" class="form-control" name="zip_code[{{$lang->name}}]"
+                                                    placeholder="Zip code" value="{{old('zip_code.'.$lang->name)}}">
 
                                             </div>
                                             <div class="form-group">
-                                                <label>Price</label>
-                                                <input type="text" class="form-control" name="price[{{$lang->name}}]"
-                                                    placeholder="Or" value="{{old('price.'.$lang->name)}}">
-                                                <span
-                                                    class="text-danger">@error('price.'.$lang->name){{'Price sahəsi boş ola bilməz!'}}@enderror</span>
+                                                <label>Condition</label>
+                                                <input type="text" class="form-control" name="condition[{{$lang->name}}]"
+                                                    placeholder="Condition" value="{{old('condition.'.$lang->name)}}">
                                             </div>
+                                            <div class="form-group">
+                                                <label>Place</label>
+                                                <input type="text" class="form-control"
+                                                    name="place[{{$lang->name}}]" placeholder="Place"
+                                                    value="{{old('place.'.$lang->name)}}">
 
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Order</label>
+                                                <input type="text" class="form-control"
+                                                    name="order[{{$lang->name}}]" placeholder="Order"
+                                                    value="{{old('order.'.$lang->name)}}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Thank</label>
+                                                <input type="text" class="form-control"
+                                                    name="thank[{{$lang->name}}]" placeholder="Thank"
+                                                    value="{{old('thank.'.$lang->name)}}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>You</label>
+                                                <input type="text" class="form-control"
+                                                    name="you[{{$lang->name}}]" placeholder="You"
+                                                    value="{{old('you.'.$lang->name)}}">
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Message for order</label>
+                                                <input type="text" class="form-control" name="message_for_order[{{$lang->name}}]"
+                                                    placeholder="Message for order" value="{{old('message_for_order.'.$lang->name)}}">
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Number</label>
+                                                <input type="text" class="form-control"
+                                                    name="number[{{$lang->name}}]" placeholder="Number"
+                                                    value="{{old('number.'.$lang->name)}}">
+                                            </div>
                                             <div class="form-group">
                                                 <label>Total</label>
                                                 <input type="text" class="form-control" name="total[{{$lang->name}}]"
-                                                    placeholder="Register" value="{{old('total.'.$lang->name)}}">
-                                                <span
-                                                    class="text-danger">@error('total.'.$lang->name){{'Total sahəsi boş ola bilməz!'}}@enderror</span>
+                                                    placeholder="Total" value="{{old('total.'.$lang->name)}}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Details</label>
+                                                <input type="text" class="form-control" name="details[{{$lang->name}}]"
+                                                    placeholder="Details" value="{{old('details.'.$lang->name)}}">
+
                                             </div>
                                         </div>
-                                        <div class="col-md-5">
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                <label>Cart summary</label>
+                                                <label>Account</label>
                                                 <input type="text" class="form-control"
-                                                    name="cart_summary[{{$lang->name}}]" placeholder="Shopping cart"
-                                                    value="{{old('cart_summary.'.$lang->name)}}">
-                                                <span
-                                                    class="text-danger">@error('cart_summary.'.$lang->name){{'Cart summary sahəsi boş ola bilməz!'}}@enderror</span>
+                                                    name="account[{{$lang->name}}]" placeholder="Account"
+                                                    value="{{old('account.'.$lang->name)}}">
 
                                             </div>
                                             <div class="form-group">
-                                                <label>Sub total</label>
+                                                <label>Change</label>
                                                 <input type="text" class="form-control"
-                                                    name="sub_total[{{$lang->name}}]"
-                                                    placeholder="Browse category"
-                                                    value="{{old('sub_total.'.$lang->name)}}">
-                                                <span
-                                                    class="text-danger">@error('sub_total.'.$lang->name){{'Sub total sahəsi boş ola bilməz!'}}@enderror</span>
+                                                    name="change[{{$lang->name}}]" placeholder="Change"
+                                                    value="{{old('change.'.$lang->name)}}">
                                             </div>
                                             <div class="form-group">
-                                                <label>Shipping cost</label>
-                                                <input type="text" class="form-control"
-                                                    name="shipping_cost[{{$lang->name}}]" placeholder="Free support"
-                                                    value="{{old('shipping_cost.'.$lang->name)}}">
-                                                <span
-                                                    class="text-danger">@error('shipping_cost.'.$lang->name){{'Shipping cost sahəsi boş ola bilməz!'}}@enderror</span>
+                                                <label>Description</label>
+                                                <input type="text" class="form-control" name="description[{{$lang->name}}]"
+                                                    placeholder="Description" value="{{old('description.'.$lang->name)}}">
                                             </div>
                                             <div class="form-group">
-                                                <label>Grand total</label>
-                                                <input type="text" class="form-control"
-                                                    name="grand_total[{{$lang->name}}]" placeholder="View cart"
-                                                    value="{{old('grand_total.'.$lang->name)}}">
-                                                <span
-                                                    class="text-danger">@error('grand_total.'.$lang->name){{'Grand total sahəsi boş ola bilməz!'}}@enderror</span>
-
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Checkout</label>
-                                                <input type="text" class="form-control"
-                                                    name="checkout[{{$lang->name}}]" placeholder="View cart"
-                                                    value="{{old('checkout.'.$lang->name)}}">
-                                                <span
-                                                    class="text-danger">@error('checkout.'.$lang->name){{'Checkout sahəsi boş ola bilməz!'}}@enderror</span>
-
+                                                <label>Dashboard</label>
+                                                <input type="text" class="form-control" name="dashboard[{{$lang->name}}]"
+                                                    placeholder="Dashboard" value="{{old('dashboard.'.$lang->name)}}">
                                             </div>
                                         </div>
                                     </fieldset>

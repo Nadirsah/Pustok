@@ -9,7 +9,8 @@
 @section('content')
     <div class="content">
         @include('layouts.admin.alert')
-        <div class="card">
+        <div class="panel panel-flat">
+    <div class="table-responsive">
             <table class="table table-hover border table-bordered">
                 <thead>
                 <tr>
@@ -25,7 +26,6 @@
                     <th>Hours</th>
                     <th>Mins</th>
                     <th>Secs</th>
-
                     <th>New</th>
                     <th>Customer</th>
                     <th>I am a</th>
@@ -54,13 +54,14 @@
                         <td>{{$items->i_am_a}}</td>
                         <td>{{$items->full}}</td>
                         <td>{{$items->name}}</td>
-                        <td> <a href="{{route('trans_content.edit',$items->id)}}"><i class="btn btn-info fa fa-edit"></i></a>
+                        <td> <a href="{{route('trans_1.edit',$items->id)}}"><i class="btn btn-info fa fa-edit"></i></a>
 
                         </td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
+        </div>
         </div>
     </div>
 

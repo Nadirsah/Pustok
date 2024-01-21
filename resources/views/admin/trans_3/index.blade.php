@@ -11,43 +11,59 @@
 @section('content')
 <div class="content">
     @include('layouts.admin.alert')
-    <div class="card">
-        <table class="table table-hover border table-bordered">
+    <div class="panel panel-flat">
+    <div class="table-responsive">
+        <table class="table ">
             <thead>
                 <tr>
-                    <th>Shopping cart</th>
-                    <th>Image</th>
-                    <th>Product</th>
-                    <th>Price</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip code</th>
+                    <th>Condition</th>
+                    <th>Place</th>
+                    <th>Order</th>
+                    <th>Thank</th>
+                    <th>You</th>
+                    <th>Message for order</th>
+                    <th>Number</th>
                     <th>Total</th>
-                    <th>Cart summary</th>
-                    <th>Sub total</th>
-                    <th>Shipping cost</th>
-                    <th>Grand total</th>
-                    <th>Checkout</th>
+                    <th>Details</th>
+                    <th>Description</th>
+                    <th>Dashboard</th>
+                    <th>Account</th>
+                    <th>Details</th>
+                    <th>Change</th>
                     <th class="text-center">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($data as $items)
                 <tr>
-                    <td>{{$items->shopping_cart}}</td>
-                    <td>{{$items->image}}</td>
-                    <td>{{$items->product}}</td>
-                    <td>{{$items->price}}</td>
+                    <td>{{$items->city}}</td>
+                    <td>{{$items->state}}</td>
+                    <td>{{$items->zip_code}}</td>
+                    <td>{{$items->condition}}</td>
+                    <td>{{$items->place}}</td>
+                    <td>{{$items->order}}</td>
+                    <td>{{$items->thank}}</td>
+                    <td>{{$items->you}}</td>
+                    <td>{{$items->message_for_order}}</td>
+                    <td>{{$items->number}}</td>
                     <td>{{$items->total}}</td>
-                    <td>{{$items->cart_summary}}</td>
-                    <td>{{$items->sub_total}}</td>
-                    <td>{{$items->shipping_cost}}</td>
-                    <td>{{$items->grand_total}}</td>
-                    <td>{{$items->checkout}}</td>
-                    <td> <a href="{{route('trans_card.edit',$items->id)}}"><i class="btn btn-info fa fa-edit"></i></a>
+                    <td>{{$items->details}}</td>
+                    <td>{{$items->description}}</td>
+                    <td>{{$items->dashboard}}</td>
+                    <td>{{$items->account}}</td>
+                    <td>{{$items->details}}</td>
+                    <td>{{$items->change}}</td>
+                    <td> <a href="{{route('trans_3.edit',$items->id)}}"><i class="btn btn-info fa fa-edit"></i></a>
 
                     </td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
+    </div>
     </div>
 </div>
 

@@ -28,7 +28,6 @@ return new class extends Migration
             $table->string('description');
             $table->string('dashboard');
             $table->string('account');
-            $table->string('details');
             $table->string('change');
             $table->timestamps();
         });
