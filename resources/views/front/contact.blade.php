@@ -17,10 +17,8 @@
                 <div class="col-lg-5 col-md-5 col-12">
                     <div class="contact_adress">
                         <div class="ct_address">
-                            <h3 class="ct_title">Location & Details</h3>
-                            <p>It is a long established fact that readewill be distracted by the readable content of
-                                a page when looking
-                                at ilayout.</p>
+                            <h3 class="ct_title">Location </h3>
+
                         </div>
                         <div class="address_wrapper">
                             <div class="address">
@@ -28,7 +26,7 @@
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <div class="contact-info-text">
-                                    <p><span>Address:</span> 1234 - Bandit Tringi lAliquam <br> Vitae. New York</p>
+                                    <p><span>{{$trans->address}}:</span> 1234 - Bandit Tringi lAliquam <br> Vitae. New York</p>
                                 </div>
                             </div>
                             <div class="address">
@@ -36,7 +34,7 @@
                                     <i class="far fa-envelope"></i>
                                 </div>
                                 <div class="contact-info-text">
-                                    <p><span>Email: </span> support@example.com </p>
+                                    <p><span>{{$trans->email}}: </span> support@example.com </p>
                                 </div>
                             </div>
                             <div class="address">
@@ -44,7 +42,7 @@
                                     <i class="fas fa-mobile-alt"></i>
                                 </div>
                                 <div class="contact-info-text">
-                                    <p><span>Phone:</span> (800) 0123 456 789 </p>
+                                    <p><span>{{$trans->phone}}:</span> (800) 0123 456 789 </p>
                                 </div>
                             </div>
                         </div>
@@ -57,21 +55,21 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label>Your Name <span class="required">*</span></label>
+                                        <label>{{$trans1->name}} <span class="required">*</span></label>
                                         <input type="text" id="con_name" name="con_name" class="form-control"
                                                required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label>Your Email <span class="required">*</span></label>
+                                        <label>{{$trans->email}}<span class="required">*</span></label>
                                         <input type="email" id="con_email" name="con_email" class="form-control"
                                                required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label>Your Phone*</label>
+                                        <label>{{$trans->phone}}*</label>
                                         <input type="text" id="con_phone" name="con_phone" class="form-control">
                                     </div>
                                 </div>

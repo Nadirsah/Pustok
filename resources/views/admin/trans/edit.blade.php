@@ -123,12 +123,6 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                        <div class="form-group">
-                                                <label>Address</label>
-                                                <input type="text" class="form-control" name="address[{{$lang->name}}]"
-                                                    placeholder="Address" 
-                                                    value="{{old('address.'.$lang->name,$data->getTranslation('phone',$lang->name))}}">
-                                            </div>
                                             <div class="form-group">
                                                 <label>Phone</label>
                                                 <input type="text" class="form-control" name="phone[{{$lang->name}}]"

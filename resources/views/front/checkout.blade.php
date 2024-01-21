@@ -18,43 +18,43 @@
                             <div class="col-lg-7 mb--20">
                                 <!-- Billing Address -->
                                 <div id="billing-form" class="mb-40">
-                                    <h4 class="checkout-title">Billing Address</h4>
+                                    <h4 class="checkout-title">{{$trans2->billing}} {{$trans->address}}</h4>
                                     <div class="row">
                                         <div class="col-md-6 col-12 mb--20">
-                                            <label>First Name*</label>
-                                            <input type="text" name="name" placeholder="First Name">
+                                            <label>{{$trans1->name}}*</label>
+                                            <input type="text" name="name" placeholder="{{$trans1->name}}">
                                         </div>
                                         <div class="col-md-6 col-12 mb--20">
-                                            <label>Last Name*</label>
-                                            <input type="text" name="surname" placeholder="Last Name">
+                                            <label>{{$trans2->last}}*</label>
+                                            <input type="text" name="surname" placeholder="{{$trans2->last}}">
                                         </div>
                                         <div class="col-12 mb--20">
-                                            <label>Company Name</label>
-                                            <input type="text" name="company" placeholder="Company Name">
+                                            <label>{{$trans2->company}}*</label>
+                                            <input type="text" name="company" placeholder="{{$trans2->company}}">
                                         </div>
                                         <div class="col-12 col-12 mb--20">
-                                            <label>Country*</label>
-                                            <input type="text" name="country" placeholder="Country">
+                                            <label>{{$trans2->country}}*</label>
+                                            <input type="text" name="country" placeholder="{{$trans2->country}}">
                                         </div>
                                         <div class="col-md-6 col-12 mb--20">
-                                            <label>Email Address*</label>
-                                            <input type="email" name="email" placeholder="Email Address">
+                                            <label>{{$trans->email}}*</label>
+                                            <input type="email" name="email" placeholder="{{$trans->email}}">
                                         </div>
                                         <div class="col-md-6 col-12 mb--20">
-                                            <label>Phone no*</label>
-                                            <input type="text" name="phone" placeholder="Phone number">
+                                            <label>{{$trans->phone}}*</label>
+                                            <input type="text" name="phone" placeholder="{{$trans->phone}}">
                                         </div>
                                         <div class="col-12 mb--20">
-                                            <label>Address*</label>
-                                            <input type="text" name="adress" placeholder="Address line 1">
+                                            <label>{{$trans->address}}*</label>
+                                            <input type="text" name="adress" placeholder="{{$trans->address}}">
                                         </div>
                                         <div class="col-md-6 col-12 mb--20">
-                                            <label>Town/City*</label>
-                                            <input type="text" name="city" placeholder="Town/City">
+                                            <label>{{$trans3->city}}*</label>
+                                            <input type="text" name="city" placeholder="{{$trans3->city}}">
                                         </div>
                                         <div class="col-md-6 col-12 mb--20">
-                                            <label>Zip Code*</label>
-                                            <input type="text" name="zip_cod" placeholder="Zip Code">
+                                            <label>{{$trans3->zip_code}}*</label>
+                                            <input type="text" name="zip_cod" placeholder="{{$trans3->zip_code}}">
                                         </div>
 
                                         <div class="col-12 mb--20 ">
@@ -70,37 +70,13 @@
                                     <!-- Cart Total -->
                                     <div class="col-12">
                                         <div class="checkout-cart-total">
-                                            <h2 class="checkout-title">YOUR ORDER</h2>
-                                            <h4>Product <span>Total</span></h4>
-                                            <ul>
-                                                <li><span class="left">Cillum dolore tortor nisl X 01</span> <span
-                                                        class="right">$25.00</span></li>
-                                                <li><span class="left">Auctor gravida pellentesque X 02 </span><span
-                                                        class="right">$50.00</span></li>
-                                                <li><span class="left">Condimentum posuere consectetur X 01</span>
-                                                    <span class="right">$29.00</span></li>
-                                                <li><span class="left">Habitasse dictumst elementum X 01</span>
-                                                    <span class="right">$10.00</span></li>
-                                            </ul>
-                                            <p>Sub Total <span>$104.00</span></p>
-                                            <p>Shipping Fee <span>$00.00</span></p>
-                                            <h4>Grand Total <span>$104.00</span></h4>
-                                            <div class="method-notice mt--25">
-                                                <article>
-                                                    <h3 class="d-none sr-only">blog-article</h3>
-                                                    Sorry, it seems that there are no available payment methods for
-                                                    your state. Please contact us if you
-                                                    require
-                                                    assistance
-                                                    or wish to make alternate arrangements.
-                                                </article>
-                                            </div>
+                                            <h4>{{$trans2->grand}} {{$trans3->total}} <span>$104.00</span></h4>
                                             <div class="term-block">
                                                 <input type="checkbox" name="status" value="1" id="accept_terms2">
                                                 <label for="accept_terms2">I’ve read and accept the terms &
                                                     conditions</label>
                                             </div>
-                                            <button type="submit" class="place-order w-100">Place order</button>
+                                            <button type="submit" class="place-order w-100">{{$trans3->order}}</button>
                                         </div>
                                     </div>
                                 </div>

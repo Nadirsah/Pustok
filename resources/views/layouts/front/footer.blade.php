@@ -7,18 +7,18 @@
                         <img src="{{asset('front')}}/assets/image/logo--footer.png" alt="">
                     </div>
                     <div class="footer-contact">
-                        <p><span class="label">Address:</span><span class="text">Example Street 98, HH2 BacHa, New
+                        <p><span class="label">{{$trans->address}}:</span><span class="text">Example Street 98, HH2 BacHa, New
                                     York,
                                     USA</span></p>
-                        <p><span class="label">Phone:</span><span class="text">+18088 234 5678</span></p>
-                        <p><span class="label">Email:</span><span class="text">suport@hastech.com</span></p>
+                        <p><span class="label">{{$trans->phone}}:</span><span class="text">+18088 234 5678</span></p>
+                        <p><span class="label">{{$trans->email}}:</span><span class="text">suport@hastech.com</span></p>
                     </div>
                 </div>
             </div>
             <div class=" col-xl-3 col-lg-2 col-sm-6">
                 <div class="single-footer pb--40">
                     <div class="footer-title">
-                        <h3>Information</h3>
+                        <h3>{{$trans->information}}</h3>
                     </div>
                     <ul class="footer-list normal-list">
                         <li><a href="">Prices drop</a></li>
@@ -32,7 +32,7 @@
             <div class=" col-xl-3 col-lg-2 col-sm-6">
                 <div class="single-footer pb--40">
                     <div class="footer-title">
-                        <h3>Extras</h3>
+                        <h3>{{$trans->extras}}</h3>
                     </div>
                     <ul class="footer-list normal-list">
                         <li><a href="">Delivery</a></li>
@@ -45,16 +45,15 @@
             </div>
             <div class=" col-xl-3 col-lg-4 col-sm-6">
                 <div class="footer-title">
-                    <h3>Newsletter Subscribe</h3>
-                </div>
+                    <h3>{{$trans->newsletter_subscribe}}
                 <div class="newsletter-form mb--30">
                     <form action="./php/mail.php">
-                        <input type="email" class="form-control" placeholder="Enter Your Email Address Here...">
-                        <button class="btn btn--primary w-100">Subscribe</button>
+                        <input type="email" class="form-control" placeholder="{{$trans1->enter_your_email}}...">
+                        <button class="btn btn--primary w-100">{{$trans1->subscribe}}</button>
                     </form>
                 </div>
                 <div class="social-block">
-                    <h3 class="title">STAY CONNECTED</h3>
+                    <h3 class="title">{{$trans1->stay_connected}}</h3>
                     <ul class="social-list list-inline">
                         <li class="single-social facebook"><a href=""><i class="ion ion-social-facebook"></i></a>
                         </li>

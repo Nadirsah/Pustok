@@ -16,12 +16,11 @@
                             <table class="table">
                                 <thead>
                                 <tr>
-                                    <th class="pro-thumbnail">Image</th>
-                                    <th class="pro-title">Product</th>
-                                    <th class="pro-price">Price</th>
-                                    <th class="pro-quantity">Quantity</th>
-                                    <th class="pro-subtotal">Total</th>
-                                    <th class="pro-remove">Remove</th>
+                                    <th class="pro-thumbnail">{{$trans2->image}}</th>
+                                    <th class="pro-title">{{$trans2->product}}</th>
+                                    <th class="pro-price">{{$trans2->price}}</th>
+                                    <th class="pro-quantity">{{$trans2->quantity}}</th>
+                                    <th class="pro-subtotal">{{$trans2->total}}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -30,61 +29,10 @@
                                                 src="{{asset('front')}}/assets/image/products/product-1.jpg" alt="Product"></a></td>
                                     <td class="pro-title"><a href="#">Rinosin Glasses</a></td>
                                     <td class="pro-price"><span>$395.00</span></td>
-                                    <td class="pro-quantity">
-                                        <div class="pro-qty">
-                                            <div class="count-input-block">
-                                                <input type="number" class="form-control text-center" value="1">
-                                            </div>
-                                        </div>
-                                    </td>
+                                    <td class="pro-price"><span>123</span></td>
                                     <td class="pro-subtotal"><span>$395.00</span></td>
-                                    <td class="pro-remove"><a href="#"><i class="far fa-trash-alt"></i></a></td>
                                 </tr>
-                                <tr>
-                                    <td class="pro-thumbnail"><a href="#"><img
-                                                src="{{asset('front')}}/assets/image/products/product-2.jpg" alt="Product"></a></td>
-                                    <td class="pro-title"><a href="#">Silacon Glasses</a></td>
-                                    <td class="pro-price"><span>$275.00</span></td>
-                                    <td class="pro-quantity">
-                                        <div class="pro-qty">
-                                            <div class="count-input-block">
-                                                <input type="number" class="form-control text-center" value="1">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="pro-subtotal"><span>$550.00</span></td>
-                                    <td class="pro-remove"><a href="#"><i class="far fa-trash-alt"></i></a></td>
-                                </tr>
-                                <tr>
-                                    <td class="pro-thumbnail"><a href="#"><img
-                                                src="{{asset('front')}}/assets/image/products/product-3.jpg" alt="Product"></a></td>
-                                    <td class="pro-title"><a href="#">Easin Glasses</a></td>
-                                    <td class="pro-price"><span>$295.00</span></td>
-                                    <td class="pro-quantity">
-                                        <div class="pro-qty">
-                                            <div class="count-input-block">
-                                                <input type="number" class="form-control text-center" value="1">
-                                            </div>
-                                    </div>
-                                    </td>
-                                    <td class="pro-subtotal"><span>$295.00</span></td>
-                                    <td class="pro-remove"><a href="#"><i class="far fa-trash-alt"></i></a></td>
-                                </tr>
-                                <tr>
-                                    <td class="pro-thumbnail"><a href="#"><img
-                                                src="{{asset('front')}}/assets/image/products/product-4.jpg" alt="Product"></a></td>
-                                    <td class="pro-title"><a href="#">Macrox Glasses</a></td>
-                                    <td class="pro-price"><span>$220.00</span></td>
-                                    <td class="pro-quantity">
-                                        <div class="pro-qty">
-                                            <div class="count-input-block">
-                                                <input type="number" class="form-control text-center" value="1">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="pro-subtotal"><span>$220.00</span></td>
-                                    <td class="pro-remove"><a href="#"><i class="far fa-trash-alt"></i></a></td>
-                                </tr>
+
                                 </tbody>
                             </table>
                         </div>

@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('translates', function (Blueprint $table) {
             $table->id();
-            $table->string('placeholder');
+            $table->longText('placeholder');
             $table->string('search_button');
-            $table->string('name');
             $table->string('login');
             $table->string('or');
             $table->string('register');
@@ -31,9 +30,9 @@ return new class extends Migration
             $table->string('information');
             $table->string('extras');
             $table->string('newsletter_subscribe');
-           
-           
-            
+
+
+
 
             $table->timestamps();
         });

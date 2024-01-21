@@ -23,7 +23,7 @@
                                 <i class="fas fa-headphones-alt"></i>
                             </div>
                             <div class="text">
-                                <p>{{$transhome->free_support}} 24/7</p>
+                                <p> {{$trans->free_support}} 24/7</p>
                                 <p class="font-weight-bold number">+01-202-555-0181</p>
                             </div>
                         </div>

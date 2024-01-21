@@ -423,7 +423,7 @@
                                                 <span class="price-discount">20%</span>
                                             </div>
                                             <div class="count-down-block">
-                                                <div class="product-countdown" data-countdown="01/05/2020"></div>
+                                                <div class="product-countdown" data-countdown="01/05/2021"></div>
                                             </div>
                                         </div>
                                     </div>

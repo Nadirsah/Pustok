@@ -8,8 +8,8 @@
             </div>
             <div class="col-lg-5">
                 <div class="header-search-block">
-                    <input type="text" placeholder="{{$transhome->placeholder}}">
-                    <button>{{$transhome->search_button}}</button>
+                    <input type="text" placeholder="{{$trans->placeholder}}">
+                    <button>{{$trans->search_button}}</button>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -17,8 +17,8 @@
                     <div class="cart-widget">
                         <div class="login-block">
                             @guest
-                            <a href="{{ route('log-res') }}" class="font-weight-bold">{{$transhome->login}}</a> <br>
-                            <span>{{$transhome->or}}</span> <a href="{{ route('log-res') }}">{{$transhome->register}}</a>
+                            <a href="{{ route('log-res') }}" class="font-weight-bold">{{$trans->login}}</a> <br>
+                            <span>{{$trans->or}}</span> <a href="{{ route('log-res') }}">{{$trans->register}}</a>
                             @else
                             <p>{{ Auth::user()->name }}</p>
                             <a href="{{route('logout')}}"><i class="icon-switch2"></i> Cixis</a>
@@ -32,7 +32,7 @@
                                    {{$cart}}
                                 </span>
                                 <span class="text-item">
-                                {{$transhome->shopping_cart}}
+                                {{$trans->shopping_cart}}
                                 </span>
                                 <span class="price">
                                     {{$totalPrice}} azn
@@ -44,7 +44,7 @@
                                    0
                                 </span>
                                         <span class="text-item">
-                                {{$transhome->shopping_cart}}
+                                {{$trans->shopping_cart}}
                                 </span>
                                         <span class="price">
                                     0.00 azn

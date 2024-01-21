@@ -11,23 +11,23 @@
             <div class="row">
                 <div class="col-12">
                     <div class="order-complete-message text-center">
-                        <h1>Thank you !</h1>
-                        <p>Your order has been received.</p>
+                        <h1>{{$trans3->thank}} !</h1>
+                        <p>{{$trans3->message_for_order}}.</p>
                     </div>
                     <ul class="order-details-list">
-                        <li>Order Number: <strong>{{$data->order_number}}</strong></li>
+                        <li>{{$trans3->order}} {{$trans2->no}}: <strong>{{$data->order_number}}</strong></li>
                         <li>Date: <strong>{{$data->created_at}}</strong></li>
-                        <li>Total: <strong>{{$data->total}}</strong></li>
+                        <li>{{$trans2->total}}: <strong>{{$data->total}}</strong></li>
 
                     </ul>
 
-                    <h3 class="order-table-title">Order Details</h3>
+                    <h3 class="order-table-title">{{$trans3->order}} {{$trans3->details}}</h3>
                     <div class="table-responsive">
                         <table class="table order-details-table">
                             <thead>
                             <tr>
-                                <th>Product</th>
-                                <th>Total</th>
+                                <th>{{$trans2->product}}</th>
+                                <th>{{$trans2->total}}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -35,18 +35,10 @@
                                 <td><a href="single-product.html">Vans Off The Wall T-Shirt In</a> <strong>× 1</strong></td>
                                 <td><span>$59.00</span></td>
                             </tr>
-                            <tr>
-                                <td><a href="single-product.html">Supreme Being Icon Glitch T-Shirt</a> <strong>× 1</strong></td>
-                                <td><span>$58.00</span></td>
-                            </tr>
                             </tbody>
                             <tfoot>
                             <tr>
-                                <th>Subtotal:</th>
-                                <td><span>$117.00</span></td>
-                            </tr>
-                            <tr>
-                                <th>Total:</th>
+                                <th>{{$trans2->total}}:</th>
                                 <td><span>$117.00</span></td>
                             </tr>
                             </tfoot>
