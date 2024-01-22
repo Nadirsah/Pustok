@@ -132,6 +132,17 @@
                                                     name="change[{{$lang->name}}]" placeholder="Change"
                                                     value="{{old('change.'.$lang->name,$data->getTranslation('change',$lang->name))}}">
                                             </div>
+                                            <div class="form-group">
+                                                <label>Send msg</label>
+                                                <input type="text" class="form-control"
+                                                    name="send_us_msg[{{$lang->name}}]" placeholder="Send msg"
+                                                    value="{{old('send_us_msg.'.$lang->name,$data->getTranslation('send_us_msg',$lang->name))}}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Text</label>
+                                                <input type="text" class="form-control" name="text[{{$lang->name}}]"
+                                                    placeholder="Text" value="{{old('text.'.$lang->name,$data->getTranslation('text',$lang->name))}}">
+                                            </div>
                                         </div>
                                 </fieldset>
                                 </div>

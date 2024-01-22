@@ -9,4 +9,6 @@ class Checkout extends Model
 {
     use HasFactory;
     protected $guarded=[];
+
+    
 }

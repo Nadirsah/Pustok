@@ -18,20 +18,6 @@
             <div class=" col-xl-3 col-lg-2 col-sm-6">
                 <div class="single-footer pb--40">
                     <div class="footer-title">
-                        <h3>{{$trans->information}}</h3>
-                    </div>
-                    <ul class="footer-list normal-list">
-                        <li><a href="">Prices drop</a></li>
-                        <li><a href="">New products</a></li>
-                        <li><a href="">Best sales</a></li>
-                        <li><a href="">Contact us</a></li>
-                        <li><a href="">Sitemap</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class=" col-xl-3 col-lg-2 col-sm-6">
-                <div class="single-footer pb--40">
-                    <div class="footer-title">
                         <h3>{{$trans->extras}}</h3>
                     </div>
                     <ul class="footer-list normal-list">
@@ -66,17 +52,5 @@
             </div>
         </div>
     </div>
-    <div class="footer-bottom">
-        <div class="container">
-            <p class="copyright-heading">Suspendisse in auctor augue. Cras fermentum est ac fermentum tempor. Etiam
-                vel
-                magna volutpat, posuere eros</p>
-            <a href="#" class="payment-block">
-                <img src="{{asset('front')}}/assets/image/icon/payment.png" alt="">
-            </a>
-            <p class="copyright-text">Copyright © 2019 <a href="#" class="author">Pustok</a>. All Right Reserved.
-                <br>
-                Design By Pustok</p>
-        </div>
-    </div>
+    
 </footer>

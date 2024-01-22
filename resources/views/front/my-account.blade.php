@@ -22,7 +22,7 @@
                                     {{$trans->address}}</a>
                                 <a href="#account-info" data-toggle="tab"><i class="fa fa-user"></i> {{$trans3->account}}
                                     {{$trans2->details}}</a>
-                                <a href="login-register.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                                <a href="{{route('logout')}}"><i class="fas fa-sign-out-alt"></i> Cixis</a>
                             </div>
                         </div>
                         <!-- My Account Tab Menu End -->
@@ -34,7 +34,7 @@
                                     <div class="myaccount-content">
                                         <h3>{{$trans3->dashboard}}</h3>
                                         <div class="welcome mb-20">
-                                            <p>Hello, <strong>Alex Tuntuni</strong> (If Not <strong>Tuntuni
+                                            <p>Hello, <strong>{{$data->name}} {{$data->surname}}</strong> (If Not <strong>Tuntuni
                                                     !</strong><a href="login-register.html" class="logout">
                                                     Logout</a>)</p>
                                         </div>

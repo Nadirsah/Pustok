@@ -26,6 +26,8 @@ class Translate3 extends Model
         'description',
         'dashboard',
         'account',
-        'change'
+        'change',
+        'send_us_msg',
+        'text',
     ];
 }

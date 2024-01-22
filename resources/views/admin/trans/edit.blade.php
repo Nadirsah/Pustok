@@ -138,9 +138,9 @@
 
                                             </div>
                                             <div class="form-group">
-                                                <label>Information</label>
+                                                <label>Yer</label>
                                                 <input type="text" class="form-control"
-                                                    name="information[{{$lang->name}}]" placeholder="Information"
+                                                    name="information[{{$lang->name}}]" placeholder="Yer"
                                                     value="{{old('information.'.$lang->name,$data->getTranslation('information',$lang->name))}}">
 
                                             </div>

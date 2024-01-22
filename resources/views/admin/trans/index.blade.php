@@ -30,7 +30,7 @@
                     <th>Address</th>
                     <th>Phone</th>
                     <th>Email</th>
-                    <th>Information</th>
+                    <th>Yer</th>
                     <th>Extras</th>
                     <th>Newsletter subscribe</th>
                     <th class="text-center">Actions</th>

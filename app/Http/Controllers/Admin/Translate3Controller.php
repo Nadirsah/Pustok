@@ -40,6 +40,8 @@ class Translate3Controller extends Controller
         $data->dashboard = $request->dashboard;
         $data->account = $request->account;
         $data->change = $request->change;
+        $data->send_us_msg = $request->send_us_msg;
+        $data->text = $request->text;
         $data->save();
 
         return redirect()->route('trans_3.index')->with('type','success')
@@ -72,6 +74,8 @@ class Translate3Controller extends Controller
         $data->dashboard = $request->dashboard;
         $data->account = $request->account;
         $data->change = $request->change;
+        $data->send_us_msg = $request->send_us_msg;
+        $data->text = $request->text;
         $data->update();
 
         return redirect()->route('trans_3.index')->with('type','success')

@@ -20,14 +20,13 @@
                             <a href="{{ route('log-res') }}" class="font-weight-bold">{{$trans->login}}</a> <br>
                             <span>{{$trans->or}}</span> <a href="{{ route('log-res') }}">{{$trans->register}}</a>
                             @else
-                            <p>{{ Auth::user()->name }}</p>
-                            <a href="{{route('logout')}}"><i class="icon-switch2"></i> Cixis</a>
+                            <p><a href="{{route('my-account',Auth::user()->id)}}"><i class="icon-switch2"></i> {{ Auth::user()->name }}</a></p>
                             @endguest
                         </div>
                         <div class="cart-block">
                             <div class="cart-total">
                                 @auth
-                                    <a href="{{route('showcart',Auth::user()->id)}}">
+                                    <a href="{{route('showcart',Auth::user()->id)}}" ><i class="icon-switch2"></i>
                                 <span class="text-number">
                                    {{$cart}}
                                 </span>

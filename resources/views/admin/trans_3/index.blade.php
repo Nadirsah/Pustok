@@ -33,6 +33,8 @@
                     <th>Account</th>
                     <th>Details</th>
                     <th>Change</th>
+                    <th>Sendmsg</th>
+                    <th>Text</th>
                     <th class="text-center">Actions</th>
                 </tr>
             </thead>
@@ -56,6 +58,8 @@
                     <td>{{$items->account}}</td>
                     <td>{{$items->details}}</td>
                     <td>{{$items->change}}</td>
+                    <td>{{$items->send_us_msg}}</td>
+                    <td>{{$items->text}}</td>
                     <td> <a href="{{route('trans_3.edit',$items->id)}}"><i class="btn btn-info fa fa-edit"></i></a>
 
                     </td>

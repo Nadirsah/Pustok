@@ -29,6 +29,8 @@ return new class extends Migration
             $table->string('dashboard');
             $table->string('account');
             $table->string('change');
+            $table->string('send_as_msg');
+            $table->string('text');
             $table->timestamps();
         });
     }

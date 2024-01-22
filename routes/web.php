@@ -46,11 +46,11 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
     Route::get('/contact',[ContactController::class,'index'])->name('contact');
     Route::get('/cart/{id}',[CartController::class,'showcart'])->name('showcart');
     Route::get('/wish',[WishController::class,'index'])->name('wish');
-    Route::get('/product-detail',[ProductDetailController::class,'index'])->name('product-detail');
+    Route::get('/product-detail/{id}',[ProductDetailController::class,'index'])->name('product-detail');
     Route::get('/faq',[FaqController::class,'index'])->name('faq');
     Route::get('/checkout',[CheckoutController::class,'index'])->name('checkout');
     Route::get('/order-complete/{order_number}',[OrderCompleteController::class,'index'])->name('order-complete');
-    Route::get('/my-account',[MyAccountController::class,'index'])->name('my-account');
+    Route::get('/my-account/{id}',[MyAccountController::class,'index'])->name('my-account');
     Route::get('/log-res',[LogResController::class,'index'])->name('log-res')->middleware('isLogin');
     Route::post('/addcart/{id}',[CartController::class,'addcart'])->name('addcart');
     Route::post('/delete_card/{id}', [CartController::class, 'delete'])->name('card.delete');

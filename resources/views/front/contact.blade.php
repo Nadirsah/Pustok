@@ -8,16 +8,12 @@
     @include('layouts.front.activ-menu')
     <main class="contact_area inner-page-sec-padding-bottom">
         <div class="container">
-{{--            <div class="row">--}}
-{{--                <div class="col-lg-12">--}}
-{{--                    <div id="google-map"></div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+
             <div class="row ">
                 <div class="col-lg-5 col-md-5 col-12">
                     <div class="contact_adress">
                         <div class="ct_address">
-                            <h3 class="ct_title">Location </h3>
+                            <h3 class="ct_title">{{$trans->information}}</h3>
 
                         </div>
                         <div class="address_wrapper">
@@ -50,7 +46,7 @@
                 </div>
                 <div class="col-lg-7 col-md-7 col-12 mt--30 mt-md--0">
                     <div class="contact_form">
-                        <h3 class="ct_title">Send Us a Message</h3>
+                        <h3 class="ct_title">{{$trans3->send_us_msg}}</h3>
                         <form id="contact-form" action="php/mail.php" method="post" class="contact-form">
                             <div class="row">
                                 <div class="col-lg-12">
@@ -75,7 +71,7 @@
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label>Your Message</label>
+                                        <label>{{$trans3->text}}</label>
                                         <textarea id="con_message" name="con_message"
                                                   class="form-control"></textarea>
                                     </div>

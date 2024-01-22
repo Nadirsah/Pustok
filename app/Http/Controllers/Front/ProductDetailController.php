@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 
 class ProductDetailController extends Controller
 {
-    public function index(){
-
-        return view('front.product-detail');
+    public function index($id){
+         $data=Product::findOrFail($id);
+        return view('front.product-detail',compact('data'));
     }
 }

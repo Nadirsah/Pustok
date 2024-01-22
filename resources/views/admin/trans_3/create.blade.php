@@ -132,6 +132,16 @@
                                                 <input type="text" class="form-control" name="dashboard[{{$lang->name}}]"
                                                     placeholder="Dashboard" value="{{old('dashboard.'.$lang->name)}}">
                                             </div>
+                                            <div class="form-group">
+                                                <label>Sen msg</label>
+                                                <input type="text" class="form-control" name="send_us_msg[{{$lang->name}}]"
+                                                    placeholder="Sen msg" value="{{old('send_us_msg.'.$lang->name)}}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Text</label>
+                                                <input type="text" class="form-control" name="text[{{$lang->name}}]"
+                                                    placeholder="Text" value="{{old('text.'.$lang->name)}}">
+                                            </div>
                                         </div>
                                     </fieldset>
                                 </div>
