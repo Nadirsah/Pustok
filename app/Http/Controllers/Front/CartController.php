@@ -32,7 +32,7 @@ class CartController extends Controller
               $cartItem->quantity += 1;
               $cartItem->save();
           } else {
-              // Eğer ürün ilk defa ekleniyorsa, yeni bir satır oluştur
+
               Cart::create([
                   'user_id' => $user_id,
                   'product_id' => $productid,

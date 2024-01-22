@@ -37,10 +37,10 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/redirects',[IndexController::class,'redirects']);
+
 
 Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath','localize','localeViewPath'       ]],function(){
-
+    Route::get('/',[IndexController::class,'redirects']);
     Route::get('/',[IndexController::class,'index'])->name('home');
     Route::get('/shop',[ShopController::class,'index'])->name('shop');
     Route::get('/contact',[ContactController::class,'index'])->name('contact');

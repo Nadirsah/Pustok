@@ -1,3 +1,4 @@
+
 <footer class="site-footer">
     <div class="container">
         <div class="row justify-content-between  section-padding">
@@ -31,7 +32,7 @@
             </div>
             <div class=" col-xl-3 col-lg-4 col-sm-6">
                 <div class="footer-title">
-                    <h3>{{$trans->newsletter_subscribe}}
+                    <h3>{{$trans->newsletter_subscribe}}</h3>
                 <div class="newsletter-form mb--30">
                     <form action="./php/mail.php">
                         <input type="email" class="form-control" placeholder="{{$trans1->enter_your_email}}...">
@@ -41,16 +42,18 @@
                 <div class="social-block">
                     <h3 class="title">{{$trans1->stay_connected}}</h3>
                     <ul class="social-list list-inline">
-                        <li class="single-social facebook"><a href=""><i class="ion ion-social-facebook"></i></a>
+                        @foreach($social as $data)
+                        <li class="single-social {{$data->name}}"><a href="{{$data->url}}" target="_blank">
+                                <i class="fa-brands fa-{{$data->name}}"></i>
+                                </a>
                         </li>
-                        <li class="single-social twitter"><a href=""><i class="ion ion-social-twitter"></i></a></li>
-                        <li class="single-social google"><a href=""><i
-                                    class="ion ion-social-googleplus-outline"></i></a></li>
-                        <li class="single-social youtube"><a href=""><i class="ion ion-social-youtube"></i></a></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
+            </div>
         </div>
     </div>
-    
+
 </footer>
+

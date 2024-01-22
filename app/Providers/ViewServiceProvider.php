@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\View\Composers\BrandComposer;
 use App\View\Composers\LangComposer;
+use App\View\Composers\SocialComposer;
 use App\View\Composers\TranslateComposer;
 use Illuminate\Support\Facades;
 //use Illuminate\View\View;
@@ -26,6 +28,8 @@ class ViewServiceProvider extends ServiceProvider
     {
         Facades\View::composer(['front.home.home-sidebar','layouts.front.header','layouts.front.sidebar','layouts.front','front.cart','front.order-complete'],LangComposer::class);
         Facades\View::composer('*',TranslateComposer::class);
+        Facades\View::composer('layouts.front.footer',SocialComposer::class);
+        Facades\View::composer('layouts.front.brand',BrandComposer::class);
 
     }
 }

@@ -109,7 +109,7 @@
                                                 <a href="#" class="author">
                                                 {{$data->get_products->tags}}
                                                 </a>
-                                                <h3><a href="{{route('product-detail',$data->id)}}">{!!$data->get_products->title!!}</a></h3>
+                                                <h3><a href="{{route('product-detail',$data->get_products->id)}}">{!!$data->get_products->title!!}</a></h3>
                                             </div>
                                             <div class="price-block">
                                                 <span class="price">{{$data->get_products->price}}</span>
@@ -265,7 +265,7 @@
                                 </div>
                             </div>
                         </div>
-                      
+
                         <div class="single-block">
                             <div class="home-right-block bg-white">
                                 <div class="sb-custom-tab text-lg-left text-center">
@@ -361,7 +361,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                               
+
                                             </div>
                                         </div>
                                         <div class="tab-pane" id="woman2" role="tabpanel"
@@ -399,7 +399,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                               
+
                                             </div>
                                         </div>
                                     </div>
