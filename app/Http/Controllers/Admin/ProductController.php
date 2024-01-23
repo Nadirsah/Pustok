@@ -102,7 +102,7 @@ class ProductController extends Controller
         'model' => 'required',
         'description.*' => 'required',
         'subcategory' => 'required',
-        'img'=>'required|max:2048',
+        'img'=>'max:2048',
 
     ]);
         $data = Product::findOrFail($id);

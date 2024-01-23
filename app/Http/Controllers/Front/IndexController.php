@@ -26,10 +26,10 @@ class IndexController extends ActivController
         $usertype=Auth::user()->user_Type;
         if($usertype=='admin')
         {
-            return view('admin.index');
+            return redirect()->route('dashboard');
         }
         else{
-            return view('front.home.index');
+            return redirect('/');
         }
     }
 }

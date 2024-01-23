@@ -1,5 +1,6 @@
 @extends('layouts.front')
 @section('css')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 @endsection
 @section('sidebar')
 @include('layouts.front.sidebar')
@@ -11,7 +12,7 @@
         <div class="row">
             <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb--30 mb-lg--0">
                 <!-- Login Form s-->
-                <form action="{{route('user.store')}}" method="POST" class="row" enctype="multipart/form-data">
+                <form action="{{route('guest.store')}}" method="POST" class="row" enctype="multipart/form-data">
             @csrf
                     <div class="login-form">
                         <h4 class="login-title">{{$trans1->new}} {{$trans1->customer}}</h4>
@@ -67,6 +68,17 @@
         </div>
     </div>
 </main>
+</script>
+@if(Session::has('message'))
+    <script>
+        swal('Message', "{{Session::get('message')}}", 'success', {
+            button: true,
+            button: 'OK',
+            timer: 6000,
+            dangerMode: true,
+        });
+    </script>
+@endif
 @endsection
 @section('js')
 @endsection

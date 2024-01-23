@@ -21,7 +21,7 @@ class AuthController extends Controller
         $option['is_active']=1;
         if(Auth::attempt($option)){
             $request->session()->regenerate();
-            return redirect('/');
+            return redirect('/redirects');
 
         }
         return back()->withErrors([

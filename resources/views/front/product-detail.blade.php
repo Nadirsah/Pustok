@@ -82,7 +82,7 @@
                         <article class="product-details-article">
                             <h4 class="sr-only">Product Summery</h4>
                             <p>
-
+                                {!! $data->about !!}
                             </p>
                         </article>
                         <div class="add-to-cart-row">
@@ -125,7 +125,7 @@
                         <article class="review-article">
                             <h1 class="sr-only">Tab Article</h1>
                             <p>
-                            {!!$data->about!!}
+                            {!!$data->description!!}
                             </p>
                         </article>
                     </div>

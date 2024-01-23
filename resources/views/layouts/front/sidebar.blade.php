@@ -17,24 +17,7 @@
                             </ul>
                         @endif
                     </li>
-
                 @endforeach
-
-
-                <li class="cat-item"><a href="#">Perfomance Filters</a></li>
-                <li class="cat-item has-children"><a href="#">Cookbooks</a>
-                    <ul class="sub-menu">
-                        <li><a href="">Brake Tools</a></li>
-                        <li><a href="">Driveshafts</a></li>
-                        <li><a href="">Emergency Brake</a></li>
-                        <li><a href="">Spools</a></li>
-                    </ul>
-                </li>
-                <li class="cat-item hidden-menu-item"><a href="#">Accessories</a></li>
-                <li class="cat-item hidden-menu-item"><a href="#">Education</a></li>
-                <li class="cat-item hidden-menu-item"><a href="#">Indoor Living</a></li>
-                <li class="cat-item"><a href="#" class="js-expand-hidden-menu">More
-                        Categories</a></li>
             </ul>
         </div>
     </nav>

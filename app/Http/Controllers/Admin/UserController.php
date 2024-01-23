@@ -43,6 +43,21 @@ class UserController extends Controller
         return  redirect()->route('user.index')->with('type','success')->with('message', 'Məlumat əlavə olundu!');
     }
 
+    public function guest(Request $request)
+    {
+        $request->validate([
+            'name'=>['required'],
+            'email'=>['required','email'],
+            'password'=>['required'],
+        ]);
+        $data=new User();
+        $data->name=$request->name;
+        $data->email=$request->email;
+        $data->password=Hash::make($request->password);
+        $data->save();
+        return  redirect()->route('log-res')->with('message','Melumatlar ugurla yuklendi! Daxil olun.');
+    }
+
     /**
      * Display the specified resource.
      */

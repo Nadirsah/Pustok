@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="en">
 
 <head>
   @include('layouts.front.head')
@@ -51,109 +51,22 @@
                         <nav class="category-nav   ">
                             <div>
                                 <a href="javascript:void(0)" class="category-trigger"><i
-                                        class="fa fa-bars"></i>Browse
-                                    categories</a>
+                                        class="fa fa-bars"></i>{{$trans->browse_category}}</a>
                                 <ul class="category-menu">
-                                    <li class="cat-item has-children">
-                                        <a href="#">Arts & Photography</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="#">Bags & Cases</a></li>
-                                            <li><a href="#">Binoculars & Scopes</a></li>
-                                            <li><a href="#">Digital Cameras</a></li>
-                                            <li><a href="#">Film Photography</a></li>
-                                            <li><a href="#">Lighting & Studio</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="cat-item has-children mega-menu"><a href="#">Biographies</a>
-                                        <ul class="sub-menu">
-                                            <li class="single-block">
-                                                <h3 class="title">WHEEL SIMULATORS</h3>
-                                                <ul>
-                                                    <li><a href="#">Bags & Cases</a></li>
-                                                    <li><a href="#">Binoculars & Scopes</a></li>
-                                                    <li><a href="#">Digital Cameras</a></li>
-                                                    <li><a href="#">Film Photography</a></li>
-                                                    <li><a href="#">Lighting & Studio</a></li>
+                                    @foreach($categories->where('parent_id', 0) as $category)
+
+                                        <li class="cat-item has-children">
+                                            <a href="#">{{$category->name}}</a>
+                                            @if($category->children->isNotEmpty())
+                                                <ul class="sub-menu">
+                                                    @foreach($category->children as $child)
+                                                        <li><a href="#">{{$child->name}}</a></li>
+                                                    @endforeach
                                                 </ul>
-                                            </li>
-                                            <li class="single-block">
-                                                <h3 class="title">WHEEL SIMULATORS</h3>
-                                                <ul>
-                                                    <li><a href="#">Bags & Cases</a></li>
-                                                    <li><a href="#">Binoculars & Scopes</a></li>
-                                                    <li><a href="#">Digital Cameras</a></li>
-                                                    <li><a href="#">Film Photography</a></li>
-                                                    <li><a href="#">Lighting & Studio</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="single-block">
-                                                <h3 class="title">WHEEL SIMULATORS</h3>
-                                                <ul>
-                                                    <li><a href="#">Bags & Cases</a></li>
-                                                    <li><a href="#">Binoculars & Scopes</a></li>
-                                                    <li><a href="#">Digital Cameras</a></li>
-                                                    <li><a href="#">Film Photography</a></li>
-                                                    <li><a href="#">Lighting & Studio</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="single-block">
-                                                <h3 class="title">WHEEL SIMULATORS</h3>
-                                                <ul>
-                                                    <li><a href="#">Bags & Cases</a></li>
-                                                    <li><a href="#">Binoculars & Scopes</a></li>
-                                                    <li><a href="#">Digital Cameras</a></li>
-                                                    <li><a href="#">Film Photography</a></li>
-                                                    <li><a href="#">Lighting & Studio</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="cat-item has-children"><a href="#">Business & Money</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="">Brake Tools</a></li>
-                                            <li><a href="">Driveshafts</a></li>
-                                            <li><a href="">Emergency Brake</a></li>
-                                            <li><a href="">Spools</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="cat-item has-children"><a href="#">Calendars</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="">Brake Tools</a></li>
-                                            <li><a href="">Driveshafts</a></li>
-                                            <li><a href="">Emergency Brake</a></li>
-                                            <li><a href="">Spools</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="cat-item has-children"><a href="#">Children's Books</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="">Brake Tools</a></li>
-                                            <li><a href="">Driveshafts</a></li>
-                                            <li><a href="">Emergency Brake</a></li>
-                                            <li><a href="">Spools</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="cat-item has-children"><a href="#">Comics</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="">Brake Tools</a></li>
-                                            <li><a href="">Driveshafts</a></li>
-                                            <li><a href="">Emergency Brake</a></li>
-                                            <li><a href="">Spools</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="cat-item"><a href="#">Perfomance Filters</a></li>
-                                    <li class="cat-item has-children"><a href="#">Cookbooks</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="">Brake Tools</a></li>
-                                            <li><a href="">Driveshafts</a></li>
-                                            <li><a href="">Emergency Brake</a></li>
-                                            <li><a href="">Spools</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="cat-item "><a href="#">Accessories</a></li>
-                                    <li class="cat-item "><a href="#">Education</a></li>
-                                    <li class="cat-item hidden-menu-item"><a href="#">Indoor Living</a></li>
-                                    <li class="cat-item"><a href="#" class="js-expand-hidden-menu">More
-                                            Categories</a></li>
+                                            @endif
+                                        </li>
+                                    @endforeach
+
                                 </ul>
                             </div>
                         </nav>
@@ -181,12 +94,7 @@
             </div>
             <div class="off-canvas-inner">
                 <!-- search box start -->
-                <div class="search-box offcanvas">
-                    <form>
-                        <input type="text" placeholder="Search Here">
-                        <button class="search-btn"><i class="ion-ios-search-strong"></i></button>
-                    </form>
-                </div>
+
                 <!-- search box end -->
                 <!-- mobile menu start -->
                 <div class="mobile-navigation">
@@ -194,15 +102,15 @@
                     <nav class="off-canvas-nav">
                         <ul class="mobile-menu main-mobile-menu">
                             <li class="menu-item-has-children">
-                                <a href="index.html">Home</a>
+                                <a href="{{route('home')}}">{{__('menu.home')}} </a>
 
                             </li>
 
                             <li class="menu-item-has-children">
-                                <a href="./shop-list.html">Shop</a>
+                                <a href="{{route('shop')}}">{{$trans->shop}}</a>
                             </li>
 
-                            <li><a href="contact.html">Contact</a></li>
+                            <a href="{{route('contact')}}">{{$trans->contact}}</a>
                         </ul>
                     </nav>
                     <!-- mobile menu navigation end -->
@@ -211,26 +119,18 @@
                 <nav class="off-canvas-nav">
                     <ul class="mobile-menu menu-block-2">
                         <li class="menu-item-has-children">
-                            <a href="#">Currency - USD $ <i class="fas fa-angle-down"></i></a>
+                            <a href="#">{{ app()->getLocale() }}<i class="fas fa-angle-down"></i></a>
                             <ul class="sub-menu">
-                                <li> <a href="cart.html">USD $</a></li>
-                                <li> <a href="checkout.html">EUR €</a></li>
+                                @foreach (LaravelLocalization::getSupportedLocales() as $lang=>$properties)
+                                <li><a class="alang" href="{{LaravelLocalization::getLocalizedURL($lang)}}">{{$lang}}</a>
+                                </li>
+                                @endforeach
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="#">Lang - Eng<i class="fas fa-angle-down"></i></a>
+                            <a href="#">{{$trans3->account}} <i class="fas fa-angle-down"></i></a>
                             <ul class="sub-menu">
-                                <li>Eng</li>
-                                <li>Ban</li>
-                            </ul>
-                        </li>
-                        <li class="menu-item-has-children">
-                            <a href="#">My Account <i class="fas fa-angle-down"></i></a>
-                            <ul class="sub-menu">
-                                <li><a href="">My Account</a></li>
-                                <li><a href="">Order History</a></li>
-                                <li><a href="">Transactions</a></li>
-                                <li><a href="">Downloads</a></li>
+                                <li><a href="">{{$trans3->account}}</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -241,12 +141,9 @@
                         <a href="" class="sin-contact"><i class="fas fa-envelope"></i>examle@handart.com</a>
                     </div>
                     <div class="off-canvas-social">
-                        <a href="#" class="single-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="single-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="single-icon"><i class="fas fa-rss"></i></a>
-                        <a href="#" class="single-icon"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="single-icon"><i class="fab fa-google-plus-g"></i></a>
-                        <a href="#" class="single-icon"><i class="fab fa-instagram"></i></a>
+                        @foreach($social as $data)
+                        <a href="{{$data->url}}" class="single-icon"><i class="fa-brands fa-{{$data->name}}"></i></a>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -265,18 +162,18 @@
                     <div class="main-navigation flex-lg-right">
                         <ul class="main-menu menu-right ">
                             <li class="menu-item has-children">
-                                <a href="index.html">Home </a>
+                                <a href="{{route('home')}}">{{__('menu.home')}} </a>
 
                             </li>
                             <!-- Shop -->
                             <li class="menu-item has-children mega-menu">
-                                <a href="./shop-list.html">shop </a>
+                                <a href="{{route('shop')}}">{{$trans->shop}}</a>
 
                             </li>
 
 
                             <li class="menu-item">
-                                <a href="contact.html">Contact</a>
+                                <a href="{{route('contact')}}">{{$trans->contact}}</a>
                             </li>
                         </ul>
                     </div>

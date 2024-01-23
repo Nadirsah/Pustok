@@ -28,10 +28,10 @@ class ViewServiceProvider extends ServiceProvider
     {
         Facades\View::composer(['front.home.home-sidebar','layouts.front.header','layouts.front.sidebar','layouts.front','front.cart','front.order-complete'],LangComposer::class);
         Facades\View::composer('*',TranslateComposer::class);
-        Facades\View::composer('layouts.front.footer',SocialComposer::class);
+        Facades\View::composer(['layouts.front.footer','layouts.front'],SocialComposer::class);
         Facades\View::composer('layouts.front.brand',BrandComposer::class);
 
     }
-   
-    
+
+
 }

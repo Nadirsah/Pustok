@@ -42,12 +42,11 @@
                 <div class="social-block">
                     <h3 class="title">{{$trans1->stay_connected}}</h3>
                     <ul class="social-list list-inline">
-                        @foreach($social as $data)
-                        <li class="single-social {{$data->name}}"><a href="{{$data->url}}" target="_blank">
-                                <i class="fa-brands fa-{{$data->name}}"></i>
-                                </a>
-                        </li>
-                        @endforeach
+                        <div class="off-canvas-social">
+                            @foreach($social as $data)
+                                <a href="{{$data->url}}" class="single-icon" ><i class="fa-brands fa-{{$data->name}}"></i></a>
+                            @endforeach
+                        </div>
                     </ul>
                 </div>
             </div>
