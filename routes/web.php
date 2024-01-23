@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\Usercontroller;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SocialController;
 use App\Http\Controllers\Admin\Translate3Controller;
+use App\Http\Controllers\Admin\TrnLangController;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CheckoutController;
 use App\Http\Controllers\Front\ContactController;
@@ -44,6 +45,7 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
     Route::get('/',[IndexController::class,'index'])->name('home');
     Route::get('/shop',[ShopController::class,'index'])->name('shop');
     Route::get('/contact',[ContactController::class,'index'])->name('contact');
+    Route::post('/msj_contact',[ContactController::class,'store'])->name('msj_contact');
     Route::get('/cart/{id}',[CartController::class,'showcart'])->name('showcart');
     Route::get('/wish',[WishController::class,'index'])->name('wish');
     Route::get('/product-detail/{id}',[ProductDetailController::class,'index'])->name('product-detail');
@@ -78,6 +80,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','isAdmin']],function(){
     Route::resource('/trans_2',Translate2Controller::class,);
     Route::resource('/trans_1',Translate1Controller::class,);
     Route::resource('/trans_3',Translate3Controller::class,);
+    Route::resource('/translate',TrnLangController::class,);
     Route::resource('/user',Usercontroller::class,);
     Route::post('update_status/', [Usercontroller::class, 'updateStatus'])->name('isdiscount');
     Route::resource('/setting',SettingController::class,);

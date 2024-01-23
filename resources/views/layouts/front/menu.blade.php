@@ -3,7 +3,7 @@
 
         <ul class="main-menu menu-right li-last-0">
             <li class="menu-item has-children">
-                <a href="{{route('home')}}">{{$trans->home}} </a>
+                <a href="{{route('home')}}">{{__('menu.home')}} </a>
 
             </li>
             <!-- Shop -->

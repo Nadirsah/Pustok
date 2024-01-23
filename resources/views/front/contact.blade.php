@@ -47,47 +47,48 @@
                 <div class="col-lg-7 col-md-7 col-12 mt--30 mt-md--0">
                     <div class="contact_form">
                         <h3 class="ct_title">{{$trans3->send_us_msg}}</h3>
-                        <form id="contact-form" action="php/mail.php" method="post" class="contact-form">
+                        <form  action="{{route('msj_contact')}}" method="Post" class="contact-form">
+                            @csrf
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label>{{$trans1->name}} <span class="required">*</span></label>
-                                        <input type="text" id="con_name" name="con_name" class="form-control"
-                                               required>
+                                        <input type="text" id="con_name" name="name" class="form-control" value="{{old('name')}}">
+                                               <span class="text-danger">@error('name'){{'Ad sahəsi boş ola bilməz!'}}@enderror</span>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label>{{$trans->email}}<span class="required">*</span></label>
-                                        <input type="email" id="con_email" name="con_email" class="form-control"
-                                               required>
+                                        <input type="email" id="con_email" name="email" class="form-control" value="{{old('email')}}">
+                                        <span class="text-danger">@error('email'){{'Email sahəsi boş ola bilməz!'}}@enderror</span>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label>{{$trans->phone}}*</label>
-                                        <input type="text" id="con_phone" name="con_phone" class="form-control">
+                                        <input type="text" id="con_phone" name="phone" class="form-control" value="{{old('phone')}}">
+                                        <span class="text-danger">@error('phone'){{'Telefon sahəsi boş ola bilməz!'}}@enderror</span>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label>{{$trans3->text}}</label>
-                                        <textarea id="con_message" name="con_message"
-                                                  class="form-control"></textarea>
+                                        <label>{{$trans3->text}}<span class="required">*</span></label>
+                                        <textarea id="con_message" name="message"
+                                                  class="form-control">{{old('message')}}</textarea>
+                                                  <span class="text-danger">@error('message'){{'Mesaj sahəsi boş ola bilməz!'}}@enderror</span>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-btn">
-                                        <button type="submit" value="submit" id="submit" class="btn btn-black"
-                                                name="submit">send</button>
+                                        <button type="submit"  id="submit" class="btn btn-black"
+                                                >Gonder</button>
                                     </div>
-                                    <div class="form__output"></div>
+                                  
                                 </div>
                             </div>
                         </form>
-                        <div class="form-output">
-                            <p class="form-messege"></p>
-                        </div>
+                       
                     </div>
                 </div>
             </div>

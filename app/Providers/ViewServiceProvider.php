@@ -32,4 +32,6 @@ class ViewServiceProvider extends ServiceProvider
         Facades\View::composer('layouts.front.brand',BrandComposer::class);
 
     }
+   
+    
 }

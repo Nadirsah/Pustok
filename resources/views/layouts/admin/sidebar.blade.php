@@ -23,6 +23,7 @@
                     <li class="{{Request::segment(2)==='trans_footer' ? 'active' : ''}}"><a href="{{route('trans_1.index')}}"><i class="icon-home4"></i> <span>Tercume 2</span></a></li>
                     <li class="{{Request::segment(2)==='trans_content' ? 'active' : ''}}"><a href="{{route('trans_2.index')}}"><i class="icon-home4"></i> <span>Tercume 3</span></a></li>
                     <li class="{{Request::segment(2)==='trans_card' ? 'active' : ''}}"><a href="{{route('trans_3.index')}}"><i class="icon-home4"></i> <span>Tercume 4</span></a></li>
+                    <li class="{{Request::segment(2)==='translate' ? 'active' : ''}}"><a href="{{route('translate.index')}}"><i class="icon-home4"></i> <span>Tercume</span></a></li>
                     </ul>
                     </li>
                     <li class="{{Request::segment(2)==='setting' ? 'active' : ''}}"><a href="{{route('setting.index')}}"><i class="icon-home4"></i> <span>Ayarlar</span></a></li>
