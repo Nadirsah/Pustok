@@ -8,13 +8,13 @@
             </li>
             <!-- Shop -->
             <li class="menu-item has-children mega-menu">
-                <a href="{{route('shop')}}">{{$trans->shop}}</a>
+                <a href="{{route('shop')}}">{{__('menu.shop')}}</a>
 
             </li>
 
 
             <li class="menu-item">
-                <a href="{{route('contact')}}">{{$trans->contact}}</a>
+                <a href="{{route('contact')}}">{{__('menu.contact')}}</a>
             </li>
         </ul>
     </div>

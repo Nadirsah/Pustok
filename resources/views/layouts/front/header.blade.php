@@ -8,8 +8,8 @@
             </div>
             <div class="col-lg-5">
                 <div class="header-search-block">
-                    <input type="text" placeholder="{{$trans->placeholder}}">
-                    <button>{{$trans->search_button}}</button>
+                    <input type="text" placeholder="{{__('search_input.placeholder')}}">
+                    <button>{{__('search_input.search_button')}}</button>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -17,8 +17,8 @@
                     <div class="cart-widget">
                         <div class="login-block">
                             @guest
-                            <a href="{{ route('log-res') }}" class="font-weight-bold">{{$trans->login}}</a> <br>
-                            <span>{{$trans->or}}</span> <a href="{{ route('log-res') }}">{{$trans->register}}</a>
+                            <a href="{{ route('log-res') }}" class="font-weight-bold">{{__('reqistr.login')}}</a> <br>
+                            <span>{{__('letter.or')}}</span> <a href="{{ route('log-res') }}">{{__('reqistr.register')}}</a>
                             @else
                             <p><a href="{{route('my-account',Auth::user()->id)}}"><i class="icon-switch2"></i> {{ Auth::user()->name }}</a></p>
                             @endguest
@@ -31,7 +31,7 @@
                                    {{$cart}}
                                 </span>
                                 <span class="text-item">
-                                {{$trans->shopping_cart}}
+                                {{__('cart.shopping_cart')}}
                                 </span>
                                 <span class="price">
                                     {{$totalPrice}} azn
@@ -43,7 +43,7 @@
                                    0
                                 </span>
                                         <span class="text-item">
-                                {{$trans->shopping_cart}}
+                                {{__('cart.shopping_cart')}}
                                 </span>
                                         <span class="price">
                                     0.00 azn

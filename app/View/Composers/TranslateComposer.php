@@ -14,7 +14,7 @@ use Illuminate\View\View;
 class TranslateComposer
 {
 public function compose(View $view):void
-{   $lang=LanguageLine::all();
+{
     $trans=Translate::first();
     $trans1=Translate1::first();
     $trans2=Translate2::first();
@@ -23,7 +23,6 @@ public function compose(View $view):void
     $view->with('trans1', $trans1);
     $view->with('trans2', $trans2);
     $view->with('trans3', $trans3);
-    $view->with('lang', $lang);
 
 }
 }

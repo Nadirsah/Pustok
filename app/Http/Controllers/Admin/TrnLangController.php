@@ -36,7 +36,7 @@ class TrnLangController extends Controller
         $data->text = $request->text;
         $data->save();
 
-        return redirect()->route('translate.index')->with('type','success')
+        return redirect()->route('translate.create')->with('type','success')
             ->with('message','Melumatlar ugurla yuklendi!');
     }
 
@@ -53,15 +53,28 @@ class TrnLangController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data=LanguageLine::findOrFail($id);
+        $langs=Lang::all();
+        return view('admin.translate.edit',compact('data','langs'));
     }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {
-        //
+    {$request->validate([
+        'text.*' => 'required',
+        'group' => 'required',
+        'key' => 'required',
+    ]);
+        $data=LanguageLine::findOrFail($id);
+        $data->group = $request->group;
+        $data->key = $request->key;
+        $data->text = $request->text;
+        $data->save();
+
+        return redirect()->route('translate.index')->with('type','success')
+            ->with('message','Melumatlar ugurla yuklendi!');
     }
 
     /**
