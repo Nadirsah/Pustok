@@ -23,11 +23,11 @@
                                     <thead>
                                     <tr>
                                         <th class="pro-remove"></th>
-                                        <th class="pro-thumbnail">{{$trans2->image}}</th>
-                                        <th class="pro-title">{{$trans2->product}}</th>
-                                        <th class="pro-price">{{$trans2->price}}</th>
-                                        <th class="pro-quantity">{{$trans2->quantity}}</th>
-                                        <th class="pro-subtotal">{{$trans2->total}}</th>
+                                        <th class="pro-thumbnail">{{__("letter.image")}}</th>
+                                        <th class="pro-title">{{__("letter.product")}}</th>
+                                        <th class="pro-price">{{__("product.price")}}</th>
+                                        <th class="pro-quantity">{{__("product.quantity")}}</th>
+                                        <th class="pro-subtotal">{{__("cart.total")}}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -127,12 +127,12 @@
                     <div class="col-lg-6 col-12 d-flex">
                         <div class="cart-summary">
                             <div class="cart-summary-wrap">
-                                <h4><span>{{$trans2->cart_summary}}</span></h4>
-                                <p>{{$trans2->sub}} {{$trans2->total}} <span class="text-primary">$1250.00</span></p>
-                                <h2>{{$trans2->grand}} {{$trans2->total}} <span class="text-primary">{{$totalPrice}} azn</span></h2>
+                                <h4><span>{{__('cart.cart_summary')}}</span></h4>
+                                <p>{{__('cart.sub')}} {{__('cart.total')}} <span class="text-primary">$1250.00</span></p>
+                                <h2>{{__('cart.grand')}} {{__('cart.total')}} <span class="text-primary">{{$totalPrice}} azn</span></h2>
                             </div>
                             <div class="cart-summary-button">
-                                <a href="{{route('checkout')}}" class="checkout-btn c-btn btn--primary">{{$trans2->checkout}}</a>
+                                <a href="{{route('checkout')}}" class="checkout-btn c-btn btn--primary">{{__("cart.checkout")}}</a>
 
                             </div>
                         </div>

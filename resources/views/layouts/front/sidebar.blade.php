@@ -2,7 +2,7 @@
     <nav class="category-nav  primary-nav ">
         <div>
             <a href="javascript:void(0)" class="category-trigger"><i
-                    class="fa fa-bars"></i>{{$trans->browse_category}}</a>
+                    class="fa fa-bars"></i>{{__("category.browse_category")}}</a>
             <ul class="category-menu">
 
                 @foreach($categories->where('parent_id', 0) as $category)

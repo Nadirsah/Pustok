@@ -35,12 +35,12 @@
                     <h3>{{__('contakt.newsletter_subscribe')}}</h3>
                 <div class="newsletter-form mb--30">
                     <form action="./php/mail.php">
-                        <input type="email" class="form-control" placeholder="{!! __('placeholder.enter_your_email') !!}...">
-                        <button class="btn btn--primary w-100">{!! __('contakt.subscribe') !!}</button>
+                        <input type="email" class="form-control" placeholder="{{__('placeholder.enter_your_email')}}...">
+                        <button class="btn btn--primary w-100">{{__("contakt.subscribe")}}</button>
                     </form>
                 </div>
                 <div class="social-block">
-                    <h3 class="title">{!! __('contakt.stay_connected') !!}</h3>
+                    <h3 class="title">{!!__("contakt.stay_connected")!!}</h3>
                     <ul class="social-list list-inline">
                         <div class="off-canvas-social">
                             @foreach($social as $data)

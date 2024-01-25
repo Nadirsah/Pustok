@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Spatie\TranslationLoader\LanguageLine;
+// use Spatie\TranslationLoader\LanguageLine;
 use App\Models\Lang;
+use App\Models\LanguageLine;
 
 class TrnLangController extends Controller
 {
