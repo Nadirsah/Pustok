@@ -78,7 +78,7 @@
                     <div class="home-left-side text-center text-lg-left">
                         <div class="single-block">
                             <h3 class="home-sidebar-title">
-                                {{$trans1->best_seller}}
+                                {{__('product.best_seller')}}
                             </h3>
                             <div class="product-slider product-list-slider multiple-row sb-slick-slider home-4-left-sidebar"
                                  data-slick-setting='{
@@ -129,7 +129,8 @@
                         </div>
                         <div class="single-block text-center">
                             <h3 class="home-sidebar-title style-2">
-                            {{$trans1->special}} {{$trans1->offer}}
+                                {{__('product.special')}} {{__('letter.offer')}}
+
                             </h3>
                             <div class="product-slider countdown-single with-countdown sb-slick-slider product-border-reset"
                                  data-slick-setting='{

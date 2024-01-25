@@ -23,7 +23,7 @@
                                 <i class="fas fa-headphones-alt"></i>
                             </div>
                             <div class="text">
-                                <p> {{$trans->free_support}} 24/7</p>
+                                <p> {{__('contakt.free_support')}} 24/7</p>
                                 <p class="font-weight-bold number">+01-202-555-0181</p>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                         <nav class="category-nav   ">
                             <div>
                                 <a href="javascript:void(0)" class="category-trigger"><i
-                                        class="fa fa-bars"></i>{{$trans->browse_category}}</a>
+                                        class="fa fa-bars"></i>{{__('category.browse_category')}}</a>
                                 <ul class="category-menu">
                                     @foreach($categories->where('parent_id', 0) as $category)
 
@@ -107,10 +107,10 @@
                             </li>
 
                             <li class="menu-item-has-children">
-                                <a href="{{route('shop')}}">{{$trans->shop}}</a>
+                                <a href="{{route('shop')}}">{{__('menu.shop')}}</a>
                             </li>
 
-                            <a href="{{route('contact')}}">{{$trans->contact}}</a>
+                            <a href="{{route('contact')}}">{{__('menu.contact')}}</a>
                         </ul>
                     </nav>
                     <!-- mobile menu navigation end -->
@@ -128,9 +128,9 @@
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="#">{{$trans3->account}} <i class="fas fa-angle-down"></i></a>
+                            <a href="#">{{__('account.account')}} <i class="fas fa-angle-down"></i></a>
                             <ul class="sub-menu">
-                                <li><a href="">{{$trans3->account}}</a></li>
+                                <li><a href="">{{__('account.account')}}</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -167,13 +167,13 @@
                             </li>
                             <!-- Shop -->
                             <li class="menu-item has-children mega-menu">
-                                <a href="{{route('shop')}}">{{$trans->shop}}</a>
+                                <a href="{{route('shop')}}">{{__('menu.shop')}}</a>
 
                             </li>
 
 
                             <li class="menu-item">
-                                <a href="{{route('contact')}}">{{$trans->contact}}</a>
+                                <a href="{{route('contact')}}">{{__('menu.contact')}}</a>
                             </li>
                         </ul>
                     </div>

@@ -29,7 +29,7 @@
                                      <fieldset class="content-group">
                                          <div class="form-group">
                                              <label >Title</label>
-                                             <textarea rows="5" cols="5" class="form-control summernote"  name="text[{{$lang->name}}]" placeholder="Default textarea">{{old('text.'.$lang->name)}}</textarea>
+                                             <textarea rows="5" cols="5" class="form-control "  name="text[{{$lang->name}}]" placeholder="Default textarea">{{old('text.'.$lang->name)}}</textarea>
                                              <span class="text-danger">@error('text.'.$lang->name){{'Title sahəsi boş ola bilməz!'}}@enderror</span>
                                          </div>
                                      </fieldset>
@@ -44,7 +44,7 @@
             <div class="col-md-5">
             <div class="card">
                 <div class="card-body">
-                    
+
                     <div class="form-group">
                         <label>Group</label>
                         <input type="text" class="form-control " name="group" value="{{old('group')}}">

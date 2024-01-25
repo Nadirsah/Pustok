@@ -8,7 +8,7 @@
                         <img src="{{asset('front')}}/assets/image/logo--footer.png" alt="">
                     </div>
                     <div class="footer-contact">
-                        <p><span class="label">{{__('contakt.address')}}:</span><span class="text">Example Street 98, HH2 BacHa, New
+                        <p><span class="label">{{__("contakt.address")}}:</span><span class="text">Example Street 98, HH2 BacHa, New
                                     York,
                                     USA</span></p>
                         <p><span class="label">{{__('contakt.phone')}}:</span><span class="text">+18088 234 5678</span></p>
@@ -35,7 +35,7 @@
                     <h3>{{__('contakt.newsletter_subscribe')}}</h3>
                 <div class="newsletter-form mb--30">
                     <form action="./php/mail.php">
-                        <input type="email" class="form-control" placeholder="{!! __('placeholder.enter_your_email') !!}...">
+                        <input type="email" class="form-control" placeholder="{{__("placeholder.enter_your_email")}}...">
                         <button class="btn btn--primary w-100">{!! __('contakt.subscribe') !!}</button>
                     </form>
                 </div>

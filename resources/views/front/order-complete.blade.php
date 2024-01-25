@@ -11,23 +11,23 @@
             <div class="row">
                 <div class="col-12">
                     <div class="order-complete-message text-center">
-                        <h1>{{$trans3->thank}} !</h1>
-                        <p>{{$trans3->message_for_order}}.</p>
+                        <h1>{{__('letter.thank')}} !</h1>
+                        <p>{{__('cart.message_for_order')}}.</p>
                     </div>
                     <ul class="order-details-list">
-                        <li>{{$trans3->order}} {{$trans2->no}}: <strong>{{$data->order_number}}</strong></li>
+                        <li>{{__('letter.order')}} {{__('letter.no')}}: <strong>{{$data->order_number}}</strong></li>
                         <li>Date: <strong>{{$data->created_at}}</strong></li>
-                        <li>{{$trans2->total}}: <strong>{{$data->total}}</strong></li>
+                        <li>{{__('cart.total')}}: <strong>{{__('cart.total')}}</strong></li>
 
                     </ul>
 
-                    <h3 class="order-table-title">{{$trans3->order}} {{$trans3->details}}</h3>
+                    <h3 class="order-table-title">{{__('letter.order')}} {{__('cart.details')}}</h3>
                     <div class="table-responsive">
                         <table class="table order-details-table">
                             <thead>
                             <tr>
-                                <th>{{$trans2->product}}</th>
-                                <th>{{$trans2->total}}</th>
+                                <th>{{__('letter.product')}}</th>
+                                <th>{{__('cart.total')}}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -38,7 +38,7 @@
                             </tbody>
                             <tfoot>
                             <tr>
-                                <th>{{$trans2->total}}:</th>
+                                <th>{{__('cart.total')}}:</th>
                                 <td><span>$117.00</span></td>
                             </tr>
                             </tfoot>

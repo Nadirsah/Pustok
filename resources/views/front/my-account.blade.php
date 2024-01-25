@@ -16,13 +16,13 @@
                             <div class="myaccount-tab-menu nav" role="tablist">
                                 <a href="#dashboad" class="active" data-toggle="tab"><i
                                         class="fas fa-tachometer-alt"></i>
-                                    {{$trans3->dashboard}}</a>
-                                <a href="#orders" data-toggle="tab"><i class="fa fa-cart-arrow-down"></i> {{$trans3->order}}</a>
+                                    {{__('letter.dashboard')}}</a>
+                                <a href="#orders" data-toggle="tab"><i class="fa fa-cart-arrow-down"></i> {{__('letter.order')}}</a>
                                 <a href="#address-edit" data-toggle="tab"><i class="fa fa-map-marker"></i>
-                                    {{$trans->address}}</a>
-                                <a href="#account-info" data-toggle="tab"><i class="fa fa-user"></i> {{$trans3->account}}
-                                    {{$trans2->details}}</a>
-                                <a href="{{route('logout')}}"><i class="fas fa-sign-out-alt"></i> Cixis</a>
+                                    {{__('contakt.address')}}</a>
+                                <a href="#account-info" data-toggle="tab"><i class="fa fa-user"></i> {{__('account.account')}}
+                                   </a>
+                                <a href="{{route('logout')}}"><i class="fas fa-sign-out-alt"></i> {{__('registr.logout')}}</a>
                             </div>
                         </div>
                         <!-- My Account Tab Menu End -->
@@ -32,7 +32,7 @@
                                 <!-- Single Tab Content Start -->
                                 <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
                                     <div class="myaccount-content">
-                                        <h3>{{$trans3->dashboard}}</h3>
+                                        <h3>{{__('letter.dashboard')}}</h3>
                                         <div class="welcome mb-20">
                                             <p>Hello, <strong>{{$data->name}} {{$data->surname}}</strong> (If Not <strong>Tuntuni
                                                     !</strong><a href="login-register.html" class="logout">
@@ -48,16 +48,15 @@
                                 <!-- Single Tab Content Start -->
                                 <div class="tab-pane fade" id="orders" role="tabpanel">
                                     <div class="myaccount-content">
-                                        <h3>{{$trans3->order}}</h3>
+                                        <h3>{{__('letter.order')}}</h3>
                                         <div class="myaccount-table table-responsive text-center">
                                             <table class="table table-bordered">
                                                 <thead class="thead-light">
                                                 <tr>
-                                                    <th>{{$trans2->no}}</th>
-                                                    <th>{{$trans1->name}}</th>
-                                                    <th>Date</th>
-                                                    <th>Status</th>
-                                                    <th>{{$trans2->total}}</th>
+                                                    <th>{{__('letter.no')}}</th>
+                                                    <th>{{__('letter.name')}}</th>
+                                                    <th>{{__('letter.date')}}</th>
+                                                    <th>{{__('cart.total')}}</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -65,7 +64,6 @@
                                                     <td>1</td>
                                                     <td>Mostarizing Oil</td>
                                                     <td>Aug 22, 2018</td>
-                                                    <td>Pending</td>
                                                     <td>$45</td>
                                                 </tr>
                                                 </tbody>
@@ -83,55 +81,44 @@
                                 <!-- Single Tab Content Start -->
                                 <div class="tab-pane fade" id="address-edit" role="tabpanel">
                                     <div class="myaccount-content">
-                                        <h3>Billing Address</h3>
+                                        <h3>{{__('cart.billing')}} {{__('contakt.address')}}</h3>
                                         <address>
                                             <p><strong>Alex Tuntuni</strong></p>
                                             <p>1355 Market St, Suite 900 <br>
                                                 San Francisco, CA 94103</p>
                                             <p>Mobile: (123) 456-7890</p>
                                         </address>
-                                        <a href="#" class="btn btn--primary"><i class="fa fa-edit"></i>Edit
-                                            Address</a>
+                                        <a href="#" class="btn btn--primary"><i class="fa fa-edit"></i>{{__('letter.edit')}}
+                                            {{__('contakt.address')}}</a>
                                     </div>
                                 </div>
                                 <!-- Single Tab Content End -->
                                 <!-- Single Tab Content Start -->
                                 <div class="tab-pane fade" id="account-info" role="tabpanel">
                                     <div class="myaccount-content">
-                                        <h3>Account Details</h3>
+                                        <h3>{{__('account.account')}} {{__('cart.details')}}</h3>
                                         <div class="account-details-form">
                                             <form action="#">
                                                 <div class="row">
-                                                    <div class="col-lg-6 col-12  mb--30">
-                                                        <input id="first-name" placeholder="First Name" type="text">
-                                                    </div>
-                                                    <div class="col-lg-6 col-12  mb--30">
-                                                        <input id="last-name" placeholder="Last Name" type="text">
+                                                    <div class="col-12 col-12  mb--30">
+                                                        <input id="first-name" placeholder="{{__('letter.name')}}" type="text">
                                                     </div>
                                                     <div class="col-12  mb--30">
-                                                        <input id="display-name" placeholder="Display Name"
-                                                               type="text">
+                                                        <input id="email" placeholder="{{__('contakt.email')}}" type="email">
                                                     </div>
                                                     <div class="col-12  mb--30">
-                                                        <input id="email" placeholder="Email Address" type="email">
+                                                        <h4>{{__('letter.password')}} {{__('letter.change')}}</h4>
                                                     </div>
                                                     <div class="col-12  mb--30">
-                                                        <h4>Password change</h4>
-                                                    </div>
-                                                    <div class="col-12  mb--30">
-                                                        <input id="current-pwd" placeholder="Current Password"
+                                                        <input id="current-pwd" placeholder="{{__('letter.current')}} {{__('letter.password')}}"
                                                                type="password">
                                                     </div>
-                                                    <div class="col-lg-6 col-12  mb--30">
-                                                        <input id="new-pwd" placeholder="New Password"
-                                                               type="password">
-                                                    </div>
-                                                    <div class="col-lg-6 col-12  mb--30">
-                                                        <input id="confirm-pwd" placeholder="Confirm Password"
+                                                    <div class="col-12 col-12  mb--30">
+                                                        <input id="new-pwd" placeholder="{{__('letter.new')}} {{__('letter.password')}}"
                                                                type="password">
                                                     </div>
                                                     <div class="col-12">
-                                                        <button class="btn btn--primary">Save Changes</button>
+                                                        <button class="btn btn--primary">{{__('registr.save_changes')}}</button>
                                                     </div>
                                                 </div>
                                             </form>

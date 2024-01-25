@@ -15,28 +15,28 @@
                 <form action="{{route('guest.store')}}" method="POST" class="row" enctype="multipart/form-data">
             @csrf
                     <div class="login-form">
-                        <h4 class="login-title">{{$trans1->new}} {{$trans1->customer}}</h4>
+                        <h4 class="login-title">{{__('letter.new')}} {{__('letter.customer')}}</h4>
                         <div class="row">
                             <div class="col-md-12 col-12 mb--15">
-                                <label for="email">{{$trans1->full}} {{$trans1->name}}</label>
+                                <label for="email">{{__('letter.full')}} {{__('letter.name')}}</label>
                                 <input class="mb-0 form-control" type="text" name="name"
-                                    placeholder="{{$trans1->name}}">
-                                    <span class="text-danger">@error('name'){{'Ad sahəsi boş ola bilməz!'}}@enderror</span>
+                                    placeholder="{{__('letter.name')}}">
+                                    <span class="text-danger">@error('name'){{ __('required.error') }}@enderror</span>
                             </div>
                             <div class="col-12 mb--20">
-                                <label for="email">{{$trans->email}}</label>
+                                <label for="email">{{__('contakt.email')}}</label>
                                 <input class="mb-0 form-control" type="email" name="email"
-                                    placeholder="{{$trans->email}}..">
-                                    <span class="text-danger">@error('email'){{'Email sahəsi boş ola bilməz!'}}@enderror</span>
+                                    placeholder="{{__('contakt.email')}}..">
+                                    <span class="text-danger">@error('email'){{ __('required.error') }}@enderror</span>
                             </div>
                             <div class="col-12 mb--20">
-                                <label for="password">{{$trans2->password}}</label>
+                                <label for="password">{{__('letter.password')}}</label>
                                 <input class="mb-0 form-control" type="password" name="password"
-                                    placeholder="{{$trans2->password}}">
-                                    <span class="text-danger">@error('password'){{'Sifre sahəsi boş ola bilməz!'}}@enderror</span>
+                                    placeholder="{{__('letter.password')}}">
+                                    <span class="text-danger">@error('password'){{ __('required.error') }}@enderror</span>
                             </div>
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-outlined">{{$trans->register}}</button>
+                                <button type="submit" class="btn btn-outlined">{{__('reqistr.register')}}</button>
                             </div>
                         </div>
                     </div>
@@ -46,20 +46,22 @@
                 <form action="{{route('auth')}}" method="POST">
                     @csrf
                     <div class="login-form">
-                        <h4 class="login-title">{{$trans2->returning}} {{$trans1->customer}}</h4>
+                        <h4 class="login-title">{{__('letter.returning')}} {{__('letter.customer')}}</h4>
                         <div class="row">
                             <div class="col-md-12 col-12 mb--15">
-                                <label for="email">{{$trans->email}}...</label>
+                                <label for="email">{{__('contakt.email')}}...</label>
                                 <input class="mb-0 form-control" type="email" name="email"
-                                    placeholder="{{$trans->email}}...">
+                                    placeholder="{{__('contakt.email')}}...">
+                                <span class="text-danger">@error('email'){{ __('required.error') }}@enderror</span>
                             </div>
                             <div class="col-12 mb--20">
-                                <label for="password">{{$trans2->password}}</label>
+                                <label for="password">{{__('letter.password')}}</label>
                                 <input class="mb-0 form-control" type="password" name="password"
-                                    placeholder="{{$trans2->password}}">
+                                    placeholder="{{__('letter.password')}}">
+                                <span class="text-danger">@error('password'){{ __('required.error') }}@enderror</span>
                             </div>
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-outlined">{{$trans1->login}}</button>
+                                <button type="submit" class="btn btn-outlined">{{__('reqistr.login')}}</button>
                             </div>
                         </div>
                     </div>

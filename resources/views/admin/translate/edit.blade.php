@@ -17,23 +17,24 @@
                 <div class="card">
                     <div class="card-body">
                         <ul class="nav nav-tabs">
-                            @foreach($langs as $key=>$lang)
-                                <li class="nav-item {{$key===0 ? 'active':''}}"> <a href="#{{$lang->name}}" class="nav-link rounded-top " data-toggle="tab">{{$lang->name}}</a></li>
+                            @foreach($translations as $lang => $translation)
+                                <li class="nav-item {{$loop->first ? 'active' : ''}}">
+                                    <a href="#{{$lang}}" class="nav-link rounded-top " data-toggle="tab">
+                                        {{$lang}}
+                                    </a>
+                                </li>
                             @endforeach
                         </ul>
-
                         <div class="tab-content">
-                            @foreach($langs as $key=>$lang)
-                                <div class="tab-pane fade{{$key===0?'show active':''}}" id="{{$lang->name}}">
+                            @foreach($translations as $lang => $translation)
+                                <div class="tab-pane fade{{$loop->first ? 'show active' : ''}}" id="{{$lang}}">
                                     <div class="card">
                                         <div class="card-body">
                                             <fieldset class="content-group">
                                                 <div class="form-group">
-                                                    <label >Title</label>
-                                                    <textarea rows="5" cols="5" class="form-control summernote"  name="text[{{$lang->name}}]"
-                                                              placeholder="Default textarea">
-                                                        {{old('text.'.$lang->name,$data->getTranslation('text',$lang->name))}}</textarea>
-                                                    <span class="text-danger">@error('text.'.$lang->name){{'Title sahəsi boş ola bilməz!'}}@enderror</span>
+                                                    <textarea rows="5" cols="5" class="form-control summernote" name="text[{{$lang}}]"
+                                                              placeholder="Default textarea">{{old('text.'.$lang, $translations[$lang])}}</textarea>
+                                                    <span class="text-danger">@error('text.'.$lang){{'Translation field cannot be empty!'}}@enderror</span>
                                                 </div>
                                             </fieldset>
                                         </div>

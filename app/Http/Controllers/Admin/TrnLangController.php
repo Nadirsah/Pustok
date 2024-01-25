@@ -14,7 +14,8 @@ class TrnLangController extends Controller
      */
     public function index()
     {   $data=LanguageLine::all();
-        return view('admin.translate.index',compact('data'));
+
+        return view('admin.translate.index',compact('data',));
     }
 
     /**
@@ -34,6 +35,7 @@ class TrnLangController extends Controller
         $data->group = $request->group;
         $data->key = $request->key;
         $data->text = $request->text;
+
         $data->save();
 
         return redirect()->route('translate.create')->with('type','success')
@@ -54,8 +56,10 @@ class TrnLangController extends Controller
     public function edit(string $id)
     {
         $data=LanguageLine::findOrFail($id);
+        $translations = $data->text;
         $langs=Lang::all();
-        return view('admin.translate.edit',compact('data','langs'));
+
+        return view('admin.translate.edit',compact('data','translations'));
     }
 
     /**
