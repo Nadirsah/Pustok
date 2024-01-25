@@ -23,7 +23,11 @@
                                 <i class="fas fa-headphones-alt"></i>
                             </div>
                             <div class="text">
+<<<<<<< HEAD
                                 <p> {{__('contakt.free_support')}} 24/7</p>
+=======
+                                <p> {{__("contakt.free_support")}} 24/7</p>
+>>>>>>> c1ad6b2092262052c593147c463557aab120cd16
                                 <p class="font-weight-bold number">+01-202-555-0181</p>
                             </div>
                         </div>
@@ -51,7 +55,11 @@
                         <nav class="category-nav   ">
                             <div>
                                 <a href="javascript:void(0)" class="category-trigger"><i
+<<<<<<< HEAD
                                         class="fa fa-bars"></i>{{__('category.browse_category')}}</a>
+=======
+                                        class="fa fa-bars"></i>{{__("category.browse_category")}}</a>
+>>>>>>> c1ad6b2092262052c593147c463557aab120cd16
                                 <ul class="category-menu">
                                     @foreach($categories->where('parent_id', 0) as $category)
 
@@ -102,15 +110,22 @@
                     <nav class="off-canvas-nav">
                         <ul class="mobile-menu main-mobile-menu">
                             <li class="menu-item-has-children">
-                                <a href="{{route('home')}}">{{__('menu.home')}} </a>
+                                <a href="{{route('home')}}">{{__("menu.home")}} </a>
 
                             </li>
 
                             <li class="menu-item-has-children">
+<<<<<<< HEAD
                                 <a href="{{route('shop')}}">{{__('menu.shop')}}</a>
                             </li>
 
                             <a href="{{route('contact')}}">{{__('menu.contact')}}</a>
+=======
+                                <a href="{{route('shop')}}">{{__("menu.shop")}}</a>
+                            </li>
+
+                            <a href="{{route('contact')}}">{{__("menu.contact")}}</a>
+>>>>>>> c1ad6b2092262052c593147c463557aab120cd16
                         </ul>
                     </nav>
                     <!-- mobile menu navigation end -->
@@ -128,9 +143,15 @@
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
+<<<<<<< HEAD
                             <a href="#">{{__('account.account')}} <i class="fas fa-angle-down"></i></a>
                             <ul class="sub-menu">
                                 <li><a href="">{{__('account.account')}}</a></li>
+=======
+                            <a href="#">{{__("account.account")}} <i class="fas fa-angle-down"></i></a>
+                            <ul class="sub-menu">
+                                <li><a href="">{{__("account.account")}}</a></li>
+>>>>>>> c1ad6b2092262052c593147c463557aab120cd16
                             </ul>
                         </li>
                     </ul>
@@ -162,18 +183,26 @@
                     <div class="main-navigation flex-lg-right">
                         <ul class="main-menu menu-right ">
                             <li class="menu-item has-children">
-                                <a href="{{route('home')}}">{{__('menu.home')}} </a>
+                                <a href="{{route('home')}}">{{__("menu.home")}} </a>
 
                             </li>
                             <!-- Shop -->
                             <li class="menu-item has-children mega-menu">
+<<<<<<< HEAD
                                 <a href="{{route('shop')}}">{{__('menu.shop')}}</a>
+=======
+                                <a href="{{route('shop')}}">{{__("menu.shop")}}</a>
+>>>>>>> c1ad6b2092262052c593147c463557aab120cd16
 
                             </li>
 
 
                             <li class="menu-item">
+<<<<<<< HEAD
                                 <a href="{{route('contact')}}">{{__('menu.contact')}}</a>
+=======
+                                <a href="{{route('contact')}}">{{__("menu.contact")}}</a>
+>>>>>>> c1ad6b2092262052c593147c463557aab120cd16
                             </li>
                         </ul>
                     </div>

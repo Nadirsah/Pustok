@@ -29,7 +29,11 @@
                                      <fieldset class="content-group">
                                          <div class="form-group">
                                              <label >Title</label>
+<<<<<<< HEAD
                                              <textarea rows="5" cols="5" class="form-control "  name="text[{{$lang->name}}]" placeholder="Default textarea">{{old('text.'.$lang->name)}}</textarea>
+=======
+                                             <input  class="form-control" name="text[{{$lang->name}}]" placeholder="Default textarea" value="{{old('text.'.$lang->name)}}"/>
+>>>>>>> c1ad6b2092262052c593147c463557aab120cd16
                                              <span class="text-danger">@error('text.'.$lang->name){{'Title sahəsi boş ola bilməz!'}}@enderror</span>
                                          </div>
                                      </fieldset>

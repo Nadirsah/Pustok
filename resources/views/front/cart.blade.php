@@ -23,11 +23,19 @@
                                     <thead>
                                     <tr>
                                         <th class="pro-remove"></th>
+<<<<<<< HEAD
                                         <th class="pro-thumbnail">{{__('letter.image')}}</th>
                                         <th class="pro-title">{{__('letter.product')}}</th>
                                         <th class="pro-price">{{__('product.price')}}</th>
                                         <th class="pro-quantity">{{__('product.quantity')}}</th>
                                         <th class="pro-subtotal">{{__('cart.total')}}</th>
+=======
+                                        <th class="pro-thumbnail">{{__("letter.image")}}</th>
+                                        <th class="pro-title">{{__("letter.product")}}</th>
+                                        <th class="pro-price">{{__("product.price")}}</th>
+                                        <th class="pro-quantity">{{__("product.quantity")}}</th>
+                                        <th class="pro-subtotal">{{__("cart.total")}}</th>
+>>>>>>> c1ad6b2092262052c593147c463557aab120cd16
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -132,7 +140,11 @@
                                 <h2>{{__('cart.grand')}} {{__('cart.total')}} <span class="text-primary">{{$totalPrice}} azn</span></h2>
                             </div>
                             <div class="cart-summary-button">
+<<<<<<< HEAD
                                 <a href="{{route('checkout')}}" class="checkout-btn c-btn btn--primary">{{__('cart.checkout')}}</a>
+=======
+                                <a href="{{route('checkout')}}" class="checkout-btn c-btn btn--primary">{{__("cart.checkout")}}</a>
+>>>>>>> c1ad6b2092262052c593147c463557aab120cd16
 
                             </div>
                         </div>

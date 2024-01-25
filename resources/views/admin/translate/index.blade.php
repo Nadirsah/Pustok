@@ -23,9 +23,7 @@
                     <tr>
                         <th>Group</th>
                         <th>Key</th>
-                        <th>Az</th>
-                        <th>En</th>
-                        <th>Ru</th>
+                        <th>Text</th>
                         <th class=" text-center">Actions</th>
             </tr>
             </thead>
@@ -34,9 +32,7 @@
                 <tr>
                     <td>{{$items->group}}</td>
                     <td>{{$items->key}}</td>
-                    @foreach($items->text as $language => $translation)
-                        <td>{!!$translation!!}</td>
-                    @endforeach
+                    <td>{{$items->text}}</td>
                     <td> <a href="{{route('translate.edit',$items->id)}}"><i class="btn btn-info fa fa-edit"></i></a>
 
                     </td>
