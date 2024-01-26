@@ -124,14 +124,8 @@
                         </div>
                     </div>
                     <div class="single-block text-center">
-                        <a href="" class="promo-image home-sidebar-promo promo-overlay">
-                            <img src="{{asset('front')}}/assets/image/others/home-side-promo.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="single-block text-center">
                         <h3 class="home-sidebar-title style-2">
                             {{__('product.special')}} {{__('letter.offer')}}
-
                         </h3>
                         <div class="product-slider countdown-single with-countdown sb-slick-slider product-border-reset"
                             data-slick-setting='{
@@ -283,7 +277,7 @@
                                     </li>
                                     @endforeach
                                 </ul>
-                                <div class="tab-content" >
+                                <div class="tab-content">
                                     @foreach($category as $key => $item)
                                     <div class="tab-pane fade{{$key === 0 ? ' show active' : ''}}" id="{{$item->name}}"
                                         role="tabpanel" aria-labelledby="shop-tab{{$key}}">
@@ -303,7 +297,7 @@
                                             <div class="single-slide">
                                                 <div class="product-card card-style-list">
                                                     <div class="card-image">
-                                                   
+
                                                     </div>
                                                     <div class="product-card--body">
                                                         <div class="product-header">
