@@ -28,6 +28,7 @@
                     </li>
                     <li class="{{Request::segment(2)==='setting' ? 'active' : ''}}"><a href="{{route('setting.index')}}"><i class="icon-home4"></i> <span>Ayarlar</span></a></li>
                     <li class="{{Request::segment(2)==='social' ? 'active' : ''}}"><a href="{{route('social.index')}}"><i class="icon-home4"></i> <span>Social</span></a></li>
+                    <li class="{{Request::segment(2)==='slide' ? 'active' : ''}}"><a href="{{route('slide.index')}}"><i class="icon-home4"></i> <span>Slide</span></a></li>
                 </ul>
             </div>
         </div>

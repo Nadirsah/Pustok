@@ -15,22 +15,22 @@
                                                                     "slidesToShow": 1,
                                                                     "dots":true
                                                                     }'>
+                                                                    @foreach($slide as $item)
                         <div class="single-slide bg-image bg-overlay--white"
-                             data-bg="{{asset('front/')}}/assets/image/bg-images/home-4-slider-1.png">
+                             data-bg="{{$item->file_path}}">
                             <div class="home-content text-left pl--30">
                                 <div class="row">
                                     <div class="col-lg-5">
-                                        <span class="title-small">Magazine Cover</span>
-                                        <h1>Mockup.</h1>
-                                        <p>Cover up front of book and
-                                            <br>leave summary</p>
+                                        <span class="title-small">{!!$item->title!!}</span>
+                                        <h1>{!!$item->name!!}</h1>
                                         <a href="shop-grid.html" class="btn btn-outlined--pink">
-                                            Shop Now
+                                           {{__('letter.slide')}}
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

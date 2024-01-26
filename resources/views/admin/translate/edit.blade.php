@@ -36,7 +36,7 @@
                                 <div class="card-body">
                                     <fieldset class="content-group">
                                         <div class="form-group">
-                                            <textarea rows="5" cols="5" class="form-control summernote"
+                                            <textarea rows="5" cols="5" class="form-control"
                                                 name="text[{{$lang}}]"
                                                 placeholder="Default textarea">{{old('text.'.$lang, $translations[$lang])}}</textarea>
                                             <span

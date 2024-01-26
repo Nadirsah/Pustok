@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SocialController;
 use App\Http\Controllers\Admin\Translate3Controller;
 use App\Http\Controllers\Admin\TrnLangController;
+use App\Http\Controllers\Admin\SlideController;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CheckoutController;
 use App\Http\Controllers\Front\ContactController;
@@ -83,6 +84,8 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','isAdmin']],function(){
     Route::resource('/trans_3',Translate3Controller::class,);
     Route::resource('/translate',TrnLangController::class,);
     Route::resource('/user',Usercontroller::class,);
+    Route::resource('/slide',SlideController::class,);
+    Route::get('/delete_slide/{id}', [SlideController::class, 'delete'])->name('slide.delete');
     Route::post('update_status/', [Usercontroller::class, 'updateStatus'])->name('isdiscount');
     Route::resource('/setting',SettingController::class,);
     Route::post('update_site/', [SettingController::class, 'updateSite'])->name('isdiscountsite');

@@ -68,10 +68,11 @@ class BrandController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {$request->validate([
-        'img'=>'required|max:2048',
+    {
+    //     $request->validate([
+    //     'img'=>'required|max:2048',
 
-    ]);
+    // ]);
 
             $fileModel=Brand::findOrFail($id);
             $file_path = $fileModel->file_path;
