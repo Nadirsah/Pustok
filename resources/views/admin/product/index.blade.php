@@ -8,6 +8,9 @@
 <script src="{{asset('admin')}}\global_assets\js\plugins\forms\selects\select2.min.js"></script>
 <script src="{{asset('admin')}}\global_assets\js\demo_pages\datatables_advanced.js"></script>
 <script src="{{asset('admin')}}\global_assets\js\demo_pages\components_thumbnails.js"></script>
+<script src="{{asset('admin')}}\global_assets\js\plugins\forms\styling\switchery.min.js"></script>
+<script src="{{asset('admin')}}\global_assets\js\plugins\forms\styling\switch.min.js"></script>
+<script src="{{asset('admin')}}\global_assets\js\demo_pages\form_checkboxes_radios.js"></script>
 @endsection
 
 
@@ -41,6 +44,8 @@
                         <th>Title</th>
                         <th>Haqqinda</th>
                         <th>Tesfir</th>
+                        <th>Activ</th>
+                        <th>Xususi teklif</th>
                         <th>Sekil</th>
                         <th class="text-center">Actions</th>
                     </tr>
@@ -57,7 +62,21 @@
                         <td>{{$items->model}}</td>
                         <td>{!! $items->title!!}</td>
                         <td>{!! $items->about !!}</td>
-                        <td>{!! $items->description !!}</td>
+                        <td>{!! Str::limit($items->description, 50) !!}</td>
+                        <td><div class="checkbox checkbox-switchery">
+                                <label>
+                                    <input type="checkbox" name='activ' class="switchery activ" id="{{ $items->id }}"
+                                        {{$items->activ==1 ? 'checked' :''}}>
+
+                                </label>
+                            </div></td>
+                        <td><div class="checkbox checkbox-switchery">
+                                <label>
+                                    <input type="checkbox" name='offer' class="switchery offer" id="{{ $items->id }}"
+                                        {{$items->offer==1 ? 'checked' :''}}>
+
+                                </label>
+                            </div></td>
                         <td>
 
                             <a type="button" class="btn bg-blue btn-block" data-toggle="modal"
@@ -141,6 +160,61 @@ $(".deleteimg").click(function() {
     });
 
 });
+</script>
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '.activ', function() {
+            var id = $(this).attr("id");
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $("meta[name='csrf-token']").attr("content")
+                }
+            });
+            $.ajax({
+                url: "{{route('isdiscountproduct')}}", // Define your Laravel route
+                type: 'POST',
+                data: {
+                    "id": id,
+                    is_active: $(this).is(':checked'),
+
+                },
+                success: function(data) {
+                    console.log('Status updated successfully');
+                },
+                error: function(error) {
+                    console.error('Error updating status:', error);
+                }
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '.offer', function() {
+            var id = $(this).attr("id");
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $("meta[name='csrf-token']").attr("content")
+                }
+            });
+            $.ajax({
+                url: "{{route('isoffer')}}", // Define your Laravel route
+                type: 'POST',
+                data: {
+                    "id": id,
+                    is_offer: $(this).is(':checked'),
+
+                },
+                success: function(data) {
+                    console.log('Status updated successfully');
+                },
+                error: function(error) {
+                    console.error('Error updating status:', error);
+                }
+            });
+        });
+    });
 </script>
 
 

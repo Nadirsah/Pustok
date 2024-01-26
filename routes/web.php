@@ -89,6 +89,8 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','isAdmin']],function(){
     Route::post('update_status/', [Usercontroller::class, 'updateStatus'])->name('isdiscount');
     Route::resource('/setting',SettingController::class,);
     Route::post('update_site/', [SettingController::class, 'updateSite'])->name('isdiscountsite');
+    Route::post('update_product/', [ProductController::class, 'updateProduct'])->name('isdiscountproduct');
+    Route::post('update_offer/', [ProductController::class, 'updateOffer'])->name('isoffer');
     Route::resource('/social',SocialController::class,);
      Route::post('/delete_social/{id}', [SocialController::class, 'delete'])->name('delete');
 

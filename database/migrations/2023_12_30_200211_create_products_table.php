@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('model');
             $table->json('about');
             $table->json('description');
+            $table->boolean('activ');
+            $table->boolean('offer');
             $table->unsignedBigInteger('catgory_id');
 
             $table->timestamps();

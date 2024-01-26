@@ -13,10 +13,10 @@ use Illuminate\Support\Str;
 class CartController extends Controller
 {
   public function showcart(Request $request,$id){
-
+      $offer=Product::where('offer','=',1)->with('images')->first();
      $data=Cart::where('user_id',$id)->where('status',0)->get();
 
-      return view('front.cart',compact('data',));
+      return view('front.cart',compact('data','offer'));
   }
   public function addcart(Request $request,$id){
       if(Auth::id()){
@@ -64,8 +64,20 @@ public function delete($id){
 
 
    public function checkout(Request $request)
-   { $user_id=Auth::id();
+   {   $request->validate([
+       'name'=>'required|string|max:30',
+       'surname'=>'required|string|max:30',
+       'company'=>'required|string|max:30',
+       'country'=>'required|string|max:30',
+       'adress'=>'required|string|max:30',
+       'city'=>'required|string|max:30',
+       'email' => 'required|email|string|max:30',
+       'phone' => 'required|numeric',
+       'zip_cod' => 'required|numeric',
+       'status' => 'required'
+   ]);
 
+       $user_id=Auth::id();
        $cartItems =Cart::where('user_id',$user_id)->where('status', 0)->get();
        $totalPrice = 0;
        foreach ($cartItems as $cartItem) {

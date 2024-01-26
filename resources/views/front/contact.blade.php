@@ -54,21 +54,21 @@
                                     <div class="form-group">
                                         <label>{{__('letter.name')}} <span class="required">*</span></label>
                                         <input type="text" id="con_name" name="name" class="form-control" value="{{old('name')}}">
-                                               <span class="text-danger">@error('name'){{'Ad sahəsi boş ola bilməz!'}}@enderror</span>
+                                               <span class="text-danger">@error('name'){{ __('required.error') }}@enderror</span>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label>{{__('contakt.email')}}<span class="required">*</span></label>
                                         <input type="email" id="con_email" name="email" class="form-control" value="{{old('email')}}">
-                                        <span class="text-danger">@error('email'){{'Email sahəsi boş ola bilməz!'}}@enderror</span>
+                                        <span class="text-danger">@error('email'){{ __('required.error') }}@enderror</span>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label>{{__('contakt.phone')}}*</label>
                                         <input type="text" id="con_phone" name="phone" class="form-control" value="{{old('phone')}}">
-                                        <span class="text-danger">@error('phone'){{'Telefon sahəsi boş ola bilməz!'}}@enderror</span>
+                                        <span class="text-danger">@error('phone'){{ __('required.error') }}@enderror</span>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
@@ -76,13 +76,13 @@
                                         <label>{{__('letter.message')}}<span class="required">*</span></label>
                                         <textarea id="con_message" name="message"
                                                   class="form-control">{{old('message')}}</textarea>
-                                                  <span class="text-danger">@error('message'){{'Mesaj sahəsi boş ola bilməz!'}}@enderror</span>
+                                                  <span class="text-danger">@error('message'){{ __('required.error') }}@enderror</span>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-btn">
                                         <button type="submit"  id="submit" class="btn btn-black"
-                                                >Gonder</button>
+                                                >{{__('letter.send')}}</button>
                                     </div>
 
                                 </div>

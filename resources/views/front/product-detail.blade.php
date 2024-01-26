@@ -59,20 +59,24 @@
                 <div class="col-lg-7">
                     <div class="product-details-info pl-lg--30">
                         <p class="tag-block">
-                            Tags: <a href="#">{{$data->tags}}</a>
+                            {{__('letter.tags')}}: <a href="#">{{$data->tags}}</a>
                         </p>
                         <h3 class="product-title">
                         {!!$data->title!!}
                         </h3>
                         <ul class="list-unstyled">
-                            <li>Ex Tax: <span class="list-value"> {{($data->price)+($data->tax)}}</span></li>
+                            <li>{{__('letter.tax')}}: <span class="list-value"> {{($data->price)+($data->tax)}}</span></li>
                             <li>
-                                Brands:
+                                {{__('letter.brand')}}:
                                 <a href="#" class="list-value font-weight-bold"> {{$data->brand}}</a>
                             </li>
-                            <li>Reward Points: <span class="list-value"> 200</span></li>
+                            <li>{{__('letter.point')}}: <span class="list-value"> 200</span></li>
                             <li>
-                                Availability: <span class="list-value"> In Stock</span>
+                                {{__('letter.stock')}}: <span class="list-value"> @if($data->quantity!==0)
+                                        {{__('letter.yes')}}
+                                    @else($data->quantity==0)
+                                        {{__('letter.not')}}
+                                    @endif</span>
                             </li>
                         </ul>
                         <div class="price-block">
@@ -90,7 +94,7 @@
                                 <form action="{{route('addcart',$data->id)}}" method="Post">
                                     @csrf
                                 <button type="submit" class="btn btn-outlined--primary"
-                                ><span class="plus-icon">+</span>Add to Cart</button
+                                ><span class="plus-icon">+</span>{{__('cart.add_cart')}}</button
                                 >
                                 </form>
                             </div>

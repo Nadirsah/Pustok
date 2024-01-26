@@ -66,7 +66,7 @@
                     <div class="col-lg-6 col-12 mb--30 mb-lg--0">
                         <!-- slide Block 5 / Normal Slider -->
                         <div class="cart-block-title">
-                            <h2>YOU MAY BE INTERESTED IN…</h2>
+                            <h2>{{__('product.special')}} {{__('letter.offer')}}</h2>
                         </div>
                         <div class="product-slider sb-slick-slider" data-slick-setting='{
 							          "autoplay": true,
@@ -83,39 +83,44 @@
                                 <div class="product-card">
                                     <div class="product-header">
 											<span class="author">
-												Lpple
+												{!! $offer->tags !!}
 											</span>
-                                        <h3><a href="product-details.html">Revolutionize Your BOOK With These
-                                                Easy-peasy Tips</a></h3>
+                                        <h3><a href="{{route('product-detail',$offer->id)}}">{!! $offer->title !!}</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
-                                            <img src="{{asset('front')}}/assets/image/products/product-10.jpg" alt="">
+                                            @if($offer->images->isNotEmpty())
+                                                @foreach($offer->images as $image)
+                                                    <img src="{{ $image->file_path }}" alt="">
+                                                @endforeach
+                                            @else
+                                                <p>No images available for this offer.</p>
+                                            @endif
                                             <div class="hover-contents">
                                                 <a href="product-details.html" class="hover-image">
-                                                    <img src="{{asset('front')}}/assets/image/products/product-1.jpg" alt="">
+                                                    @if($offer->images->isNotEmpty())
+                                                        @foreach($offer->images as $image)
+                                                            <img src="{{ $image->file_path }}" alt="">
+                                                        @endforeach
+                                                    @else
+                                                        <p>No images available for this offer.</p>
+                                                    @endif
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
-                                                        <i class="fas fa-shopping-basket"></i>
-                                                    </a>
-                                                    <a href="wishlist.html" class="single-btn">
-                                                        <i class="fas fa-heart"></i>
-                                                    </a>
-                                                    <a href="compare.html" class="single-btn">
-                                                        <i class="fas fa-random"></i>
-                                                    </a>
-                                                    <a href="#" data-toggle="modal" data-target="#quickModal"
-                                                       class="single-btn">
-                                                        <i class="fas fa-eye"></i>
-                                                    </a>
+                                                    <form action="{{route('addcart',$offer->id)}}" method="Post">
+                                                        @csrf
+                                                        <button type="submit" class="single-btn">
+                                                            <i class="fas fa-shopping-basket"></i>
+                                                        </button>
+                                                    </form>
+
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="price-block">
-                                            <span class="price">£51.20</span>
-                                            <del class="price-old">£51.20</del>
-                                            <span class="price-discount">20%</span>
+                                            <span class="price">{{$offer->price}} azn</span>
+                                            <del class="price-old">{{$offer->old_price}} azn</del>
+                                            <span class="price-discount">{{$offer->tax}}%</span>
                                         </div>
                                     </div>
                                 </div>

@@ -144,44 +144,47 @@
                                 <div class="product-card">
                                     <div class="product-header">
                                         <a href="" class="author">
-                                            Ypple
+                                            {!! $offer->tags !!}
                                         </a>
-                                        <h3><a href="">BOOK: Do You Really Need It? This
-                                                Will Help You</a></h3>
+                                        <h3><a href="{{route('product-detail',$offer->id)}}">{!! $offer->title !!}</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
-                                            <img src="{{asset('front')}}/assets/image/products/product-2.jpg" alt="">
+                                            @if($offer->images->isNotEmpty())
+                                                @foreach($offer->images as $image)
+                                                    <img src="{{ $image->file_path }}" alt="">
+                                                @endforeach
+                                            @else
+                                                <p>No images available for this offer.</p>
+                                            @endif
                                             <div class="hover-contents">
                                                 <a href="" class="hover-image">
-                                                    <img src="{{asset('front')}}/assets/image/products/product-1.jpg"
-                                                        alt="">
+
+                                                    @if($offer->images->isNotEmpty())
+                                                        @foreach($offer->images as $image)
+                                                            <img src="{{ $image->file_path }}" alt="">
+                                                        @endforeach
+                                                    @else
+                                                        <p>No images available for this offer.</p>
+                                                    @endif
+
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="" class="single-btn">
+                                                    <form action="{{route('addcart',$offer->id)}}" method="Post">
+                                                        @csrf
+                                                    <button type="submit" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
-                                                    </a>
-                                                    <a href="{{route('wish')}}" class="single-btn">
-                                                        <i class="fas fa-heart"></i>
-                                                    </a>
-                                                    <a href="compare.html" class="single-btn">
-                                                        <i class="fas fa-random"></i>
-                                                    </a>
-                                                    <a href="#" data-toggle="modal" data-target="#quickModal"
-                                                        class="single-btn">
-                                                        <i class="fas fa-eye"></i>
-                                                    </a>
+                                                    </button>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="price-block">
-                                            <span class="price">£51.20</span>
-                                            <del class="price-old">£51.20</del>
-                                            <span class="price-discount">20%</span>
+                                            <span class="price">{{$offer->price}} azn</span>
+                                            <del class="price-old">{{$offer->old_price}} azn</del>
+                                            <span class="price-discount">{{$offer->tax}}%</span>
                                         </div>
-                                        <div class="count-down-block">
-                                            <div class="product-countdown" data-countdown="01/05/2021"></div>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -241,7 +244,7 @@
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </button>
                                                                     <a href="#" data-toggle="modal"
-                                                                        data-target="#quickModal" class="single-btn">
+                                                                       data-target="#quickModal{{$product->id}}" class="single-btn">
                                                                         <i class="fas fa-eye"></i>
                                                                     </a>
                                                                 </div>
@@ -330,7 +333,8 @@
     </div>
 </section>
 <!-- Modal -->
-<div class="modal fade modal-quick-view" id="quickModal" tabindex="-1" role="dialog" aria-labelledby="quickModal"
+@foreach($products as $product)
+<div class="modal fade modal-quick-view" id="quickModal{{$product->id}}" tabindex="-1" role="dialog" aria-labelledby="quickModal"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -349,21 +353,15 @@
               "swipe": false,
               "asNavFor": ".product-slider-nav"
               }'>
-                            <div class="single-slide">
-                                <img src="{{asset('front')}}/assets/image/products/product-details-1.jpg" alt="">
-                            </div>
-                            <div class="single-slide">
-                                <img src="{{asset('front')}}/assets/image/products/product-details-2.jpg" alt="">
-                            </div>
-                            <div class="single-slide">
-                                <img src="{{asset('front')}}/assets/image/products/product-details-3.jpg" alt="">
-                            </div>
-                            <div class="single-slide">
-                                <img src="{{asset('front')}}/assets/image/products/product-details-4.jpg" alt="">
-                            </div>
-                            <div class="single-slide">
-                                <img src="{{asset('front')}}/assets/image/products/product-details-5.jpg" alt="">
-                            </div>
+                            @foreach($product->images as $image)
+                                <div class="single-slide">
+                                    <img
+                                        src="{{$image->file_path}}"
+                                        alt=""
+                                    />
+                                </div>
+                            @endforeach
+
                         </div>
                         <!-- Product Details Slider Nav -->
                         <div class="mt--30 product-slider-nav sb-slick-slider arrow-type-two" data-slick-setting='{
@@ -377,85 +375,64 @@
               "asNavFor": ".product-details-slider",
               "focusOnSelect": true
               }'>
-                            <div class="single-slide">
-                                <img src="{{asset('front')}}/assets/image/products/product-details-1.jpg" alt="">
-                            </div>
-                            <div class="single-slide">
-                                <img src="{{asset('front')}}/assets/image/products/product-details-2.jpg" alt="">
-                            </div>
-                            <div class="single-slide">
-                                <img src="{{asset('front')}}/assets/image/products/product-details-3.jpg" alt="">
-                            </div>
-                            <div class="single-slide">
-                                <img src="{{asset('front')}}/assets/image/products/product-details-4.jpg" alt="">
-                            </div>
-                            <div class="single-slide">
-                                <img src="{{asset('front')}}/assets/image/products/product-details-5.jpg" alt="">
-                            </div>
+                            @foreach($product->images as $image)
+                                <div class="single-slide">
+                                    <img
+                                        src="{{$image->file_path}}"
+                                        alt=""
+                                    />
+                                </div>
+                            @endforeach
+
                         </div>
                     </div>
                     <div class="col-lg-7 mt--30 mt-lg--30">
                         <div class="product-details-info pl-lg--30 ">
-                            <p class="tag-block">Tags: <a href="#">Movado</a>, <a href="#">Omega</a></p>
-                            <h3 class="product-title">Beats EP Wired On-Ear Headphone-Black</h3>
+                            <p class="tag-block">{{__('letter.tags')}}: <a href="#">{{$product->tags}}</a></p>
+                            <h3 class="product-title">{!! $product->title !!}</h3>
                             <ul class="list-unstyled">
-                                <li>Ex Tax: <span class="list-value"> £60.24</span></li>
-                                <li>Brands: <a href="#" class="list-value font-weight-bold"> Canon</a></li>
-                                <li>Product Code: <span class="list-value"> model1</span></li>
-                                <li>Reward Points: <span class="list-value"> 200</span></li>
-                                <li>Availability: <span class="list-value"> In Stock</span></li>
+                                <li>{{__('letter.tax')}}: <span class="list-value"> {{($product->price)+($product->tax)}}</span></li>
+                                <li>{{__('letter.brand')}}: <a href="#" class="list-value font-weight-bold"> {{$product->brand}}</a></li>
+                                <li>{{__('letter.point')}}: <span class="list-value"> 200</span></li>
+                                <li>{{__('letter.stock')}}: <span class="list-value">
+                                        @if($product->quantity!==0)
+                                            {{__('letter.yes')}}
+                                        @else($product->quantity==0)
+                                            {{__('letter.not')}}
+                                        @endif</span></li>
                             </ul>
                             <div class="price-block">
-                                <span class="price-new">£73.79</span>
-                                <del class="price-old">£91.86</del>
+                                <span class="price-new">{{$product->price}} azn</span>
+                                <del class="price-old">{{$product->old_price}} azn</del>
                             </div>
-                            <div class="rating-widget">
-                                <div class="rating-block">
-                                    <span class="fas fa-star star_on"></span>
-                                    <span class="fas fa-star star_on"></span>
-                                    <span class="fas fa-star star_on"></span>
-                                    <span class="fas fa-star star_on"></span>
-                                    <span class="fas fa-star "></span>
-                                </div>
-                                <div class="review-widget">
-                                    <a href="">(1 Reviews)</a> <span>|</span>
-                                    <a href="">Write a review</a>
-                                </div>
-                            </div>
+
                             <article class="product-details-article">
                                 <h4 class="sr-only">Product Summery</h4>
-                                <p>Long printed dress with thin adjustable straps. V-neckline and wiring under
-                                    the Dust with ruffles
-                                    at the bottom
-                                    of the
-                                    dress.</p>
+                                <p>{!! $product->about !!}</p>
                             </article>
                             <div class="add-to-cart-row">
-                                <div class="count-input-block">
-                                    <span class="widget-label">Qty</span>
-                                    <input type="number" class="form-control text-center" value="1">
-                                </div>
+
                                 <div class="add-cart-btn">
-                                    <a href="" class="btn btn-outlined--primary"><span class="plus-icon">+</span>Add to
-                                        Cart</a>
+                                    <form action="{{route('addcart',$product->id)}}" method="Post">
+                                        @csrf
+                                        <button type="submit" class="btn btn-outlined--primary"
+                                        ><span class="plus-icon">+</span>{{__('cart.add_cart')}}</button
+                                        >
+                                    </form>
                                 </div>
                             </div>
-                            <div class="compare-wishlist-row">
-                                <a href="" class="add-link"><i class="fas fa-heart"></i>Add to Wish List</a>
-                                <a href="" class="add-link"><i class="fas fa-random"></i>Add to Compare</a>
-                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <div class="widget-social-share">
-                    <span class="widget-label">Share:</span>
+                    <span class="widget-label">{{__('letter.share')}}:</span>
                     <div class="modal-social-share">
-                        <a href="#" class="single-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="single-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="single-icon"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="single-icon"><i class="fab fa-google-plus-g"></i></a>
+                        @foreach($social as $data)
+                        <a href="{{$data->url}}" class="single-icon"><i class="fab fa-{{$data->name}}"></i></a>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -463,9 +440,11 @@
     </div>
 </div>
 
-
+@endforeach
 
 
 @endsection
 @section('js')
 @endsection
+
+

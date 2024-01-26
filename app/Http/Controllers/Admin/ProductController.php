@@ -161,4 +161,26 @@ class ProductController extends Controller
             'success' => 'Record deleted successfully!'
         ]);
     }
+
+    public function updateProduct(Request $request)
+    {
+        $id = $request->id;
+        $isActive = $request->is_active == 'true' ? 1 : 0;
+
+        // Update the database
+        Product::where('id', $id)->update(['activ' => $isActive]);
+
+        return response()->json(['message' => 'Status updated successfully']);
+    }
+
+    public function updateOffer(Request $request)
+    {
+        $id = $request->id;
+        $isActive = $request->is_offer == 'true' ? 1 : 0;
+
+        // Update the database
+        Product::where('id', $id)->update(['offer' => $isActive]);
+
+        return response()->json(['message' => 'Status updated successfully']);
+    }
 }
