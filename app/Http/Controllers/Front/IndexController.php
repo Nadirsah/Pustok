@@ -8,6 +8,7 @@ use App\Models\Setting;
 use App\Models\Product;
 use App\Models\Cart;
 use App\Models\SlideModel;
+use App\Models\Category;
 use App\Services\DataService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +21,8 @@ class IndexController extends ActivController
         $slide=SlideModel::all();
         $products=Product::with('images')->get();
         $best_product=Cart::where('quantity','>',2)->with('get_products')->get();
-        return view('front.home.index',compact('products','best_product','slide'));
+        $category=Category::where('parent_id','!=',0)->take(3)->with('products')->get();
+        return view('front.home.index',compact('products','best_product','slide','category'));
     }
 
     public function redirects(){

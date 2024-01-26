@@ -19,7 +19,8 @@
                     <div class="card-body">
                         <ul class="nav nav-tabs">
                             @foreach($langs as $key=>$lang)
-                                <li class="nav-item {{$key===0 ? 'active':''}}"> <a href="#{{$lang->name}}" class="nav-link rounded-top " data-toggle="tab">{{$lang->name}}</a></li>
+                                <li class="nav-item {{$key===0 ? 'active':''}}"> 
+                                    <a href="#{{$lang->name}}" class="nav-link rounded-top " data-toggle="tab">{{$lang->name}}</a></li>
                             @endforeach
                         </ul>
 
