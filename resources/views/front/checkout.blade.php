@@ -79,7 +79,7 @@
                                     <!-- Cart Total -->
                                     <div class="col-12">
                                         <div class="checkout-cart-total">
-                                            <h4>{{__('cart.grand')}} {{__('cart.total')}} <span>$104.00</span></h4>
+                                            <h4>{{__('cart.grand')}} {{__('cart.total')}} <span>{{$totalPrice}} azn</span></h4>
                                             <div class="term-block">
                                                 <input type="checkbox" name="status" value="1" id="accept_terms2">
                                                 <label for="accept_terms2">I’ve read and accept the terms &

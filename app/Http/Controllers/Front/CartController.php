@@ -48,18 +48,11 @@ class CartController extends Controller
 
 
 public function delete($id){
-    $card = Card::find($id);
+    Cart::find($id)->delete($id);
 
-    if ($card) {
-        $card->delete();
-        return response()->json([
-            'success' => 'Record deleted successfully!'
-        ]);
-    } else {
-        return response()->json([
-            'error' => 'Record not found!'
-        ], 404);
-    }
+    return response()->json([
+        'success' => 'Record deleted successfully!'
+    ]);
 }
 
 

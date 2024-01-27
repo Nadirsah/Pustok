@@ -28,10 +28,8 @@ public function compose(View $view):void
     $lang=Lang::get();
     $categories=Category::with('children')->get();
     $cart=Cart::where('user_id',$user_id )->where('status', 0)->sum('quantity');
-
     $view->with('categories', $categories);
     $view->with('lang', $lang);
-
     $view->with('cart', $cart);
     $view->with('totalPrice', $totalPrice);
 }

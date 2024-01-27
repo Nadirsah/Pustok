@@ -6,6 +6,7 @@
 @endsection
 @section('content')
     @include('layouts.front.activ-menu')
+    {{ $whishlist }}
     <div class="cart_area inner-page-sec-padding-bottom">
         <div class="container">
             <div class="row">
@@ -25,14 +26,15 @@
                                 </thead>
                                 <tbody>
                                 <tr>
+                                @foreach($whishlist as $product)
                                     <td class="pro-thumbnail"><a href="#"><img
                                                 src="{{asset('front')}}/assets/image/products/product-1.jpg" alt="Product"></a></td>
-                                    <td class="pro-title"><a href="#">Rinosin Glasses</a></td>
+                                    <td class="pro-title"><a href="#">{{ $product->title }}</a></td>
                                     <td class="pro-price"><span>$395.00</span></td>
                                     <td class="pro-price"><span>123</span></td>
                                     <td class="pro-subtotal"><span>$395.00</span></td>
                                 </tr>
-
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

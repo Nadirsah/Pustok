@@ -56,6 +56,7 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
     Route::get('/my-account/{id}',[MyAccountController::class,'index'])->name('my-account')->middleware('NotLogin');
     Route::get('/log-res',[LogResController::class,'index'])->name('log-res')->middleware('isLogin');
     Route::post('/addcart/{id}',[CartController::class,'addcart'])->name('addcart');
+    Route::post('/wishlist/{id}',[WishController::class,'store'])->name('addwhishlist');
     Route::post('/delete_card/{id}', [CartController::class, 'delete'])->name('card.delete');
     Route::post('/checkout', [CartController::class, 'checkout'])->name('card.checkout');
     Route::post('/guest', [Usercontroller::class, 'guest'])->name('guest.store');

@@ -30,8 +30,6 @@ class ContactController extends ActivController
             $data->email=$request->email;
             $data->phone=$request->phone;
             $data->message=$request->message;
-            $data->name=$request->name;
-            $data->name=$request->name;
             $data->status=0;
     
             $data->save();

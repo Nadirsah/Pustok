@@ -33,7 +33,7 @@
                         <td><img width="50" src="{{$item->file_path}}"></td>
                         <td> <a href="{{route('brand.edit',$item->id)}}"><i
                                     class="btn btn-info fa fa-edit"></i></a>
-                                    <a class="deleteRecord" data-id="{{ $item->id }}" onclick="return confirmDelete('Silmeye eminsiz?')"><i class="btn btn-danger fa fa-trash"></i></a>
+                                    <a class="deleteRecord" data-id="{{ $item->id }}" ><i class="btn btn-danger fa fa-trash"></i></a>
 
                 @endforeach
                 </tbody>
@@ -44,15 +44,16 @@
         let table = new DataTable('#dataTable');
     </script>
     <script type="text/javascript">
-        function confirmDelete(message) {
-            return confirm(message);
-        }
+        
 
 $(".deleteRecord").click(function(){
     var id = $(this).data("id");
     var token = $("meta[name='csrf-token']").attr("content");
 
-    if (confirmDelete('Silmeye eminsiz?')) {
+    var confirmDelete = confirm("Are you sure you want to delete this record?");
+    if (!confirmDelete) {
+        return false;
+    }
         $.ajax(
             {
                 url: "delete_brand/" + id,
@@ -65,7 +66,7 @@ $(".deleteRecord").click(function(){
                     $(`.deleteRecord[data-id="${id}"]`).closest('tr').remove();
                 }
             });
-    }
+    
 });
 </script>
 @endsection

@@ -146,35 +146,36 @@
                                         <a href="" class="author">
                                             {!! $offer->tags !!}
                                         </a>
-                                        <h3><a href="{{route('product-detail',$offer->id)}}">{!! $offer->title !!}</a></h3>
+                                        <h3><a href="{{route('product-detail',$offer->id)}}">{!! $offer->title !!}</a>
+                                        </h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             @if($offer->images->isNotEmpty())
-                                                @foreach($offer->images as $image)
-                                                    <img src="{{ $image->file_path }}" alt="">
-                                                @endforeach
+                                            @foreach($offer->images as $image)
+                                            <img src="{{ $image->file_path }}" alt="">
+                                            @endforeach
                                             @else
-                                                <p>No images available for this offer.</p>
+                                            <p>No images available for this offer.</p>
                                             @endif
                                             <div class="hover-contents">
                                                 <a href="" class="hover-image">
 
                                                     @if($offer->images->isNotEmpty())
-                                                        @foreach($offer->images as $image)
-                                                            <img src="{{ $image->file_path }}" alt="">
-                                                        @endforeach
+                                                    @foreach($offer->images as $image)
+                                                    <img src="{{ $image->file_path }}" alt="">
+                                                    @endforeach
                                                     @else
-                                                        <p>No images available for this offer.</p>
+                                                    <p>No images available for this offer.</p>
                                                     @endif
 
                                                 </a>
                                                 <div class="hover-btns">
                                                     <form action="{{route('addcart',$offer->id)}}" method="Post">
                                                         @csrf
-                                                    <button type="submit" class="single-btn">
-                                                        <i class="fas fa-shopping-basket"></i>
-                                                    </button>
+                                                        <button type="submit" class="single-btn">
+                                                            <i class="fas fa-shopping-basket"></i>
+                                                        </button>
                                                     </form>
                                                 </div>
                                             </div>
@@ -215,50 +216,62 @@
                         {"breakpoint":320, "settings": {"slidesToShow": 1} }
                     ]'>
                                         @foreach($products as $product)
-                                        <form action="{{route('addcart',$product->id)}}" method="Post">
-                                            @csrf
-                                            <div class="single-slide">
-                                                <div class="product-card">
-                                                    <div class="product-header">
-                                                        <a href="" class="author">
-                                                            {{$product->tags}}
-                                                        </a>
-                                                        <h3><a
-                                                                href="{{route('product-detail',$product->id)}}">{!!$product->title!!}</a>
-                                                        </h3>
-                                                    </div>
-                                                    <div class="product-card--body">
-                                                        <div class="card-image">
-                                                            @foreach($product->images as $image)
-                                                            @if($image->is_main == 1)
-                                                            <img src="{{ $image->file_path }}" alt="">
-                                                            @endif
-                                                            @endforeach
 
-                                                            <div class="hover-contents">
-                                                                <a href="" class="hover-image">
-                                                                    <img src="" alt="">
-                                                                </a>
-                                                                <div class="hover-btns">
+                                        <div class="single-slide">
+                                            <div class="product-card">
+                                                <div class="product-header">
+                                                    <a href="" class="author">
+                                                        {{$product->tags}}
+                                                    </a>
+                                                    <h3><a
+                                                            href="{{route('product-detail',$product->id)}}">{!!$product->title!!}</a>
+                                                    </h3>
+                                                </div>
+                                                <div class="product-card--body">
+                                                    <div class="card-image">
+                                                        @foreach($product->images as $image)
+                                                        @if($image->is_main == 1)
+                                                        <img src="{{ $image->file_path }}" alt="">
+                                                        @endif
+                                                        @endforeach
+
+                                                        <div class="hover-contents">
+                                                            <a href="" class="hover-image">
+                                                                <img src="" alt="">
+                                                            </a>
+                                                            <div class="hover-btns">
+                                                                <form action="{{route('addcart',$product->id)}}"
+                                                                    method="Post">
+                                                                    @csrf
                                                                     <button type="submit" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </button>
+                                                                    </form>
                                                                     <a href="#" data-toggle="modal"
-                                                                       data-target="#quickModal{{$product->id}}" class="single-btn">
+                                                                        data-target="#quickModal{{$product->id}}"
+                                                                        class="single-btn">
                                                                         <i class="fas fa-eye"></i>
                                                                     </a>
-                                                                </div>
+                                                                    <form action="{{route('addwhishlist',$product->id)}}"
+                                                                    method="Post">
+                                                                    @csrf
+                                                                    <button type="submit" class="single-btn"
+                                                                        tabindex="-1">
+                                                                        <i class="fas fa-heart"></i>
+                                                                    </button>
+                                                                    </form>
                                                             </div>
                                                         </div>
-                                                        <div class="price-block">
-                                                            <span class="price">{{$product->price}}-azn</span>
-                                                            <del class="price-old">{{$product->old_price}}-azn</del>
-                                                            <span class="price-discount">{{$product->tax}}%</span>
-                                                        </div>
+                                                    </div>
+                                                    <div class="price-block">
+                                                        <span class="price">{{$product->price}}-azn</span>
+                                                        <del class="price-old">{{$product->old_price}}-azn</del>
+                                                        <span class="price-discount">{{$product->tax}}%</span>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </form>
+                                        </div>
+                                      
                                         @endforeach
                                     </div>
                                 </div>
@@ -334,8 +347,8 @@
 </section>
 <!-- Modal -->
 @foreach($products as $product)
-<div class="modal fade modal-quick-view" id="quickModal{{$product->id}}" tabindex="-1" role="dialog" aria-labelledby="quickModal"
-    aria-hidden="true">
+<div class="modal fade modal-quick-view" id="quickModal{{$product->id}}" tabindex="-1" role="dialog"
+    aria-labelledby="quickModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <button type="button" class="close modal-close-btn ml-auto" data-dismiss="modal" aria-label="Close">
@@ -354,12 +367,9 @@
               "asNavFor": ".product-slider-nav"
               }'>
                             @foreach($product->images as $image)
-                                <div class="single-slide">
-                                    <img
-                                        src="{{$image->file_path}}"
-                                        alt=""
-                                    />
-                                </div>
+                            <div class="single-slide">
+                                <img src="{{$image->file_path}}" alt="" />
+                            </div>
                             @endforeach
 
                         </div>
@@ -376,12 +386,9 @@
               "focusOnSelect": true
               }'>
                             @foreach($product->images as $image)
-                                <div class="single-slide">
-                                    <img
-                                        src="{{$image->file_path}}"
-                                        alt=""
-                                    />
-                                </div>
+                            <div class="single-slide">
+                                <img src="{{$image->file_path}}" alt="" />
+                            </div>
                             @endforeach
 
                         </div>
@@ -391,14 +398,16 @@
                             <p class="tag-block">{{__('letter.tags')}}: <a href="#">{{$product->tags}}</a></p>
                             <h3 class="product-title">{!! $product->title !!}</h3>
                             <ul class="list-unstyled">
-                                <li>{{__('letter.tax')}}: <span class="list-value"> {{($product->price)+($product->tax)}}</span></li>
-                                <li>{{__('letter.brand')}}: <a href="#" class="list-value font-weight-bold"> {{$product->brand}}</a></li>
+                                <li>{{__('letter.tax')}}: <span class="list-value">
+                                        {{($product->price)+($product->tax)}}</span></li>
+                                <li>{{__('letter.brand')}}: <a href="#" class="list-value font-weight-bold">
+                                        {{$product->brand}}</a></li>
                                 <li>{{__('letter.point')}}: <span class="list-value"> 200</span></li>
                                 <li>{{__('letter.stock')}}: <span class="list-value">
                                         @if($product->quantity!==0)
-                                            {{__('letter.yes')}}
+                                        {{__('letter.yes')}}
                                         @else($product->quantity==0)
-                                            {{__('letter.not')}}
+                                        {{__('letter.not')}}
                                         @endif</span></li>
                             </ul>
                             <div class="price-block">
@@ -415,9 +424,8 @@
                                 <div class="add-cart-btn">
                                     <form action="{{route('addcart',$product->id)}}" method="Post">
                                         @csrf
-                                        <button type="submit" class="btn btn-outlined--primary"
-                                        ><span class="plus-icon">+</span>{{__('cart.add_cart')}}</button
-                                        >
+                                        <button type="submit" class="btn btn-outlined--primary"><span
+                                                class="plus-icon">+</span>{{__('cart.add_cart')}}</button>
                                     </form>
                                 </div>
                             </div>
@@ -446,5 +454,3 @@
 @endsection
 @section('js')
 @endsection
-
-
