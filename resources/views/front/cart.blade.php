@@ -34,7 +34,7 @@
                                     <!-- Product Row -->
                                     @foreach($data as $item)
                                     <tr>
-                                        <td class="pro-remove"><a class="deleteCard" data-id="{{ $item->id }}"><i class="far fa-trash-alt"></i></a>
+                                        <td class="pro-remove"><a  class="deleteCard" data-id="{{ $item->id }}"><i class="far fa-trash-alt"></i></a>
                                         </td>
                                         <td class="pro-thumbnail"><a href="#">
                                                 @foreach($item->get_products->images as $image)
@@ -46,7 +46,7 @@
                                         <td class="pro-title"><a href="#">{!!$item->get_products->title!!}</a></td>
                                         <td class="pro-price"><span>{{$item->get_products->price}} azn</span></td>
                                         <td class="pro-price"><span>{{$item->quantity}}</span></td>
-                                        <td class="pro-subtotal"><span>{{($item->get_products->price)*($item->quantity)}} azn</span></td>
+                                        <td class="pro-subtotal"><span id="total">{{($item->get_products->price)*($item->quantity)}} azn</span></td>
                                     </tr>
                                     @endforeach
                                     <!-- Product Row -->
@@ -133,14 +133,14 @@
                         <div class="cart-summary">
                             <div class="cart-summary-wrap">
                                 <h4><span>{{__('cart.cart_summary')}}</span></h4>
-                                <p>{{__('cart.sub')}} {{__('cart.total')}} <span class="text-primary">{{$totalPrice}} azn</span></p>
+                                <p>{{__('cart.sub')}} {{__('cart.total')}} <span class="text-primary" id="totalcart"></span></p>
                                 <h2>{{__('cart.grand')}} {{__('cart.total')}} <span class="text-primary">{{$totalPrice}} azn</span></h2>
                             </div>
                             <div class="cart-summary-button">
                                 @if($totalPrice!==0)
                                 <a href="{{route('checkout')}}" class="checkout-btn c-btn btn--primary">{{__('cart.checkout')}}</a>
                                 @else
-                                
+
                                 @endif
                             </div>
                         </div>
@@ -149,11 +149,18 @@
             </div>
         </div>
     </main>
+
+    <script>
+        $(document).ready(function() {
+            var totalValue = $("#total").text();
+            $("#totalcart").text(totalValue);
+        });
+    </script>
     <script type="text/javascript">
 $(".deleteCard").click(function(){
     var id = $(this).data("id");
     var token = $("meta[name='csrf-token']").attr("content");
-    
+
     var confirmDelete = confirm("Are you sure you want to delete this record?");
     if (!confirmDelete) {
         return false;
@@ -168,11 +175,12 @@ $(".deleteCard").click(function(){
                     "_token": token,
                 },
                 success: function () {
-                    $(`.deleteRecord[data-id="${id}"]`).closest('tr').remove();
+                    $(`.deleteCard[data-id="${id}"]`).closest('tr').remove();
                 }
             });
 });
 </script>
+
 @endsection
 
 
