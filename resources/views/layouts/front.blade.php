@@ -24,7 +24,7 @@
                                 </div>
                                 <div class="text">
                                     <p> {{__('contakt.free_support')}} 24/7</p>
-                                    <p class="font-weight-bold number">+01-202-555-0181</p>
+                                    <p class="font-weight-bold number">+{{$setting->phone_1}}</p>
                                 </div>
                             </div>
                         </div>
@@ -138,8 +138,8 @@
                     </nav>
                     <div class="off-canvas-bottom">
                         <div class="contact-list mb--10">
-                            <a href="" class="sin-contact"><i class="fas fa-mobile-alt"></i>(12345) 78790220</a>
-                            <a href="" class="sin-contact"><i class="fas fa-envelope"></i>examle@handart.com</a>
+                            <a href="" class="sin-contact"><i class="fas fa-mobile-alt"></i>+{{$setting->phone_2}}</a>
+                            <a href="" class="sin-contact"><i class="fas fa-envelope"></i>{{$setting->email}}</a>
                         </div>
                         <div class="off-canvas-social">
                             @foreach($social as $data)

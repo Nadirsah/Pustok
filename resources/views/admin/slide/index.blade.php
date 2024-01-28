@@ -8,6 +8,7 @@
 <script src="{{asset('admin')}}\global_assets\js\plugins\forms\selects\select2.min.js"></script>
 <script src="{{asset('admin')}}\global_assets\js\demo_pages\datatables_advanced.js"></script>
 <script src="{{asset('admin')}}\global_assets\js\demo_pages\components_thumbnails.js"></script>
+<script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 @endsection
 
 
@@ -28,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            <table class="table datatable-show-all">
+            <table class="table table-hover border table-bordered " id="dataTable">
                 <thead>
                     <tr>
                         <th>Title</th>
@@ -44,8 +45,7 @@
                         <td>{!!$items->name!!}</td>
                         <td><img width="50" src="{{$items->file_path}}"></td>
                         <td> <a href="{{route('slide.edit',$items->id)}}"><i class="btn btn-info fa fa-edit"></i></a>
-                            <a href="{{route('slide.delete',$items->id)}}"
-                                onclick="return confirm('Mehsulu silmeye eminsiz?')"><i
+                            <a class="deleteimg" data-id="{{ $items->id }}"><i
                                     class="btn btn-danger fa fa-trash"></i></a>
                         </td>
                     </tr>
@@ -59,22 +59,27 @@
 
 </div>
 <!-- /login form -->
-
+<script>
+let table = new DataTable('#dataTable');
+</script>
 <script type="text/javascript">
 $(".deleteimg").click(function() {
     var id = $(this).data("id");
     var token = $("meta[name='csrf-token']").attr("content");
+    var confirmDelete = confirm("Are you sure you want to delete this record?");
+    if (!confirmDelete) {
+        return false;
+    }
     $.ajax({
-        url: "delete_image/" + id,
+        url: "delete_slide/" + id,
         type: 'post',
         data: {
             "id": id,
             "_token": token,
         },
         success: function() {
-            $('.modal').modal('hide');
             console.log("itcon Works");
-            $(`.deleteRecord[data-id="${id}"]`).closest('tr').remove();
+            $(`.deleteimg[data-id="${id}"]`).closest('tr').remove();
         }
     });
 

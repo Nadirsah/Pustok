@@ -98,10 +98,13 @@ class SlideController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function delete(string $id)
-    {
-        $data = SlideModel::findOrFail($id);
-        $data->delete();
-        return redirect()->route('slide.index')->with('message','Melumatlar ugurla silindi')->with('type','success');
+    
+    public function delete($id){
+
+        SlideModel::find($id)->delete($id);
+
+        return response()->json([
+            'success' => 'Record deleted successfully!'
+        ]);
     }
 }

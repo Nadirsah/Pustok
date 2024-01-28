@@ -3,7 +3,7 @@
         <div class="row align-items-center">
             <div class="col-lg-3">
                 <a href="{{route('home')}}" class="site-brand">
-                    <img src="{{asset('front')}}/assets/image/logo.png" alt="">
+                    <img src="{{$setting->file_path}}" alt="">
                 </a>
             </div>
             <div class="col-lg-5">

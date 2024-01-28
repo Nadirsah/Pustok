@@ -87,4 +87,13 @@ class SocialController extends Controller
     {
         //
     }
+
+    public function delete($id){
+
+        Social::find($id)->delete($id);
+
+        return response()->json([
+            'success' => 'Record deleted successfully!'
+        ]);
+    }
 }

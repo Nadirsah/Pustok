@@ -1,14 +1,12 @@
 @extends('layouts.admin')
 @section('title','Mehsullar')
-@section('theme_css')
-<link href="{{asset('admin')}}\global_assets\css\icons\fontawesome\styles.min.css" rel="stylesheet" type="text/css">
-@endsection
 @section('theme_js')
-<script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<link href="{{asset('admin')}}\global_assets\css\icons\fontawesome\styles.min.css" rel="stylesheet" type="text/css">
 <script src="{{asset('admin')}}\global_assets\js\plugins\forms\styling\uniform.min.js"></script>
 <script src="{{asset('admin')}}\global_assets\js\plugins\forms\styling\switchery.min.js"></script>
 <script src="{{asset('admin')}}\global_assets\js\plugins\forms\styling\switch.min.js"></script>
 <script src="{{asset('admin')}}\global_assets\js\demo_pages\form_checkboxes_radios.js"></script>
+<script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 
 @endsection
 
@@ -17,27 +15,17 @@
 <div class="content">
     @include('layouts.admin.alert')
     <div class="card">
-        <div class="card-header header-elements-inline">
 
-            <h5 class="card-title"><a href="{{route('user.create')}}" class="btn btn-info"><i
-                        class="icon-plus3 mr-3 icon-xl"></i> Mehsul elave et</a></h5>
-            <div class="header-elements">
-                <div class="list-icons">
-                    <a class="list-icons-item" data-action="collapse"></a>
-                    <a class="list-icons-item" data-action="reload"></a>
-                    <a class="list-icons-item" data-action="remove"></a>
-                </div>
-            </div>
-        </div>
 
-        <table class="table table-hover border table-bordered" id="dataTable">
+        <table class="table table-hover border table-bordered " id="dataTable">
             <thead>
                 <tr>
                     <th>Ad</th>
                     <th>Email</th>
-                    <th>Activ</th>
-                    <th>Imtiyaz</th>
-                    <th class="text-center">Actions</th>
+                    <th>Telefon</th>
+                    <th>Metn</th>
+                    <th>Status</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -45,23 +33,18 @@
                 <tr>
                     <td>{{$items->name}}</td>
                     <td>{{$items->email}}</td>
+                    <td>{{$items->phone}}</td>
+                    <td>{{$items->message}}</td>
                     <td>
                         <div class="checkbox checkbox-switchery">
                             <label>
                                 <input type="checkbox" name='activ' class="switchery" id="{{ $items->id }}"
-                                    {{$items->is_active=='1' ? 'checked' :''}}>
-                                Checked switch
+                                    {{$items->status=='1' ? 'checked' :''}}>
+
                             </label>
                         </div>
                     </td>
-                    <td>@if($items->user_Type=='admin')
-                        Admin
-                        @else($items->user_Type=='user')
-                        Istifadeci
-                        @endif</td>
-                    <td> <a href="{{route('user.edit',$items->id)}}"><i class="btn btn-info fa fa-edit"></i></a>
 
-                    </td>
                 </tr>
                 @endforeach
             </tbody>
@@ -70,6 +53,29 @@
 </div>
 <script>
 let table = new DataTable('#dataTable');
+</script>
+<script type="text/javascript">
+$(".deleteRecord").click(function() {
+    var id = $(this).data("id");
+    var token = $("meta[name='csrf-token']").attr("content");
+    var confirmDelete = confirm("Are you sure you want to delete this record?");
+    if (!confirmDelete) {
+        return false;
+    }
+    $.ajax({
+        url: "delete_social/" + id,
+        type: 'post',
+        data: {
+            "id": id,
+            "_token": token,
+        },
+        success: function() {
+            console.log("itcon Works");
+            $(`.deleteRecord[data-id="${id}"]`).closest('tr').remove();
+        }
+    });
+
+});
 </script>
 <script>
 $(document).ready(function() {
@@ -81,7 +87,7 @@ $(document).ready(function() {
             }
         });
         $.ajax({
-            url: "{{route('isdiscount')}}", // Define your Laravel route
+            url: "{{route('offmessage')}}", // Define your Laravel route
             type: 'POST',
             data: {
                 "id": id,

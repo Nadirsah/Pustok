@@ -35,7 +35,7 @@ class ProductController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(ProductRequest $request)
-    {
+    {try {
         $data = new Product();
         $data->tags = $request->tags;
         $data->title = $request->title;
@@ -48,11 +48,11 @@ class ProductController extends Controller
         $data->about = $request->about;
         $data->description = $request->description;
         $data->catgory_id = $request->subcategory;
-
         $data->save();
 
-
-        foreach ($request->file('img') as $key => $image) {
+        try {
+            if ($request->hasFile('img')) {
+           foreach ($request->file('img') as $key => $image) {
             $fileModel = new ProductImage;
             $filename = time() . '-' . $image->getClientOriginalName();
             $filePath = $image->storeAs('uploads', $filename, 'public');
@@ -62,10 +62,17 @@ class ProductController extends Controller
             $fileModel->product_id =$data->id;
             $fileModel->save();
         }
-
+    }
+}catch (\Exception $e) {
+        $data->delete();
+        throw new \Exception('Image upload failed: ' . $e->getMessage());
+    }
         return redirect()->route('product.index')->with('type','success')
             ->with('message','Melumatlar ugurla yuklendi!');
-
+        } catch (\Exception $e) {
+            return redirect()->route('product.index')->with('type', 'error')
+                ->with('message', 'Yuklenme de xeta bas verdi: ' . $e->getMessage());
+        }
 
     }
 
@@ -91,7 +98,8 @@ class ProductController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {    $request->validate([
+    {   try {
+        $request->validate([
         'title.*' => 'required',
         'about.*' => 'required',
         'tags' => 'required',
@@ -118,6 +126,9 @@ class ProductController extends Controller
         $data->description = $request->description;
         $data->catgory_id = $request->subcategory;
         $data->save();
+
+        try {
+            if ($request->hasFile('img')) {
         foreach ($request->file('img') as $key => $image) {
             $fileModel = new ProductImage;
             $filename = time() . '-' . $image->getClientOriginalName();
@@ -128,8 +139,17 @@ class ProductController extends Controller
             $fileModel->product_id =$data->id;
             $fileModel->save();
         }
+    }
+}catch (\Exception $e) {
+        $data->delete();
+        throw new \Exception('Image upload failed: ' . $e->getMessage());
+    }
         return redirect()->route('product.index')->with('type','success')
             ->with('message','Melumatlar ugurla yenilendi!');
+        } catch (\Exception $e) {
+            return redirect()->route('product.index')->with('type', 'error')
+                ->with('message', 'Error occurred during update: ' . $e->getMessage());
+        }
     }
 
     /**

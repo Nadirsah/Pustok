@@ -63,20 +63,24 @@
                         <td>{!! $items->title!!}</td>
                         <td>{!! $items->about !!}</td>
                         <td>{!! Str::limit($items->description, 50) !!}</td>
-                        <td><div class="checkbox checkbox-switchery">
+                        <td>
+                            <div class="checkbox checkbox-switchery">
                                 <label>
                                     <input type="checkbox" name='activ' class="switchery activ" id="{{ $items->id }}"
                                         {{$items->activ==1 ? 'checked' :''}}>
 
                                 </label>
-                            </div></td>
-                        <td><div class="checkbox checkbox-switchery">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="checkbox checkbox-switchery">
                                 <label>
                                     <input type="checkbox" name='offer' class="switchery offer" id="{{ $items->id }}"
                                         {{$items->offer==1 ? 'checked' :''}}>
 
                                 </label>
-                            </div></td>
+                            </div>
+                        </td>
                         <td>
 
                             <a type="button" class="btn bg-blue btn-block" data-toggle="modal"
@@ -99,6 +103,7 @@
     </div>
 
     <!-- Login form -->
+    @foreach($item as $items)
     <div id="modal-login{{$items->id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -138,6 +143,7 @@
             </div>
         </div>
     </div>
+    @endforeach
 </div>
 <!-- /login form -->
 
@@ -145,6 +151,10 @@
 $(".deleteimg").click(function() {
     var id = $(this).data("id");
     var token = $("meta[name='csrf-token']").attr("content");
+    var confirmDelete = confirm("Are you sure you want to delete this record?");
+    if (!confirmDelete) {
+        return false;
+    }
     $.ajax({
         url: "delete_image/" + id,
         type: 'post',
@@ -162,59 +172,59 @@ $(".deleteimg").click(function() {
 });
 </script>
 <script>
-    $(document).ready(function() {
-        $(document).on('click', '.activ', function() {
-            var id = $(this).attr("id");
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $("meta[name='csrf-token']").attr("content")
-                }
-            });
-            $.ajax({
-                url: "{{route('isdiscountproduct')}}", // Define your Laravel route
-                type: 'POST',
-                data: {
-                    "id": id,
-                    is_active: $(this).is(':checked'),
+$(document).ready(function() {
+    $(document).on('click', '.activ', function() {
+        var id = $(this).attr("id");
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $("meta[name='csrf-token']").attr("content")
+            }
+        });
+        $.ajax({
+            url: "{{route('isdiscountproduct')}}", // Define your Laravel route
+            type: 'POST',
+            data: {
+                "id": id,
+                is_active: $(this).is(':checked'),
 
-                },
-                success: function(data) {
-                    console.log('Status updated successfully');
-                },
-                error: function(error) {
-                    console.error('Error updating status:', error);
-                }
-            });
+            },
+            success: function(data) {
+                console.log('Status updated successfully');
+            },
+            error: function(error) {
+                console.error('Error updating status:', error);
+            }
         });
     });
+});
 </script>
 
 <script>
-    $(document).ready(function() {
-        $(document).on('click', '.offer', function() {
-            var id = $(this).attr("id");
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $("meta[name='csrf-token']").attr("content")
-                }
-            });
-            $.ajax({
-                url: "{{route('isoffer')}}", // Define your Laravel route
-                type: 'POST',
-                data: {
-                    "id": id,
-                    is_offer: $(this).is(':checked'),
+$(document).ready(function() {
+    $(document).on('click', '.offer', function() {
+        var id = $(this).attr("id");
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $("meta[name='csrf-token']").attr("content")
+            }
+        });
+        $.ajax({
+            url: "{{route('isoffer')}}", // Define your Laravel route
+            type: 'POST',
+            data: {
+                "id": id,
+                is_offer: $(this).is(':checked'),
 
-                },
-                success: function(data) {
-                    console.log('Status updated successfully');
-                },
-                error: function(error) {
-                    console.error('Error updating status:', error);
-                }
-            });
+            },
+            success: function(data) {
+                console.log('Status updated successfully');
+            },
+            error: function(error) {
+                console.error('Error updating status:', error);
+            }
         });
     });
+});
 </script>
 
 

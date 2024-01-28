@@ -74,7 +74,7 @@ class SettingController extends Controller
         'adress' => 'required',
         'email' => 'required|email',
         'activ' => 'required|integer',
-        'logo'=>'required|max:2048',
+        'logo'=>'max:2048',
 
     ]);
         $data=Setting::findOrFail($id);
@@ -83,10 +83,12 @@ class SettingController extends Controller
         $data->adress = $request->adress;
         $data->email = $request->email;
         $data->activ = $request->activ;
+        if ($request->hasFile('img')) {
         $filename = time() . '-' . $request->file('logo')->getClientOriginalName();
         $filePath = $request->file('logo')->storeAs('uploads', $filename, 'public');
         $data->logo = time() . '-' . $request->file('logo')->getClientOriginalName();
         $data->file_path = '/storage/' . $filePath;
+        }
         $data->save();
 
 
