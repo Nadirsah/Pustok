@@ -82,8 +82,7 @@
                                             <h4>{{__('cart.grand')}} {{__('cart.total')}} <span>{{$totalPrice}} azn</span></h4>
                                             <div class="term-block">
                                                 <input type="checkbox" name="status" value="1" id="accept_terms2">
-                                                <label for="accept_terms2">I’ve read and accept the terms &
-                                                    conditions</label>
+                                                <label for="accept_terms2">{{__('checkout.rule')}}</label>
                                                 <span class="text-danger">@error('status'){{ __('required.error') }}@enderror</span>
                                             </div>
                                             <button type="submit" class="place-order w-100">{{__('letter.order')}}</button>

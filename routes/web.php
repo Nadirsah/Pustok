@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\Faq;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\Translate1Controller;
@@ -45,6 +46,7 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
     Route::get('/redirects',[IndexController::class,'redirects']);
     Route::get('/',[IndexController::class,'index'])->name('home');
     Route::get('/shop',[ShopController::class,'index'])->name('shop');
+    Route::get('/kat_shop/{id}/{slug}',[ShopController::class,'kat_shop'])->name('kat_shop');
     Route::get('/contact',[ContactController::class,'index'])->name('contact');
     Route::post('/msj_contact',[ContactController::class,'store'])->name('msj_contact');
     Route::get('/cart/{id}',[CartController::class,'showcart'])->name('showcart')->middleware('NotLogin');;
@@ -60,6 +62,7 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
     Route::post('/delete_card/{id}', [CartController::class, 'delete'])->name('card.delete');
     Route::post('/checkout', [CartController::class, 'checkout'])->name('card.checkout');
     Route::post('/guest', [Usercontroller::class, 'guest'])->name('guest.store');
+    Route::post('/editguest/{id}', [Usercontroller::class, 'editguest'])->name('guest.update');
 
 });
 
@@ -94,6 +97,8 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','isAdmin']],function(){
     Route::post('update_offer/', [ProductController::class, 'updateOffer'])->name('isoffer');
     Route::resource('/social',SocialController::class,);
      Route::post('/delete_social/{id}', [SocialController::class, 'delete'])->name('delete');
+    Route::resource('/faq',Faq::class,);
+    Route::post('/delete_faq/{id}', [Faq::class, 'delete'])->name('faq.delete');
 
 });
 

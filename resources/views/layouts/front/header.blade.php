@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-3">
-                <a href="index.html" class="site-brand">
+                <a href="{{route('home')}}" class="site-brand">
                     <img src="{{asset('front')}}/assets/image/logo.png" alt="">
                 </a>
             </div>
@@ -18,37 +18,39 @@
                         <div class="login-block">
                             @guest
                             <a href="{{ route('log-res') }}" class="font-weight-bold">{{__('reqistr.login')}}</a> <br>
-                            <span>{{__('letter.or')}}</span> <a href="{{ route('log-res') }}">{{__('reqistr.register')}}</a>
+                            <span>{{__('letter.or')}}</span> <a
+                                href="{{ route('log-res') }}">{{__('reqistr.register')}}</a>
                             @else
-                            <p><a href="{{route('my-account',Auth::user()->id)}}"><i class="icon-switch2"></i> {{ Auth::user()->name }}</a></p>
+                            <p><a href="{{route('my-account',Auth::user()->id)}}"><i class="icon-switch2"></i>
+                                    {{ Auth::user()->name }}</a></p>
                             @endguest
                         </div>
                         <div class="cart-block">
                             <div class="cart-total">
                                 @auth
-                                    <a href="{{route('showcart',Auth::user()->id)}}" ><i class="icon-switch2"></i>
+                                <a href="{{route('showcart',Auth::user()->id)}}"><i class="icon-switch2"></i>
+                                    <span class="text-number">
+                                        {{$cart}}
+                                    </span>
+                                    <span class="text-item">
+                                        {{__('cart.shopping_cart')}}
+                                    </span>
+                                    <span class="price">
+                                        {{$totalPrice}} azn
+                                    </span>
+                                </a>
+                                @endauth
+                                @guest
                                 <span class="text-number">
-                                   {{$cart}}
+                                    0
                                 </span>
                                 <span class="text-item">
-                                {{__('cart.shopping_cart')}}
+                                    {{__('cart.shopping_cart')}}
                                 </span>
                                 <span class="price">
-                                    {{$totalPrice}} azn
-                                </span>
-                                    </a>
-                                @endauth
-                                    @guest
-                                        <span class="text-number">
-                                   0
-                                </span>
-                                        <span class="text-item">
-                                {{__('cart.shopping_cart')}}
-                                </span>
-                                        <span class="price">
                                     0.00 azn
                                 </span>
-                                    @endguest
+                                @endguest
                             </div>
 
                         </div>

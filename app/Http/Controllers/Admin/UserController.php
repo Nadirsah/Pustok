@@ -58,6 +58,21 @@ class UserController extends Controller
         return  redirect()->route('log-res')->with('message','Melumatlar ugurla yuklendi! Daxil olun.');
     }
 
+    public function editguest(Request $request,$id)
+    {
+        $request->validate([
+            'name'=>['required'],
+            'email'=>['required','email'],
+            'password'=>['required'],
+        ]);
+        $data=User::findOrFail($id);
+        $data->name=$request->name;
+        $data->email=$request->email;
+        $data->password=Hash::make($request->password);
+        $data->save();
+        return  redirect()->route('home')->with('message','Melumatlar ugurla yenilendi! ');
+    }
+
     /**
      * Display the specified resource.
      */

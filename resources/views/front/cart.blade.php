@@ -43,7 +43,7 @@
                                                     @endif
                                                 @endforeach
                                                     </a></td>
-                                        <td class="pro-title"><a href="#">{!!$item->get_products->title!!}</a></td>
+                                        <td class="pro-title"><a href="{{route('product-detail',$item->get_products->id)}}">{!!$item->get_products->title!!}</a></td>
                                         <td class="pro-price"><span>{{$item->get_products->price}} azn</span></td>
                                         <td class="pro-price"><span>{{$item->quantity}}</span></td>
                                         <td class="pro-subtotal"><span id="total">{{($item->get_products->price)*($item->quantity)}} azn</span></td>

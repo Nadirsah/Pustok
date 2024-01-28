@@ -11,8 +11,9 @@
                         @if($category->children->isNotEmpty())
                             <ul class="sub-menu">
                                 @foreach($category->children as $child)
-                                    <li><a href="#">{{$child->name}}</a></li>
+                                    <li><a href="{{ route('kat_shop', ['id' => $child->id, 'slug' => Str::slug($child->name)]) }}" >{{ $child->name }}</a></li>
                                 @endforeach
+
                             </ul>
                         @endif
                     </li>

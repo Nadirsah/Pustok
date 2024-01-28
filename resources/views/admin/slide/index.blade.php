@@ -33,7 +33,7 @@
                     <tr>
                         <th>Title</th>
                         <th>Name</th>
-                        <th>Vergi</th>
+                        <th>Sekil</th>
                         <th class="text-center">Actions</th>
                     </tr>
                 </thead>
@@ -56,7 +56,7 @@
     </div>
 
     <!-- Login form -->
- 
+
 </div>
 <!-- /login form -->
 

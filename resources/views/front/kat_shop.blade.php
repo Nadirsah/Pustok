@@ -92,19 +92,19 @@
             </div>
         </div>
         <div class="shop-product-wrap with-pagination row space-db--30 shop-border grid-four">
-            @foreach($products as $product)
+            @foreach($data as $items)
             <div class="col-lg-4 col-sm-6">
                 <div class="product-card">
                     <div class="product-grid-content">
                         <div class="product-header">
                             <a href="" class="author">
-                                {{$product->tags}}
+                                {{$items->tags}}
                             </a>
-                            <h3><a href="{{route('product-detail',$product->id)}}">{!!$product->title!!}</a></h3>
+                            <h3><a href="{{route('product-detail',$items->id)}}">{!!$items->title!!}</a></h3>
                         </div>
                         <div class="product-card--body">
                             <div class="card-image">
-                                @foreach($product->images as $image)
+                                @foreach($items->images as $image)
                                 @if($image->is_main == 1)
                                 <img src="{{ $image->file_path }}" alt="">
                                 @endif
@@ -114,13 +114,13 @@
 
                                     </a>
                                     <div class="hover-btns">
-                                        <form action="{{route('addcart',$product->id)}}" method="Post">
+                                        <form action="{{route('addcart',$items->id)}}" method="Post">
                                             @csrf
                                             <button type="submit" class="single-btn">
                                                 <i class="fas fa-shopping-basket"></i>
                                             </button>
                                         </form>
-                                        <a href="#" data-toggle="modal" data-target="#quickModal{{$product->id}}"
+                                        <a href="#" data-toggle="modal" data-target="#quickModal{{$items->id}}"
                                             class="single-btn">
                                             <i class="fas fa-eye"></i>
                                         </a>
@@ -128,9 +128,9 @@
                                 </div>
                             </div>
                             <div class="price-block">
-                                <span class="price">{{$product->price}}-azn</span>
-                                <del class="price-old">{{$product->old_price}}-azn</del>
-                                <span class="price-discount">{{$product->tax}}%</span>
+                                <span class="price">{{$items->price}}-azn</span>
+                                <del class="price-old">{{$items->old_price}}-azn</del>
+                                <span class="price-discount">{{$items->tax}}%</span>
                             </div>
                         </div>
                     </div>
@@ -140,64 +140,11 @@
 
         </div>
 
-        <!-- Pagination Block -->
-        <!-- <div class="row pt--30">
-            <div class="col-md-12">
-                <div class="pagination-block">
-                    <ul class="pagination-btns flex-center">
-                        <li><a href="" class="single-btn prev-btn ">|<i class="zmdi zmdi-chevron-left"></i> </a>
-                        </li>
-                        <li><a href="" class="single-btn prev-btn "><i class="zmdi zmdi-chevron-left"></i> </a>
-                        </li>
-                        <li class="active"><a href="" class="single-btn">1</a></li>
-                        <li><a href="" class="single-btn">2</a></li>
-                        <li><a href="" class="single-btn">3</a></li>
-                        <li><a href="" class="single-btn">4</a></li>
-                        <li><a href="" class="single-btn next-btn"><i class="zmdi zmdi-chevron-right"></i></a>
-                        </li>
-                        <li><a href="" class="single-btn next-btn"><i class="zmdi zmdi-chevron-right"></i>|</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div> -->
 
-        <div class="row pt--30">
-            <div class="col-md-12">
-                <div class="pagination-block">
-                    <ul class="pagination-btns flex-center">
 
-                        <!-- Önceki sayfa düğmesi -->
-                        @if ($products->onFirstPage())
-                        <li><span class="single-btn prev-btn disabled">|<i class="zmdi zmdi-chevron-left"></i> </span>
-                        </li>
-                        @else
-                        <li><a href="{{ $products->previousPageUrl() }}" class="single-btn prev-btn ">|<i
-                                    class="zmdi zmdi-chevron-left"></i> </a></li>
-                        @endif
-
-                        <!-- Sayfa bağlantıları -->
-                        @foreach ($products->getUrlRange(1, $products->lastPage()) as $page => $url)
-                        <li class="{{ $page == $products->currentPage() ? 'active' : '' }}"><a href="{{ $url }}"
-                                class="single-btn">{{ $page }}</a></li>
-                        @endforeach
-
-                        <!-- Sonraki sayfa düğmesi -->
-                        @if ($products->hasMorePages())
-                        <li><a href="{{ $products->nextPageUrl() }}" class="single-btn next-btn"><i
-                                    class="zmdi zmdi-chevron-right"></i></a></li>
-                        @else
-                        <li><span class="single-btn next-btn disabled"><i class="zmdi zmdi-chevron-right"></i>|</span>
-                        </li>
-                        @endif
-
-                    </ul>
-                </div>
-            </div>
-        </div>
 
         <!-- Modal -->
-        @foreach($products as $product)
+        @foreach($data as $product)
         <div class="modal fade modal-quick-view" id="quickModal{{$product->id}}" tabindex="-1" role="dialog"
             aria-labelledby="quickModal" aria-hidden="true">
             <div class="modal-dialog" role="document">

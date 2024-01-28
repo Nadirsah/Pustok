@@ -76,7 +76,6 @@ class CategoryController extends Controller
             $data->name=$request->name;
             $data->slug = Str::slug($data->getTranslation('name', app()->getLocale()), '-');
             $data->parent_id=$request->parent_id;
-
             $data->save();
             return redirect()->route('category.index')->with('message','Melumatlar ugurla yuklendi!');
 

@@ -1,5 +1,8 @@
 @extends('layouts.front')
 @section('css')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+    integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 @endsection
 @section('home-sidebar')
 @include('front.home.home-sidebar')
@@ -22,7 +25,7 @@
                                 <div class="col-lg-5">
                                     <span class="title-small">{!!$item->title!!}</span>
                                     <h1>{!!$item->name!!}</h1>
-                                    <a href="shop-grid.html" class="btn btn-outlined--pink">
+                                    <a href="{{route('shop')}}" class="btn btn-outlined--pink">
                                         {{__('letter.slide')}}
                                     </a>
                                 </div>
@@ -246,20 +249,13 @@
                                                                     <button type="submit" class="single-btn">
                                                                         <i class="fas fa-shopping-basket"></i>
                                                                     </button>
-                                                                    </form>
-                                                                    <a href="#" data-toggle="modal"
-                                                                        data-target="#quickModal{{$product->id}}"
-                                                                        class="single-btn">
-                                                                        <i class="fas fa-eye"></i>
-                                                                    </a>
-                                                                    <form action="{{route('addwhishlist',$product->id)}}"
-                                                                    method="Post">
-                                                                    @csrf
-                                                                    <button type="submit" class="single-btn"
-                                                                        tabindex="-1">
-                                                                        <i class="fas fa-heart"></i>
-                                                                    </button>
-                                                                    </form>
+                                                                </form>
+                                                                <a href="#" data-toggle="modal"
+                                                                    data-target="#quickModal{{$product->id}}"
+                                                                    class="single-btn">
+                                                                    <i class="fas fa-eye"></i>
+                                                                </a>
+
                                                             </div>
                                                         </div>
                                                     </div>
@@ -271,7 +267,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                      
+
                                         @endforeach
                                     </div>
                                 </div>
@@ -311,26 +307,53 @@
                                                     ]'>
                                             @foreach($item->products as $product)
                                             <div class="single-slide">
-                                                <div class="product-card card-style-list">
-                                                    <div class="card-image">
-
+                                                <div class="product-card">
+                                                    <div class="product-header">
+                                                        <a href="" class="author">
+                                                            {{$product->tags}}
+                                                        </a>
+                                                        <h3><a
+                                                                href="{{route('product-detail',$product->id)}}">{!!$product->title!!}</a>
+                                                        </h3>
                                                     </div>
                                                     <div class="product-card--body">
-                                                        <div class="product-header">
-                                                            <a href="" class="author">
-                                                                {!!$product->brand!!}
-                                                            </a>
-                                                            <h3><a href="">5 Ways To Get
-                                                                    Through To Your BOOK</a></h3>
+                                                        <div class="card-image">
+                                                            @foreach($product->images as $image)
+                                                            @if($image->is_main == 1)
+                                                            <img src="{{ $image->file_path }}" alt="">
+                                                            @endif
+                                                            @endforeach
+
+                                                            <div class="hover-contents">
+                                                                <a href="" class="hover-image">
+                                                                    <img src="" alt="">
+                                                                </a>
+                                                                <div class="hover-btns">
+                                                                    <form action="{{route('addcart',$product->id)}}"
+                                                                        method="Post">
+                                                                        @csrf
+                                                                        <button type="submit" class="single-btn">
+                                                                            <i class="fas fa-shopping-basket"></i>
+                                                                        </button>
+                                                                    </form>
+                                                                    <a href="#" data-toggle="modal"
+                                                                        data-target="#quickModal{{$product->id}}"
+                                                                        class="single-btn">
+                                                                        <i class="fas fa-eye"></i>
+                                                                    </a>
+
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                         <div class="price-block">
-                                                            <span class="price">£51.20</span>
-                                                            <del class="price-old">£51.20</del>
-                                                            <span class="price-discount">20%</span>
+                                                            <span class="price">{{$product->price}}-azn</span>
+                                                            <del class="price-old">{{$product->old_price}}-azn</del>
+                                                            <span class="price-discount">{{$product->tax}}%</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+
                                             @endforeach
                                         </div>
                                     </div>
@@ -447,10 +470,17 @@
         </div>
     </div>
 </div>
-
 @endforeach
-
-
+@if(Session::has('message'))
+<script>
+swal('Message', "{{Session::get('message')}}", 'success', {
+    button: true,
+    button: 'OK',
+    timer: 6000,
+    dangerMode: true,
+});
+</script>
+@endif
 @endsection
 @section('js')
 @endsection

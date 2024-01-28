@@ -92,7 +92,7 @@ public function delete($id){
       $data->zip_cod=$request->zip_cod;
       $data->status=$request->status;
       $data->order_number=rand(1,100);
-       $data->total=$totalPrice;
+      $data->total=$totalPrice;
       $data->save();
 
        if(Auth::id()){

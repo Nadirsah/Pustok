@@ -16,34 +16,12 @@
                     </div>
                     <ul class="order-details-list">
                         <li>{{__('letter.order')}} {{__('letter.no')}}: <strong>{{$data->order_number}}</strong></li>
-                        <li>Date: <strong>{{$data->created_at}}</strong></li>
-                        <li>{{__('cart.total')}}: <strong>{{__('cart.total')}}</strong></li>
+                        <li>{{__('letter.date')}}: <strong>{{$data->created_at}}</strong></li>
+                        <li>{{__('cart.total')}}: <strong>{{$data->total}} azn</strong></li>
 
                     </ul>
 
-                    <h3 class="order-table-title">{{__('letter.order')}} {{__('cart.details')}}</h3>
-                    <div class="table-responsive">
-                        <table class="table order-details-table">
-                            <thead>
-                            <tr>
-                                <th>{{__('letter.product')}}</th>
-                                <th>{{__('cart.total')}}</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td><a href="single-product.html">Vans Off The Wall T-Shirt In</a> <strong>× 1</strong></td>
-                                <td><span>$59.00</span></td>
-                            </tr>
-                            </tbody>
-                            <tfoot>
-                            <tr>
-                                <th>{{__('cart.total')}}:</th>
-                                <td><span>$117.00</span></td>
-                            </tr>
-                            </tfoot>
-                        </table>
-                    </div>
+                   
                 </div>
             </div>
         </div>

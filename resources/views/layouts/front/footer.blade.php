@@ -24,11 +24,9 @@
                         <h3>{{__('letter.extras')}}</h3>
                     </div>
                     <ul class="footer-list normal-list">
-                        <li><a href="">Delivery</a></li>
-                        <li><a href="">About Us</a></li>
-                        <li><a href="">Stores</a></li>
-                        <li><a href="">Contact us</a></li>
-                        <li><a href="">Sitemap</a></li>
+                        <li><a href="{{route('faq')}}">{{__('contakt.about_as')}}</a></li>
+                        <li><a href="{{route('shop')}}">{{__('contakt.stores')}}</a></li>
+                        <li><a href="{{route('contact')}}">{{__('menu.contact')}}</a></li>
                     </ul>
                 </div>
             </div>
@@ -57,5 +55,4 @@
             </div>
         </div>
     </div>
-
 </footer>
