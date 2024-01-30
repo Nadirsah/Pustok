@@ -13,8 +13,8 @@ class FaqController extends Controller
     public function index(){
         $categories=Category::all();
         $social=Social::all();
-        $data=FaqModel::all();
+        $items=FaqModel::all();
 
-        return view ('front.faq',compact('categories','data','social'));
+        return view ('front.faq',compact('categories','items','social'));
     }
 }

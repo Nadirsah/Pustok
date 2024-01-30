@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','Mehsullar')
+@section('title','Admin panel')
 @section('theme_css')
 <link href="{{asset('admin')}}\global_assets\css\icons\fontawesome\styles.min.css" rel="stylesheet" type="text/css">
 @endsection

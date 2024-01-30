@@ -84,9 +84,9 @@ class SlideController extends Controller
        
         if ($request->hasFile('img') && $request->file('img')) {
             Storage::delete($file_path);
-            $filename = time() . '-' . $image->getClientOriginalName();
-            $filePath = $image->storeAs('uploads', $filename, 'public');
-            $data->image = time() . '-' . $image->getClientOriginalName();
+            $filename = time() . '-' . $request->hasFile('img')->getClientOriginalName();
+            $filePath =$request->hasFile('img')->storeAs('uploads', $filename, 'public');
+            $data->image = time() . '-' . $request->hasFile('img')->getClientOriginalName();
             $data->file_path = '/storage/' . $filePath;
         }
         $data->save();
